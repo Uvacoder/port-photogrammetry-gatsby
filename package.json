@@ -18,7 +18,8 @@
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "start": "npm run dev",
     "test": "npm run type-check && npm run lint",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "generate": "graphql-codegen"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -56,6 +57,10 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.8",
+    "@graphql-codegen/cli": "^1.8.3",
+    "@graphql-codegen/typescript": "^1.8.3",
+    "@graphql-codegen/typescript-operations": "^1.8.3",
+    "graphql": "^14.5.8",
     "@types/node": "^12.0.10",
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",

@@ -1,37 +1,25 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import { BlogListerQuery } from '../types'
 
-interface StaticQueryProps {
-  allMarkdownRemark: {
-    edges: [
-      {
-        node: {
-          frontmatter: {
-            title: string
-          }
-        }
-
-      }
-    ]
-  }
-}
-
-const BlogLister: React.FC = () => (
-  <StaticQuery
-    query={graphql`
-    query BlogListerQuery {
-      allMarkdownRemark {
-        edges {
-          node {
-            frontmatter {
-              title
-            }
-          }
+export const PageQuery = graphql`
+query BlogLister {
+  allMarkdownRemark {
+    edges {
+      node {
+        frontmatter {
+          title
         }
       }
     }
-    `}
-    render={(data: StaticQueryProps) => (
+  }
+}
+`
+
+const BlogLister: React.FC = () => (
+  <StaticQuery
+    query={PageQuery}
+    render={(data: BlogListerQuery) => (
       <h1>
         {data.allMarkdownRemark.edges.map(post => <h1>{post.node.frontmatter.title}</h1>)}
       </h1>
