@@ -2,13 +2,18 @@ import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { BlogListerQuery } from '../types'
 import Img from "gatsby-image"
+import { ToFluid, ToFixed } from './ToFluid'
 
 export const ComponentQuery = graphql`
 query BlogLister {
-  imageOne: file(relativePath: { eq: "one.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
+  imageOne: file(relativePath: { eq: "images/reinterpretcode.jpg" }) {
+    childImageSharp{
+      fixed (width: 276, height: 266, quality:50){
+        src
+        srcSet
+        width
+        height
+        base64
       }
     }
   }
@@ -37,7 +42,9 @@ query BlogLister {
   }
 }
 `
-
+const ImgStyle = {
+  margin: "0"
+}
 //<Img fluid={post.node.frontmatter!.resources![0]!.src!} alt="" />
 const BlogLister: React.FC = () => (
   <StaticQuery
@@ -46,9 +53,7 @@ const BlogLister: React.FC = () => (
       <>
         {data.allMarkdownRemark.edges.map(post =>
           <a className="card blog-card" href={post.node.fields!.slug!}>
-            <div className="card-img-container">
-
-            </div>
+            <Img imgStyle={ImgStyle} fixed={ToFixed(data.imageOne!.childImageSharp!.fixed)} alt="" />
             <article className="card-body">
               <h2 className="card-title">{post.node.frontmatter!.title}</h2>
               <p className="card-text">{post.node.excerpt}</p>

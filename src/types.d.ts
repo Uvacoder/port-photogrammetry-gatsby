@@ -2899,7 +2899,16 @@ export type BlogListerQueryVariables = {};
 
 export type BlogListerQuery = (
   { readonly __typename?: 'Query' }
-  & { readonly allMarkdownRemark: (
+  & { readonly imageOne: Maybe<(
+    { readonly __typename?: 'File' }
+    & { readonly childImageSharp: Maybe<(
+      { readonly __typename?: 'ImageSharp' }
+      & { readonly fixed: Maybe<(
+        { readonly __typename?: 'ImageSharpFixed' }
+        & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'aspectRatio' | 'width' | 'height' | 'base64'>
+      )> }
+    )> }
+  )>, readonly allMarkdownRemark: (
     { readonly __typename?: 'MarkdownRemarkConnection' }
     & { readonly edges: ReadonlyArray<(
       { readonly __typename?: 'MarkdownRemarkEdge' }
