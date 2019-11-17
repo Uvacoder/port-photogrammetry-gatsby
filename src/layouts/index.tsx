@@ -2,13 +2,9 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import 'modern-normalize'
-import '../styles/normalize'
+import 'normalize.css'
 
-import Header from '../components/Header'
-import LayoutRoot from '../components/LayoutRoot'
-import LayoutMain from '../components/LayoutMain'
-import BlogLister from '../components/BlogPostLister'
+import Navigation from '../components/Navigation'
 
 interface StaticQueryProps {
   site: {
@@ -33,7 +29,7 @@ const IndexLayout: React.FC = ({ children }) => (
       }
     `}
     render={(data: StaticQueryProps) => (
-      <LayoutRoot>
+      <div className="list-body" >
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -41,10 +37,9 @@ const IndexLayout: React.FC = ({ children }) => (
             { name: 'keywords', content: data.site.siteMetadata.keywords }
           ]}
         />
-        <Header title={data.site.siteMetadata.title} />
-        <LayoutMain>{children}</LayoutMain>
-        <BlogLister></BlogLister>
-      </LayoutRoot>
+        <Navigation></Navigation>
+        {children}
+      </div>
     )}
   />
 )

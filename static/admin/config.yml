@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: "static/images" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
+publish_mode: editorial_workflow
+
+site_url: https://photographing-programmer.netlify.com/
+
+collections:
+  - name: "posts"
+    label: "Post"
+    folder: "content/posts"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}_{{title}}/index"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Categories", name: "categories", widget: "list"}
+      - label: "Resources"
+        name: "resources"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "Name", name: "name", widget: string, default: "featuredImage"}
+          - {label: "Featured Image", name: "src", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
