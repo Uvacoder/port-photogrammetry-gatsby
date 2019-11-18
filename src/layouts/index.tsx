@@ -29,7 +29,7 @@ const IndexLayout: React.FC = ({ children }) => (
       }
     `}
     render={(data: StaticQueryProps) => (
-      <div className="list-body" >
+      <>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -39,7 +39,7 @@ const IndexLayout: React.FC = ({ children }) => (
         />
         <Navigation></Navigation>
         {children}
-      </div>
+      </>
     )}
   />
 )

@@ -11,6 +11,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   word-break: break-word;
+  background-image: url("../../static/images/ignasipattern.png");
 }
 
 p {
@@ -230,10 +231,7 @@ b, strong {
 }
 
 .card-img {
-  border-radius: 0.3rem 0.3rem 0 0;
-  margin: 0 0 -0.28em 0;
   max-height: 10em;
-  object-fit: cover;
 }
 
 .card-img-overlay {
@@ -367,13 +365,6 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 1.5em 0;
-}
-
 blockquote {
   border-left: 0.3em solid #D1D1D1;
   margin: 1.5em 0.8em;
@@ -490,8 +481,6 @@ footer {
     align-items: stretch;
   }
   .card-img {
-    border-radius: 0.2rem 0 0 0.2rem;
-    margin: 0;
     max-height: unset;
     height: 100%;
     width: 15em;
@@ -501,6 +490,7 @@ footer {
   }
   .card-body {
     padding: 1.5em 1.3em;
+    flex-grow: 1;
   }
   .card-title {
     font-size: 1.27em;

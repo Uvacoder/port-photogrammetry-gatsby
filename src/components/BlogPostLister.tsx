@@ -8,11 +8,10 @@ export const ComponentQuery = graphql`
 query BlogLister {
   imageOne: file(relativePath: { eq: "images/reinterpretcode.jpg" }) {
     childImageSharp{
-      fixed (width: 276, height: 266, quality:50){
+      fixed (width: 276, quality:50){
         src
         srcSet
         width
-        height
         base64
       }
     }
@@ -42,8 +41,9 @@ query BlogLister {
   }
 }
 `
-const ImgStyle = {
-  margin: "0"
+
+const style = {
+  height: null
 }
 //<Img fluid={post.node.frontmatter!.resources![0]!.src!} alt="" />
 const BlogLister: React.FC = () => (
@@ -53,7 +53,7 @@ const BlogLister: React.FC = () => (
       <>
         {data.allMarkdownRemark.edges.map(post =>
           <a className="card blog-card" href={post.node.fields!.slug!}>
-            <Img imgStyle={ImgStyle} fixed={ToFixed(data.imageOne!.childImageSharp!.fixed)} alt="" />
+            <Img className="card-img-container" fixed={ToFixed(data.imageOne!.childImageSharp!.fixed)} alt="" />
             <article className="card-body">
               <h2 className="card-title">{post.node.frontmatter!.title}</h2>
               <p className="card-text">{post.node.excerpt}</p>
