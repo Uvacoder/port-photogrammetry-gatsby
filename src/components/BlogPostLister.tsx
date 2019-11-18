@@ -6,16 +6,6 @@ import { ToFixed } from './ToFluid'
 
 export const ComponentQuery = graphql`
 query BlogLister {
-  imageOne: file(relativePath: { eq: "images/reinterpretcode.jpg" }) {
-    childImageSharp{
-      fixed (width: 276, quality:50){
-        src
-        srcSet
-        width
-        base64
-      }
-    }
-  }
   allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
     edges {
       node {

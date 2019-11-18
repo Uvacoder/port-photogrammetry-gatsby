@@ -2403,9 +2403,19 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsPluginsSsrApIs = 'pluginCreator___pluginOptions___plugins___ssrAPIs',
   PluginCreatorPluginOptionsPluginsPluginFilepath = 'pluginCreator___pluginOptions___plugins___pluginFilepath',
   PluginCreatorPluginOptionsWrapperStyle = 'pluginCreator___pluginOptions___wrapperStyle',
+  PluginCreatorPluginOptionsIgnoreFileExtensions = 'pluginCreator___pluginOptions___ignoreFileExtensions',
   PluginCreatorPluginOptionsMaxWidth = 'pluginCreator___pluginOptions___maxWidth',
   PluginCreatorPluginOptionsQuality = 'pluginCreator___pluginOptions___quality',
   PluginCreatorPluginOptionsLinkImagesToOriginal = 'pluginCreator___pluginOptions___linkImagesToOriginal',
+  PluginCreatorPluginOptionsPathPrefix = 'pluginCreator___pluginOptions___pathPrefix',
+  PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___backgroundColor',
+  PluginCreatorPluginOptionsShowCaptions = 'pluginCreator___pluginOptions___showCaptions',
+  PluginCreatorPluginOptionsMarkdownCaptions = 'pluginCreator___pluginOptions___markdownCaptions',
+  PluginCreatorPluginOptionsWithWebp = 'pluginCreator___pluginOptions___withWebp',
+  PluginCreatorPluginOptionsTracedSvg = 'pluginCreator___pluginOptions___tracedSVG',
+  PluginCreatorPluginOptionsLoading = 'pluginCreator___pluginOptions___loading',
+  PluginCreatorPluginOptionsDisableBgImageOnAlpha = 'pluginCreator___pluginOptions___disableBgImageOnAlpha',
+  PluginCreatorPluginOptionsDisableBgImage = 'pluginCreator___pluginOptions___disableBgImage',
   PluginCreatorPluginOptionsSiteUrl = 'pluginCreator___pluginOptions___siteUrl',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
@@ -2606,16 +2616,36 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPluginsName = 'pluginOptions___plugins___name',
   PluginOptionsPluginsVersion = 'pluginOptions___plugins___version',
   PluginOptionsPluginsPluginOptionsWrapperStyle = 'pluginOptions___plugins___pluginOptions___wrapperStyle',
+  PluginOptionsPluginsPluginOptionsIgnoreFileExtensions = 'pluginOptions___plugins___pluginOptions___ignoreFileExtensions',
   PluginOptionsPluginsPluginOptionsMaxWidth = 'pluginOptions___plugins___pluginOptions___maxWidth',
   PluginOptionsPluginsPluginOptionsQuality = 'pluginOptions___plugins___pluginOptions___quality',
   PluginOptionsPluginsPluginOptionsLinkImagesToOriginal = 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal',
+  PluginOptionsPluginsPluginOptionsPathPrefix = 'pluginOptions___plugins___pluginOptions___pathPrefix',
+  PluginOptionsPluginsPluginOptionsBackgroundColor = 'pluginOptions___plugins___pluginOptions___backgroundColor',
+  PluginOptionsPluginsPluginOptionsShowCaptions = 'pluginOptions___plugins___pluginOptions___showCaptions',
+  PluginOptionsPluginsPluginOptionsMarkdownCaptions = 'pluginOptions___plugins___pluginOptions___markdownCaptions',
+  PluginOptionsPluginsPluginOptionsWithWebp = 'pluginOptions___plugins___pluginOptions___withWebp',
+  PluginOptionsPluginsPluginOptionsTracedSvg = 'pluginOptions___plugins___pluginOptions___tracedSVG',
+  PluginOptionsPluginsPluginOptionsLoading = 'pluginOptions___plugins___pluginOptions___loading',
+  PluginOptionsPluginsPluginOptionsDisableBgImageOnAlpha = 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha',
+  PluginOptionsPluginsPluginOptionsDisableBgImage = 'pluginOptions___plugins___pluginOptions___disableBgImage',
   PluginOptionsPluginsBrowserApIs = 'pluginOptions___plugins___browserAPIs',
   PluginOptionsPluginsSsrApIs = 'pluginOptions___plugins___ssrAPIs',
   PluginOptionsPluginsPluginFilepath = 'pluginOptions___plugins___pluginFilepath',
   PluginOptionsWrapperStyle = 'pluginOptions___wrapperStyle',
+  PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
   PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
   PluginOptionsQuality = 'pluginOptions___quality',
   PluginOptionsLinkImagesToOriginal = 'pluginOptions___linkImagesToOriginal',
+  PluginOptionsPathPrefix = 'pluginOptions___pathPrefix',
+  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
+  PluginOptionsShowCaptions = 'pluginOptions___showCaptions',
+  PluginOptionsMarkdownCaptions = 'pluginOptions___markdownCaptions',
+  PluginOptionsWithWebp = 'pluginOptions___withWebp',
+  PluginOptionsTracedSvg = 'pluginOptions___tracedSVG',
+  PluginOptionsLoading = 'pluginOptions___loading',
+  PluginOptionsDisableBgImageOnAlpha = 'pluginOptions___disableBgImageOnAlpha',
+  PluginOptionsDisableBgImage = 'pluginOptions___disableBgImage',
   PluginOptionsSiteUrl = 'pluginOptions___siteUrl',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsPath = 'pluginOptions___path',
@@ -2741,9 +2771,19 @@ export type SitePluginPluginOptions = {
   readonly __typename?: 'SitePluginPluginOptions',
   readonly plugins: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsPlugins>>>,
   readonly wrapperStyle: Maybe<Scalars['String']>,
+  readonly ignoreFileExtensions: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
   readonly maxWidth: Maybe<Scalars['Int']>,
   readonly quality: Maybe<Scalars['Int']>,
   readonly linkImagesToOriginal: Maybe<Scalars['Boolean']>,
+  readonly pathPrefix: Maybe<Scalars['String']>,
+  readonly backgroundColor: Maybe<Scalars['String']>,
+  readonly showCaptions: Maybe<Scalars['Boolean']>,
+  readonly markdownCaptions: Maybe<Scalars['Boolean']>,
+  readonly withWebp: Maybe<Scalars['Boolean']>,
+  readonly tracedSVG: Maybe<Scalars['Boolean']>,
+  readonly loading: Maybe<Scalars['String']>,
+  readonly disableBgImageOnAlpha: Maybe<Scalars['Boolean']>,
+  readonly disableBgImage: Maybe<Scalars['Boolean']>,
   readonly siteUrl: Maybe<Scalars['String']>,
   readonly name: Maybe<Scalars['String']>,
   readonly path: Maybe<Scalars['String']>,
@@ -2753,9 +2793,19 @@ export type SitePluginPluginOptions = {
 export type SitePluginPluginOptionsFilterInput = {
   readonly plugins: Maybe<SitePluginPluginOptionsPluginsFilterListInput>,
   readonly wrapperStyle: Maybe<StringQueryOperatorInput>,
+  readonly ignoreFileExtensions: Maybe<StringQueryOperatorInput>,
   readonly maxWidth: Maybe<IntQueryOperatorInput>,
   readonly quality: Maybe<IntQueryOperatorInput>,
   readonly linkImagesToOriginal: Maybe<BooleanQueryOperatorInput>,
+  readonly pathPrefix: Maybe<StringQueryOperatorInput>,
+  readonly backgroundColor: Maybe<StringQueryOperatorInput>,
+  readonly showCaptions: Maybe<BooleanQueryOperatorInput>,
+  readonly markdownCaptions: Maybe<BooleanQueryOperatorInput>,
+  readonly withWebp: Maybe<BooleanQueryOperatorInput>,
+  readonly tracedSVG: Maybe<BooleanQueryOperatorInput>,
+  readonly loading: Maybe<StringQueryOperatorInput>,
+  readonly disableBgImageOnAlpha: Maybe<BooleanQueryOperatorInput>,
+  readonly disableBgImage: Maybe<BooleanQueryOperatorInput>,
   readonly siteUrl: Maybe<StringQueryOperatorInput>,
   readonly name: Maybe<StringQueryOperatorInput>,
   readonly path: Maybe<StringQueryOperatorInput>,
@@ -2792,16 +2842,36 @@ export type SitePluginPluginOptionsPluginsFilterListInput = {
 export type SitePluginPluginOptionsPluginsPluginOptions = {
   readonly __typename?: 'SitePluginPluginOptionsPluginsPluginOptions',
   readonly wrapperStyle: Maybe<Scalars['String']>,
+  readonly ignoreFileExtensions: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
   readonly maxWidth: Maybe<Scalars['Int']>,
   readonly quality: Maybe<Scalars['Int']>,
   readonly linkImagesToOriginal: Maybe<Scalars['Boolean']>,
+  readonly pathPrefix: Maybe<Scalars['String']>,
+  readonly backgroundColor: Maybe<Scalars['String']>,
+  readonly showCaptions: Maybe<Scalars['Boolean']>,
+  readonly markdownCaptions: Maybe<Scalars['Boolean']>,
+  readonly withWebp: Maybe<Scalars['Boolean']>,
+  readonly tracedSVG: Maybe<Scalars['Boolean']>,
+  readonly loading: Maybe<Scalars['String']>,
+  readonly disableBgImageOnAlpha: Maybe<Scalars['Boolean']>,
+  readonly disableBgImage: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   readonly wrapperStyle: Maybe<StringQueryOperatorInput>,
+  readonly ignoreFileExtensions: Maybe<StringQueryOperatorInput>,
   readonly maxWidth: Maybe<IntQueryOperatorInput>,
   readonly quality: Maybe<IntQueryOperatorInput>,
   readonly linkImagesToOriginal: Maybe<BooleanQueryOperatorInput>,
+  readonly pathPrefix: Maybe<StringQueryOperatorInput>,
+  readonly backgroundColor: Maybe<StringQueryOperatorInput>,
+  readonly showCaptions: Maybe<BooleanQueryOperatorInput>,
+  readonly markdownCaptions: Maybe<BooleanQueryOperatorInput>,
+  readonly withWebp: Maybe<BooleanQueryOperatorInput>,
+  readonly tracedSVG: Maybe<BooleanQueryOperatorInput>,
+  readonly loading: Maybe<StringQueryOperatorInput>,
+  readonly disableBgImageOnAlpha: Maybe<BooleanQueryOperatorInput>,
+  readonly disableBgImage: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginSortInput = {
@@ -2861,16 +2931,7 @@ export type BlogListerQueryVariables = {};
 
 export type BlogListerQuery = (
   { readonly __typename?: 'Query' }
-  & { readonly imageOne: Maybe<(
-    { readonly __typename?: 'File' }
-    & { readonly childImageSharp: Maybe<(
-      { readonly __typename?: 'ImageSharp' }
-      & { readonly fixed: Maybe<(
-        { readonly __typename?: 'ImageSharpFixed' }
-        & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'width' | 'base64'>
-      )> }
-    )> }
-  )>, readonly allMarkdownRemark: (
+  & { readonly allMarkdownRemark: (
     { readonly __typename?: 'MarkdownRemarkConnection' }
     & { readonly edges: ReadonlyArray<(
       { readonly __typename?: 'MarkdownRemarkEdge' }
