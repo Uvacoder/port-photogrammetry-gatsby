@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
     console.error(allMarkdown.errors)
     throw new Error(allMarkdown.errors)
   }
-
+//MarkdownRemarkFrontmatterResourcesFilterInput
   allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const { slug, layout } = node.fields
 

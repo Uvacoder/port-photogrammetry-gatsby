@@ -6,7 +6,7 @@ categories: [Photography]
 draft: true
 resources:
 - name: featuredImage
-  src: "thumbnail.jpg"
+  src: images/spherephotography.jpg
   params:
     description: "A photo made through a glass sphere"
 ---

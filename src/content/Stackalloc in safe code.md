@@ -8,7 +8,7 @@ categories:
 - Programming
 resources:
 - name: featuredImage
-  src: thumbnail.jpg
+  src: images/spancode.jpg
   params:
     description: Stackalloc in safe C# code
 description: Throw it on the heap or stack it up
@@ -31,7 +31,7 @@ Span<int> block = stackalloc int[length];
 ```
 
 ## The limitations of stackalloc
-Now just because you can now use 'stackalloc' in a safe context doesnt mean you should always use it. As 'stackalloc' allocates on the stack the limits of the stack will also be in effect. This means allocating large arrays is probably not the best idea as this can easily lead to a stackoverflow. 
+Now just because you can now use 'stackalloc' in a safe context doesnt mean you should always use it. As 'stackalloc' allocates on the stack the limits of the stack will also be in effect. This means allocating large arrays is probably not the best idea as this can easily lead to a stackoverflow.
 
 Normally the stack size is 1MB but with ASP .NET its only 256/512kb and there might be other flavors around. So even though you could allocate a object that is larger than 85000 bytes and thus normally would need to be allocated on the LOH (Large Object Heap) which is very slow I wouldnt recommend that. Anything larger than a few hundred bytes should be allocated on the heap. At that point the performance difference gets really small (well until you hit the 85000 bytes mark). A simple if else expression could even do this for you at runtime:
 ```cs
@@ -88,7 +88,7 @@ public int UnsafeStackAllocatedArray()
 	unsafe
 	{
 		int* block = stackalloc int[Length];
-		
+
 		for (int i = 0; i < Length; i++)
 		{
 			block[i] = i;

@@ -13,13 +13,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'content',
-        path: `${__dirname}/src/content`
-      }
-    },
-    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -48,6 +41,13 @@ module.exports = {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
         siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/src/content`
       }
     },
     'gatsby-plugin-emotion',

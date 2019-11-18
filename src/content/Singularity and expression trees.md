@@ -6,7 +6,7 @@ categories: [Programming]
 draft: false
 resources:
 - name: featuredImage
-  src: "thumbnail.jpg"
+  src: images/tree.jpg
   params:
     description: "Trees"
 ---
@@ -15,7 +15,7 @@ resources:
 Some time ago I was searching for a way to make code that used reflection faster. I came across expression trees which enables you to generate code at runtime thus making it possible to remove most of the overhead from reflection. After fiddling around with expression trees for a bit I wanted to do more with them. As a final experiment I decided to write a DI container. In the end I went a bit further than just a quick experiment and wrote a full DI container and thus [Singularity](https://github.com/Barsonax/Singularity) was born.
 
 ### What are expression trees?
-You most likely already used expression trees without even realizing it. When you are building a LINQ query to a 'IQueryable' you are essentially building up a expression tree. Depending on what you are talking to this expression tree might be converted into SQL, REST API calls etc. 
+You most likely already used expression trees without even realizing it. When you are building a LINQ query to a 'IQueryable' you are essentially building up a expression tree. Depending on what you are talking to this expression tree might be converted into SQL, REST API calls etc.
 
 The reason this is possible is that a expression tree is nothing more than a data structure that represents what should be done but it does not dictate how it should be done. This means expression trees may be evaluated and interpreted in many different ways. One build in way in the .NET framework is converting a expression tree to a delegate. Basically this allows you to generate a program at runtime using expression trees.
 

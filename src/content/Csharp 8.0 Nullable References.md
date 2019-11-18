@@ -9,7 +9,7 @@ categories:
 - Programming
 resources:
 - name: featuredImage
-  src: thumbnail.jpg
+  src: images/nullreferenceexception.jpg
   params:
     description: A null reference exception in C#
 description: Is this the end of the nullable reference exception?
@@ -118,9 +118,9 @@ This is not desirable however as we now have a method signature that says it wil
 
 ## Testing it out yourself
 
-To test out nullable references yourself you have 2 options  
+To test out nullable references yourself you have 2 options
 
-* Install the preview of Visual Studio 2019  
+* Install the preview of Visual Studio 2019
 * Test out nullable references in [Sharplab](https://sharplab.io/#v2:EYLgZgpghgLgrgJwgZwLQDk4BstWFiAJQkiQDsBjCAFQE8AHFAGgBMQBqAHwAEAGAAm4BGANwBYAFDcAzIIBM/AML8A3pP4bBs7gBZ+AWQAUASlXrNAX0kWgA===)
 
 Regardless of which option you take you will notice nullable references are not enabled by default. You have enable the feature by adding #nullable enable to the code:

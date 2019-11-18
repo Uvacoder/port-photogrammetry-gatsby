@@ -8,7 +8,7 @@ categories:
 - Programming
 resources:
 - name: featuredImage
-  src: thumbnail.jpg
+  src: images/reinterpretcode.jpg
   params:
     description: Reinterpret cast in C# code
 description: A different way of looking at the same thing

@@ -25,15 +25,24 @@ query BlogLister {
         }
         frontmatter {
           title
-          date(formatString: "D MMM, YYYY")
+          date(formatString: "MMMM Do YYYY")
           tags
           categories
           description
           resources {
             params {
               description
-            }
-            src
+          }
+        	src {
+          	childImageSharp {
+      				fixed (width: 276, quality:50){
+        				src
+        				srcSet
+        				width
+        				base64
+      				}
+          	}
+          }
             name
           }
         }
@@ -47,26 +56,28 @@ query BlogLister {
 const BlogLister: React.FC = () => (
   <StaticQuery
     query={ComponentQuery}
-    render={(data: BlogListerQuery) => (
-      <>
-        {data.allMarkdownRemark.edges.map(post =>
-          <a className="card blog-card" href={post.node.fields!.slug!}>
-            <Image className="card-img-container" fixed={ToFixed(data.imageOne!.childImageSharp!.fixed)} alt="" />
-            <article className="card-body">
-              <h2 className="card-title">{post.node.frontmatter!.title}</h2>
-              <p className="card-text">{post.node.frontmatter!.description || post.node.excerpt}</p>
-              <div className="card-subtext muted-text">
-                <p>Posted
+    render={(data: BlogListerQuery) => (<>
+      {data.allMarkdownRemark.edges.map(post => {
+        var blogImage = post.node.frontmatter?.resources?.[0]?.src?.childImageSharp?.fixed;
+        console.log(blogImage);
+        return <a className="card blog-card" href={post.node.fields!.slug!}>
+
+          {blogImage !== null && blogImage !== undefined && <Image className="card-img-container" fixed={ToFixed(blogImage)} alt="" />}
+          <article className="card-body">
+            <h2 className="card-title">{post.node.frontmatter!.title}</h2>
+            <p className="card-text">{post.node.frontmatter!.description ?? post.node.excerpt}</p>
+            <div className="card-subtext muted-text">
+              <p>Posted
                   <time> {post.node.frontmatter!.date}</time>
-                </p>
-                <p>
-                  {post.node.frontmatter!.categories!.map(x => `#${x}`)}
-                </p>
-              </div>
-            </article>
-          </a>)}
-      </>
-    )}
+              </p>
+              <p>
+                {post.node.frontmatter!.categories!.map(x => `#${x}`)}
+              </p>
+            </div>
+          </article>
+        </a>;
+      })}
+    </>)}
   />
 )
 
