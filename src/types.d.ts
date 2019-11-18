@@ -2905,7 +2905,7 @@ export type BlogListerQuery = (
       { readonly __typename?: 'ImageSharp' }
       & { readonly fixed: Maybe<(
         { readonly __typename?: 'ImageSharpFixed' }
-        & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'aspectRatio' | 'width' | 'height' | 'base64'>
+        & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'width' | 'base64'>
       )> }
     )> }
   )>, readonly allMarkdownRemark: (
@@ -2920,7 +2920,7 @@ export type BlogListerQuery = (
           & Pick<MarkdownRemarkFields, 'slug'>
         )>, readonly frontmatter: Maybe<(
           { readonly __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'tags'>
+          & Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'tags' | 'categories' | 'description'>
           & { readonly resources: Maybe<ReadonlyArray<Maybe<(
             { readonly __typename?: 'MarkdownRemarkFrontmatterResources' }
             & Pick<MarkdownRemarkFrontmatterResources, 'src' | 'name'>
@@ -2933,6 +2933,25 @@ export type BlogListerQuery = (
       ) }
     )> }
   ) }
+);
+
+export type ImageQueryVariables = {
+  src: Maybe<Scalars['String']>
+};
+
+
+export type ImageQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly imageOne: Maybe<(
+    { readonly __typename?: 'File' }
+    & { readonly childImageSharp: Maybe<(
+      { readonly __typename?: 'ImageSharp' }
+      & { readonly fixed: Maybe<(
+        { readonly __typename?: 'ImageSharpFixed' }
+        & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'width' | 'base64'>
+      )> }
+    )> }
+  )> }
 );
 
 export type NavigationQueryVariables = {};

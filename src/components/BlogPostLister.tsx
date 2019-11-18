@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { BlogListerQuery } from '../types'
-import Img from "gatsby-image"
-import { ToFluid, ToFixed } from './ToFluid'
+import Image from "gatsby-image"
+import { ToFixed } from './ToFluid'
 
 export const ComponentQuery = graphql`
 query BlogLister {
@@ -16,7 +16,7 @@ query BlogLister {
       }
     }
   }
-  allMarkdownRemark {
+  allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
     edges {
       node {
         id
@@ -25,8 +25,10 @@ query BlogLister {
         }
         frontmatter {
           title
-          date
+          date(formatString: "D MMM, YYYY")
           tags
+          categories
+          description
           resources {
             params {
               description
@@ -42,10 +44,6 @@ query BlogLister {
 }
 `
 
-const style = {
-  height: null
-}
-//<Img fluid={post.node.frontmatter!.resources![0]!.src!} alt="" />
 const BlogLister: React.FC = () => (
   <StaticQuery
     query={ComponentQuery}
@@ -53,18 +51,16 @@ const BlogLister: React.FC = () => (
       <>
         {data.allMarkdownRemark.edges.map(post =>
           <a className="card blog-card" href={post.node.fields!.slug!}>
-            <Img className="card-img-container" fixed={ToFixed(data.imageOne!.childImageSharp!.fixed)} alt="" />
+            <Image className="card-img-container" fixed={ToFixed(data.imageOne!.childImageSharp!.fixed)} alt="" />
             <article className="card-body">
               <h2 className="card-title">{post.node.frontmatter!.title}</h2>
-              <p className="card-text">{post.node.excerpt}</p>
+              <p className="card-text">{post.node.frontmatter!.description || post.node.excerpt}</p>
               <div className="card-subtext muted-text">
-                <p>Posted:
-                  <time dateTime={post.node.frontmatter!.date}>
-
-                  </time>
+                <p>Posted
+                  <time> {post.node.frontmatter!.date}</time>
                 </p>
                 <p>
-                  {post.node.frontmatter!.tags}
+                  {post.node.frontmatter!.categories!.map(x => `#${x}`)}
                 </p>
               </div>
             </article>
