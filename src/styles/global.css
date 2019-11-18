@@ -228,6 +228,7 @@ b, strong {
 
 .card-img-container {
   position: relative;
+  min-width: 276px;
 }
 
 .card-img {
