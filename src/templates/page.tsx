@@ -42,12 +42,13 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           </h1>
           <PostDate date={data.markdownRemark.frontmatter.date} className="post-date"></PostDate>
         </header>
+        {blogImage !== null && blogImage !== undefined && <Image className="post-figure" fixed={blogImage} alt="" />}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </article>
     </main>
   </>)
 }
-//{blogImage !== null && blogImage !== undefined && <Image className="post-figure" fixed={blogImage} alt="" />}
+
 export default PageTemplate
 
 export const query = graphql`
