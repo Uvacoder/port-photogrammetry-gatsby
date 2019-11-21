@@ -228,7 +228,8 @@ b, strong {
 
 .card-img-container {
   position: relative;
-  min-width: 276px;
+  min-height: 176px;
+  width: 100%
 }
 
 .card-img {
@@ -480,6 +481,11 @@ footer {
   .blog-card {
     flex-direction: row;
     align-items: stretch;
+  }
+  .card-img-container {
+    min-height: unset;
+    min-width: 276px;
+    width: 276px;
   }
   .card-img {
     max-height: unset;

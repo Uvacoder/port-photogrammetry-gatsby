@@ -15,7 +15,7 @@ query BlogLister {
         }
         frontmatter {
           title
-          date(formatString: "MMMM Do YYYY")
+          date(formatString: "D-MM-YYYY")
           tags
           categories
           description
@@ -28,7 +28,6 @@ query BlogLister {
       				fixed (width: 276, quality:50){
         				src
         				srcSet
-        				width
         				base64
       				}
           	}
