@@ -1,5 +1,4 @@
 import { FluidObject, FixedObject } from "gatsby-image"
-import { ImageSharpFluid } from "../types";
 
 export function ToFluid(data: any): FluidObject {
   return {

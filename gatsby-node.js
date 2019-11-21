@@ -25,7 +25,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'slug',
-        value: slug || ''
+        value: slug.replace(/ /g, '-') || ''
       })
 
       // Used to determine a page layout.
@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
     console.error(allMarkdown.errors)
     throw new Error(allMarkdown.errors)
   }
-//MarkdownRemarkFrontmatterResourcesFilterInput
+  //MarkdownRemarkFrontmatterResourcesFilterInput
   allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const { slug, layout } = node.fields
 

@@ -2956,7 +2956,7 @@ export type BlogListerQuery = (
                 { readonly __typename?: 'ImageSharp' }
                 & { readonly fixed: Maybe<(
                   { readonly __typename?: 'ImageSharpFixed' }
-                  & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'width' | 'base64'>
+                  & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'base64'>
                 )> }
               )> }
             )> }
@@ -3010,6 +3010,39 @@ export type NavigationQuery = (
   ) }
 );
 
+export type PostCardQueryVariables = {
+  slug: Scalars['String']
+};
+
+
+export type PostCardQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly markdownRemark: Maybe<(
+    { readonly __typename?: 'MarkdownRemark' }
+    & Pick<MarkdownRemark, 'html' | 'excerpt'>
+    & { readonly frontmatter: Maybe<(
+      { readonly __typename?: 'MarkdownRemarkFrontmatter' }
+      & Pick<MarkdownRemarkFrontmatter, 'title' | 'date'>
+      & { readonly resources: Maybe<ReadonlyArray<Maybe<(
+        { readonly __typename?: 'MarkdownRemarkFrontmatterResources' }
+        & { readonly params: Maybe<(
+          { readonly __typename?: 'MarkdownRemarkFrontmatterResourcesParams' }
+          & Pick<MarkdownRemarkFrontmatterResourcesParams, 'description'>
+        )>, readonly src: Maybe<(
+          { readonly __typename?: 'File' }
+          & { readonly childImageSharp: Maybe<(
+            { readonly __typename?: 'ImageSharp' }
+            & { readonly fixed: Maybe<(
+              { readonly __typename?: 'ImageSharpFixed' }
+              & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'base64'>
+            )> }
+          )> }
+        )> }
+      )>>> }
+    )> }
+  )> }
+);
+
 export type IndexLayoutQueryQueryVariables = {};
 
 
@@ -3024,29 +3057,35 @@ export type IndexLayoutQueryQuery = (
   )> }
 );
 
-export type PageTemplateQueryQueryVariables = {
+export type PageTemplateQueryVariables = {
   slug: Scalars['String']
 };
 
 
-export type PageTemplateQueryQuery = (
+export type PageTemplateQuery = (
   { readonly __typename?: 'Query' }
-  & { readonly site: Maybe<(
-    { readonly __typename?: 'Site' }
-    & { readonly siteMetadata: Maybe<(
-      { readonly __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'title' | 'description'>
-      & { readonly author: Maybe<(
-        { readonly __typename?: 'SiteSiteMetadataAuthor' }
-        & Pick<SiteSiteMetadataAuthor, 'name' | 'url'>
-      )> }
-    )> }
-  )>, readonly markdownRemark: Maybe<(
+  & { readonly markdownRemark: Maybe<(
     { readonly __typename?: 'MarkdownRemark' }
     & Pick<MarkdownRemark, 'html' | 'excerpt'>
     & { readonly frontmatter: Maybe<(
       { readonly __typename?: 'MarkdownRemarkFrontmatter' }
-      & Pick<MarkdownRemarkFrontmatter, 'title'>
+      & Pick<MarkdownRemarkFrontmatter, 'title' | 'date'>
+      & { readonly resources: Maybe<ReadonlyArray<Maybe<(
+        { readonly __typename?: 'MarkdownRemarkFrontmatterResources' }
+        & { readonly params: Maybe<(
+          { readonly __typename?: 'MarkdownRemarkFrontmatterResourcesParams' }
+          & Pick<MarkdownRemarkFrontmatterResourcesParams, 'description'>
+        )>, readonly src: Maybe<(
+          { readonly __typename?: 'File' }
+          & { readonly childImageSharp: Maybe<(
+            { readonly __typename?: 'ImageSharp' }
+            & { readonly fixed: Maybe<(
+              { readonly __typename?: 'ImageSharpFixed' }
+              & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'base64'>
+            )> }
+          )> }
+        )> }
+      )>>> }
     )> }
   )> }
 );

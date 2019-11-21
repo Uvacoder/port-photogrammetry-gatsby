@@ -1,61 +1,78 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
-import Main from '../components/Main'
 import IndexLayout from '../layouts'
+import PostDate from '../components/PostDate'
+import { PageTemplateQuery, } from '../types'
+import { FixedObject } from 'gatsby-image'
+import Image from "gatsby-image"
 
 interface PageTemplateProps {
   data: {
-    site: {
-      siteMetadata: {
-        title: string
-        description: string
-        author: {
-          name: string
-          url: string
-        }
-      }
-    }
     markdownRemark: {
       html: string
       excerpt: string
       frontmatter: {
         title: string
+        date: string
+        resources: ReadonlyArray<{
+          params: {
+            description: string
+          }
+          src: {
+            childImageSharp: {
+              fixed: FixedObject
+            }
+          }
+        }>
       }
     }
   }
 }
 
-const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => (
-  <IndexLayout>
-    <Main>
-      <h1>{data.markdownRemark.frontmatter.title}</h1>
-      {/* eslint-disable-next-line react/no-danger */}
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-    </Main>
-  </IndexLayout>
-)
-
+const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
+  var blogImage = data.markdownRemark.frontmatter.resources?.[0]?.src?.childImageSharp.fixed;
+  return (<>
+    <IndexLayout></IndexLayout>
+    <main className="content side-text-padding">
+      <article className="post">
+        <header className="post-header">
+          <h1 className="post-title">
+            {data.markdownRemark.frontmatter.title}
+          </h1>
+          <PostDate date={data.markdownRemark.frontmatter.date} className="post-date"></PostDate>
+        </header>
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      </article>
+    </main>
+  </>)
+}
+//{blogImage !== null && blogImage !== undefined && <Image className="post-figure" fixed={blogImage} alt="" />}
 export default PageTemplate
 
 export const query = graphql`
-  query PageTemplateQuery($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        description
-        author {
-          name
-          url
+query PageTemplate($slug: String!) {
+  markdownRemark(fields: {slug: {eq: $slug}}) {
+    html
+    excerpt
+    frontmatter {
+      title
+      date(formatString: "D-MM-YYYY")
+      resources {
+        params {
+          description
+        }
+        src {
+          childImageSharp {
+            fixed(width: 757, quality: 50) {
+              src
+              srcSet
+              base64
+            }
+          }
         }
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      excerpt
-      frontmatter {
-        title
-      }
-    }
   }
-`
+}
+  `
