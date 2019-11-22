@@ -1,7 +1,7 @@
 body {
-  font-family: 'LatoLatinWeb', Avenir, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Segoe UI", Avenir, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #141823;
-  font-size: 1.1em;
+  font-size: 1.0em;
   background-color: #ecedef;
   margin: 0;
   padding: 0 0 2em 0;
@@ -459,7 +459,6 @@ footer {
   }
   .card {
     border-radius: 0.2rem;
-    /* margin: 2.5em 0; */
   }
   .blog-card {
     flex-direction: row;
@@ -499,7 +498,7 @@ footer {
     margin: 1em 1em 2em 1em;
   }
   .post-title {
-    font-size: 2.5em;
+    font-size: 2.4em;
   }
   .button {
     border-radius: 0.2rem;
