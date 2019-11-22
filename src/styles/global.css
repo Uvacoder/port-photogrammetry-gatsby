@@ -1,5 +1,5 @@
 body {
-  font-family: "Segoe UI", Avenir, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: Avenir, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #141823;
   font-size: 1.0em;
   background-color: #ecedef;
@@ -19,7 +19,6 @@ p {
 }
 
 b, strong {
-  font-family: 'LatoLatinWebHeavy';
   font-weight: normal;
 }
 
@@ -414,7 +413,6 @@ td, th {
 }
 
 th {
-  font-family: 'LatoLatinWebHeavy';
   font-weight: normal
 }
 

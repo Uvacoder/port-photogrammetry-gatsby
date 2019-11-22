@@ -14,7 +14,7 @@ So the solution was to write unit tests to test everything the API can do. One o
 ## Covering your tests
 
 ### Opencover
-[Opencover](https://github.com/OpenCover/opencover) is a tool that can analyse what code your unit tests are covering. It doesn't just analyses if a certain method is being called but it will also see if everything inside the method is being used in a test. 
+[Opencover](https://github.com/OpenCover/opencover) is a tool that can analyse what code your unit tests are covering. It doesn't just analyses if a certain method is being called but it will also see if everything inside the method is being used in a test.
 
 Iam using [chocolatey](https://chocolatey.org/) to install tools like opencover in this article so you might have to install *chocolatey* first for local testing. [Appveyor](https://www.appveyor.com/) has *chocolatey* preinstalled already so you don't have to install it yourself. If you are using a different CI that does not have *chocolatey* you might be interested in the [installation instructions](https://chocolatey.org/install).
 In order to use opencover we first have to install opencover:
@@ -35,10 +35,10 @@ param (
 )
 
 # This will make sure the CI will fail if the something in this script fails (such as the unit tests).
-$ErrorActionPreference = 'Stop' 
+$ErrorActionPreference = 'Stop'
 
 # Using the full path since appveyor already has a different version installed.
-$opencover_console = 'C:\ProgramData\chocolatey\bin\OpenCover.Console.exe' 
+$opencover_console = 'C:\ProgramData\chocolatey\bin\OpenCover.Console.exe'
 
 # Clears the coverage output folder if it already exist
 Remove-Item $coverageFolder -Recurse -ErrorAction Ignore
@@ -102,11 +102,11 @@ coverage:
     project:
       default: false # Turn of the default as we will be telling codecov where the projects are below
       Singularity:
-        target: 90% 
-        paths: "Singularity/" 
+        target: 90%
+        paths: "Singularity/"
       Singularity.Duality:
         target: 60%
-        paths: "Duality/Source/Code/Singularity.Duality/" 
+        paths: "Duality/Source/Code/Singularity.Duality/"
 ```
 
 Here I set a much lower target for *Singularity.Duality* as its much harder to test everything due to dependencies.
@@ -120,9 +120,9 @@ $coverageFilename = 'test.coverage.xml'
 $coverageFileFullname = $coverageFolder + $coverageFilename
 
 # this is where I put my dll's
-$buildOutputFolder = $PSScriptRoot + '\BuildOutput\' 
+$buildOutputFolder = $PSScriptRoot + '\BuildOutput\'
 
-.\InstallChocolateyPackages.ps1 
+.\InstallChocolateyPackages.ps1
 .\Build.ps1
 .\RunOpenCover.ps1 -coverageFolder:$coverageFolder -coverageFilename:$coverageFilename -buildOutputFolder:$buildOutputFolder
 .\PublishCoverage.ps1 -codegovtoken:$env:codegov_token -coverageFile:$coverageFileFullname
@@ -132,7 +132,7 @@ Note the *$env:codegov_token* which will grab our codecov token from the *appvey
 Then in order to use this CI script on *appveyor* put this in your *appveyor.yml*:
 ```yml
 build_script:
-- ps: Invoke-Expression .\CI_script.ps1 
+- ps: Invoke-Expression .\CI_script.ps1
 ```
 
 Depending on which CI you use this may vary but the general idea will be the same.
