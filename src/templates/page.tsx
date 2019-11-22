@@ -66,6 +66,8 @@ query PageTemplate($slug: String!) {
         src {
           childImageSharp {
             fixed(width: 757, quality: 50) {
+              srcWebp
+              srcSetWebp
               src
               srcSet
               base64

@@ -26,10 +26,12 @@ query BlogLister {
           }
         	src {
           	childImageSharp {
-      				fixed (width: 276, quality:50){
-        				src
-        				srcSet
-        				base64
+      				fixed (height: 170 quality:50){
+                srcWebp
+                srcSetWebp
+                src
+                srcSet
+                base64
       				}
           	}
           }

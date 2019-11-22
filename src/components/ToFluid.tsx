@@ -9,8 +9,7 @@ export function ToFluid(data: any): FluidObject {
     base64: data.base64!,
     tracedSVG: data.tracedSVG!,
     srcWebp: data.srcWebp!,
-    srcSetWebp: data.srcSetWebp!,
-    media: data.src!
+    srcSetWebp: data.srcSetWebp!
   }
 }
 export function ToFixed(data: any): FixedObject {
@@ -22,7 +21,6 @@ export function ToFixed(data: any): FixedObject {
     base64: data.base64!,
     tracedSVG: data.tracedSVG!,
     srcWebp: data.srcWebp!,
-    srcSetWebp: data.srcSetWebp!,
-    media: data.src!
+    srcSetWebp: data.srcSetWebp!
   }
 }
