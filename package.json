@@ -1,20 +1,7 @@
 {
-  "name": "gatsby-starter-typescript-plus",
-  "description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
-  "version": "1.0.0",
-  "private": true,
-  "author": "Resi Respati <resir014@gmail.com>",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "clean": "rimraf public",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",
-    "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "start": "npm run dev",
     "test": "npm run type-check && npm run lint",
@@ -25,14 +12,10 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.12",
     "babel-plugin-styled-components": "^1.10.1",
-    "classnames": "^2.2.6",
     "gatsby": "^2.17.16",
     "gatsby-image": "^2.2.33",
     "gatsby-plugin-canonical-urls": "^2.1.15",
-    "gatsby-plugin-emotion": "^4.1.15",
     "gatsby-plugin-react-helmet": "^3.1.15",
     "gatsby-plugin-sharp": "^2.3.1",
     "gatsby-plugin-typescript": "^2.1.18",
@@ -40,7 +23,6 @@
     "gatsby-remark-images": "^3.1.31",
     "gatsby-remark-prismjs": "^3.3.23",
     "gatsby-remark-responsive-iframe": "^2.2.27",
-    "gatsby-remark-smartypants": "^2.1.16",
     "gatsby-source-filesystem": "^2.1.37",
     "gatsby-transformer-json": "^2.2.18",
     "gatsby-transformer-remark": "^2.6.36",
@@ -56,21 +38,13 @@
     "@graphql-codegen/cli": "^1.8.3",
     "@graphql-codegen/typescript": "^1.8.3",
     "@graphql-codegen/typescript-operations": "^1.8.3",
-    "@types/classnames": "^2.2.8",
     "@types/node": "^12.12.8",
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
-    "@types/react-helmet": "^5.0.8",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
     "babel-preset-gatsby": "^0.2.22",
     "eslint": "^6.6.0",
-    "eslint-config-blvd": "^1.0.0",
-    "eslint-config-prettier": "^6.6.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "gh-pages": "^2.0.1",
-    "graphql": "^14.5.8",
-    "prettier": "^1.18.2",
-    "rimraf": "^2.7.1"
+    "graphql": "^14.5.8"
   }
 }

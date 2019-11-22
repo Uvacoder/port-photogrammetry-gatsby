@@ -22,7 +22,7 @@ Bumping the version in step 1 is made completely obsolete with [gitversion](http
 Gitversion will look at the latest tag and use that as a base. At of the time of writing 0.4.0 is the latest tag in the Singularity repository so it will take this as the base version.
 
 Then it will look at the configuration and the git history to figure out the next version. For instance my *gitversion.yml* is as follows:
-``` yml
+```yml
 mode: ContinuousDeployment
 branches:
   hotfix:
@@ -52,7 +52,7 @@ Ofcourse manually calling *gitversion* everytime is not what I want. I want the 
 Do note that on *appveyor* there is by default a older version of *gitversion* installed which seems to handle *gitversion.yml* differently. This is why I install *gitversion* myself using *chocolatey* in this [script](https://github.com/Barsonax/Singularity/blob/develop/InstallChocolateyPackages.ps1) and then use the full path to the *gitversion.exe* in the build script to call it. This ensures that iam using the correct version.
 
 ## Release notes
-Still whenever I make a new release I should write release notes to let ppl know what has changed. I usually tend to skip this part though since iam a bit lazy... 
+Still whenever I make a new release I should write release notes to let ppl know what has changed. I usually tend to skip this part though since iam a bit lazy...
 However with [GitHubReleaseNotes](https://github.com/StefH/GitHubReleaseNotes) this is now super easy to do. Just install it with:
 ```
 choco install GitHubReleaseNotes

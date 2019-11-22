@@ -26,12 +26,12 @@ module.exports = {
             resolve: 'gatsby-remark-prismjs',
             options: {
               aliases: {
-                cs: "csharp"
+                cs: "csharp",
+                posh: "powershell"
               },
             }
           },
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -57,7 +57,6 @@ module.exports = {
         path: `${__dirname}/src/content`
       }
     },
-    'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
