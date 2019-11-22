@@ -57,9 +57,29 @@ module.exports = {
         path: `${__dirname}/src/content`
       }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `The Photogrammer`,
+        short_name: `Photogrammer`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/content/images/icon_512x512.png`
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/*`],
+      },
+    },
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-feed`,
   ]
 }

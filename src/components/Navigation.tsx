@@ -1,10 +1,15 @@
 import * as React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import { NavigationQuery } from '../types'
-
 
 export const ComponentQuery = graphql`
 query Navigation {
+  site {
+    siteMetadata {
+      title
+      description
+    }
+  }
   allMarkdownRemark {
     edges {
       node {
@@ -23,18 +28,29 @@ query Navigation {
   }
 }
 `
-//onlick="hamburgerMenuPressed.call(this)"
+
+const hamburgerMenuPressed = (element: any) => {
+  if (element.parentNode.classList.contains('hamburger-menu-open')) {
+    //document.body.classList.remove('no-scroll');
+    element.parentNode.classList.remove('hamburger-menu-open')
+    element.setAttribute('aria-expanded', "false");
+  } else {
+    document.body.classList.add('no-scroll');
+    element.parentNode.classList.add('hamburger-menu-open')
+    element.setAttribute('aria-expanded', "true");
+  }
+}
+
 const Navigation: React.FC = () => (
   <StaticQuery
     query={ComponentQuery}
     render={(data: NavigationQuery) => (
       <nav className="nav-bar side-padding" >
         <h1 className="nav-header">
-          <a href="https://www.the-photographing-programmer.com" className="nav-text">The Photogrammer
-      </a>
+          <Link to="/" className="nav-text">{data.site?.siteMetadata?.title}</Link>
         </h1>
         <div className="hamburger-menu">
-          <button aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+          <button onClick={e => hamburgerMenuPressed(e.currentTarget)} aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
             <span>
             </span>
             <span>
@@ -42,20 +58,19 @@ const Navigation: React.FC = () => (
           </button>
           <ul id="menu" className="hamburger-menu-overlay">
             <li>
-              <a href="https://www.the-photographing-programmer.com" className="hamburger-menu-overlay-link">Home</a>
+              <Link to="/" className="hamburger-menu-overlay-link">Home</Link>
             </li>
             <li>
-              <a href="https://www.the-photographing-programmer.com/about-me/" className="hamburger-menu-overlay-link">About Me
-              </a>
+              <Link to="/about-me/" className="hamburger-menu-overlay-link">About Me</Link>
             </li>
             <li>
-              <a href="https://www.the-photographing-programmer.com/categories/photography" className="hamburger-menu-overlay-link">Photography</a>
+              <Link to="/categories/photography" className="hamburger-menu-overlay-link">Photography</Link>
             </li>
             <li>
-              <a href="https://www.the-photographing-programmer.com/categories/programming" className="hamburger-menu-overlay-link">Programming</a>
+              <Link to="/categories/programming" className="hamburger-menu-overlay-link">Programming</Link>
             </li>
             <li>
-              <a href="https://www.the-photographing-programmer.com/index.xml" className="hamburger-menu-overlay-link">rss</a>
+              <a href="/rss.xml" className="hamburger-menu-overlay-link">rss</a>
             </li>
           </ul>
         </div>

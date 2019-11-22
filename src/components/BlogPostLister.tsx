@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import { BlogListerQuery } from '../types'
 import Image from "gatsby-image"
 import { ToFixed } from './ToFluid'
@@ -49,7 +49,7 @@ const BlogLister: React.FC = () => (
     render={(data: BlogListerQuery) => (<>
       {data.allMarkdownRemark.edges.map(post => {
         var blogImage = post.node.frontmatter?.resources?.[0]?.src?.childImageSharp?.fixed;
-        return <a className="card blog-card" href={post.node.fields!.slug!}>
+        return <Link className="card blog-card" to={post.node.fields!.slug!}>
 
           {blogImage !== null && blogImage !== undefined && <Image className="card-img-container" fixed={ToFixed(blogImage)} alt="" />}
           <article className="card-body">
@@ -62,7 +62,7 @@ const BlogLister: React.FC = () => (
               </p>
             </div>
           </article>
-        </a>;
+        </Link>;
       })}
     </>)}
   />
