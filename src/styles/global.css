@@ -390,23 +390,6 @@ li>p {
   margin: 0;
 }
 
-code {
-  font-family: monospace;
-  padding: .2em .5em;
-  line-height: 1.5;
-  border-radius: 0.3rem;
-  background-color: #f5f6f7;
-}
-
-pre>code {
-  margin: 1.5em 0;
-  display: block;
-  padding: 0.5em;
-  word-break: normal;
-  overflow-x: auto;
-  color: black;
-}
-
 hr {
   border: 0;
   border-bottom: thin solid #D1D1D1;
@@ -528,8 +511,5 @@ footer {
   .smartfloat-left {
     float: left;
     margin: 0em 1em 1em 0em;
-  }
-  code {
-    border-radius: 0.2rem;
   }
 }

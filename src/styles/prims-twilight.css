@@ -10,9 +10,9 @@ code[class*="language-"], pre[class*="language-"] {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
   text-shadow: 0 -.1em .2em black;
-  white-space: pre;
+  white-space: pre-wrap;
   word-spacing: normal;
-  word-break: normal;
+  word-break: break-word;
   word-wrap: normal;
   line-height: 1.5;
   -moz-tab-size: 4;
