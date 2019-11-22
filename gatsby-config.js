@@ -63,8 +63,8 @@ module.exports = {
         name: `The Photogrammer`,
         short_name: `Photogrammer`,
         start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
+        background_color: `#ecedef`,
+        theme_color: `#ecedef`,
         display: `standalone`,
         icon: `src/content/images/icon_512x512.png`
       },
