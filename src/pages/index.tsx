@@ -7,7 +7,7 @@ import BlogLister from '../components/BlogPostLister'
 import Header from '../components/Header'
 
 const IndexPage = () => (<IndexLayout>
-  <Main className="card-container side-gutter">
+  <Main className="card-container">
     <Header title=""></Header>
     <BlogLister></BlogLister>
   </Main>

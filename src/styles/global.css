@@ -23,7 +23,7 @@ b, strong {
 }
 
 .nav-bar {
-  max-width: 50rem;
+  max-width: 52rem;
   width: 100%;
   padding: 0.4em 0;
   display: flex;
@@ -191,7 +191,7 @@ b, strong {
 }
 
 .card-container {
-  max-width: 49rem;
+  max-width: 52rem;
 }
 
 .card-container>a:first-of-type {
@@ -317,11 +317,6 @@ b, strong {
 
 .button:active {
   transform: scale(1);
-}
-
-.side-gutter {
-  margin-left: 1.2rem !important;
-  margin-right: 1.2rem !important;
 }
 
 .side-padding {
