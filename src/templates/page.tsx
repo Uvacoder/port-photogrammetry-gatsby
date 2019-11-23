@@ -3,8 +3,7 @@ import { graphql } from 'gatsby'
 
 import IndexLayout from '../layouts'
 import PostDate from '../components/PostDate'
-import { PageTemplateQuery, } from '../types'
-import { FixedObject, FluidObject } from 'gatsby-image'
+import { FluidObject } from 'gatsby-image'
 import Image from "gatsby-image"
 
 interface PageTemplateProps {
