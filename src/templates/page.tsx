@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import IndexLayout from '../layouts'
 import PostDate from '../components/PostDate'
 import { PageTemplateQuery, } from '../types'
-import { FixedObject } from 'gatsby-image'
+import { FixedObject, FluidObject } from 'gatsby-image'
 import Image from "gatsby-image"
 
 interface PageTemplateProps {
@@ -21,7 +21,7 @@ interface PageTemplateProps {
           }
           src: {
             childImageSharp: {
-              fixed: FixedObject
+              fluid: FluidObject
             }
           }
         }>
@@ -31,7 +31,7 @@ interface PageTemplateProps {
 }
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
-  var blogImage = data.markdownRemark.frontmatter.resources?.[0]?.src?.childImageSharp.fixed;
+  var blogImage = data.markdownRemark.frontmatter.resources?.[0]?.src?.childImageSharp.fluid;
   return (<>
     <IndexLayout></IndexLayout>
     <main className="content side-text-padding">
@@ -42,7 +42,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           </h1>
           <PostDate date={data.markdownRemark.frontmatter.date} className="post-date"></PostDate>
         </header>
-        {blogImage !== null && blogImage !== undefined && <Image className="post-figure" fixed={blogImage} alt="" />}
+        {blogImage !== null && blogImage !== undefined && <Image fluid={blogImage} alt="" />}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </article>
     </main>
@@ -65,12 +65,13 @@ query PageTemplate($slug: String!) {
         }
         src {
           childImageSharp {
-            fixed(width: 757, quality: 50) {
-              srcWebp
-              srcSetWebp
+            fluid(quality: 50) {
               src
               srcSet
-              base64
+              srcSetWebp
+              srcWebp
+              sizes
+              aspectRatio
             }
           }
         }

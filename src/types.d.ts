@@ -2410,6 +2410,13 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsSiteUrl = 'pluginCreator___pluginOptions___siteUrl',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
+  PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
+  PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
+  PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___background_color',
+  PluginCreatorPluginOptionsThemeColor = 'pluginCreator___pluginOptions___theme_color',
+  PluginCreatorPluginOptionsDisplay = 'pluginCreator___pluginOptions___display',
+  PluginCreatorPluginOptionsIcon = 'pluginCreator___pluginOptions___icon',
+  PluginCreatorPluginOptionsPrecachePages = 'pluginCreator___pluginOptions___precachePages',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -2621,6 +2628,13 @@ export enum SitePluginFieldsEnum {
   PluginOptionsSiteUrl = 'pluginOptions___siteUrl',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsPath = 'pluginOptions___path',
+  PluginOptionsShortName = 'pluginOptions___short_name',
+  PluginOptionsStartUrl = 'pluginOptions___start_url',
+  PluginOptionsBackgroundColor = 'pluginOptions___background_color',
+  PluginOptionsThemeColor = 'pluginOptions___theme_color',
+  PluginOptionsDisplay = 'pluginOptions___display',
+  PluginOptionsIcon = 'pluginOptions___icon',
+  PluginOptionsPrecachePages = 'pluginOptions___precachePages',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -2750,6 +2764,13 @@ export type SitePluginPluginOptions = {
   readonly siteUrl: Maybe<Scalars['String']>,
   readonly name: Maybe<Scalars['String']>,
   readonly path: Maybe<Scalars['String']>,
+  readonly short_name: Maybe<Scalars['String']>,
+  readonly start_url: Maybe<Scalars['String']>,
+  readonly background_color: Maybe<Scalars['String']>,
+  readonly theme_color: Maybe<Scalars['String']>,
+  readonly display: Maybe<Scalars['String']>,
+  readonly icon: Maybe<Scalars['String']>,
+  readonly precachePages: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
   readonly pathCheck: Maybe<Scalars['Boolean']>,
 };
 
@@ -2774,6 +2795,13 @@ export type SitePluginPluginOptionsFilterInput = {
   readonly siteUrl: Maybe<StringQueryOperatorInput>,
   readonly name: Maybe<StringQueryOperatorInput>,
   readonly path: Maybe<StringQueryOperatorInput>,
+  readonly short_name: Maybe<StringQueryOperatorInput>,
+  readonly start_url: Maybe<StringQueryOperatorInput>,
+  readonly background_color: Maybe<StringQueryOperatorInput>,
+  readonly theme_color: Maybe<StringQueryOperatorInput>,
+  readonly display: Maybe<StringQueryOperatorInput>,
+  readonly icon: Maybe<StringQueryOperatorInput>,
+  readonly precachePages: Maybe<StringQueryOperatorInput>,
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>,
 };
 
@@ -2912,7 +2940,7 @@ export type BlogListerQuery = (
                 { readonly __typename?: 'ImageSharp' }
                 & { readonly fixed: Maybe<(
                   { readonly __typename?: 'ImageSharpFixed' }
-                  & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'base64'>
+                  & Pick<ImageSharpFixed, 'srcWebp' | 'srcSetWebp' | 'src' | 'srcSet' | 'base64'>
                 )> }
               )> }
             )> }
@@ -3008,9 +3036,9 @@ export type PageTemplateQuery = (
           { readonly __typename?: 'File' }
           & { readonly childImageSharp: Maybe<(
             { readonly __typename?: 'ImageSharp' }
-            & { readonly fixed: Maybe<(
-              { readonly __typename?: 'ImageSharpFixed' }
-              & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'base64'>
+            & { readonly fluid: Maybe<(
+              { readonly __typename?: 'ImageSharpFluid' }
+              & Pick<ImageSharpFluid, 'src' | 'srcSet' | 'srcSetWebp' | 'srcWebp' | 'sizes'>
             )> }
           )> }
         )> }
