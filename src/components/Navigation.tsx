@@ -31,7 +31,7 @@ query Navigation {
 
 const hamburgerMenuPressed = (element: any) => {
   if (element.parentNode.classList.contains('hamburger-menu-open')) {
-    //document.body.classList.remove('no-scroll');
+    document.body.classList.remove('no-scroll');
     element.parentNode.classList.remove('hamburger-menu-open')
     element.setAttribute('aria-expanded', "false");
   } else {
