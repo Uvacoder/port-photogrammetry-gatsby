@@ -54,7 +54,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
-        path: `${__dirname}/src/content`
+        path: `${__dirname}/content`
       }
     },
     {
@@ -66,7 +66,7 @@ module.exports = {
         background_color: `#ecedef`,
         theme_color: `#ecedef`,
         display: `standalone`,
-        icon: `src/content/images/icon_512x512.png`
+        icon: `content/images/favicon.png`
       },
     },
     {
@@ -82,6 +82,6 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-feed`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
   ]
 }
