@@ -6,7 +6,7 @@ tags:
 categories:
 - Photography
 featuredImage:
-  src: images/vietnamlanternstand.jpg
+  src: vietnamlanternstand.jpg
   description: Lantern shop in Hoi An, Vietnam
 description: Full RAW workflow with your phone
 dropcap: false
@@ -20,7 +20,7 @@ In my last trip to Vietnam I faced the above problem. I really wanted to show th
 ## Getting the photo's to your phone
 To solve this problem we first have to figure out a way to get the files on your sd card to your mobile phone. Luckily there are cardreaders that work with mobile phones such as this one:
 
-{{<image src="usbotgcardreader.jpg" alt="Usb otg cardreader" >}}
+![Usb otg cardreader](../images/usbotgcardreader.jpg)
 
 I bought the above cardreader with usb c adapter in Vietnam but its probably easier if you buy it before you go on a trip. Make sure the card reader supports OTG so that it will work with mobile phones. Recently I have also noticed that usb 3.0 devices such as the [Transcend RDF5 USB 3.0 Card reader](https://www.transcend-info.com/Products/No-396) will work as well.
 

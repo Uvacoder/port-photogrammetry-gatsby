@@ -65,7 +65,7 @@ After analysing every test opencover will output these results to a xml file. Ho
 ### Codecov
 [Codecov](https://codecov.io/) is a site that can visualize the code coverage results. All you need is to send the xml opencover generates to codegov and it will use it to visualize your code coverage which will look like this:
 
-{{<image src="codecov_sunburst.jpg" alt="Code cov sunburst" >}}
+![Code cov sunburst](../images/codecov_sunburst.jpg)
 
 So lets push the xml file opencover generated to codecov. First we have to install codecov:
 ```posh

@@ -29,6 +29,7 @@ interface PageTemplateProps {
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   var blogImage = data.markdownRemark.frontmatter.featuredImage?.src.childImageSharp.fluid;
+  var date = data.markdownRemark.frontmatter.date;
   return (<>
     <IndexLayout></IndexLayout>
     <main className="content side-text-padding">
@@ -37,7 +38,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           <h1 className="post-title">
             {data.markdownRemark.frontmatter.title}
           </h1>
-          <PostDate date={data.markdownRemark.frontmatter.date} className="post-date"></PostDate>
+          {date !== null && <PostDate date={data.markdownRemark.frontmatter.date} className="post-date"></PostDate>}
         </header>
         {blogImage !== null && blogImage !== undefined && <Image fluid={blogImage} alt={data.markdownRemark.frontmatter.featuredImage.description} />}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />

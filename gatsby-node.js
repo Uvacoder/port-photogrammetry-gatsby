@@ -16,7 +16,7 @@ exports.createSchemaCustomization = ({ actions }) => {
           return null
         }
 
-        const regex = "/(/content/" + featureImage.src + ")/"
+        const regex = "/(/content/images/" + featureImage.src + ")/"
         const fileNode = context.nodeModel.runQuery({
           firstOnly: true,
           type: 'File',

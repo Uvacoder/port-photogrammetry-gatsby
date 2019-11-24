@@ -5,7 +5,7 @@ tags: [Sphere]
 categories: [Photography]
 draft: true
 featuredImage:
-  src: images/spherephotography.jpg
+  src: spherephotography.jpg
   description: "A photo made through a glass sphere"
 ---
 

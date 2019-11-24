@@ -9,4 +9,4 @@ I'm a full time .NET developer at Aviva Solutions.
 
 In my free time iam also actively programming on [GitHub](https://github.com/barsonax) or I take my camera somewhere to take beautiful photo's.
 
-{{<image src="park.jpg" alt="A park in lisbon" >}}
+![A park in lisbon](images/park.jpg)

@@ -8,7 +8,7 @@ tags:
 categories:
 - Programming
 featuredImage:
-  src: images/nullreferenceexception.jpg
+  src: nullreferenceexception.jpg
   description: A null reference exception in C#
 description: Is this the end of the nullable reference exception?
 dropcap: false
