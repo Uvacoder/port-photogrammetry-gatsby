@@ -70,7 +70,7 @@ const Navigation: React.FC = () => (
               <a onClick={e => hamburgerMenuPressed(e.currentTarget.parentElement?.parentElement)} href="/categories/programming" className="hamburger-menu-overlay-link">Programming</a>
             </li>
             <li>
-              <a onClick={e => hamburgerMenuPressed(e.currentTarget.parentElement?.parentElement)} href="/rss.xml" className="hamburger-menu-overlay-link">rss</a>
+              <a onClick={e => hamburgerMenuPressed(e.currentTarget.parentElement?.parentElement)} href="/index.xml" className="hamburger-menu-overlay-link">rss</a>
             </li>
           </ul>
         </div>
