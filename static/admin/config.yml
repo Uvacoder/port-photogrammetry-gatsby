@@ -14,7 +14,7 @@ collections:
     folder: "content/posts"
     create: true
     delete: true
-    slug: "{{year}}-{{month}}-{{day}}_{{title}}/index"
+    slug: "{{title}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
