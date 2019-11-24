@@ -31,6 +31,9 @@ const IndexLayout: React.FC = ({ children }) => (
     render={(data: StaticQueryProps) => (
       <>
         <Helmet
+          htmlAttributes={{
+            lang: "en",
+          }}
           title={data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: data.site.siteMetadata.description },
