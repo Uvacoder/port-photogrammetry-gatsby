@@ -697,9 +697,6 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
   ChildMarkdownRemarkFrontmatterFeatureImageDescription = 'childMarkdownRemark___frontmatter___featureImage___description',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
-  ChildMarkdownRemarkFrontmatterDropCap = 'childMarkdownRemark___frontmatter___dropCap',
-  ChildMarkdownRemarkFrontmatterDisplayInMenu = 'childMarkdownRemark___frontmatter___displayInMenu',
-  ChildMarkdownRemarkFrontmatterDisplayInList = 'childMarkdownRemark___frontmatter___displayInList',
   ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
   ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
   ChildMarkdownRemarkFrontmatterTags = 'childMarkdownRemark___frontmatter___tags',
@@ -833,9 +830,6 @@ export type Frontmatter = {
   readonly __typename?: 'Frontmatter',
   readonly featureImage: Maybe<MarkdownRemarkFrontmatterFeaturedImage>,
   readonly title: Maybe<Scalars['String']>,
-  readonly dropCap: Maybe<Scalars['Boolean']>,
-  readonly displayInMenu: Maybe<Scalars['Boolean']>,
-  readonly displayInList: Maybe<Scalars['Boolean']>,
   readonly draft: Maybe<Scalars['Boolean']>,
   readonly date: Maybe<Scalars['Date']>,
   readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
@@ -856,9 +850,6 @@ export type FrontmatterDateArgs = {
 export type FrontmatterFilterInput = {
   readonly featureImage: Maybe<MarkdownRemarkFrontmatterFeaturedImageFilterInput>,
   readonly title: Maybe<StringQueryOperatorInput>,
-  readonly dropCap: Maybe<BooleanQueryOperatorInput>,
-  readonly displayInMenu: Maybe<BooleanQueryOperatorInput>,
-  readonly displayInList: Maybe<BooleanQueryOperatorInput>,
   readonly draft: Maybe<BooleanQueryOperatorInput>,
   readonly date: Maybe<DateQueryOperatorInput>,
   readonly tags: Maybe<StringQueryOperatorInput>,
@@ -1567,9 +1558,6 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterFeatureImageSrcChildren = 'frontmatter___featureImage___src___children',
   FrontmatterFeatureImageDescription = 'frontmatter___featureImage___description',
   FrontmatterTitle = 'frontmatter___title',
-  FrontmatterDropCap = 'frontmatter___dropCap',
-  FrontmatterDisplayInMenu = 'frontmatter___displayInMenu',
-  FrontmatterDisplayInList = 'frontmatter___displayInList',
   FrontmatterDraft = 'frontmatter___draft',
   FrontmatterDate = 'frontmatter___date',
   FrontmatterTags = 'frontmatter___tags',
@@ -2954,13 +2942,13 @@ export type BlogListerQuery = (
       { readonly __typename?: 'MarkdownRemarkEdge' }
       & { readonly node: (
         { readonly __typename?: 'MarkdownRemark' }
-        & Pick<MarkdownRemark, 'id' | 'excerpt'>
+        & Pick<MarkdownRemark, 'excerpt'>
         & { readonly fields: Maybe<(
           { readonly __typename?: 'MarkdownRemarkFields' }
           & Pick<MarkdownRemarkFields, 'slug'>
         )>, readonly frontmatter: Maybe<(
           { readonly __typename?: 'Frontmatter' }
-          & Pick<Frontmatter, 'title' | 'date' | 'tags' | 'categories' | 'displayInList' | 'description'>
+          & Pick<Frontmatter, 'title' | 'date' | 'tags' | 'categories' | 'description'>
           & { readonly featuredImage: Maybe<(
             { readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage' }
             & Pick<MarkdownRemarkFrontmatterFeaturedImage, 'description'>
