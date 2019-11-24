@@ -81,5 +81,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-feed`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-netlify`
   ]
 }
