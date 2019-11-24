@@ -76,7 +76,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'slug',
-        value: slug.replace(/ /g, '-').replace('posts', '').toLowerCase() || ''
+        value: slug.replace(/ /g, '-').replace('/posts', '').toLowerCase() || ''
       })
 
       // Used to determine a page layout.

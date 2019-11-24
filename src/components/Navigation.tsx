@@ -44,8 +44,8 @@ const hamburgerMenuPressed = (element: any) => {
 const Navigation: React.FC = () => (
   <StaticQuery
     query={ComponentQuery}
-    render={(data: NavigationQuery) => (
-      <nav className="nav-bar side-padding" >
+    render={(data: NavigationQuery) => {
+      return <nav className="nav-bar side-padding" >
         <h1 className="nav-header">
           <Link to="/" className="nav-text">{data.site?.siteMetadata?.title}</Link>
         </h1>
@@ -58,24 +58,24 @@ const Navigation: React.FC = () => (
           </button>
           <ul id="menu" className="hamburger-menu-overlay">
             <li>
-              <Link to="/" className="hamburger-menu-overlay-link">Home</Link>
+              <Link onClick={e => hamburgerMenuPressed(e.currentTarget.parentElement?.parentElement)} to="/" className="hamburger-menu-overlay-link">Home</Link>
             </li>
             <li>
-              <Link to="/about-me/" className="hamburger-menu-overlay-link">About Me</Link>
+              <Link onClick={e => hamburgerMenuPressed(e.currentTarget.parentElement?.parentElement)} to="/about-me/" className="hamburger-menu-overlay-link">About Me</Link>
             </li>
             <li>
-              <a href="/categories/photography" className="hamburger-menu-overlay-link">Photography</a>
+              <a onClick={e => hamburgerMenuPressed(e.currentTarget.parentElement?.parentElement)} href="/categories/photography" className="hamburger-menu-overlay-link">Photography</a>
             </li>
             <li>
-              <a href="/categories/programming" className="hamburger-menu-overlay-link">Programming</a>
+              <a onClick={e => hamburgerMenuPressed(e.currentTarget.parentElement?.parentElement)} href="/categories/programming" className="hamburger-menu-overlay-link">Programming</a>
             </li>
             <li>
-              <a href="/rss.xml" className="hamburger-menu-overlay-link">rss</a>
+              <a onClick={e => hamburgerMenuPressed(e.currentTarget.parentElement?.parentElement)} href="/rss.xml" className="hamburger-menu-overlay-link">rss</a>
             </li>
           </ul>
         </div>
       </nav >
-    )}
+    }}
   />
 )
 
