@@ -5,7 +5,7 @@ tags: [Csharp]
 categories: [Programming]
 draft: false
 featuredImage:
-  src: tree.jpg
+  src: images/tree.jpg
   description: "Trees"
 ---
 
