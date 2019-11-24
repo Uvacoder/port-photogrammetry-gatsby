@@ -20,11 +20,11 @@ collections:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Categories", name: "categories", widget: "list"}
-      - label: "Resources"
-        name: "resources"
+      - label: "FeaturedImage"
+        name: "featuredImage"
         widget: "object"
         required: false
         fields:
-          - {label: "Name", name: "name", widget: string, default: "featuredImage"}
-          - {label: "Featured Image", name: "src", widget: "image"}
+          - {label: "Src", name: "src", widget: "image"}
+          - {label: "Alt", name: "description", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
