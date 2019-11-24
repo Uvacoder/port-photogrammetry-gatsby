@@ -5,11 +5,9 @@ tags:
 - Travel
 categories:
 - Photography
-resources:
-- name: featuredImage
+featuredImage:
   src: images/vietnamlanternstand.jpg
-  params:
-    description: Lantern shop in Hoi An, Vietnam
+  description: Lantern shop in Hoi An, Vietnam
 description: Full RAW workflow with your phone
 dropcap: false
 

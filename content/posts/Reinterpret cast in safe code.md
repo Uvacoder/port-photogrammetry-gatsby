@@ -6,14 +6,11 @@ tags:
 - Performance
 categories:
 - Programming
-resources:
-- name: featuredImage
+featuredImage:
   src: images/reinterpretcode.jpg
-  params:
-    description: Reinterpret cast in C# code
+  description: Reinterpret cast in C# code
 description: A different way of looking at the same thing
 dropcap: false
-
 ---
 ## Reinterpret cast with Span
 Did you know you can do a reinterpret cast in C# where we treat a array of structs as a array of bytes?

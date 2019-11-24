@@ -4,11 +4,9 @@ date: 2018-11-20T20:48:51+02:00
 tags: [Csharp]
 categories: [Programming]
 draft: false
-resources:
-- name: featuredImage
+featuredImage:
   src: images/tree.jpg
-  params:
-    description: "Trees"
+  description: "Trees"
 ---
 
 ## Why write yet another DI container?

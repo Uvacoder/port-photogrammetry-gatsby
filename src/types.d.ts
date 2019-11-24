@@ -25,6 +25,7 @@ export type Scalars = {
 
 
 
+
 export type BooleanQueryOperatorInput = {
   readonly eq: Maybe<Scalars['Boolean']>,
   readonly ne: Maybe<Scalars['Boolean']>,
@@ -694,13 +695,16 @@ export enum FileFieldsEnum {
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
+  ChildMarkdownRemarkFrontmatterFeatureImageDescription = 'childMarkdownRemark___frontmatter___featureImage___description',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
+  ChildMarkdownRemarkFrontmatterDropCap = 'childMarkdownRemark___frontmatter___dropCap',
+  ChildMarkdownRemarkFrontmatterDisplayInMenu = 'childMarkdownRemark___frontmatter___displayInMenu',
+  ChildMarkdownRemarkFrontmatterDisplayInList = 'childMarkdownRemark___frontmatter___displayInList',
+  ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
   ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
   ChildMarkdownRemarkFrontmatterTags = 'childMarkdownRemark___frontmatter___tags',
   ChildMarkdownRemarkFrontmatterCategories = 'childMarkdownRemark___frontmatter___categories',
-  ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
-  ChildMarkdownRemarkFrontmatterResources = 'childMarkdownRemark___frontmatter___resources',
-  ChildMarkdownRemarkFrontmatterResourcesName = 'childMarkdownRemark___frontmatter___resources___name',
+  ChildMarkdownRemarkFrontmatterFeaturedImageDescription = 'childMarkdownRemark___frontmatter___featuredImage___description',
   ChildMarkdownRemarkFrontmatterDescription = 'childMarkdownRemark___frontmatter___description',
   ChildMarkdownRemarkFrontmatterDropcap = 'childMarkdownRemark___frontmatter___dropcap',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
@@ -823,6 +827,45 @@ export type FloatQueryOperatorInput = {
   readonly lte: Maybe<Scalars['Float']>,
   readonly in: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>,
   readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>,
+};
+
+export type Frontmatter = {
+  readonly __typename?: 'Frontmatter',
+  readonly featureImage: Maybe<MarkdownRemarkFrontmatterFeaturedImage>,
+  readonly title: Maybe<Scalars['String']>,
+  readonly dropCap: Maybe<Scalars['Boolean']>,
+  readonly displayInMenu: Maybe<Scalars['Boolean']>,
+  readonly displayInList: Maybe<Scalars['Boolean']>,
+  readonly draft: Maybe<Scalars['Boolean']>,
+  readonly date: Maybe<Scalars['Date']>,
+  readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly categories: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly featuredImage: Maybe<MarkdownRemarkFrontmatterFeaturedImage>,
+  readonly description: Maybe<Scalars['String']>,
+  readonly dropcap: Maybe<Scalars['Boolean']>,
+};
+
+
+export type FrontmatterDateArgs = {
+  formatString: Maybe<Scalars['String']>,
+  fromNow: Maybe<Scalars['Boolean']>,
+  difference: Maybe<Scalars['String']>,
+  locale: Maybe<Scalars['String']>
+};
+
+export type FrontmatterFilterInput = {
+  readonly featureImage: Maybe<MarkdownRemarkFrontmatterFeaturedImageFilterInput>,
+  readonly title: Maybe<StringQueryOperatorInput>,
+  readonly dropCap: Maybe<BooleanQueryOperatorInput>,
+  readonly displayInMenu: Maybe<BooleanQueryOperatorInput>,
+  readonly displayInList: Maybe<BooleanQueryOperatorInput>,
+  readonly draft: Maybe<BooleanQueryOperatorInput>,
+  readonly date: Maybe<DateQueryOperatorInput>,
+  readonly tags: Maybe<StringQueryOperatorInput>,
+  readonly categories: Maybe<StringQueryOperatorInput>,
+  readonly featuredImage: Maybe<MarkdownRemarkFrontmatterFeaturedImageFilterInput>,
+  readonly description: Maybe<StringQueryOperatorInput>,
+  readonly dropcap: Maybe<BooleanQueryOperatorInput>,
 };
 
 export enum ImageCropFocus {
@@ -1409,7 +1452,7 @@ export enum MarkdownHeadingLevels {
 export type MarkdownRemark = Node & {
   readonly __typename?: 'MarkdownRemark',
   readonly id: Scalars['ID'],
-  readonly frontmatter: Maybe<MarkdownRemarkFrontmatter>,
+  readonly frontmatter: Maybe<Frontmatter>,
   readonly excerpt: Maybe<Scalars['String']>,
   readonly rawMarkdownBody: Maybe<Scalars['String']>,
   readonly fileAbsolutePath: Maybe<Scalars['String']>,
@@ -1488,48 +1531,84 @@ export type MarkdownRemarkFields = {
 
 export enum MarkdownRemarkFieldsEnum {
   Id = 'id',
+  FrontmatterFeatureImageSrcBirthtime = 'frontmatter___featureImage___src___birthtime',
+  FrontmatterFeatureImageSrcBirthtimeMs = 'frontmatter___featureImage___src___birthtimeMs',
+  FrontmatterFeatureImageSrcSourceInstanceName = 'frontmatter___featureImage___src___sourceInstanceName',
+  FrontmatterFeatureImageSrcAbsolutePath = 'frontmatter___featureImage___src___absolutePath',
+  FrontmatterFeatureImageSrcRelativePath = 'frontmatter___featureImage___src___relativePath',
+  FrontmatterFeatureImageSrcExtension = 'frontmatter___featureImage___src___extension',
+  FrontmatterFeatureImageSrcSize = 'frontmatter___featureImage___src___size',
+  FrontmatterFeatureImageSrcPrettySize = 'frontmatter___featureImage___src___prettySize',
+  FrontmatterFeatureImageSrcModifiedTime = 'frontmatter___featureImage___src___modifiedTime',
+  FrontmatterFeatureImageSrcAccessTime = 'frontmatter___featureImage___src___accessTime',
+  FrontmatterFeatureImageSrcChangeTime = 'frontmatter___featureImage___src___changeTime',
+  FrontmatterFeatureImageSrcBirthTime = 'frontmatter___featureImage___src___birthTime',
+  FrontmatterFeatureImageSrcRoot = 'frontmatter___featureImage___src___root',
+  FrontmatterFeatureImageSrcDir = 'frontmatter___featureImage___src___dir',
+  FrontmatterFeatureImageSrcBase = 'frontmatter___featureImage___src___base',
+  FrontmatterFeatureImageSrcExt = 'frontmatter___featureImage___src___ext',
+  FrontmatterFeatureImageSrcName = 'frontmatter___featureImage___src___name',
+  FrontmatterFeatureImageSrcRelativeDirectory = 'frontmatter___featureImage___src___relativeDirectory',
+  FrontmatterFeatureImageSrcDev = 'frontmatter___featureImage___src___dev',
+  FrontmatterFeatureImageSrcMode = 'frontmatter___featureImage___src___mode',
+  FrontmatterFeatureImageSrcNlink = 'frontmatter___featureImage___src___nlink',
+  FrontmatterFeatureImageSrcUid = 'frontmatter___featureImage___src___uid',
+  FrontmatterFeatureImageSrcGid = 'frontmatter___featureImage___src___gid',
+  FrontmatterFeatureImageSrcRdev = 'frontmatter___featureImage___src___rdev',
+  FrontmatterFeatureImageSrcIno = 'frontmatter___featureImage___src___ino',
+  FrontmatterFeatureImageSrcAtimeMs = 'frontmatter___featureImage___src___atimeMs',
+  FrontmatterFeatureImageSrcMtimeMs = 'frontmatter___featureImage___src___mtimeMs',
+  FrontmatterFeatureImageSrcCtimeMs = 'frontmatter___featureImage___src___ctimeMs',
+  FrontmatterFeatureImageSrcAtime = 'frontmatter___featureImage___src___atime',
+  FrontmatterFeatureImageSrcMtime = 'frontmatter___featureImage___src___mtime',
+  FrontmatterFeatureImageSrcCtime = 'frontmatter___featureImage___src___ctime',
+  FrontmatterFeatureImageSrcPublicUrl = 'frontmatter___featureImage___src___publicURL',
+  FrontmatterFeatureImageSrcId = 'frontmatter___featureImage___src___id',
+  FrontmatterFeatureImageSrcChildren = 'frontmatter___featureImage___src___children',
+  FrontmatterFeatureImageDescription = 'frontmatter___featureImage___description',
   FrontmatterTitle = 'frontmatter___title',
+  FrontmatterDropCap = 'frontmatter___dropCap',
+  FrontmatterDisplayInMenu = 'frontmatter___displayInMenu',
+  FrontmatterDisplayInList = 'frontmatter___displayInList',
+  FrontmatterDraft = 'frontmatter___draft',
   FrontmatterDate = 'frontmatter___date',
   FrontmatterTags = 'frontmatter___tags',
   FrontmatterCategories = 'frontmatter___categories',
-  FrontmatterDraft = 'frontmatter___draft',
-  FrontmatterResources = 'frontmatter___resources',
-  FrontmatterResourcesName = 'frontmatter___resources___name',
-  FrontmatterResourcesSrcBirthtime = 'frontmatter___resources___src___birthtime',
-  FrontmatterResourcesSrcBirthtimeMs = 'frontmatter___resources___src___birthtimeMs',
-  FrontmatterResourcesSrcSourceInstanceName = 'frontmatter___resources___src___sourceInstanceName',
-  FrontmatterResourcesSrcAbsolutePath = 'frontmatter___resources___src___absolutePath',
-  FrontmatterResourcesSrcRelativePath = 'frontmatter___resources___src___relativePath',
-  FrontmatterResourcesSrcExtension = 'frontmatter___resources___src___extension',
-  FrontmatterResourcesSrcSize = 'frontmatter___resources___src___size',
-  FrontmatterResourcesSrcPrettySize = 'frontmatter___resources___src___prettySize',
-  FrontmatterResourcesSrcModifiedTime = 'frontmatter___resources___src___modifiedTime',
-  FrontmatterResourcesSrcAccessTime = 'frontmatter___resources___src___accessTime',
-  FrontmatterResourcesSrcChangeTime = 'frontmatter___resources___src___changeTime',
-  FrontmatterResourcesSrcBirthTime = 'frontmatter___resources___src___birthTime',
-  FrontmatterResourcesSrcRoot = 'frontmatter___resources___src___root',
-  FrontmatterResourcesSrcDir = 'frontmatter___resources___src___dir',
-  FrontmatterResourcesSrcBase = 'frontmatter___resources___src___base',
-  FrontmatterResourcesSrcExt = 'frontmatter___resources___src___ext',
-  FrontmatterResourcesSrcName = 'frontmatter___resources___src___name',
-  FrontmatterResourcesSrcRelativeDirectory = 'frontmatter___resources___src___relativeDirectory',
-  FrontmatterResourcesSrcDev = 'frontmatter___resources___src___dev',
-  FrontmatterResourcesSrcMode = 'frontmatter___resources___src___mode',
-  FrontmatterResourcesSrcNlink = 'frontmatter___resources___src___nlink',
-  FrontmatterResourcesSrcUid = 'frontmatter___resources___src___uid',
-  FrontmatterResourcesSrcGid = 'frontmatter___resources___src___gid',
-  FrontmatterResourcesSrcRdev = 'frontmatter___resources___src___rdev',
-  FrontmatterResourcesSrcIno = 'frontmatter___resources___src___ino',
-  FrontmatterResourcesSrcAtimeMs = 'frontmatter___resources___src___atimeMs',
-  FrontmatterResourcesSrcMtimeMs = 'frontmatter___resources___src___mtimeMs',
-  FrontmatterResourcesSrcCtimeMs = 'frontmatter___resources___src___ctimeMs',
-  FrontmatterResourcesSrcAtime = 'frontmatter___resources___src___atime',
-  FrontmatterResourcesSrcMtime = 'frontmatter___resources___src___mtime',
-  FrontmatterResourcesSrcCtime = 'frontmatter___resources___src___ctime',
-  FrontmatterResourcesSrcPublicUrl = 'frontmatter___resources___src___publicURL',
-  FrontmatterResourcesSrcId = 'frontmatter___resources___src___id',
-  FrontmatterResourcesSrcChildren = 'frontmatter___resources___src___children',
-  FrontmatterResourcesParamsDescription = 'frontmatter___resources___params___description',
+  FrontmatterFeaturedImageSrcBirthtime = 'frontmatter___featuredImage___src___birthtime',
+  FrontmatterFeaturedImageSrcBirthtimeMs = 'frontmatter___featuredImage___src___birthtimeMs',
+  FrontmatterFeaturedImageSrcSourceInstanceName = 'frontmatter___featuredImage___src___sourceInstanceName',
+  FrontmatterFeaturedImageSrcAbsolutePath = 'frontmatter___featuredImage___src___absolutePath',
+  FrontmatterFeaturedImageSrcRelativePath = 'frontmatter___featuredImage___src___relativePath',
+  FrontmatterFeaturedImageSrcExtension = 'frontmatter___featuredImage___src___extension',
+  FrontmatterFeaturedImageSrcSize = 'frontmatter___featuredImage___src___size',
+  FrontmatterFeaturedImageSrcPrettySize = 'frontmatter___featuredImage___src___prettySize',
+  FrontmatterFeaturedImageSrcModifiedTime = 'frontmatter___featuredImage___src___modifiedTime',
+  FrontmatterFeaturedImageSrcAccessTime = 'frontmatter___featuredImage___src___accessTime',
+  FrontmatterFeaturedImageSrcChangeTime = 'frontmatter___featuredImage___src___changeTime',
+  FrontmatterFeaturedImageSrcBirthTime = 'frontmatter___featuredImage___src___birthTime',
+  FrontmatterFeaturedImageSrcRoot = 'frontmatter___featuredImage___src___root',
+  FrontmatterFeaturedImageSrcDir = 'frontmatter___featuredImage___src___dir',
+  FrontmatterFeaturedImageSrcBase = 'frontmatter___featuredImage___src___base',
+  FrontmatterFeaturedImageSrcExt = 'frontmatter___featuredImage___src___ext',
+  FrontmatterFeaturedImageSrcName = 'frontmatter___featuredImage___src___name',
+  FrontmatterFeaturedImageSrcRelativeDirectory = 'frontmatter___featuredImage___src___relativeDirectory',
+  FrontmatterFeaturedImageSrcDev = 'frontmatter___featuredImage___src___dev',
+  FrontmatterFeaturedImageSrcMode = 'frontmatter___featuredImage___src___mode',
+  FrontmatterFeaturedImageSrcNlink = 'frontmatter___featuredImage___src___nlink',
+  FrontmatterFeaturedImageSrcUid = 'frontmatter___featuredImage___src___uid',
+  FrontmatterFeaturedImageSrcGid = 'frontmatter___featuredImage___src___gid',
+  FrontmatterFeaturedImageSrcRdev = 'frontmatter___featuredImage___src___rdev',
+  FrontmatterFeaturedImageSrcIno = 'frontmatter___featuredImage___src___ino',
+  FrontmatterFeaturedImageSrcAtimeMs = 'frontmatter___featuredImage___src___atimeMs',
+  FrontmatterFeaturedImageSrcMtimeMs = 'frontmatter___featuredImage___src___mtimeMs',
+  FrontmatterFeaturedImageSrcCtimeMs = 'frontmatter___featuredImage___src___ctimeMs',
+  FrontmatterFeaturedImageSrcAtime = 'frontmatter___featuredImage___src___atime',
+  FrontmatterFeaturedImageSrcMtime = 'frontmatter___featuredImage___src___mtime',
+  FrontmatterFeaturedImageSrcCtime = 'frontmatter___featuredImage___src___ctime',
+  FrontmatterFeaturedImageSrcPublicUrl = 'frontmatter___featuredImage___src___publicURL',
+  FrontmatterFeaturedImageSrcId = 'frontmatter___featuredImage___src___id',
+  FrontmatterFeaturedImageSrcChildren = 'frontmatter___featuredImage___src___children',
+  FrontmatterFeaturedImageDescription = 'frontmatter___featuredImage___description',
   FrontmatterDescription = 'frontmatter___description',
   FrontmatterDropcap = 'frontmatter___dropcap',
   Excerpt = 'excerpt',
@@ -1642,7 +1721,7 @@ export type MarkdownRemarkFieldsFilterInput = {
 
 export type MarkdownRemarkFilterInput = {
   readonly id: Maybe<StringQueryOperatorInput>,
-  readonly frontmatter: Maybe<MarkdownRemarkFrontmatterFilterInput>,
+  readonly frontmatter: Maybe<FrontmatterFilterInput>,
   readonly excerpt: Maybe<StringQueryOperatorInput>,
   readonly rawMarkdownBody: Maybe<StringQueryOperatorInput>,
   readonly fileAbsolutePath: Maybe<StringQueryOperatorInput>,
@@ -1659,60 +1738,14 @@ export type MarkdownRemarkFilterInput = {
   readonly internal: Maybe<InternalFilterInput>,
 };
 
-export type MarkdownRemarkFrontmatter = {
-  readonly __typename?: 'MarkdownRemarkFrontmatter',
-  readonly title: Maybe<Scalars['String']>,
-  readonly date: Maybe<Scalars['Date']>,
-  readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly categories: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly draft: Maybe<Scalars['Boolean']>,
-  readonly resources: Maybe<ReadonlyArray<Maybe<MarkdownRemarkFrontmatterResources>>>,
-  readonly description: Maybe<Scalars['String']>,
-  readonly dropcap: Maybe<Scalars['Boolean']>,
-};
-
-
-export type MarkdownRemarkFrontmatterDateArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
-};
-
-export type MarkdownRemarkFrontmatterFilterInput = {
-  readonly title: Maybe<StringQueryOperatorInput>,
-  readonly date: Maybe<DateQueryOperatorInput>,
-  readonly tags: Maybe<StringQueryOperatorInput>,
-  readonly categories: Maybe<StringQueryOperatorInput>,
-  readonly draft: Maybe<BooleanQueryOperatorInput>,
-  readonly resources: Maybe<MarkdownRemarkFrontmatterResourcesFilterListInput>,
-  readonly description: Maybe<StringQueryOperatorInput>,
-  readonly dropcap: Maybe<BooleanQueryOperatorInput>,
-};
-
-export type MarkdownRemarkFrontmatterResources = {
-  readonly __typename?: 'MarkdownRemarkFrontmatterResources',
-  readonly name: Maybe<Scalars['String']>,
+export type MarkdownRemarkFrontmatterFeaturedImage = {
+  readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage',
   readonly src: Maybe<File>,
-  readonly params: Maybe<MarkdownRemarkFrontmatterResourcesParams>,
-};
-
-export type MarkdownRemarkFrontmatterResourcesFilterInput = {
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly src: Maybe<FileFilterInput>,
-  readonly params: Maybe<MarkdownRemarkFrontmatterResourcesParamsFilterInput>,
-};
-
-export type MarkdownRemarkFrontmatterResourcesFilterListInput = {
-  readonly elemMatch: Maybe<MarkdownRemarkFrontmatterResourcesFilterInput>,
-};
-
-export type MarkdownRemarkFrontmatterResourcesParams = {
-  readonly __typename?: 'MarkdownRemarkFrontmatterResourcesParams',
   readonly description: Maybe<Scalars['String']>,
 };
 
-export type MarkdownRemarkFrontmatterResourcesParamsFilterInput = {
+export type MarkdownRemarkFrontmatterFeaturedImageFilterInput = {
+  readonly src: Maybe<FileFilterInput>,
   readonly description: Maybe<StringQueryOperatorInput>,
 };
 
@@ -1815,7 +1848,7 @@ export type Query = {
 
 export type QueryMarkdownRemarkArgs = {
   id: Maybe<StringQueryOperatorInput>,
-  frontmatter: Maybe<MarkdownRemarkFrontmatterFilterInput>,
+  frontmatter: Maybe<FrontmatterFilterInput>,
   excerpt: Maybe<StringQueryOperatorInput>,
   rawMarkdownBody: Maybe<StringQueryOperatorInput>,
   fileAbsolutePath: Maybe<StringQueryOperatorInput>,
@@ -2926,15 +2959,12 @@ export type BlogListerQuery = (
           { readonly __typename?: 'MarkdownRemarkFields' }
           & Pick<MarkdownRemarkFields, 'slug'>
         )>, readonly frontmatter: Maybe<(
-          { readonly __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'tags' | 'categories' | 'description'>
-          & { readonly resources: Maybe<ReadonlyArray<Maybe<(
-            { readonly __typename?: 'MarkdownRemarkFrontmatterResources' }
-            & Pick<MarkdownRemarkFrontmatterResources, 'name'>
-            & { readonly params: Maybe<(
-              { readonly __typename?: 'MarkdownRemarkFrontmatterResourcesParams' }
-              & Pick<MarkdownRemarkFrontmatterResourcesParams, 'description'>
-            )>, readonly src: Maybe<(
+          { readonly __typename?: 'Frontmatter' }
+          & Pick<Frontmatter, 'title' | 'date' | 'tags' | 'categories' | 'displayInList' | 'description'>
+          & { readonly featuredImage: Maybe<(
+            { readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage' }
+            & Pick<MarkdownRemarkFrontmatterFeaturedImage, 'description'>
+            & { readonly src: Maybe<(
               { readonly __typename?: 'File' }
               & { readonly childImageSharp: Maybe<(
                 { readonly __typename?: 'ImageSharp' }
@@ -2944,30 +2974,11 @@ export type BlogListerQuery = (
                 )> }
               )> }
             )> }
-          )>>> }
+          )> }
         )> }
       ) }
     )> }
   ) }
-);
-
-export type ImageQueryVariables = {
-  src: Maybe<Scalars['String']>
-};
-
-
-export type ImageQuery = (
-  { readonly __typename?: 'Query' }
-  & { readonly imageOne: Maybe<(
-    { readonly __typename?: 'File' }
-    & { readonly childImageSharp: Maybe<(
-      { readonly __typename?: 'ImageSharp' }
-      & { readonly fixed: Maybe<(
-        { readonly __typename?: 'ImageSharpFixed' }
-        & Pick<ImageSharpFixed, 'src' | 'srcSet' | 'width' | 'base64'>
-      )> }
-    )> }
-  )> }
 );
 
 export type NavigationQueryVariables = {};
@@ -2992,8 +3003,8 @@ export type NavigationQuery = (
           { readonly __typename?: 'MarkdownRemarkFields' }
           & Pick<MarkdownRemarkFields, 'slug'>
         )>, readonly frontmatter: Maybe<(
-          { readonly __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'tags'>
+          { readonly __typename?: 'Frontmatter' }
+          & Pick<Frontmatter, 'title' | 'date' | 'tags'>
         )> }
       ) }
     )> }
@@ -3025,24 +3036,22 @@ export type PageTemplateQuery = (
     { readonly __typename?: 'MarkdownRemark' }
     & Pick<MarkdownRemark, 'html' | 'excerpt'>
     & { readonly frontmatter: Maybe<(
-      { readonly __typename?: 'MarkdownRemarkFrontmatter' }
-      & Pick<MarkdownRemarkFrontmatter, 'title' | 'date'>
-      & { readonly resources: Maybe<ReadonlyArray<Maybe<(
-        { readonly __typename?: 'MarkdownRemarkFrontmatterResources' }
-        & { readonly params: Maybe<(
-          { readonly __typename?: 'MarkdownRemarkFrontmatterResourcesParams' }
-          & Pick<MarkdownRemarkFrontmatterResourcesParams, 'description'>
-        )>, readonly src: Maybe<(
+      { readonly __typename?: 'Frontmatter' }
+      & Pick<Frontmatter, 'title' | 'date'>
+      & { readonly featuredImage: Maybe<(
+        { readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage' }
+        & Pick<MarkdownRemarkFrontmatterFeaturedImage, 'description'>
+        & { readonly src: Maybe<(
           { readonly __typename?: 'File' }
           & { readonly childImageSharp: Maybe<(
             { readonly __typename?: 'ImageSharp' }
             & { readonly fluid: Maybe<(
               { readonly __typename?: 'ImageSharpFluid' }
-              & Pick<ImageSharpFluid, 'src' | 'srcSet' | 'srcSetWebp' | 'srcWebp' | 'sizes'>
+              & Pick<ImageSharpFluid, 'src' | 'srcSet' | 'srcSetWebp' | 'srcWebp' | 'sizes' | 'aspectRatio' | 'base64'>
             )> }
           )> }
         )> }
-      )>>> }
+      )> }
     )> }
   )> }
 );

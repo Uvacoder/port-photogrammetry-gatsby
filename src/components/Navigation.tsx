@@ -64,10 +64,10 @@ const Navigation: React.FC = () => (
               <Link to="/about-me/" className="hamburger-menu-overlay-link">About Me</Link>
             </li>
             <li>
-              <Link to="/categories/photography" className="hamburger-menu-overlay-link">Photography</Link>
+              <a href="/categories/photography" className="hamburger-menu-overlay-link">Photography</a>
             </li>
             <li>
-              <Link to="/categories/programming" className="hamburger-menu-overlay-link">Programming</Link>
+              <a href="/categories/programming" className="hamburger-menu-overlay-link">Programming</a>
             </li>
             <li>
               <a href="/rss.xml" className="hamburger-menu-overlay-link">rss</a>

@@ -1,6 +1,57 @@
+// @ts-check
+
 'use strict'
 
 const path = require('path')
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createFieldExtension, createTypes } = actions
+
+  createFieldExtension({
+    name: 'fileByDataPath',
+    extend: () => ({
+      resolve: function (featureImage, args, context, info) {
+        const partialPath = featureImage.src
+        if (!partialPath) {
+          return null
+        }
+
+        const regex = "/(/content/" + featureImage.src + ")/"
+        const fileNode = context.nodeModel.runQuery({
+          firstOnly: true,
+          type: 'File',
+          query: {
+            filter: {
+              absolutePath: {
+                regex: regex
+              }
+            }
+          }
+        })
+
+        if (!fileNode) {
+          return null
+        }
+
+        return fileNode
+      }
+    })
+  })
+
+  const typeDefs = `
+    type MarkdownRemarkFrontmatterFeaturedImage @infer{
+      src: File @fileByDataPath
+    }
+    type Frontmatter @infer {
+      featureImage: MarkdownRemarkFrontmatterFeaturedImage
+    }
+    type MarkdownRemark implements Node @infer {
+      frontmatter: Frontmatter
+    }
+  `
+
+  createTypes(typeDefs)
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -25,7 +76,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'slug',
-        value: slug.replace(/ /g, '-') || ''
+        value: slug.replace(/ /g, '-').replace('posts', '') || ''
       })
 
       // Used to determine a page layout.

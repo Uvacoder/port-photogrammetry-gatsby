@@ -14,23 +14,21 @@ interface PageTemplateProps {
       frontmatter: {
         title: string
         date: string
-        resources: ReadonlyArray<{
-          params: {
-            description: string
-          }
+        featuredImage: {
+          description: string
           src: {
             childImageSharp: {
               fluid: FluidObject
             }
           }
-        }>
+        }
       }
     }
   }
 }
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
-  var blogImage = data.markdownRemark.frontmatter.resources?.[0]?.src?.childImageSharp.fluid;
+  var blogImage = data.markdownRemark.frontmatter.featuredImage?.src.childImageSharp.fluid;
   return (<>
     <IndexLayout></IndexLayout>
     <main className="content side-text-padding">
@@ -58,10 +56,8 @@ query PageTemplate($slug: String!) {
     frontmatter {
       title
       date(formatString: "D-MM-YYYY")
-      resources {
-        params {
-          description
-        }
+      featuredImage {
+        description
         src {
           childImageSharp {
             fluid(quality: 50) {
@@ -71,6 +67,7 @@ query PageTemplate($slug: String!) {
               srcWebp
               sizes
               aspectRatio
+              base64
             }
           }
         }

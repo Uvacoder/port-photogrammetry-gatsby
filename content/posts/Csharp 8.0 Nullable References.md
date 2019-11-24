@@ -7,14 +7,11 @@ tags:
 - NullReference
 categories:
 - Programming
-resources:
-- name: featuredImage
+featuredImage:
   src: images/nullreferenceexception.jpg
-  params:
-    description: A null reference exception in C#
+  description: A null reference exception in C#
 description: Is this the end of the nullable reference exception?
 dropcap: false
-
 ---
 ## The What and Why of 'nullable references'
 
