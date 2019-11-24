@@ -1,8 +1,5 @@
 ---
 title: "About Me"
-dropCap: false
-displayInMenu: true
-displayInList: false
 draft: false
 ---
 

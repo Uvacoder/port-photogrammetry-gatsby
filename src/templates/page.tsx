@@ -39,7 +39,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           </h1>
           <PostDate date={data.markdownRemark.frontmatter.date} className="post-date"></PostDate>
         </header>
-        {blogImage !== null && blogImage !== undefined && <Image fluid={blogImage} alt="" />}
+        {blogImage !== null && blogImage !== undefined && <Image fluid={blogImage} alt={data.markdownRemark.frontmatter.featuredImage.description} />}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </article>
     </main>

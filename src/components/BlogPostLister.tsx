@@ -10,7 +10,6 @@ query BlogLister {
   allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "/(posts)/"}}) {
     edges {
       node {
-        id
         fields {
           slug
         }
@@ -19,7 +18,6 @@ query BlogLister {
           date(formatString: "D-MM-YYYY")
           tags
           categories
-          displayInList
           description
           featuredImage {
             description
@@ -50,7 +48,7 @@ const BlogLister: React.FC = () => (
       {data.allMarkdownRemark.edges.map(post => {
         var blogImage = post.node.frontmatter?.featuredImage?.src?.childImageSharp?.fixed;
         return <Link className="card blog-card" to={post.node.fields!.slug!}>
-          {blogImage !== null && blogImage !== undefined && <Img className="card-img-container" fixed={ToFixed(blogImage)} alt="" />}
+          {blogImage !== null && blogImage !== undefined && <Img className="card-img-container" fixed={ToFixed(blogImage)} alt={post.node.frontmatter?.featuredImage?.description!} />}
           <article className="card-body">
             <h2 className="card-title">{post.node.frontmatter!.title}</h2>
             <p className="card-text">{post.node.frontmatter!.description ?? post.node.excerpt}</p>
