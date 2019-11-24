@@ -6,12 +6,12 @@ media_folder: "content/images" # Media files will be stored in the repo under st
 public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
 publish_mode: editorial_workflow
 
-site_url: https://photographing-programmer.netlify.com/
+site_url: https://lucid-noether-af1c61.netlify.com/
 
 collections:
   - name: "posts"
     label: "Post"
-    folder: "content"
+    folder: "content/posts"
     create: true
     delete: true
     slug: "{{year}}-{{month}}-{{day}}_{{title}}/index"
