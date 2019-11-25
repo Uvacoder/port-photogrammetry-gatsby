@@ -60,6 +60,8 @@ const IndexLayout: React.FC = ({ children }) => (
           <meta property="og:type" content="website" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:image" content={data.site.siteMetadata.siteUrl + data.file.childImageSharp.fixed.src} />
+          <meta property="og:image:width" content="400" />
+          <meta property="og:image:height" content="400" />
         </Helmet>
         <Navigation></Navigation>
         {children}
