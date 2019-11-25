@@ -18,6 +18,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'images',
+            },
+          },
+          {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {
               wrapperStyle: 'margin-bottom: 1rem'
