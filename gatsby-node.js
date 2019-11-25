@@ -2,6 +2,7 @@
 
 'use strict'
 
+const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require('path')
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -62,20 +63,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, layout } = node.frontmatter
-      const { relativePath } = getNode(node.parent)
-
-      let slug = permalink
-
-      if (!slug) {
-        slug = `/${relativePath.replace('.md', '')}/`
-      }
+      const { layout } = node.frontmatter
+      const slug = createFilePath({ node, getNode, basePath: `posts` });
 
       // Used to generate URL to view this content.
       createNodeField({
         node,
         name: 'slug',
-        value: slug.replace(/ /g, '-').replace('/posts', '').toLowerCase() || ''
+        value: slug.replace(/ /g, '-').toLowerCase() || ''
       })
 
       // Used to determine a page layout.
