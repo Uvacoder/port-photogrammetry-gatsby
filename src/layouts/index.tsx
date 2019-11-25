@@ -12,6 +12,7 @@ interface StaticQueryProps {
       title: string
       description: string
       keywords: string
+      siteUrl: string
     }
   }
   file: {
@@ -32,6 +33,7 @@ const IndexLayout: React.FC = ({ children }) => (
             title
             description
             keywords
+            siteUrl
           }
         }
         file(name: {eq: "favicon"} ext: {eq: ".png"}) {
@@ -56,7 +58,8 @@ const IndexLayout: React.FC = ({ children }) => (
           ]}
         >
           <meta property="og:type" content="article" />
-          <meta property="og:image" content={data.file.childImageSharp.fixed.src} />
+          <meta property="og:title" content={data.site.siteMetadata.title} />
+          <meta property="og:image" content={data.site.siteMetadata.siteUrl + data.file.childImageSharp.fixed.src} />
         </Helmet>
         <Navigation></Navigation>
         {children}
