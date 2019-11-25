@@ -25,6 +25,7 @@ const IndexLayout: React.FC = ({ children }) => (
           siteMetadata {
             title
             description
+            keywords
           }
         }
       }
