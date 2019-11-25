@@ -15,8 +15,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         if (!partialPath) {
           return null
         }
-
-        const regex = "/(/static/" + featureImage.src + ")/"
+        const regex = "/(/static/" + partialPath + ")/"
         const fileNode = context.nodeModel.runQuery({
           firstOnly: true,
           type: 'File',
