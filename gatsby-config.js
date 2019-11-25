@@ -59,13 +59,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/static/images`
-      }
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `The Photogrammer`,
@@ -74,7 +67,7 @@ module.exports = {
         background_color: `#ecedef`,
         theme_color: `#ecedef`,
         display: `standalone`,
-        icon: `static/images/favicon.png`
+        icon: `content/images/favicon.png`
       },
     },
     {
