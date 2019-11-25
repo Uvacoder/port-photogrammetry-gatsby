@@ -5,7 +5,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import 'normalize.css'
 
 import Navigation from '../components/Navigation'
-import Footer from '../components/Footer'
 
 interface StaticQueryProps {
   site: {
@@ -13,6 +12,13 @@ interface StaticQueryProps {
       title: string
       description: string
       keywords: string
+    }
+  }
+  file: {
+    childImageSharp: {
+      fixed: {
+        src: string
+      }
     }
   }
 }
@@ -28,6 +34,13 @@ const IndexLayout: React.FC = ({ children }) => (
             keywords
           }
         }
+        file(name: {eq: "favicon"} ext: {eq: ".png"}) {
+          childImageSharp {
+            fixed {
+              src
+            }
+          }
+        }
       }
     `}
     render={(data: StaticQueryProps) => (
@@ -41,7 +54,10 @@ const IndexLayout: React.FC = ({ children }) => (
             { name: 'description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: data.site.siteMetadata.keywords }
           ]}
-        />
+        >
+          <meta property="og:type" content="article" />
+          <meta property="og:image" content={data.file.childImageSharp.fixed.src} />
+        </Helmet>
         <Navigation></Navigation>
         {children}
       </>

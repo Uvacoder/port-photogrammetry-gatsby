@@ -3095,7 +3095,16 @@ export type IndexLayoutQueryQuery = (
     { readonly __typename?: 'Site' }
     & { readonly siteMetadata: Maybe<(
       { readonly __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'title' | 'description'>
+      & Pick<SiteSiteMetadata, 'title' | 'description' | 'keywords'>
+    )> }
+  )>, readonly file: Maybe<(
+    { readonly __typename?: 'File' }
+    & { readonly childImageSharp: Maybe<(
+      { readonly __typename?: 'ImageSharp' }
+      & { readonly fixed: Maybe<(
+        { readonly __typename?: 'ImageSharpFixed' }
+        & Pick<ImageSharpFixed, 'src'>
+      )> }
     )> }
   )> }
 );
