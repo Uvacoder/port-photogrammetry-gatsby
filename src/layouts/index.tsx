@@ -57,7 +57,7 @@ const IndexLayout: React.FC = ({ children }) => (
             { name: 'keywords', content: data.site.siteMetadata.keywords }
           ]}
         >
-          <meta property="og:type" content="article" />
+          <meta property="og:type" content="website" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:image" content={data.site.siteMetadata.siteUrl + data.file.childImageSharp.fixed.src} />
         </Helmet>
