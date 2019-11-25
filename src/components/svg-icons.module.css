@@ -1,7 +1,14 @@
+.svg-icon-container {
+  text-align: center;
+}
+
 .svg-icon {
   width: 40px;
   height: 40px;
   display: inline-block;
+  padding: 0px 2px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .email {

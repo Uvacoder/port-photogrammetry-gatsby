@@ -5,6 +5,8 @@ import IndexLayout from '../layouts'
 import PostDate from '../components/PostDate'
 import { FluidObject } from 'gatsby-image'
 import Image from "gatsby-image"
+import Main from '../components/Main'
+import Footer from '../components/Footer'
 
 interface PageTemplateProps {
   data: {
@@ -32,7 +34,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   var date = data.markdownRemark.frontmatter.date;
   return (<>
     <IndexLayout></IndexLayout>
-    <main className="content side-text-padding">
+    <Main className="content side-text-padding">
       <article className="post">
         <header className="post-header">
           <h1 className="post-title">
@@ -43,7 +45,8 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
         {blogImage !== null && blogImage !== undefined && <Image fluid={blogImage} alt={data.markdownRemark.frontmatter.featuredImage.description} />}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </article>
-    </main>
+    </Main>
+    <Footer></Footer>
   </>)
 }
 

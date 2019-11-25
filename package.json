@@ -13,9 +13,11 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.1",
+    "classnames": "^2.2.6",
     "gatsby": "^2.17.16",
     "gatsby-image": "^2.2.33",
     "gatsby-plugin-canonical-urls": "^2.1.15",
+    "gatsby-plugin-catch-links": "^2.1.17",
     "gatsby-plugin-feed": "^2.3.21",
     "gatsby-plugin-manifest": "^2.2.29",
     "gatsby-plugin-netlify": "^2.1.25",
@@ -26,6 +28,7 @@
     "gatsby-plugin-sitemap": "^2.2.21",
     "gatsby-plugin-typescript": "^2.1.18",
     "gatsby-remark-copy-linked-files": "^2.1.30",
+    "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^3.1.31",
     "gatsby-remark-prismjs": "^3.3.23",
     "gatsby-remark-relative-images": "^0.2.3",
@@ -43,6 +46,7 @@
     "typescript": "^3.7.2"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.9",
     "@graphql-codegen/cli": "^1.8.3",
     "@graphql-codegen/typescript": "^1.8.3",
     "@graphql-codegen/typescript-operations": "^1.8.3",

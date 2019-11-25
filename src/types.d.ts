@@ -2196,6 +2196,9 @@ export enum SiteFieldsEnum {
   SiteMetadataSiteUrl = 'siteMetadata___siteUrl',
   SiteMetadataAuthorName = 'siteMetadata___author___name',
   SiteMetadataAuthorUrl = 'siteMetadata___author___url',
+  SiteMetadataSocialGithub = 'siteMetadata___social___github',
+  SiteMetadataSocialInstagram = 'siteMetadata___social___instagram',
+  SiteMetadataSocialLinkedin = 'siteMetadata___social___linkedin',
   Port = 'port',
   Host = 'host',
   Polyfill = 'polyfill',
@@ -2422,14 +2425,16 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsPluginsVersion = 'pluginCreator___pluginOptions___plugins___version',
   PluginCreatorPluginOptionsPluginsBrowserApIs = 'pluginCreator___pluginOptions___plugins___browserAPIs',
   PluginCreatorPluginOptionsPluginsSsrApIs = 'pluginCreator___pluginOptions___plugins___ssrAPIs',
+  PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
+  PluginCreatorPluginOptionsTarget = 'pluginCreator___pluginOptions___target',
+  PluginCreatorPluginOptionsRel = 'pluginCreator___pluginOptions___rel',
   PluginCreatorPluginOptionsWrapperStyle = 'pluginCreator___pluginOptions___wrapperStyle',
   PluginCreatorPluginOptionsAliasesCs = 'pluginCreator___pluginOptions___aliases___cs',
   PluginCreatorPluginOptionsAliasesPosh = 'pluginCreator___pluginOptions___aliases___posh',
   PluginCreatorPluginOptionsMaxWidth = 'pluginCreator___pluginOptions___maxWidth',
-  PluginCreatorPluginOptionsQuality = 'pluginCreator___pluginOptions___quality',
   PluginCreatorPluginOptionsLinkImagesToOriginal = 'pluginCreator___pluginOptions___linkImagesToOriginal',
+  PluginCreatorPluginOptionsWithWebp = 'pluginCreator___pluginOptions___withWebp',
   PluginCreatorPluginOptionsSiteUrl = 'pluginCreator___pluginOptions___siteUrl',
-  PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
   PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
@@ -2438,6 +2443,11 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsDisplay = 'pluginCreator___pluginOptions___display',
   PluginCreatorPluginOptionsIcon = 'pluginCreator___pluginOptions___icon',
   PluginCreatorPluginOptionsPrecachePages = 'pluginCreator___pluginOptions___precachePages',
+  PluginCreatorPluginOptionsQuery = 'pluginCreator___pluginOptions___query',
+  PluginCreatorPluginOptionsFeeds = 'pluginCreator___pluginOptions___feeds',
+  PluginCreatorPluginOptionsFeedsQuery = 'pluginCreator___pluginOptions___feeds___query',
+  PluginCreatorPluginOptionsFeedsOutput = 'pluginCreator___pluginOptions___feeds___output',
+  PluginCreatorPluginOptionsFeedsTitle = 'pluginCreator___pluginOptions___feeds___title',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -2634,20 +2644,25 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPluginsId = 'pluginOptions___plugins___id',
   PluginOptionsPluginsName = 'pluginOptions___plugins___name',
   PluginOptionsPluginsVersion = 'pluginOptions___plugins___version',
+  PluginOptionsPluginsPluginOptionsName = 'pluginOptions___plugins___pluginOptions___name',
+  PluginOptionsPluginsPluginOptionsTarget = 'pluginOptions___plugins___pluginOptions___target',
+  PluginOptionsPluginsPluginOptionsRel = 'pluginOptions___plugins___pluginOptions___rel',
   PluginOptionsPluginsPluginOptionsWrapperStyle = 'pluginOptions___plugins___pluginOptions___wrapperStyle',
   PluginOptionsPluginsPluginOptionsMaxWidth = 'pluginOptions___plugins___pluginOptions___maxWidth',
-  PluginOptionsPluginsPluginOptionsQuality = 'pluginOptions___plugins___pluginOptions___quality',
   PluginOptionsPluginsPluginOptionsLinkImagesToOriginal = 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal',
+  PluginOptionsPluginsPluginOptionsWithWebp = 'pluginOptions___plugins___pluginOptions___withWebp',
   PluginOptionsPluginsBrowserApIs = 'pluginOptions___plugins___browserAPIs',
   PluginOptionsPluginsSsrApIs = 'pluginOptions___plugins___ssrAPIs',
+  PluginOptionsName = 'pluginOptions___name',
+  PluginOptionsTarget = 'pluginOptions___target',
+  PluginOptionsRel = 'pluginOptions___rel',
   PluginOptionsWrapperStyle = 'pluginOptions___wrapperStyle',
   PluginOptionsAliasesCs = 'pluginOptions___aliases___cs',
   PluginOptionsAliasesPosh = 'pluginOptions___aliases___posh',
   PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
-  PluginOptionsQuality = 'pluginOptions___quality',
   PluginOptionsLinkImagesToOriginal = 'pluginOptions___linkImagesToOriginal',
+  PluginOptionsWithWebp = 'pluginOptions___withWebp',
   PluginOptionsSiteUrl = 'pluginOptions___siteUrl',
-  PluginOptionsName = 'pluginOptions___name',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsShortName = 'pluginOptions___short_name',
   PluginOptionsStartUrl = 'pluginOptions___start_url',
@@ -2656,6 +2671,11 @@ export enum SitePluginFieldsEnum {
   PluginOptionsDisplay = 'pluginOptions___display',
   PluginOptionsIcon = 'pluginOptions___icon',
   PluginOptionsPrecachePages = 'pluginOptions___precachePages',
+  PluginOptionsQuery = 'pluginOptions___query',
+  PluginOptionsFeeds = 'pluginOptions___feeds',
+  PluginOptionsFeedsQuery = 'pluginOptions___feeds___query',
+  PluginOptionsFeedsOutput = 'pluginOptions___feeds___output',
+  PluginOptionsFeedsTitle = 'pluginOptions___feeds___title',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -2777,13 +2797,15 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 export type SitePluginPluginOptions = {
   readonly __typename?: 'SitePluginPluginOptions',
   readonly plugins: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsPlugins>>>,
+  readonly name: Maybe<Scalars['String']>,
+  readonly target: Maybe<Scalars['String']>,
+  readonly rel: Maybe<Scalars['String']>,
   readonly wrapperStyle: Maybe<Scalars['String']>,
   readonly aliases: Maybe<SitePluginPluginOptionsAliases>,
   readonly maxWidth: Maybe<Scalars['Int']>,
-  readonly quality: Maybe<Scalars['Int']>,
   readonly linkImagesToOriginal: Maybe<Scalars['Boolean']>,
+  readonly withWebp: Maybe<Scalars['Boolean']>,
   readonly siteUrl: Maybe<Scalars['String']>,
-  readonly name: Maybe<Scalars['String']>,
   readonly path: Maybe<Scalars['String']>,
   readonly short_name: Maybe<Scalars['String']>,
   readonly start_url: Maybe<Scalars['String']>,
@@ -2792,6 +2814,8 @@ export type SitePluginPluginOptions = {
   readonly display: Maybe<Scalars['String']>,
   readonly icon: Maybe<Scalars['String']>,
   readonly precachePages: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly query: Maybe<Scalars['String']>,
+  readonly feeds: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsFeeds>>>,
   readonly pathCheck: Maybe<Scalars['Boolean']>,
 };
 
@@ -2806,15 +2830,34 @@ export type SitePluginPluginOptionsAliasesFilterInput = {
   readonly posh: Maybe<StringQueryOperatorInput>,
 };
 
+export type SitePluginPluginOptionsFeeds = {
+  readonly __typename?: 'SitePluginPluginOptionsFeeds',
+  readonly query: Maybe<Scalars['String']>,
+  readonly output: Maybe<Scalars['String']>,
+  readonly title: Maybe<Scalars['String']>,
+};
+
+export type SitePluginPluginOptionsFeedsFilterInput = {
+  readonly query: Maybe<StringQueryOperatorInput>,
+  readonly output: Maybe<StringQueryOperatorInput>,
+  readonly title: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsFeedsFilterListInput = {
+  readonly elemMatch: Maybe<SitePluginPluginOptionsFeedsFilterInput>,
+};
+
 export type SitePluginPluginOptionsFilterInput = {
   readonly plugins: Maybe<SitePluginPluginOptionsPluginsFilterListInput>,
+  readonly name: Maybe<StringQueryOperatorInput>,
+  readonly target: Maybe<StringQueryOperatorInput>,
+  readonly rel: Maybe<StringQueryOperatorInput>,
   readonly wrapperStyle: Maybe<StringQueryOperatorInput>,
   readonly aliases: Maybe<SitePluginPluginOptionsAliasesFilterInput>,
   readonly maxWidth: Maybe<IntQueryOperatorInput>,
-  readonly quality: Maybe<IntQueryOperatorInput>,
   readonly linkImagesToOriginal: Maybe<BooleanQueryOperatorInput>,
+  readonly withWebp: Maybe<BooleanQueryOperatorInput>,
   readonly siteUrl: Maybe<StringQueryOperatorInput>,
-  readonly name: Maybe<StringQueryOperatorInput>,
   readonly path: Maybe<StringQueryOperatorInput>,
   readonly short_name: Maybe<StringQueryOperatorInput>,
   readonly start_url: Maybe<StringQueryOperatorInput>,
@@ -2823,6 +2866,8 @@ export type SitePluginPluginOptionsFilterInput = {
   readonly display: Maybe<StringQueryOperatorInput>,
   readonly icon: Maybe<StringQueryOperatorInput>,
   readonly precachePages: Maybe<StringQueryOperatorInput>,
+  readonly query: Maybe<StringQueryOperatorInput>,
+  readonly feeds: Maybe<SitePluginPluginOptionsFeedsFilterListInput>,
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>,
 };
 
@@ -2853,11 +2898,14 @@ export type SitePluginPluginOptionsPluginsFilterListInput = {
 
 export type SitePluginPluginOptionsPluginsPluginOptions = {
   readonly __typename?: 'SitePluginPluginOptionsPluginsPluginOptions',
+  readonly name: Maybe<Scalars['String']>,
+  readonly target: Maybe<Scalars['String']>,
+  readonly rel: Maybe<Scalars['String']>,
   readonly wrapperStyle: Maybe<Scalars['String']>,
   readonly aliases: Maybe<SitePluginPluginOptionsPluginsPluginOptionsAliases>,
   readonly maxWidth: Maybe<Scalars['Int']>,
-  readonly quality: Maybe<Scalars['Int']>,
   readonly linkImagesToOriginal: Maybe<Scalars['Boolean']>,
+  readonly withWebp: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsAliases = {
@@ -2872,11 +2920,14 @@ export type SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput = {
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
+  readonly name: Maybe<StringQueryOperatorInput>,
+  readonly target: Maybe<StringQueryOperatorInput>,
+  readonly rel: Maybe<StringQueryOperatorInput>,
   readonly wrapperStyle: Maybe<StringQueryOperatorInput>,
   readonly aliases: Maybe<SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput>,
   readonly maxWidth: Maybe<IntQueryOperatorInput>,
-  readonly quality: Maybe<IntQueryOperatorInput>,
   readonly linkImagesToOriginal: Maybe<BooleanQueryOperatorInput>,
+  readonly withWebp: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginSortInput = {
@@ -2891,6 +2942,7 @@ export type SiteSiteMetadata = {
   readonly keywords: Maybe<Scalars['String']>,
   readonly siteUrl: Maybe<Scalars['String']>,
   readonly author: Maybe<SiteSiteMetadataAuthor>,
+  readonly social: Maybe<SiteSiteMetadataSocial>,
 };
 
 export type SiteSiteMetadataAuthor = {
@@ -2910,6 +2962,20 @@ export type SiteSiteMetadataFilterInput = {
   readonly keywords: Maybe<StringQueryOperatorInput>,
   readonly siteUrl: Maybe<StringQueryOperatorInput>,
   readonly author: Maybe<SiteSiteMetadataAuthorFilterInput>,
+  readonly social: Maybe<SiteSiteMetadataSocialFilterInput>,
+};
+
+export type SiteSiteMetadataSocial = {
+  readonly __typename?: 'SiteSiteMetadataSocial',
+  readonly github: Maybe<Scalars['String']>,
+  readonly instagram: Maybe<Scalars['String']>,
+  readonly linkedin: Maybe<Scalars['String']>,
+};
+
+export type SiteSiteMetadataSocialFilterInput = {
+  readonly github: Maybe<StringQueryOperatorInput>,
+  readonly instagram: Maybe<StringQueryOperatorInput>,
+  readonly linkedin: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
@@ -2967,6 +3033,23 @@ export type BlogListerQuery = (
       ) }
     )> }
   ) }
+);
+
+export type FooterQueryVariables = {};
+
+
+export type FooterQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly site: Maybe<(
+    { readonly __typename?: 'Site' }
+    & { readonly siteMetadata: Maybe<(
+      { readonly __typename?: 'SiteSiteMetadata' }
+      & { readonly social: Maybe<(
+        { readonly __typename?: 'SiteSiteMetadataSocial' }
+        & Pick<SiteSiteMetadataSocial, 'github' | 'instagram' | 'linkedin'>
+      )> }
+    )> }
+  )> }
 );
 
 export type NavigationQueryVariables = {};

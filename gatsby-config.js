@@ -10,6 +10,11 @@ module.exports = {
     author: {
       name: 'Rick van Dam',
       url: 'https://github.com/barsonax'
+    },
+    social: {
+      github: "Barsonax",
+      instagram: "rickthephotogrammer",
+      linkedin: "rick-van-dam-8369b264"
     }
   },
   plugins: [
@@ -22,6 +27,13 @@ module.exports = {
             options: {
               name: 'images',
             },
+          },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_self",
+              rel: "nofollow"
+            }
           },
           {
             resolve: 'gatsby-remark-responsive-iframe',
@@ -38,6 +50,7 @@ module.exports = {
               },
             }
           },
+          `gatsby-plugin-catch-links`,
           'gatsby-remark-copy-linked-files',
           {
             resolve: 'gatsby-remark-images',

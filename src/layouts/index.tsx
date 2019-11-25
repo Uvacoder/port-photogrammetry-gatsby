@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import 'normalize.css'
 
 import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 
 interface StaticQueryProps {
   site: {
