@@ -2423,6 +2423,7 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsPluginsId = 'pluginCreator___pluginOptions___plugins___id',
   PluginCreatorPluginOptionsPluginsName = 'pluginCreator___pluginOptions___plugins___name',
   PluginCreatorPluginOptionsPluginsVersion = 'pluginCreator___pluginOptions___plugins___version',
+  PluginCreatorPluginOptionsPluginsNodeApIs = 'pluginCreator___pluginOptions___plugins___nodeAPIs',
   PluginCreatorPluginOptionsPluginsBrowserApIs = 'pluginCreator___pluginOptions___plugins___browserAPIs',
   PluginCreatorPluginOptionsPluginsSsrApIs = 'pluginCreator___pluginOptions___plugins___ssrAPIs',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
@@ -2651,6 +2652,7 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPluginsPluginOptionsMaxWidth = 'pluginOptions___plugins___pluginOptions___maxWidth',
   PluginOptionsPluginsPluginOptionsLinkImagesToOriginal = 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal',
   PluginOptionsPluginsPluginOptionsWithWebp = 'pluginOptions___plugins___pluginOptions___withWebp',
+  PluginOptionsPluginsNodeApIs = 'pluginOptions___plugins___nodeAPIs',
   PluginOptionsPluginsBrowserApIs = 'pluginOptions___plugins___browserAPIs',
   PluginOptionsPluginsSsrApIs = 'pluginOptions___plugins___ssrAPIs',
   PluginOptionsName = 'pluginOptions___name',
@@ -2878,6 +2880,7 @@ export type SitePluginPluginOptionsPlugins = {
   readonly name: Maybe<Scalars['String']>,
   readonly version: Maybe<Scalars['String']>,
   readonly pluginOptions: Maybe<SitePluginPluginOptionsPluginsPluginOptions>,
+  readonly nodeAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
   readonly browserAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
   readonly ssrAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
 };
@@ -2888,6 +2891,7 @@ export type SitePluginPluginOptionsPluginsFilterInput = {
   readonly name: Maybe<StringQueryOperatorInput>,
   readonly version: Maybe<StringQueryOperatorInput>,
   readonly pluginOptions: Maybe<SitePluginPluginOptionsPluginsPluginOptionsFilterInput>,
+  readonly nodeAPIs: Maybe<StringQueryOperatorInput>,
   readonly browserAPIs: Maybe<StringQueryOperatorInput>,
   readonly ssrAPIs: Maybe<StringQueryOperatorInput>,
 };
@@ -3014,7 +3018,7 @@ export type BlogListerQuery = (
           & Pick<MarkdownRemarkFields, 'slug'>
         )>, readonly frontmatter: Maybe<(
           { readonly __typename?: 'Frontmatter' }
-          & Pick<Frontmatter, 'title' | 'date' | 'tags' | 'categories' | 'description'>
+          & Pick<Frontmatter, 'title' | 'draft' | 'date' | 'tags' | 'categories' | 'description'>
           & { readonly featuredImage: Maybe<(
             { readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage' }
             & Pick<MarkdownRemarkFrontmatterFeaturedImage, 'description'>

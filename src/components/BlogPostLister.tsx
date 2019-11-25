@@ -15,6 +15,7 @@ query BlogLister {
         }
         frontmatter {
           title
+          draft
           date(formatString: "D-MM-YYYY")
           tags
           categories
@@ -40,26 +41,31 @@ query BlogLister {
   }
 }
 `
+interface BlogListerProps {
+  category?: string
+}
 
-const BlogLister: React.FC = () => (
+const BlogLister: React.FC<BlogListerProps> = (props) => (
   <StaticQuery
     query={ComponentQuery}
     render={(data: BlogListerQuery) => (<>
       {data.allMarkdownRemark.edges.map(post => {
-        var blogImage = post.node.frontmatter?.featuredImage?.src?.childImageSharp?.fixed;
-        return <Link className="card blog-card" to={post.node.fields!.slug!}>
-          {blogImage !== null && blogImage !== undefined && <Img className="card-img-container" fixed={ToFixed(blogImage)} alt={post.node.frontmatter?.featuredImage?.description!} />}
-          <article className="card-body">
-            <h2 className="card-title">{post.node.frontmatter!.title}</h2>
-            <p className="card-text">{post.node.frontmatter!.description ?? post.node.excerpt}</p>
-            <div className="card-subtext muted-text">
-              <PostDate date={post.node.frontmatter!.date}></PostDate>
-              <p>
-                {post.node.frontmatter!.categories?.map(x => `#${x}`)}
-              </p>
-            </div>
-          </article>
-        </Link>;
+        if (post.node.frontmatter?.draft !== true && (props.category === undefined || post.node.frontmatter?.categories?.includes(props.category!))) {
+          var blogImage = post.node.frontmatter?.featuredImage?.src?.childImageSharp?.fixed;
+          return <Link className="card blog-card" to={post.node.fields!.slug!}>
+            {blogImage !== null && blogImage !== undefined && <Img className="card-img-container" fixed={ToFixed(blogImage)} alt={post.node.frontmatter?.featuredImage?.description!} />}
+            <article className="card-body">
+              <h2 className="card-title">{post.node.frontmatter!.title}</h2>
+              <p className="card-text">{post.node.frontmatter!.description ?? post.node.excerpt}</p>
+              <div className="card-subtext muted-text">
+                <PostDate date={post.node.frontmatter!.date}></PostDate>
+                <p>
+                  {post.node.frontmatter!.categories?.map(x => `#${x}`)}
+                </p>
+              </div>
+            </article>
+          </Link>;
+        }
       })}
     </>)}
   />
