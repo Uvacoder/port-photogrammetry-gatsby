@@ -1,6 +1,5 @@
 ---
 title: "About Me"
-draft: false
 ---
 
 Hi. I'm Rick van Dam and this is my blog.

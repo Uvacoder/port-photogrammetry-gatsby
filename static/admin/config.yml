@@ -15,11 +15,42 @@ collections:
     create: true
     delete: true
     slug: "{{title}}"
+    preview_path: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Categories", name: "categories", widget: "list"}
+      - label: "FeaturedImage"
+        name: "featuredImage"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "Src", name: "src", widget: "image"}
+          - {label: "Alt", name: "description", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+  - name: "About Page"
+    label: "about"
+    file: "content/About me.md"
+    slug: "{{title}}"
+    preview_path: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "FeaturedImage"
+        name: "featuredImage"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "Src", name: "src", widget: "image"}
+          - {label: "Alt", name: "description", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+  - name: "404 Page"
+    label: "404"
+    file: "content/404.md"
+    slug: "{{title}}"
+    preview_path: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
       - label: "FeaturedImage"
         name: "featuredImage"
         widget: "object"
