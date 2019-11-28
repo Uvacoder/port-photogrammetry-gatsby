@@ -8,8 +8,15 @@ import Image from "gatsby-image"
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 
+import { Disqus } from 'gatsby-plugin-disqus'
+
 interface PageTemplateProps {
   data: {
+    site: {
+      siteMetadata: {
+        siteUrl: string
+      }
+    }
     markdownRemark: {
       html: string
       excerpt: string
@@ -32,6 +39,11 @@ interface PageTemplateProps {
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   var blogImage = data.markdownRemark.frontmatter.featuredImage?.src.childImageSharp.fluid;
   var date = data.markdownRemark.frontmatter.date;
+  let disqusConfig = {
+    url: `${data.site.siteMetadata.siteUrl + location.pathname}`,
+    identifier: location.pathname,
+    title: data.markdownRemark.frontmatter.title,
+  }
   return (<>
     <IndexLayout></IndexLayout>
     <Main className="content side-text-padding">
@@ -44,6 +56,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
         </header>
         {blogImage !== null && blogImage !== undefined && <Image fluid={blogImage} alt={data.markdownRemark.frontmatter.featuredImage.description} />}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        <Disqus config={disqusConfig} />
       </article>
     </Main>
     <Footer></Footer>
@@ -54,6 +67,11 @@ export default PageTemplate
 
 export const query = graphql`
 query PageTemplate($slug: String!) {
+  site {
+    siteMetadata {
+      siteUrl
+    }
+  }
   markdownRemark(fields: {slug: {eq: $slug}}) {
     html
     excerpt

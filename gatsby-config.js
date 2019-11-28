@@ -159,6 +159,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `barsonaxblog`
+      }
+    },
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-netlify`,
   ]
