@@ -3,12 +3,13 @@ import { graphql } from 'gatsby'
 
 import IndexLayout from '../layouts'
 import PostDate from '../components/PostDate'
-import { FluidObject } from 'gatsby-image'
+import { FluidObject, FixedObject } from 'gatsby-image'
 import Image from "gatsby-image"
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 
 import { Disqus } from 'gatsby-plugin-disqus'
+import BlogCard from '../components/BlogCard'
 
 interface PageTemplateProps {
   data: {
@@ -33,8 +34,35 @@ interface PageTemplateProps {
         }
       }
     }
+    sitePage: {
+      context: {
+        previous: {
+          node: {
+            fields: {
+              slug: string
+            }
+            frontmatter: {
+              title: string
+              date: string
+              categories: string[]
+              description: string
+              featuredImage: {
+                description: string
+                src: {
+                  childImageSharp: {
+                    fixed: FixedObject
+                  }
+                }
+              }
+            }
+            excerpt: string
+          }
+        }
+      }
+    }
   }
 }
+
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   var blogImage = data.markdownRemark.frontmatter.featuredImage?.src.childImageSharp.fluid;
@@ -59,6 +87,18 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
         <Disqus config={disqusConfig} />
       </article>
     </Main>
+    <nav className="end-nav side-padding">
+      {data.sitePage.context.previous !== null && <BlogCard
+        title={data.sitePage.context.previous.node.frontmatter.title}
+        slug={data.sitePage.context.previous.node.fields.slug}
+        description={data.sitePage.context.previous.node.frontmatter.description!}
+        excerpt={data.sitePage.context.previous.node.excerpt} date={data.sitePage.context.previous.node.frontmatter.date}
+        categories={data.sitePage.context.previous.node.frontmatter.categories!}
+        blogImage={data.sitePage.context.previous.node.frontmatter.featuredImage?.src.childImageSharp.fixed}
+        blogImageDescription={data.sitePage.context.previous.node.frontmatter.featuredImage?.description!}>
+      </BlogCard>}
+    </nav>
+
     <Footer></Footer>
   </>)
 }
@@ -92,6 +132,39 @@ query PageTemplate($slug: String!) {
               base64
             }
           }
+        }
+      }
+    }
+  }
+  sitePage(context: {slug: {eq: $slug}}) {
+    context {
+      previous {
+        node {
+          fields {
+            slug
+          }
+        frontmatter {
+          title
+          draft
+          date
+          categories
+          description
+          featuredImage {
+            description
+            src {
+              childImageSharp {
+                fixed {
+                  srcWebp
+                  srcSetWebp
+                  src
+                  srcSet
+                  base64
+                }
+              }
+            }
+          }
+        }
+        excerpt
         }
       }
     }
