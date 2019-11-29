@@ -19,12 +19,14 @@ choco install hugo -confirm
 
 \`\``
 
-Hugo delivers on the build performance they promise as well. Generating your site is almost instant and probably faster than any other static site generator. However when it comes to customizing your site it fares a bit worse. There less options here but you can do quite a bit if you learn how Hugo templates work.
+Hugo delivers on the build performance they promise as well. Generating your site is almost instant and probably faster than any other static site generator. 
+
+You can make some from scratch with Hugo but its much easier to just choose a [theme](https://themes.gohugo.io/). However when it comes to customizing your site it can be a bit harder. There less options here but you can do quite a bit if you learn how Hugo templates work.
 
 ## Gatsby
 
-[Gatsby](https://www.gatsbyjs.org/) uses [React](https://reactjs.org/) and [Graphql](https://graphql.org/) to build your site. As such its quite easy to customize your site or even build it from scratch. There are also a huge amount of plugins which can do all kind of useful things such as SEO, image processing etc. 
+[Gatsby](https://www.gatsbyjs.org/) uses [React](https://reactjs.org/) and [Graphql](https://graphql.org/) to build your site. As such its quite easy to customize your site or even build it from scratch. There are also a huge amount of plugins which can do all kind of useful things such as SEO, image processing, code highlighting etc. 
 
-Did I already mention the performance of gatsby? No no not the build performance as that falls a bit between Jekyll and Hugo iam talking about the performance of the generated site. Maybe you already noticed that my blog loads almost instantly and this is among other things thanks to Gatsby.
+Did I already mention the performance of gatsby? No no not the build performance as that falls a bit between Jekyll and Hugo iam talking about the performance of the generated site. Maybe you already noticed that my blog loads almost instantly and this is among other things is thanks to Gatsby.
 
 Working with gatsby does mean you have to learn React and Grahpql but I don't necessarily view this as a bad thing as these technologies are quite popular and thus worth to learn.
