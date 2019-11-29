@@ -23,4 +23,6 @@ Hugo delivers on the build performance they promise as well. Generating your sit
 
 ## Gatsby
 
-[Gatsby](https://www.gatsbyjs.org/) uses [React](https://reactjs.org/) to build your site.
+[Gatsby](https://www.gatsbyjs.org/) uses [React](https://reactjs.org/) to build your site. As such its quite easy to customize your site or even build it from scratch. There are also a huge amount of plugins which can do all kind of useful things such as SEO, image processing etc. 
+
+Did I already mention the performance of gatsby? No no not the build performance as that falls a bit between Jekyll and Hugo iam talking about the performance of the generated site. Maybe your already noticed that my blog loads almost instantly.
