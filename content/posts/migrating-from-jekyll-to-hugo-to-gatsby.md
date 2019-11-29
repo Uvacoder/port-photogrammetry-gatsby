@@ -29,4 +29,6 @@ You can make some from scratch with Hugo but its much easier to just choose a [t
 
 Did I already mention the performance of gatsby? No no not the build performance as that falls a bit between Jekyll and Hugo iam talking about the performance of the generated site. Maybe you already noticed that my blog loads almost instantly and this is among other things is thanks to Gatsby.
 
-Working with gatsby does mean you have to learn React and Grahpql but I don't necessarily view this as a bad thing as these technologies are quite popular and thus worth to learn.
+Working with gatsby does mean you have to learn React and Grahpql but I don't necessarily view this as a bad thing as these technologies are quite popular and thus worth it to learn.
+
+If you want to get a gatsby site up and running fast you can pick one of the [starters](https://www.gatsbyjs.org/starters/?v=2) which you can deploy to [netlify](https://www.netlify.com/) easily by clicking on Netlify (next to Try this starter).
