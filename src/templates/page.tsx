@@ -35,6 +35,7 @@ interface PageTemplateProps {
       }
     }
     sitePage: {
+      path: string
       context: {
         previous: {
           node: {
@@ -68,8 +69,8 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   var blogImage = data.markdownRemark.frontmatter.featuredImage?.src.childImageSharp.fluid;
   var date = data.markdownRemark.frontmatter.date;
   let disqusConfig = {
-    url: `${data.site.siteMetadata.siteUrl + location.pathname}`,
-    identifier: location.pathname,
+    url: `${data.site.siteMetadata.siteUrl + data.sitePage.path}`,
+    identifier: data.sitePage.path,
     title: data.markdownRemark.frontmatter.title,
   }
   return (<>
@@ -137,6 +138,7 @@ query PageTemplate($slug: String!) {
     }
   }
   sitePage(context: {slug: {eq: $slug}}) {
+    path
     context {
       previous {
         node {

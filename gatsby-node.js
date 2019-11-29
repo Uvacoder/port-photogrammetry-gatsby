@@ -130,8 +130,6 @@ exports.createPages = async ({ graphql, actions }) => {
     return acc
   }, {})
 
-  console.log(JSON.stringify(publishedArticles))
-
   articles.forEach(({ node }) => {
     const { slug, layout } = node.fields
 
