@@ -32,3 +32,5 @@ Did I already mention the performance of gatsby? No no not the build performance
 Working with gatsby does mean you have to learn React and Grahpql but I don't necessarily view this as a bad thing as these technologies are quite popular and thus worth it to learn.
 
 If you want to get a gatsby site up and running fast you can pick one of the [starters](https://www.gatsbyjs.org/starters/?v=2) which you can deploy to [netlify](https://www.netlify.com/) easily by clicking on Netlify (next to Try this starter).
+
+And now iam done with migrating my blog to another generator :).
