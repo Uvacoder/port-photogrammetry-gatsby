@@ -6,7 +6,7 @@ module.exports = {
     title: 'The Photogrammer',
     description: 'A blog about coding and photography',
     keywords: 'programming, photography',
-    siteUrl: 'https://lucid-noether-af1c61.netlify.com',
+    siteUrl: 'https://the-photographing-programmer.com/',
     author: {
       name: 'Rick van Dam',
       url: 'https://github.com/barsonax'
@@ -67,7 +67,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://lucid-noether-af1c61.netlify.com'
+        siteUrl: 'https://the-photographing-programmer.com/'
       }
     },
     {
