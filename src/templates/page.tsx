@@ -95,7 +95,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
         description={data.sitePage.context.previous.node.frontmatter.description!}
         excerpt={data.sitePage.context.previous.node.excerpt} date={data.sitePage.context.previous.node.frontmatter.date}
         categories={data.sitePage.context.previous.node.frontmatter.categories!}
-        blogImage={data.sitePage.context.previous.node.frontmatter.featuredImage?.src.childImageSharp.fixed}
+        blogImage={data.sitePage.context.previous.node.frontmatter.featuredImage?.src?.childImageSharp.fixed}
         blogImageDescription={data.sitePage.context.previous.node.frontmatter.featuredImage?.description!}>
       </BlogCard>}
     </nav>
