@@ -14,11 +14,7 @@ Some time ago I decided to start switch from Jekyll to another static site gener
 
 As I wanted a easy to setup development environment [Hugo](https://gohugo.io/) seemed like logical choice and it was. Hugo is just a binary file and they even provide a [chocolatey](https://chocolatey.org/) package:
 
-\`\``posh
-
-choco install hugo -confirm
-
-\`\``
+`choco install hugo -confirm`
 
 Hugo delivers on the build performance they promise as well. Generating your site is almost instant and probably faster than any other static site generator. 
 
