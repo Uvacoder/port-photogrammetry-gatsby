@@ -11,7 +11,7 @@ Some time ago I decided to start switch from Jekyll to another static site gener
 
 ## Hugo
 
-As I wanted a easy to setup development environment [Hugo](https://gohugo.io/) seemed like logical choice and it was. Hugo is just a binary file and the even provide a [chocolatey](https://chocolatey.org/) package:
+As I wanted a easy to setup development environment [Hugo](https://gohugo.io/) seemed like logical choice and it was. Hugo is just a binary file and they even provide a [chocolatey](https://chocolatey.org/) package:
 
 \`\``posh
 
