@@ -66,7 +66,7 @@ interface PageTemplateProps {
 
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
-  var blogImage = data.markdownRemark.frontmatter.featuredImage?.src.childImageSharp.fluid;
+  var blogImage = data.markdownRemark.frontmatter.featuredImage?.src?.childImageSharp.fluid;
   var date = data.markdownRemark.frontmatter.date;
   let disqusConfig = {
     url: `${data.site.siteMetadata.siteUrl + data.sitePage.path}`,
