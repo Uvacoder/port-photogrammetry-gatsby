@@ -19,7 +19,7 @@ choco install hugo -confirm
 
 \`\``
 
-Hugo delivers on the build performance they promise as well. Generating your site is almost instant. However when it comes to customizing your site it fares a bit worse. There less options here but you can do quite a bit if you learn how Hugo templates work.
+Hugo delivers on the build performance they promise as well. Generating your site is almost instant and probably faster than any other static site generator. However when it comes to customizing your site it fares a bit worse. There less options here but you can do quite a bit if you learn how Hugo templates work.
 
 ## Gatsby
 
