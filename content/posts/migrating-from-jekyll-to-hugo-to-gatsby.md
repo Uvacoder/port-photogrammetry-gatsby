@@ -25,7 +25,7 @@ You can make some from scratch with Hugo but its much easier to just choose a [t
 
 ## Gatsby
 
-[Gatsby](https://www.gatsbyjs.org/) uses [React](https://reactjs.org/) and [Graphql](https://graphql.org/) to build your site. As such its quite easy to customize your site or even build it from scratch. There are also a huge amount of plugins which can do all kind of useful things such as SEO, image processing, code highlighting etc. Compared to Jekyll and Hugo I believe that Gatsby is the easiest to customize and brings in the most functionality. Everything is on npm so installing is not hard either but Gatsby also requires [Nodejs](https://nodejs.org/en/).
+[Gatsby](https://www.gatsbyjs.org/) uses [React](https://reactjs.org/) and [Graphql](https://graphql.org/) to build your site. As such its quite easy to customize your site or even build it from scratch. There are also a huge amount of plugins which can do all kind of useful things such as SEO, image processing, PWA, code highlighting etc. Compared to Jekyll and Hugo I believe that Gatsby is the easiest to customize and brings in the most functionality. Everything is on npm so installing is not hard either but Gatsby also requires [Nodejs](https://nodejs.org/en/).
 
 Did I already mention the performance of gatsby? No no not the build performance as that falls a bit between Jekyll and Hugo iam talking about the performance of the generated site. Maybe you already noticed that my blog loads almost instantly and this is among other things is thanks to Gatsby.
 
