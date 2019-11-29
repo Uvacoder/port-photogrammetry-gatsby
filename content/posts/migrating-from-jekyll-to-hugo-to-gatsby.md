@@ -19,6 +19,8 @@ choco install hugo -confirm
 
 \`\``
 
-Hugo delivers on the build performance they promise as well. Generating your site is almost instant.
+Hugo delivers on the build performance they promise as well. Generating your site is almost instant. However when it comes to customizing your site it fares a bit worse. There less options here but you can do quite a bit if you learn how Hugo templates work.
 
 ## Gatsby
+
+[Gatsby](https://www.gatsbyjs.org/) uses [React](https://reactjs.org/) to build your site.
