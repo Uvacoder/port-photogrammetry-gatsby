@@ -1,6 +1,7 @@
 ---
 title: Migrating from Jekyll to Hugo to Gatsby
 date: 2019-11-29T22:47:33.653Z
+description: Migrations.... migrations.... migrations....
 categories:
   - Programming
 featuredImage:
