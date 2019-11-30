@@ -18,7 +18,7 @@ As I wanted a easy to setup development environment [Hugo](https://gohugo.io/) s
 choco install hugo -confirm
 ```
 
-Hugo delivers on the build performance they promise as well. Generating your site is almost instant and probably faster than any other static site generator. 
+Hugo delivers on the build performance they promise as well. As Hugo is written in Go generating your site is almost instant and probably faster than any other static site generator. 
 
 You can make a site from scratch with Hugo but its much easier to just choose a [theme](https://themes.gohugo.io/). However when it comes to customizing your site it can be a bit harder. There less options here but you can do quite a bit if you learn how Hugo templates work. All things considered I was still quite happy with Hugo but in the end I did want to more easily customize my site.
 
