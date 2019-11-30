@@ -12,10 +12,14 @@ exports.createSchemaCustomization = ({ actions }) => {
     name: 'fileByDataPath',
     extend: () => ({
       resolve: function (featureImage, args, context, info) {
-        const partialPath = featureImage.src
+        let partialPath = featureImage.src
         if (!partialPath) {
           return null
         }
+        if (partialPath.charAt(0) === '/') {
+          partialPath = partialPath.substring(1)
+        }
+
         const regex = "/(/static/" + partialPath + ")/"
         const fileNode = context.nodeModel.runQuery({
           firstOnly: true,
@@ -43,7 +47,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       src: File @fileByDataPath
     }
     type Frontmatter @infer {
-      featureImage: MarkdownRemarkFrontmatterFeaturedImage
+      featuredImage: MarkdownRemarkFrontmatterFeaturedImage
     }
     type MarkdownRemark implements Node @infer {
       frontmatter: Frontmatter
