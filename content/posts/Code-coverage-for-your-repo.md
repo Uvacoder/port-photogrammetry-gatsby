@@ -1,9 +1,10 @@
 ---
 title: Code coverage for your repo
-date: 2018-11-07T20:48:51+02:00
-tags: [devops,unittest]
-categories: [Programming]
-draft: false
+date: 2018-11-07T18:48:51.000Z
+categories:
+  - Programming
+featuredImage:
+  src: /images/stephen-dawson-qwtcej5clys-unsplash.jpg
 ---
 
 ## Which unit tests am I missing?
