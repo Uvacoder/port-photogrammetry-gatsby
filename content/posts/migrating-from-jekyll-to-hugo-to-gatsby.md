@@ -6,7 +6,7 @@ categories:
   - Programming
 featuredImage:
   description: ''
-  src: ''
+  src: /images/john-fornander-raullausmry-unsplash.jpg
 ---
 Some time ago I decided to start switch from Jekyll to another static site generator. My main reason was that is was more work than I would like to setup a development environment for Jekyll on windows as it involved getting a working ruby environment.
 
