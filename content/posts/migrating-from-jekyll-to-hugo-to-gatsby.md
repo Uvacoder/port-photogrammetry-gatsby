@@ -32,4 +32,4 @@ Working with gatsby does mean you have to learn React and Grahpql but I don't ne
 
 If you want to get a gatsby site up and running fast you can pick one of the [starters](https://www.gatsbyjs.org/starters/?v=2) which you can deploy to [netlify](https://www.netlify.com/) easily by clicking on Netlify (next to Try this starter).
 
-And now iam done with migrating my blog to another generator :).
+And now I'am done with migrating my blog to yet another generator :).
