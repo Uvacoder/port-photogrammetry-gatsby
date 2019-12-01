@@ -2,7 +2,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "forestry:preview": "gatsby develop --port 8080",
+    "forestry:preview": "gatsby develop --port 8080 -H 0.0.0.0",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "start": "npm run dev",
     "test": "npm run type-check && npm run lint",
