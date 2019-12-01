@@ -5,10 +5,10 @@ admin_path: static/admin
 webhook_url: 
 sections:
 - type: document
-  path: content/404.md
+  path: content/pages/404.md
   label: '404'
 - type: document
-  path: content/about-me.md
+  path: content/pages/about-me.md
   label: About me
 - type: directory
   path: content/posts
