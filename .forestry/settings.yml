@@ -4,6 +4,14 @@ auto_deploy: false
 admin_path: static/admin
 webhook_url: 
 sections:
+- type: document
+  path: content/404.md
+  label: '404'
+  match: "**/*"
+- type: document
+  path: content/about-me.md
+  label: About me
+  match: "**/*"
 - type: directory
   path: content/posts
   label: Posts
