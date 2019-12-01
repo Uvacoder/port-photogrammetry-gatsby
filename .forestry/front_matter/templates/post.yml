@@ -27,6 +27,3 @@ fields:
 - type: text
   name: description
   label: description
-- type: boolean
-  name: dropcap
-  label: dropcap
