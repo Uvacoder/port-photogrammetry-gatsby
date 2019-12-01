@@ -7,8 +7,10 @@ sections:
 - type: directory
   path: content/pages
   label: Pages
-  create: documents
+  create: none
   match: "**/*"
+  templates:
+  - pages
 - type: directory
   path: content/posts
   label: Posts
