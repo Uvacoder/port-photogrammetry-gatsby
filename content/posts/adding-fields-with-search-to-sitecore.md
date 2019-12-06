@@ -7,5 +7,6 @@ featuredImage:
   src: ''
   description: ''
 description: ''
+draft: true
 
 ---
