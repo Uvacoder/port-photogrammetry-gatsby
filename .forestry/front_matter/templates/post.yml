@@ -27,5 +27,8 @@ fields:
 - type: text
   name: description
   label: description
+- name: draft
+  type: boolean
+  label: Draft
 pages:
 - content/posts/adding-fields-with-search-to-sitecore.md
