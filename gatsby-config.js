@@ -100,6 +100,7 @@ module.exports = {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/*`],
+        appendScript: require.resolve(`./src/sw.js`),
       },
     },
     'gatsby-plugin-typescript',
