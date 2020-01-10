@@ -101,9 +101,6 @@ module.exports = {
       options: {
         precachePages: [`/*`],
         appendScript: require.resolve(`./src/sw.js`),
-        workboxConfig: {
-          globPatterns: ['**/*']
-        }
       },
     },
     'gatsby-plugin-typescript',
