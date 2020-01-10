@@ -166,7 +166,6 @@ module.exports = {
         shortname: `barsonaxblog`
       }
     },
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-netlify`,
   ]
 }

@@ -4,7 +4,7 @@ date: 2018-11-07T18:48:51.000Z
 categories:
   - Programming
 featuredImage:
-  src: /images/stephen-dawson-qwtcej5clys-unsplash.jpg
+  src: images/stephen-dawson-qwtcej5clys-unsplash.jpg
 ---
 
 ## Which unit tests am I missing?
