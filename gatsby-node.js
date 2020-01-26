@@ -16,9 +16,6 @@ exports.createSchemaCustomization = ({ actions }) => {
         if (!partialPath) {
           return null
         }
-        if (partialPath.charAt(0) === '/') {
-          partialPath = partialPath.substring(1)
-        }
 
         const regex = "/(/static/" + partialPath + ")/"
         const fileNode = context.nodeModel.runQuery({

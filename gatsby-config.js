@@ -6,7 +6,7 @@ module.exports = {
     title: 'The Photogrammer',
     description: 'A blog about coding and photography',
     keywords: 'programming, photography',
-    siteUrl: 'https://the-photographing-programmer.com/',
+    siteUrl: 'https://the-photographing-programmer.com',
     author: {
       name: 'Rick van Dam',
       url: 'https://github.com/barsonax'
@@ -100,6 +100,7 @@ module.exports = {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/*`],
+        appendScript: require.resolve(`./src/sw.js`),
       },
     },
     'gatsby-plugin-typescript',
@@ -165,7 +166,6 @@ module.exports = {
         shortname: `barsonaxblog`
       }
     },
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-netlify`,
   ]
 }
