@@ -3475,10 +3475,10 @@ export type NavigationQuery = (
   ) }
 );
 
-export type IndexLayoutQueryQueryVariables = {};
+export type IndexLayoutQueryVariables = {};
 
 
-export type IndexLayoutQueryQuery = (
+export type IndexLayoutQuery = (
   { readonly __typename?: 'Query' }
   & { readonly site: Maybe<(
     { readonly __typename?: 'Site' }
