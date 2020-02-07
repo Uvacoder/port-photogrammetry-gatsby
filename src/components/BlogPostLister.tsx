@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { BlogListerQuery } from '../types'
-import { ToFixed } from './ToFluid'
 import BlogCard from './BlogCard'
 
 export const ComponentQuery = graphql`
@@ -22,8 +21,8 @@ query BlogLister {
             description
             src {
               childImageSharp {
-                fixed(height: 170, quality: 50) {
-                  ...GatsbyImageSharpFixed_withWebp
+                fluid(quality: 50) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -45,14 +44,13 @@ const BlogLister: React.FC<BlogListerProps> = (props) => (
     render={(data: BlogListerQuery) => (<>
       {data.allMarkdownRemark.edges.map(post => {
         if (post.node.frontmatter?.draft !== true && (props.category === undefined || post.node.frontmatter?.categories?.includes(props.category!))) {
-          var blogImage = post.node.frontmatter?.featuredImage?.src?.childImageSharp?.fixed;
           return <BlogCard
             title={post.node.frontmatter!.title!}
             slug={post.node.fields!.slug!}
             description={post.node.frontmatter!.description!}
             excerpt={post.node.excerpt!} date={post.node.frontmatter!.date}
             categories={post.node.frontmatter!.categories!}
-            blogImage={blogImage !== null && blogImage !== undefined && ToFixed(blogImage)}
+            blogImage={post.node.frontmatter?.featuredImage?.src?.childImageSharp?.fluid}
             blogImageDescription={post.node.frontmatter?.featuredImage?.description!}>
           </BlogCard>
         }
