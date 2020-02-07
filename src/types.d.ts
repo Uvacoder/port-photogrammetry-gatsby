@@ -6,146 +6,124 @@ export type Scalars = {
   Boolean: boolean,
   Int: number,
   Float: number,
-  /** 
- * A date string, such as 2007-12-03, compliant with the ISO 8601 standard for
-   * representation of dates and times using the Gregorian calendar.
- **/
   Date: any,
-  /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: any,
 };
 
-
-
-
-
-
-
-
-
-
-
-
 export type BooleanQueryOperatorInput = {
-  readonly eq: Maybe<Scalars['Boolean']>,
-  readonly ne: Maybe<Scalars['Boolean']>,
-  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['Boolean']>>>,
-  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Boolean']>>>,
+  readonly eq?: Maybe<Scalars['Boolean']>,
+  readonly ne?: Maybe<Scalars['Boolean']>,
+  readonly in?: Maybe<ReadonlyArray<Maybe<Scalars['Boolean']>>>,
+  readonly nin?: Maybe<ReadonlyArray<Maybe<Scalars['Boolean']>>>,
 };
 
 
 export type DateQueryOperatorInput = {
-  readonly eq: Maybe<Scalars['Date']>,
-  readonly ne: Maybe<Scalars['Date']>,
-  readonly gt: Maybe<Scalars['Date']>,
-  readonly gte: Maybe<Scalars['Date']>,
-  readonly lt: Maybe<Scalars['Date']>,
-  readonly lte: Maybe<Scalars['Date']>,
-  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['Date']>>>,
-  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Date']>>>,
+  readonly eq?: Maybe<Scalars['Date']>,
+  readonly ne?: Maybe<Scalars['Date']>,
+  readonly gt?: Maybe<Scalars['Date']>,
+  readonly gte?: Maybe<Scalars['Date']>,
+  readonly lt?: Maybe<Scalars['Date']>,
+  readonly lte?: Maybe<Scalars['Date']>,
+  readonly in?: Maybe<ReadonlyArray<Maybe<Scalars['Date']>>>,
+  readonly nin?: Maybe<ReadonlyArray<Maybe<Scalars['Date']>>>,
 };
 
 export type Directory = Node & {
   readonly __typename?: 'Directory',
+  readonly sourceInstanceName: Scalars['String'],
+  readonly absolutePath: Scalars['String'],
+  readonly relativePath: Scalars['String'],
+  readonly extension: Scalars['String'],
+  readonly size: Scalars['Int'],
+  readonly prettySize: Scalars['String'],
+  readonly modifiedTime: Scalars['Date'],
+  readonly accessTime: Scalars['Date'],
+  readonly changeTime: Scalars['Date'],
+  readonly birthTime: Scalars['Date'],
+  readonly root: Scalars['String'],
+  readonly dir: Scalars['String'],
+  readonly base: Scalars['String'],
+  readonly ext: Scalars['String'],
+  readonly name: Scalars['String'],
+  readonly relativeDirectory: Scalars['String'],
+  readonly dev: Scalars['Int'],
+  readonly mode: Scalars['Int'],
+  readonly nlink: Scalars['Int'],
+  readonly uid: Scalars['Int'],
+  readonly gid: Scalars['Int'],
+  readonly rdev: Scalars['Int'],
+  readonly ino: Scalars['Float'],
+  readonly atimeMs: Scalars['Float'],
+  readonly mtimeMs: Scalars['Float'],
+  readonly ctimeMs: Scalars['Float'],
+  readonly atime: Scalars['Date'],
+  readonly mtime: Scalars['Date'],
+  readonly ctime: Scalars['Date'],
+  readonly birthtime?: Maybe<Scalars['Date']>,
+  readonly birthtimeMs?: Maybe<Scalars['Float']>,
+  readonly blksize?: Maybe<Scalars['Int']>,
+  readonly blocks?: Maybe<Scalars['Int']>,
   readonly id: Scalars['ID'],
-  readonly parent: Maybe<Node>,
+  readonly parent?: Maybe<Node>,
   readonly children: ReadonlyArray<Node>,
   readonly internal: Internal,
-  readonly sourceInstanceName: Maybe<Scalars['String']>,
-  readonly absolutePath: Maybe<Scalars['String']>,
-  readonly relativePath: Maybe<Scalars['String']>,
-  readonly extension: Maybe<Scalars['String']>,
-  readonly size: Maybe<Scalars['Int']>,
-  readonly prettySize: Maybe<Scalars['String']>,
-  readonly modifiedTime: Maybe<Scalars['Date']>,
-  readonly accessTime: Maybe<Scalars['Date']>,
-  readonly changeTime: Maybe<Scalars['Date']>,
-  readonly birthTime: Maybe<Scalars['Date']>,
-  readonly root: Maybe<Scalars['String']>,
-  readonly dir: Maybe<Scalars['String']>,
-  readonly base: Maybe<Scalars['String']>,
-  readonly ext: Maybe<Scalars['String']>,
-  readonly name: Maybe<Scalars['String']>,
-  readonly relativeDirectory: Maybe<Scalars['String']>,
-  readonly dev: Maybe<Scalars['Int']>,
-  readonly mode: Maybe<Scalars['Int']>,
-  readonly nlink: Maybe<Scalars['Int']>,
-  readonly uid: Maybe<Scalars['Int']>,
-  readonly gid: Maybe<Scalars['Int']>,
-  readonly rdev: Maybe<Scalars['Int']>,
-  readonly ino: Maybe<Scalars['Float']>,
-  readonly atimeMs: Maybe<Scalars['Float']>,
-  readonly mtimeMs: Maybe<Scalars['Float']>,
-  readonly ctimeMs: Maybe<Scalars['Float']>,
-  readonly birthtimeMs: Maybe<Scalars['Float']>,
-  readonly atime: Maybe<Scalars['Date']>,
-  readonly mtime: Maybe<Scalars['Date']>,
-  readonly ctime: Maybe<Scalars['Date']>,
-  readonly birthtime: Maybe<Scalars['Date']>,
 };
 
 
 export type DirectoryModifiedTimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type DirectoryAccessTimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type DirectoryChangeTimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type DirectoryBirthTimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type DirectoryAtimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type DirectoryMtimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type DirectoryCtimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
-};
-
-
-export type DirectoryBirthtimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 export type DirectoryConnection = {
@@ -165,19 +143,52 @@ export type DirectoryConnectionDistinctArgs = {
 
 
 export type DirectoryConnectionGroupArgs = {
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>,
   field: DirectoryFieldsEnum
 };
 
 export type DirectoryEdge = {
   readonly __typename?: 'DirectoryEdge',
-  readonly next: Maybe<Directory>,
+  readonly next?: Maybe<Directory>,
   readonly node: Directory,
-  readonly previous: Maybe<Directory>,
+  readonly previous?: Maybe<Directory>,
 };
 
 export enum DirectoryFieldsEnum {
+  SourceInstanceName = 'sourceInstanceName',
+  AbsolutePath = 'absolutePath',
+  RelativePath = 'relativePath',
+  Extension = 'extension',
+  Size = 'size',
+  PrettySize = 'prettySize',
+  ModifiedTime = 'modifiedTime',
+  AccessTime = 'accessTime',
+  ChangeTime = 'changeTime',
+  BirthTime = 'birthTime',
+  Root = 'root',
+  Dir = 'dir',
+  Base = 'base',
+  Ext = 'ext',
+  Name = 'name',
+  RelativeDirectory = 'relativeDirectory',
+  Dev = 'dev',
+  Mode = 'mode',
+  Nlink = 'nlink',
+  Uid = 'uid',
+  Gid = 'gid',
+  Rdev = 'rdev',
+  Ino = 'ino',
+  AtimeMs = 'atimeMs',
+  MtimeMs = 'mtimeMs',
+  CtimeMs = 'ctimeMs',
+  Atime = 'atime',
+  Mtime = 'mtime',
+  Ctime = 'ctime',
+  Birthtime = 'birthtime',
+  BirthtimeMs = 'birthtimeMs',
+  Blksize = 'blksize',
+  Blocks = 'blocks',
   Id = 'id',
   ParentId = 'parent___id',
   ParentParentId = 'parent___parent___id',
@@ -263,76 +274,47 @@ export enum DirectoryFieldsEnum {
   InternalIgnoreType = 'internal___ignoreType',
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
-  InternalType = 'internal___type',
-  SourceInstanceName = 'sourceInstanceName',
-  AbsolutePath = 'absolutePath',
-  RelativePath = 'relativePath',
-  Extension = 'extension',
-  Size = 'size',
-  PrettySize = 'prettySize',
-  ModifiedTime = 'modifiedTime',
-  AccessTime = 'accessTime',
-  ChangeTime = 'changeTime',
-  BirthTime = 'birthTime',
-  Root = 'root',
-  Dir = 'dir',
-  Base = 'base',
-  Ext = 'ext',
-  Name = 'name',
-  RelativeDirectory = 'relativeDirectory',
-  Dev = 'dev',
-  Mode = 'mode',
-  Nlink = 'nlink',
-  Uid = 'uid',
-  Gid = 'gid',
-  Rdev = 'rdev',
-  Ino = 'ino',
-  AtimeMs = 'atimeMs',
-  MtimeMs = 'mtimeMs',
-  CtimeMs = 'ctimeMs',
-  BirthtimeMs = 'birthtimeMs',
-  Atime = 'atime',
-  Mtime = 'mtime',
-  Ctime = 'ctime',
-  Birthtime = 'birthtime'
+  InternalType = 'internal___type'
 }
 
 export type DirectoryFilterInput = {
-  readonly id: Maybe<StringQueryOperatorInput>,
-  readonly parent: Maybe<NodeFilterInput>,
-  readonly children: Maybe<NodeFilterListInput>,
-  readonly internal: Maybe<InternalFilterInput>,
-  readonly sourceInstanceName: Maybe<StringQueryOperatorInput>,
-  readonly absolutePath: Maybe<StringQueryOperatorInput>,
-  readonly relativePath: Maybe<StringQueryOperatorInput>,
-  readonly extension: Maybe<StringQueryOperatorInput>,
-  readonly size: Maybe<IntQueryOperatorInput>,
-  readonly prettySize: Maybe<StringQueryOperatorInput>,
-  readonly modifiedTime: Maybe<DateQueryOperatorInput>,
-  readonly accessTime: Maybe<DateQueryOperatorInput>,
-  readonly changeTime: Maybe<DateQueryOperatorInput>,
-  readonly birthTime: Maybe<DateQueryOperatorInput>,
-  readonly root: Maybe<StringQueryOperatorInput>,
-  readonly dir: Maybe<StringQueryOperatorInput>,
-  readonly base: Maybe<StringQueryOperatorInput>,
-  readonly ext: Maybe<StringQueryOperatorInput>,
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly relativeDirectory: Maybe<StringQueryOperatorInput>,
-  readonly dev: Maybe<IntQueryOperatorInput>,
-  readonly mode: Maybe<IntQueryOperatorInput>,
-  readonly nlink: Maybe<IntQueryOperatorInput>,
-  readonly uid: Maybe<IntQueryOperatorInput>,
-  readonly gid: Maybe<IntQueryOperatorInput>,
-  readonly rdev: Maybe<IntQueryOperatorInput>,
-  readonly ino: Maybe<FloatQueryOperatorInput>,
-  readonly atimeMs: Maybe<FloatQueryOperatorInput>,
-  readonly mtimeMs: Maybe<FloatQueryOperatorInput>,
-  readonly ctimeMs: Maybe<FloatQueryOperatorInput>,
-  readonly birthtimeMs: Maybe<FloatQueryOperatorInput>,
-  readonly atime: Maybe<DateQueryOperatorInput>,
-  readonly mtime: Maybe<DateQueryOperatorInput>,
-  readonly ctime: Maybe<DateQueryOperatorInput>,
-  readonly birthtime: Maybe<DateQueryOperatorInput>,
+  readonly sourceInstanceName?: Maybe<StringQueryOperatorInput>,
+  readonly absolutePath?: Maybe<StringQueryOperatorInput>,
+  readonly relativePath?: Maybe<StringQueryOperatorInput>,
+  readonly extension?: Maybe<StringQueryOperatorInput>,
+  readonly size?: Maybe<IntQueryOperatorInput>,
+  readonly prettySize?: Maybe<StringQueryOperatorInput>,
+  readonly modifiedTime?: Maybe<DateQueryOperatorInput>,
+  readonly accessTime?: Maybe<DateQueryOperatorInput>,
+  readonly changeTime?: Maybe<DateQueryOperatorInput>,
+  readonly birthTime?: Maybe<DateQueryOperatorInput>,
+  readonly root?: Maybe<StringQueryOperatorInput>,
+  readonly dir?: Maybe<StringQueryOperatorInput>,
+  readonly base?: Maybe<StringQueryOperatorInput>,
+  readonly ext?: Maybe<StringQueryOperatorInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly relativeDirectory?: Maybe<StringQueryOperatorInput>,
+  readonly dev?: Maybe<IntQueryOperatorInput>,
+  readonly mode?: Maybe<IntQueryOperatorInput>,
+  readonly nlink?: Maybe<IntQueryOperatorInput>,
+  readonly uid?: Maybe<IntQueryOperatorInput>,
+  readonly gid?: Maybe<IntQueryOperatorInput>,
+  readonly rdev?: Maybe<IntQueryOperatorInput>,
+  readonly ino?: Maybe<FloatQueryOperatorInput>,
+  readonly atimeMs?: Maybe<FloatQueryOperatorInput>,
+  readonly mtimeMs?: Maybe<FloatQueryOperatorInput>,
+  readonly ctimeMs?: Maybe<FloatQueryOperatorInput>,
+  readonly atime?: Maybe<DateQueryOperatorInput>,
+  readonly mtime?: Maybe<DateQueryOperatorInput>,
+  readonly ctime?: Maybe<DateQueryOperatorInput>,
+  readonly birthtime?: Maybe<DateQueryOperatorInput>,
+  readonly birthtimeMs?: Maybe<FloatQueryOperatorInput>,
+  readonly blksize?: Maybe<IntQueryOperatorInput>,
+  readonly blocks?: Maybe<IntQueryOperatorInput>,
+  readonly id?: Maybe<StringQueryOperatorInput>,
+  readonly parent?: Maybe<NodeFilterInput>,
+  readonly children?: Maybe<NodeFilterListInput>,
+  readonly internal?: Maybe<InternalFilterInput>,
 };
 
 export type DirectoryGroupConnection = {
@@ -342,117 +324,118 @@ export type DirectoryGroupConnection = {
   readonly nodes: ReadonlyArray<Directory>,
   readonly pageInfo: PageInfo,
   readonly field: Scalars['String'],
-  readonly fieldValue: Maybe<Scalars['String']>,
+  readonly fieldValue?: Maybe<Scalars['String']>,
 };
 
 export type DirectorySortInput = {
-  readonly fields: Maybe<ReadonlyArray<Maybe<DirectoryFieldsEnum>>>,
-  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
+  readonly fields?: Maybe<ReadonlyArray<Maybe<DirectoryFieldsEnum>>>,
+  readonly order?: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
 };
 
 export type DuotoneGradient = {
   readonly highlight: Scalars['String'],
   readonly shadow: Scalars['String'],
-  readonly opacity: Maybe<Scalars['Int']>,
+  readonly opacity?: Maybe<Scalars['Int']>,
 };
 
 export type File = Node & {
   readonly __typename?: 'File',
-  readonly birthtime: Maybe<Scalars['Date']>,
-  readonly birthtimeMs: Maybe<Scalars['Float']>,
-  readonly sourceInstanceName: Maybe<Scalars['String']>,
-  readonly absolutePath: Maybe<Scalars['String']>,
-  readonly relativePath: Maybe<Scalars['String']>,
-  readonly extension: Maybe<Scalars['String']>,
-  readonly size: Maybe<Scalars['Int']>,
-  readonly prettySize: Maybe<Scalars['String']>,
-  readonly modifiedTime: Maybe<Scalars['Date']>,
-  readonly accessTime: Maybe<Scalars['Date']>,
-  readonly changeTime: Maybe<Scalars['Date']>,
-  readonly birthTime: Maybe<Scalars['Date']>,
-  readonly root: Maybe<Scalars['String']>,
-  readonly dir: Maybe<Scalars['String']>,
-  readonly base: Maybe<Scalars['String']>,
-  readonly ext: Maybe<Scalars['String']>,
-  readonly name: Maybe<Scalars['String']>,
-  readonly relativeDirectory: Maybe<Scalars['String']>,
-  readonly dev: Maybe<Scalars['Int']>,
-  readonly mode: Maybe<Scalars['Int']>,
-  readonly nlink: Maybe<Scalars['Int']>,
-  readonly uid: Maybe<Scalars['Int']>,
-  readonly gid: Maybe<Scalars['Int']>,
-  readonly rdev: Maybe<Scalars['Int']>,
-  readonly ino: Maybe<Scalars['Float']>,
-  readonly atimeMs: Maybe<Scalars['Float']>,
-  readonly mtimeMs: Maybe<Scalars['Float']>,
-  readonly ctimeMs: Maybe<Scalars['Float']>,
-  readonly atime: Maybe<Scalars['Date']>,
-  readonly mtime: Maybe<Scalars['Date']>,
-  readonly ctime: Maybe<Scalars['Date']>,
-  /** Copy file to static directory and return public url to it */
-  readonly publicURL: Maybe<Scalars['String']>,
-  readonly childImageSharp: Maybe<ImageSharp>,
+  readonly sourceInstanceName: Scalars['String'],
+  readonly absolutePath: Scalars['String'],
+  readonly relativePath: Scalars['String'],
+  readonly extension: Scalars['String'],
+  readonly size: Scalars['Int'],
+  readonly prettySize: Scalars['String'],
+  readonly modifiedTime: Scalars['Date'],
+  readonly accessTime: Scalars['Date'],
+  readonly changeTime: Scalars['Date'],
+  readonly birthTime: Scalars['Date'],
+  readonly root: Scalars['String'],
+  readonly dir: Scalars['String'],
+  readonly base: Scalars['String'],
+  readonly ext: Scalars['String'],
+  readonly name: Scalars['String'],
+  readonly relativeDirectory: Scalars['String'],
+  readonly dev: Scalars['Int'],
+  readonly mode: Scalars['Int'],
+  readonly nlink: Scalars['Int'],
+  readonly uid: Scalars['Int'],
+  readonly gid: Scalars['Int'],
+  readonly rdev: Scalars['Int'],
+  readonly ino: Scalars['Float'],
+  readonly atimeMs: Scalars['Float'],
+  readonly mtimeMs: Scalars['Float'],
+  readonly ctimeMs: Scalars['Float'],
+  readonly atime: Scalars['Date'],
+  readonly mtime: Scalars['Date'],
+  readonly ctime: Scalars['Date'],
+  readonly birthtime?: Maybe<Scalars['Date']>,
+  readonly birthtimeMs?: Maybe<Scalars['Float']>,
+  readonly blksize?: Maybe<Scalars['Int']>,
+  readonly blocks?: Maybe<Scalars['Int']>,
+  readonly publicURL?: Maybe<Scalars['String']>,
+  readonly childImageSharp?: Maybe<ImageSharp>,
   readonly id: Scalars['ID'],
-  readonly parent: Maybe<Node>,
+  readonly parent?: Maybe<Node>,
   readonly children: ReadonlyArray<Node>,
   readonly internal: Internal,
-  readonly childMarkdownRemark: Maybe<MarkdownRemark>,
+  readonly childMarkdownRemark?: Maybe<MarkdownRemark>,
 };
 
 
 export type FileModifiedTimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type FileAccessTimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type FileChangeTimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type FileBirthTimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type FileAtimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type FileMtimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 
 export type FileCtimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 export type FileConnection = {
@@ -472,21 +455,19 @@ export type FileConnectionDistinctArgs = {
 
 
 export type FileConnectionGroupArgs = {
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>,
   field: FileFieldsEnum
 };
 
 export type FileEdge = {
   readonly __typename?: 'FileEdge',
-  readonly next: Maybe<File>,
+  readonly next?: Maybe<File>,
   readonly node: File,
-  readonly previous: Maybe<File>,
+  readonly previous?: Maybe<File>,
 };
 
 export enum FileFieldsEnum {
-  Birthtime = 'birthtime',
-  BirthtimeMs = 'birthtimeMs',
   SourceInstanceName = 'sourceInstanceName',
   AbsolutePath = 'absolutePath',
   RelativePath = 'relativePath',
@@ -516,6 +497,10 @@ export enum FileFieldsEnum {
   Atime = 'atime',
   Mtime = 'mtime',
   Ctime = 'ctime',
+  Birthtime = 'birthtime',
+  BirthtimeMs = 'birthtimeMs',
+  Blksize = 'blksize',
+  Blocks = 'blocks',
   PublicUrl = 'publicURL',
   ChildImageSharpFixedBase64 = 'childImageSharp___fixed___base64',
   ChildImageSharpFixedTracedSvg = 'childImageSharp___fixed___tracedSVG',
@@ -695,15 +680,14 @@ export enum FileFieldsEnum {
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
-  ChildMarkdownRemarkFrontmatterFeatureImageDescription = 'childMarkdownRemark___frontmatter___featureImage___description',
+  ChildMarkdownRemarkFrontmatterFeaturedImageDescription = 'childMarkdownRemark___frontmatter___featuredImage___description',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
-  ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
   ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
   ChildMarkdownRemarkFrontmatterTags = 'childMarkdownRemark___frontmatter___tags',
   ChildMarkdownRemarkFrontmatterCategories = 'childMarkdownRemark___frontmatter___categories',
-  ChildMarkdownRemarkFrontmatterFeaturedImageDescription = 'childMarkdownRemark___frontmatter___featuredImage___description',
   ChildMarkdownRemarkFrontmatterDescription = 'childMarkdownRemark___frontmatter___description',
   ChildMarkdownRemarkFrontmatterDropcap = 'childMarkdownRemark___frontmatter___dropcap',
+  ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
   ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
@@ -760,44 +744,46 @@ export enum FileFieldsEnum {
 }
 
 export type FileFilterInput = {
-  readonly birthtime: Maybe<DateQueryOperatorInput>,
-  readonly birthtimeMs: Maybe<FloatQueryOperatorInput>,
-  readonly sourceInstanceName: Maybe<StringQueryOperatorInput>,
-  readonly absolutePath: Maybe<StringQueryOperatorInput>,
-  readonly relativePath: Maybe<StringQueryOperatorInput>,
-  readonly extension: Maybe<StringQueryOperatorInput>,
-  readonly size: Maybe<IntQueryOperatorInput>,
-  readonly prettySize: Maybe<StringQueryOperatorInput>,
-  readonly modifiedTime: Maybe<DateQueryOperatorInput>,
-  readonly accessTime: Maybe<DateQueryOperatorInput>,
-  readonly changeTime: Maybe<DateQueryOperatorInput>,
-  readonly birthTime: Maybe<DateQueryOperatorInput>,
-  readonly root: Maybe<StringQueryOperatorInput>,
-  readonly dir: Maybe<StringQueryOperatorInput>,
-  readonly base: Maybe<StringQueryOperatorInput>,
-  readonly ext: Maybe<StringQueryOperatorInput>,
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly relativeDirectory: Maybe<StringQueryOperatorInput>,
-  readonly dev: Maybe<IntQueryOperatorInput>,
-  readonly mode: Maybe<IntQueryOperatorInput>,
-  readonly nlink: Maybe<IntQueryOperatorInput>,
-  readonly uid: Maybe<IntQueryOperatorInput>,
-  readonly gid: Maybe<IntQueryOperatorInput>,
-  readonly rdev: Maybe<IntQueryOperatorInput>,
-  readonly ino: Maybe<FloatQueryOperatorInput>,
-  readonly atimeMs: Maybe<FloatQueryOperatorInput>,
-  readonly mtimeMs: Maybe<FloatQueryOperatorInput>,
-  readonly ctimeMs: Maybe<FloatQueryOperatorInput>,
-  readonly atime: Maybe<DateQueryOperatorInput>,
-  readonly mtime: Maybe<DateQueryOperatorInput>,
-  readonly ctime: Maybe<DateQueryOperatorInput>,
-  readonly publicURL: Maybe<StringQueryOperatorInput>,
-  readonly childImageSharp: Maybe<ImageSharpFilterInput>,
-  readonly id: Maybe<StringQueryOperatorInput>,
-  readonly parent: Maybe<NodeFilterInput>,
-  readonly children: Maybe<NodeFilterListInput>,
-  readonly internal: Maybe<InternalFilterInput>,
-  readonly childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>,
+  readonly sourceInstanceName?: Maybe<StringQueryOperatorInput>,
+  readonly absolutePath?: Maybe<StringQueryOperatorInput>,
+  readonly relativePath?: Maybe<StringQueryOperatorInput>,
+  readonly extension?: Maybe<StringQueryOperatorInput>,
+  readonly size?: Maybe<IntQueryOperatorInput>,
+  readonly prettySize?: Maybe<StringQueryOperatorInput>,
+  readonly modifiedTime?: Maybe<DateQueryOperatorInput>,
+  readonly accessTime?: Maybe<DateQueryOperatorInput>,
+  readonly changeTime?: Maybe<DateQueryOperatorInput>,
+  readonly birthTime?: Maybe<DateQueryOperatorInput>,
+  readonly root?: Maybe<StringQueryOperatorInput>,
+  readonly dir?: Maybe<StringQueryOperatorInput>,
+  readonly base?: Maybe<StringQueryOperatorInput>,
+  readonly ext?: Maybe<StringQueryOperatorInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly relativeDirectory?: Maybe<StringQueryOperatorInput>,
+  readonly dev?: Maybe<IntQueryOperatorInput>,
+  readonly mode?: Maybe<IntQueryOperatorInput>,
+  readonly nlink?: Maybe<IntQueryOperatorInput>,
+  readonly uid?: Maybe<IntQueryOperatorInput>,
+  readonly gid?: Maybe<IntQueryOperatorInput>,
+  readonly rdev?: Maybe<IntQueryOperatorInput>,
+  readonly ino?: Maybe<FloatQueryOperatorInput>,
+  readonly atimeMs?: Maybe<FloatQueryOperatorInput>,
+  readonly mtimeMs?: Maybe<FloatQueryOperatorInput>,
+  readonly ctimeMs?: Maybe<FloatQueryOperatorInput>,
+  readonly atime?: Maybe<DateQueryOperatorInput>,
+  readonly mtime?: Maybe<DateQueryOperatorInput>,
+  readonly ctime?: Maybe<DateQueryOperatorInput>,
+  readonly birthtime?: Maybe<DateQueryOperatorInput>,
+  readonly birthtimeMs?: Maybe<FloatQueryOperatorInput>,
+  readonly blksize?: Maybe<IntQueryOperatorInput>,
+  readonly blocks?: Maybe<IntQueryOperatorInput>,
+  readonly publicURL?: Maybe<StringQueryOperatorInput>,
+  readonly childImageSharp?: Maybe<ImageSharpFilterInput>,
+  readonly id?: Maybe<StringQueryOperatorInput>,
+  readonly parent?: Maybe<NodeFilterInput>,
+  readonly children?: Maybe<NodeFilterListInput>,
+  readonly internal?: Maybe<InternalFilterInput>,
+  readonly childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>,
 };
 
 export type FileGroupConnection = {
@@ -807,56 +793,54 @@ export type FileGroupConnection = {
   readonly nodes: ReadonlyArray<File>,
   readonly pageInfo: PageInfo,
   readonly field: Scalars['String'],
-  readonly fieldValue: Maybe<Scalars['String']>,
+  readonly fieldValue?: Maybe<Scalars['String']>,
 };
 
 export type FileSortInput = {
-  readonly fields: Maybe<ReadonlyArray<Maybe<FileFieldsEnum>>>,
-  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
+  readonly fields?: Maybe<ReadonlyArray<Maybe<FileFieldsEnum>>>,
+  readonly order?: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
 };
 
 export type FloatQueryOperatorInput = {
-  readonly eq: Maybe<Scalars['Float']>,
-  readonly ne: Maybe<Scalars['Float']>,
-  readonly gt: Maybe<Scalars['Float']>,
-  readonly gte: Maybe<Scalars['Float']>,
-  readonly lt: Maybe<Scalars['Float']>,
-  readonly lte: Maybe<Scalars['Float']>,
-  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>,
-  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>,
+  readonly eq?: Maybe<Scalars['Float']>,
+  readonly ne?: Maybe<Scalars['Float']>,
+  readonly gt?: Maybe<Scalars['Float']>,
+  readonly gte?: Maybe<Scalars['Float']>,
+  readonly lt?: Maybe<Scalars['Float']>,
+  readonly lte?: Maybe<Scalars['Float']>,
+  readonly in?: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>,
+  readonly nin?: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>,
 };
 
 export type Frontmatter = {
   readonly __typename?: 'Frontmatter',
-  readonly featureImage: Maybe<MarkdownRemarkFrontmatterFeaturedImage>,
-  readonly title: Maybe<Scalars['String']>,
-  readonly draft: Maybe<Scalars['Boolean']>,
-  readonly date: Maybe<Scalars['Date']>,
-  readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly categories: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly featuredImage: Maybe<MarkdownRemarkFrontmatterFeaturedImage>,
-  readonly description: Maybe<Scalars['String']>,
-  readonly dropcap: Maybe<Scalars['Boolean']>,
+  readonly featuredImage?: Maybe<MarkdownRemarkFrontmatterFeaturedImage>,
+  readonly title?: Maybe<Scalars['String']>,
+  readonly date?: Maybe<Scalars['Date']>,
+  readonly tags?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly categories?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly description?: Maybe<Scalars['String']>,
+  readonly dropcap?: Maybe<Scalars['Boolean']>,
+  readonly draft?: Maybe<Scalars['Boolean']>,
 };
 
 
 export type FrontmatterDateArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 export type FrontmatterFilterInput = {
-  readonly featureImage: Maybe<MarkdownRemarkFrontmatterFeaturedImageFilterInput>,
-  readonly title: Maybe<StringQueryOperatorInput>,
-  readonly draft: Maybe<BooleanQueryOperatorInput>,
-  readonly date: Maybe<DateQueryOperatorInput>,
-  readonly tags: Maybe<StringQueryOperatorInput>,
-  readonly categories: Maybe<StringQueryOperatorInput>,
-  readonly featuredImage: Maybe<MarkdownRemarkFrontmatterFeaturedImageFilterInput>,
-  readonly description: Maybe<StringQueryOperatorInput>,
-  readonly dropcap: Maybe<BooleanQueryOperatorInput>,
+  readonly featuredImage?: Maybe<MarkdownRemarkFrontmatterFeaturedImageFilterInput>,
+  readonly title?: Maybe<StringQueryOperatorInput>,
+  readonly date?: Maybe<DateQueryOperatorInput>,
+  readonly tags?: Maybe<StringQueryOperatorInput>,
+  readonly categories?: Maybe<StringQueryOperatorInput>,
+  readonly description?: Maybe<StringQueryOperatorInput>,
+  readonly dropcap?: Maybe<BooleanQueryOperatorInput>,
+  readonly draft?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export enum ImageCropFocus {
@@ -888,32 +872,32 @@ export enum ImageFormat {
 
 export type ImageSharp = Node & {
   readonly __typename?: 'ImageSharp',
-  readonly fixed: Maybe<ImageSharpFixed>,
-  readonly resolutions: Maybe<ImageSharpResolutions>,
-  readonly fluid: Maybe<ImageSharpFluid>,
-  readonly sizes: Maybe<ImageSharpSizes>,
-  readonly original: Maybe<ImageSharpOriginal>,
-  readonly resize: Maybe<ImageSharpResize>,
+  readonly fixed?: Maybe<ImageSharpFixed>,
+  readonly resolutions?: Maybe<ImageSharpResolutions>,
+  readonly fluid?: Maybe<ImageSharpFluid>,
+  readonly sizes?: Maybe<ImageSharpSizes>,
+  readonly original?: Maybe<ImageSharpOriginal>,
+  readonly resize?: Maybe<ImageSharpResize>,
   readonly id: Scalars['ID'],
-  readonly parent: Maybe<Node>,
+  readonly parent?: Maybe<Node>,
   readonly children: ReadonlyArray<Node>,
   readonly internal: Internal,
 };
 
 
 export type ImageSharpFixedArgs = {
-  width: Maybe<Scalars['Int']>,
-  height: Maybe<Scalars['Int']>,
-  base64Width: Maybe<Scalars['Int']>,
+  width?: Maybe<Scalars['Int']>,
+  height?: Maybe<Scalars['Int']>,
+  base64Width?: Maybe<Scalars['Int']>,
   jpegProgressive?: Maybe<Scalars['Boolean']>,
   pngCompressionSpeed?: Maybe<Scalars['Int']>,
   grayscale?: Maybe<Scalars['Boolean']>,
-  duotone: Maybe<DuotoneGradient>,
-  traceSVG: Maybe<Potrace>,
-  quality: Maybe<Scalars['Int']>,
-  jpegQuality: Maybe<Scalars['Int']>,
-  pngQuality: Maybe<Scalars['Int']>,
-  webpQuality: Maybe<Scalars['Int']>,
+  duotone?: Maybe<DuotoneGradient>,
+  traceSVG?: Maybe<Potrace>,
+  quality?: Maybe<Scalars['Int']>,
+  jpegQuality?: Maybe<Scalars['Int']>,
+  pngQuality?: Maybe<Scalars['Int']>,
+  webpQuality?: Maybe<Scalars['Int']>,
   toFormat?: Maybe<ImageFormat>,
   toFormatBase64?: Maybe<ImageFormat>,
   cropFocus?: Maybe<ImageCropFocus>,
@@ -925,18 +909,18 @@ export type ImageSharpFixedArgs = {
 
 
 export type ImageSharpResolutionsArgs = {
-  width: Maybe<Scalars['Int']>,
-  height: Maybe<Scalars['Int']>,
-  base64Width: Maybe<Scalars['Int']>,
+  width?: Maybe<Scalars['Int']>,
+  height?: Maybe<Scalars['Int']>,
+  base64Width?: Maybe<Scalars['Int']>,
   jpegProgressive?: Maybe<Scalars['Boolean']>,
   pngCompressionSpeed?: Maybe<Scalars['Int']>,
   grayscale?: Maybe<Scalars['Boolean']>,
-  duotone: Maybe<DuotoneGradient>,
-  traceSVG: Maybe<Potrace>,
-  quality: Maybe<Scalars['Int']>,
-  jpegQuality: Maybe<Scalars['Int']>,
-  pngQuality: Maybe<Scalars['Int']>,
-  webpQuality: Maybe<Scalars['Int']>,
+  duotone?: Maybe<DuotoneGradient>,
+  traceSVG?: Maybe<Potrace>,
+  quality?: Maybe<Scalars['Int']>,
+  jpegQuality?: Maybe<Scalars['Int']>,
+  pngQuality?: Maybe<Scalars['Int']>,
+  webpQuality?: Maybe<Scalars['Int']>,
   toFormat?: Maybe<ImageFormat>,
   toFormatBase64?: Maybe<ImageFormat>,
   cropFocus?: Maybe<ImageCropFocus>,
@@ -948,18 +932,18 @@ export type ImageSharpResolutionsArgs = {
 
 
 export type ImageSharpFluidArgs = {
-  maxWidth: Maybe<Scalars['Int']>,
-  maxHeight: Maybe<Scalars['Int']>,
-  base64Width: Maybe<Scalars['Int']>,
+  maxWidth?: Maybe<Scalars['Int']>,
+  maxHeight?: Maybe<Scalars['Int']>,
+  base64Width?: Maybe<Scalars['Int']>,
   grayscale?: Maybe<Scalars['Boolean']>,
   jpegProgressive?: Maybe<Scalars['Boolean']>,
   pngCompressionSpeed?: Maybe<Scalars['Int']>,
-  duotone: Maybe<DuotoneGradient>,
-  traceSVG: Maybe<Potrace>,
-  quality: Maybe<Scalars['Int']>,
-  jpegQuality: Maybe<Scalars['Int']>,
-  pngQuality: Maybe<Scalars['Int']>,
-  webpQuality: Maybe<Scalars['Int']>,
+  duotone?: Maybe<DuotoneGradient>,
+  traceSVG?: Maybe<Potrace>,
+  quality?: Maybe<Scalars['Int']>,
+  jpegQuality?: Maybe<Scalars['Int']>,
+  pngQuality?: Maybe<Scalars['Int']>,
+  webpQuality?: Maybe<Scalars['Int']>,
   toFormat?: Maybe<ImageFormat>,
   toFormatBase64?: Maybe<ImageFormat>,
   cropFocus?: Maybe<ImageCropFocus>,
@@ -973,18 +957,18 @@ export type ImageSharpFluidArgs = {
 
 
 export type ImageSharpSizesArgs = {
-  maxWidth: Maybe<Scalars['Int']>,
-  maxHeight: Maybe<Scalars['Int']>,
-  base64Width: Maybe<Scalars['Int']>,
+  maxWidth?: Maybe<Scalars['Int']>,
+  maxHeight?: Maybe<Scalars['Int']>,
+  base64Width?: Maybe<Scalars['Int']>,
   grayscale?: Maybe<Scalars['Boolean']>,
   jpegProgressive?: Maybe<Scalars['Boolean']>,
   pngCompressionSpeed?: Maybe<Scalars['Int']>,
-  duotone: Maybe<DuotoneGradient>,
-  traceSVG: Maybe<Potrace>,
-  quality: Maybe<Scalars['Int']>,
-  jpegQuality: Maybe<Scalars['Int']>,
-  pngQuality: Maybe<Scalars['Int']>,
-  webpQuality: Maybe<Scalars['Int']>,
+  duotone?: Maybe<DuotoneGradient>,
+  traceSVG?: Maybe<Potrace>,
+  quality?: Maybe<Scalars['Int']>,
+  jpegQuality?: Maybe<Scalars['Int']>,
+  pngQuality?: Maybe<Scalars['Int']>,
+  webpQuality?: Maybe<Scalars['Int']>,
   toFormat?: Maybe<ImageFormat>,
   toFormatBase64?: Maybe<ImageFormat>,
   cropFocus?: Maybe<ImageCropFocus>,
@@ -998,19 +982,19 @@ export type ImageSharpSizesArgs = {
 
 
 export type ImageSharpResizeArgs = {
-  width: Maybe<Scalars['Int']>,
-  height: Maybe<Scalars['Int']>,
-  quality: Maybe<Scalars['Int']>,
-  jpegQuality: Maybe<Scalars['Int']>,
-  pngQuality: Maybe<Scalars['Int']>,
-  webpQuality: Maybe<Scalars['Int']>,
+  width?: Maybe<Scalars['Int']>,
+  height?: Maybe<Scalars['Int']>,
+  quality?: Maybe<Scalars['Int']>,
+  jpegQuality?: Maybe<Scalars['Int']>,
+  pngQuality?: Maybe<Scalars['Int']>,
+  webpQuality?: Maybe<Scalars['Int']>,
   jpegProgressive?: Maybe<Scalars['Boolean']>,
   pngCompressionLevel?: Maybe<Scalars['Int']>,
   pngCompressionSpeed?: Maybe<Scalars['Int']>,
   grayscale?: Maybe<Scalars['Boolean']>,
-  duotone: Maybe<DuotoneGradient>,
+  duotone?: Maybe<DuotoneGradient>,
   base64?: Maybe<Scalars['Boolean']>,
-  traceSVG: Maybe<Potrace>,
+  traceSVG?: Maybe<Potrace>,
   toFormat?: Maybe<ImageFormat>,
   cropFocus?: Maybe<ImageCropFocus>,
   fit?: Maybe<ImageFit>,
@@ -1036,16 +1020,16 @@ export type ImageSharpConnectionDistinctArgs = {
 
 
 export type ImageSharpConnectionGroupArgs = {
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>,
   field: ImageSharpFieldsEnum
 };
 
 export type ImageSharpEdge = {
   readonly __typename?: 'ImageSharpEdge',
-  readonly next: Maybe<ImageSharp>,
+  readonly next?: Maybe<ImageSharp>,
   readonly node: ImageSharp,
-  readonly previous: Maybe<ImageSharp>,
+  readonly previous?: Maybe<ImageSharp>,
 };
 
 export enum ImageSharpFieldsEnum {
@@ -1191,74 +1175,74 @@ export enum ImageSharpFieldsEnum {
 }
 
 export type ImageSharpFilterInput = {
-  readonly fixed: Maybe<ImageSharpFixedFilterInput>,
-  readonly resolutions: Maybe<ImageSharpResolutionsFilterInput>,
-  readonly fluid: Maybe<ImageSharpFluidFilterInput>,
-  readonly sizes: Maybe<ImageSharpSizesFilterInput>,
-  readonly original: Maybe<ImageSharpOriginalFilterInput>,
-  readonly resize: Maybe<ImageSharpResizeFilterInput>,
-  readonly id: Maybe<StringQueryOperatorInput>,
-  readonly parent: Maybe<NodeFilterInput>,
-  readonly children: Maybe<NodeFilterListInput>,
-  readonly internal: Maybe<InternalFilterInput>,
+  readonly fixed?: Maybe<ImageSharpFixedFilterInput>,
+  readonly resolutions?: Maybe<ImageSharpResolutionsFilterInput>,
+  readonly fluid?: Maybe<ImageSharpFluidFilterInput>,
+  readonly sizes?: Maybe<ImageSharpSizesFilterInput>,
+  readonly original?: Maybe<ImageSharpOriginalFilterInput>,
+  readonly resize?: Maybe<ImageSharpResizeFilterInput>,
+  readonly id?: Maybe<StringQueryOperatorInput>,
+  readonly parent?: Maybe<NodeFilterInput>,
+  readonly children?: Maybe<NodeFilterListInput>,
+  readonly internal?: Maybe<InternalFilterInput>,
 };
 
 export type ImageSharpFixed = {
   readonly __typename?: 'ImageSharpFixed',
-  readonly base64: Maybe<Scalars['String']>,
-  readonly tracedSVG: Maybe<Scalars['String']>,
-  readonly aspectRatio: Maybe<Scalars['Float']>,
-  readonly width: Maybe<Scalars['Float']>,
-  readonly height: Maybe<Scalars['Float']>,
-  readonly src: Maybe<Scalars['String']>,
-  readonly srcSet: Maybe<Scalars['String']>,
-  readonly srcWebp: Maybe<Scalars['String']>,
-  readonly srcSetWebp: Maybe<Scalars['String']>,
-  readonly originalName: Maybe<Scalars['String']>,
+  readonly base64?: Maybe<Scalars['String']>,
+  readonly tracedSVG?: Maybe<Scalars['String']>,
+  readonly aspectRatio?: Maybe<Scalars['Float']>,
+  readonly width: Scalars['Float'],
+  readonly height: Scalars['Float'],
+  readonly src: Scalars['String'],
+  readonly srcSet: Scalars['String'],
+  readonly srcWebp?: Maybe<Scalars['String']>,
+  readonly srcSetWebp?: Maybe<Scalars['String']>,
+  readonly originalName?: Maybe<Scalars['String']>,
 };
 
 export type ImageSharpFixedFilterInput = {
-  readonly base64: Maybe<StringQueryOperatorInput>,
-  readonly tracedSVG: Maybe<StringQueryOperatorInput>,
-  readonly aspectRatio: Maybe<FloatQueryOperatorInput>,
-  readonly width: Maybe<FloatQueryOperatorInput>,
-  readonly height: Maybe<FloatQueryOperatorInput>,
-  readonly src: Maybe<StringQueryOperatorInput>,
-  readonly srcSet: Maybe<StringQueryOperatorInput>,
-  readonly srcWebp: Maybe<StringQueryOperatorInput>,
-  readonly srcSetWebp: Maybe<StringQueryOperatorInput>,
-  readonly originalName: Maybe<StringQueryOperatorInput>,
+  readonly base64?: Maybe<StringQueryOperatorInput>,
+  readonly tracedSVG?: Maybe<StringQueryOperatorInput>,
+  readonly aspectRatio?: Maybe<FloatQueryOperatorInput>,
+  readonly width?: Maybe<FloatQueryOperatorInput>,
+  readonly height?: Maybe<FloatQueryOperatorInput>,
+  readonly src?: Maybe<StringQueryOperatorInput>,
+  readonly srcSet?: Maybe<StringQueryOperatorInput>,
+  readonly srcWebp?: Maybe<StringQueryOperatorInput>,
+  readonly srcSetWebp?: Maybe<StringQueryOperatorInput>,
+  readonly originalName?: Maybe<StringQueryOperatorInput>,
 };
 
 export type ImageSharpFluid = {
   readonly __typename?: 'ImageSharpFluid',
-  readonly base64: Maybe<Scalars['String']>,
-  readonly tracedSVG: Maybe<Scalars['String']>,
-  readonly aspectRatio: Maybe<Scalars['Float']>,
-  readonly src: Maybe<Scalars['String']>,
-  readonly srcSet: Maybe<Scalars['String']>,
-  readonly srcWebp: Maybe<Scalars['String']>,
-  readonly srcSetWebp: Maybe<Scalars['String']>,
-  readonly sizes: Maybe<Scalars['String']>,
-  readonly originalImg: Maybe<Scalars['String']>,
-  readonly originalName: Maybe<Scalars['String']>,
-  readonly presentationWidth: Maybe<Scalars['Int']>,
-  readonly presentationHeight: Maybe<Scalars['Int']>,
+  readonly base64?: Maybe<Scalars['String']>,
+  readonly tracedSVG?: Maybe<Scalars['String']>,
+  readonly aspectRatio: Scalars['Float'],
+  readonly src: Scalars['String'],
+  readonly srcSet: Scalars['String'],
+  readonly srcWebp?: Maybe<Scalars['String']>,
+  readonly srcSetWebp?: Maybe<Scalars['String']>,
+  readonly sizes: Scalars['String'],
+  readonly originalImg?: Maybe<Scalars['String']>,
+  readonly originalName?: Maybe<Scalars['String']>,
+  readonly presentationWidth?: Maybe<Scalars['Int']>,
+  readonly presentationHeight?: Maybe<Scalars['Int']>,
 };
 
 export type ImageSharpFluidFilterInput = {
-  readonly base64: Maybe<StringQueryOperatorInput>,
-  readonly tracedSVG: Maybe<StringQueryOperatorInput>,
-  readonly aspectRatio: Maybe<FloatQueryOperatorInput>,
-  readonly src: Maybe<StringQueryOperatorInput>,
-  readonly srcSet: Maybe<StringQueryOperatorInput>,
-  readonly srcWebp: Maybe<StringQueryOperatorInput>,
-  readonly srcSetWebp: Maybe<StringQueryOperatorInput>,
-  readonly sizes: Maybe<StringQueryOperatorInput>,
-  readonly originalImg: Maybe<StringQueryOperatorInput>,
-  readonly originalName: Maybe<StringQueryOperatorInput>,
-  readonly presentationWidth: Maybe<IntQueryOperatorInput>,
-  readonly presentationHeight: Maybe<IntQueryOperatorInput>,
+  readonly base64?: Maybe<StringQueryOperatorInput>,
+  readonly tracedSVG?: Maybe<StringQueryOperatorInput>,
+  readonly aspectRatio?: Maybe<FloatQueryOperatorInput>,
+  readonly src?: Maybe<StringQueryOperatorInput>,
+  readonly srcSet?: Maybe<StringQueryOperatorInput>,
+  readonly srcWebp?: Maybe<StringQueryOperatorInput>,
+  readonly srcSetWebp?: Maybe<StringQueryOperatorInput>,
+  readonly sizes?: Maybe<StringQueryOperatorInput>,
+  readonly originalImg?: Maybe<StringQueryOperatorInput>,
+  readonly originalName?: Maybe<StringQueryOperatorInput>,
+  readonly presentationWidth?: Maybe<IntQueryOperatorInput>,
+  readonly presentationHeight?: Maybe<IntQueryOperatorInput>,
 };
 
 export type ImageSharpGroupConnection = {
@@ -1268,146 +1252,146 @@ export type ImageSharpGroupConnection = {
   readonly nodes: ReadonlyArray<ImageSharp>,
   readonly pageInfo: PageInfo,
   readonly field: Scalars['String'],
-  readonly fieldValue: Maybe<Scalars['String']>,
+  readonly fieldValue?: Maybe<Scalars['String']>,
 };
 
 export type ImageSharpOriginal = {
   readonly __typename?: 'ImageSharpOriginal',
-  readonly width: Maybe<Scalars['Float']>,
-  readonly height: Maybe<Scalars['Float']>,
-  readonly src: Maybe<Scalars['String']>,
+  readonly width?: Maybe<Scalars['Float']>,
+  readonly height?: Maybe<Scalars['Float']>,
+  readonly src?: Maybe<Scalars['String']>,
 };
 
 export type ImageSharpOriginalFilterInput = {
-  readonly width: Maybe<FloatQueryOperatorInput>,
-  readonly height: Maybe<FloatQueryOperatorInput>,
-  readonly src: Maybe<StringQueryOperatorInput>,
+  readonly width?: Maybe<FloatQueryOperatorInput>,
+  readonly height?: Maybe<FloatQueryOperatorInput>,
+  readonly src?: Maybe<StringQueryOperatorInput>,
 };
 
 export type ImageSharpResize = {
   readonly __typename?: 'ImageSharpResize',
-  readonly src: Maybe<Scalars['String']>,
-  readonly tracedSVG: Maybe<Scalars['String']>,
-  readonly width: Maybe<Scalars['Int']>,
-  readonly height: Maybe<Scalars['Int']>,
-  readonly aspectRatio: Maybe<Scalars['Float']>,
-  readonly originalName: Maybe<Scalars['String']>,
+  readonly src?: Maybe<Scalars['String']>,
+  readonly tracedSVG?: Maybe<Scalars['String']>,
+  readonly width?: Maybe<Scalars['Int']>,
+  readonly height?: Maybe<Scalars['Int']>,
+  readonly aspectRatio?: Maybe<Scalars['Float']>,
+  readonly originalName?: Maybe<Scalars['String']>,
 };
 
 export type ImageSharpResizeFilterInput = {
-  readonly src: Maybe<StringQueryOperatorInput>,
-  readonly tracedSVG: Maybe<StringQueryOperatorInput>,
-  readonly width: Maybe<IntQueryOperatorInput>,
-  readonly height: Maybe<IntQueryOperatorInput>,
-  readonly aspectRatio: Maybe<FloatQueryOperatorInput>,
-  readonly originalName: Maybe<StringQueryOperatorInput>,
+  readonly src?: Maybe<StringQueryOperatorInput>,
+  readonly tracedSVG?: Maybe<StringQueryOperatorInput>,
+  readonly width?: Maybe<IntQueryOperatorInput>,
+  readonly height?: Maybe<IntQueryOperatorInput>,
+  readonly aspectRatio?: Maybe<FloatQueryOperatorInput>,
+  readonly originalName?: Maybe<StringQueryOperatorInput>,
 };
 
 export type ImageSharpResolutions = {
   readonly __typename?: 'ImageSharpResolutions',
-  readonly base64: Maybe<Scalars['String']>,
-  readonly tracedSVG: Maybe<Scalars['String']>,
-  readonly aspectRatio: Maybe<Scalars['Float']>,
-  readonly width: Maybe<Scalars['Float']>,
-  readonly height: Maybe<Scalars['Float']>,
-  readonly src: Maybe<Scalars['String']>,
-  readonly srcSet: Maybe<Scalars['String']>,
-  readonly srcWebp: Maybe<Scalars['String']>,
-  readonly srcSetWebp: Maybe<Scalars['String']>,
-  readonly originalName: Maybe<Scalars['String']>,
+  readonly base64?: Maybe<Scalars['String']>,
+  readonly tracedSVG?: Maybe<Scalars['String']>,
+  readonly aspectRatio?: Maybe<Scalars['Float']>,
+  readonly width: Scalars['Float'],
+  readonly height: Scalars['Float'],
+  readonly src: Scalars['String'],
+  readonly srcSet: Scalars['String'],
+  readonly srcWebp?: Maybe<Scalars['String']>,
+  readonly srcSetWebp?: Maybe<Scalars['String']>,
+  readonly originalName?: Maybe<Scalars['String']>,
 };
 
 export type ImageSharpResolutionsFilterInput = {
-  readonly base64: Maybe<StringQueryOperatorInput>,
-  readonly tracedSVG: Maybe<StringQueryOperatorInput>,
-  readonly aspectRatio: Maybe<FloatQueryOperatorInput>,
-  readonly width: Maybe<FloatQueryOperatorInput>,
-  readonly height: Maybe<FloatQueryOperatorInput>,
-  readonly src: Maybe<StringQueryOperatorInput>,
-  readonly srcSet: Maybe<StringQueryOperatorInput>,
-  readonly srcWebp: Maybe<StringQueryOperatorInput>,
-  readonly srcSetWebp: Maybe<StringQueryOperatorInput>,
-  readonly originalName: Maybe<StringQueryOperatorInput>,
+  readonly base64?: Maybe<StringQueryOperatorInput>,
+  readonly tracedSVG?: Maybe<StringQueryOperatorInput>,
+  readonly aspectRatio?: Maybe<FloatQueryOperatorInput>,
+  readonly width?: Maybe<FloatQueryOperatorInput>,
+  readonly height?: Maybe<FloatQueryOperatorInput>,
+  readonly src?: Maybe<StringQueryOperatorInput>,
+  readonly srcSet?: Maybe<StringQueryOperatorInput>,
+  readonly srcWebp?: Maybe<StringQueryOperatorInput>,
+  readonly srcSetWebp?: Maybe<StringQueryOperatorInput>,
+  readonly originalName?: Maybe<StringQueryOperatorInput>,
 };
 
 export type ImageSharpSizes = {
   readonly __typename?: 'ImageSharpSizes',
-  readonly base64: Maybe<Scalars['String']>,
-  readonly tracedSVG: Maybe<Scalars['String']>,
-  readonly aspectRatio: Maybe<Scalars['Float']>,
-  readonly src: Maybe<Scalars['String']>,
-  readonly srcSet: Maybe<Scalars['String']>,
-  readonly srcWebp: Maybe<Scalars['String']>,
-  readonly srcSetWebp: Maybe<Scalars['String']>,
-  readonly sizes: Maybe<Scalars['String']>,
-  readonly originalImg: Maybe<Scalars['String']>,
-  readonly originalName: Maybe<Scalars['String']>,
-  readonly presentationWidth: Maybe<Scalars['Int']>,
-  readonly presentationHeight: Maybe<Scalars['Int']>,
+  readonly base64?: Maybe<Scalars['String']>,
+  readonly tracedSVG?: Maybe<Scalars['String']>,
+  readonly aspectRatio: Scalars['Float'],
+  readonly src: Scalars['String'],
+  readonly srcSet: Scalars['String'],
+  readonly srcWebp?: Maybe<Scalars['String']>,
+  readonly srcSetWebp?: Maybe<Scalars['String']>,
+  readonly sizes: Scalars['String'],
+  readonly originalImg?: Maybe<Scalars['String']>,
+  readonly originalName?: Maybe<Scalars['String']>,
+  readonly presentationWidth?: Maybe<Scalars['Int']>,
+  readonly presentationHeight?: Maybe<Scalars['Int']>,
 };
 
 export type ImageSharpSizesFilterInput = {
-  readonly base64: Maybe<StringQueryOperatorInput>,
-  readonly tracedSVG: Maybe<StringQueryOperatorInput>,
-  readonly aspectRatio: Maybe<FloatQueryOperatorInput>,
-  readonly src: Maybe<StringQueryOperatorInput>,
-  readonly srcSet: Maybe<StringQueryOperatorInput>,
-  readonly srcWebp: Maybe<StringQueryOperatorInput>,
-  readonly srcSetWebp: Maybe<StringQueryOperatorInput>,
-  readonly sizes: Maybe<StringQueryOperatorInput>,
-  readonly originalImg: Maybe<StringQueryOperatorInput>,
-  readonly originalName: Maybe<StringQueryOperatorInput>,
-  readonly presentationWidth: Maybe<IntQueryOperatorInput>,
-  readonly presentationHeight: Maybe<IntQueryOperatorInput>,
+  readonly base64?: Maybe<StringQueryOperatorInput>,
+  readonly tracedSVG?: Maybe<StringQueryOperatorInput>,
+  readonly aspectRatio?: Maybe<FloatQueryOperatorInput>,
+  readonly src?: Maybe<StringQueryOperatorInput>,
+  readonly srcSet?: Maybe<StringQueryOperatorInput>,
+  readonly srcWebp?: Maybe<StringQueryOperatorInput>,
+  readonly srcSetWebp?: Maybe<StringQueryOperatorInput>,
+  readonly sizes?: Maybe<StringQueryOperatorInput>,
+  readonly originalImg?: Maybe<StringQueryOperatorInput>,
+  readonly originalName?: Maybe<StringQueryOperatorInput>,
+  readonly presentationWidth?: Maybe<IntQueryOperatorInput>,
+  readonly presentationHeight?: Maybe<IntQueryOperatorInput>,
 };
 
 export type ImageSharpSortInput = {
-  readonly fields: Maybe<ReadonlyArray<Maybe<ImageSharpFieldsEnum>>>,
-  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
+  readonly fields?: Maybe<ReadonlyArray<Maybe<ImageSharpFieldsEnum>>>,
+  readonly order?: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
 };
 
 export type Internal = {
   readonly __typename?: 'Internal',
-  readonly content: Maybe<Scalars['String']>,
+  readonly content?: Maybe<Scalars['String']>,
   readonly contentDigest: Scalars['String'],
-  readonly description: Maybe<Scalars['String']>,
-  readonly fieldOwners: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly ignoreType: Maybe<Scalars['Boolean']>,
-  readonly mediaType: Maybe<Scalars['String']>,
+  readonly description?: Maybe<Scalars['String']>,
+  readonly fieldOwners?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly ignoreType?: Maybe<Scalars['Boolean']>,
+  readonly mediaType?: Maybe<Scalars['String']>,
   readonly owner: Scalars['String'],
   readonly type: Scalars['String'],
 };
 
 export type InternalFilterInput = {
-  readonly content: Maybe<StringQueryOperatorInput>,
-  readonly contentDigest: Maybe<StringQueryOperatorInput>,
-  readonly description: Maybe<StringQueryOperatorInput>,
-  readonly fieldOwners: Maybe<StringQueryOperatorInput>,
-  readonly ignoreType: Maybe<BooleanQueryOperatorInput>,
-  readonly mediaType: Maybe<StringQueryOperatorInput>,
-  readonly owner: Maybe<StringQueryOperatorInput>,
-  readonly type: Maybe<StringQueryOperatorInput>,
+  readonly content?: Maybe<StringQueryOperatorInput>,
+  readonly contentDigest?: Maybe<StringQueryOperatorInput>,
+  readonly description?: Maybe<StringQueryOperatorInput>,
+  readonly fieldOwners?: Maybe<StringQueryOperatorInput>,
+  readonly ignoreType?: Maybe<BooleanQueryOperatorInput>,
+  readonly mediaType?: Maybe<StringQueryOperatorInput>,
+  readonly owner?: Maybe<StringQueryOperatorInput>,
+  readonly type?: Maybe<StringQueryOperatorInput>,
 };
 
 export type IntQueryOperatorInput = {
-  readonly eq: Maybe<Scalars['Int']>,
-  readonly ne: Maybe<Scalars['Int']>,
-  readonly gt: Maybe<Scalars['Int']>,
-  readonly gte: Maybe<Scalars['Int']>,
-  readonly lt: Maybe<Scalars['Int']>,
-  readonly lte: Maybe<Scalars['Int']>,
-  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['Int']>>>,
-  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Int']>>>,
+  readonly eq?: Maybe<Scalars['Int']>,
+  readonly ne?: Maybe<Scalars['Int']>,
+  readonly gt?: Maybe<Scalars['Int']>,
+  readonly gte?: Maybe<Scalars['Int']>,
+  readonly lt?: Maybe<Scalars['Int']>,
+  readonly lte?: Maybe<Scalars['Int']>,
+  readonly in?: Maybe<ReadonlyArray<Maybe<Scalars['Int']>>>,
+  readonly nin?: Maybe<ReadonlyArray<Maybe<Scalars['Int']>>>,
 };
 
 
 export type JsonQueryOperatorInput = {
-  readonly eq: Maybe<Scalars['JSON']>,
-  readonly ne: Maybe<Scalars['JSON']>,
-  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['JSON']>>>,
-  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['JSON']>>>,
-  readonly regex: Maybe<Scalars['JSON']>,
-  readonly glob: Maybe<Scalars['JSON']>,
+  readonly eq?: Maybe<Scalars['JSON']>,
+  readonly ne?: Maybe<Scalars['JSON']>,
+  readonly in?: Maybe<ReadonlyArray<Maybe<Scalars['JSON']>>>,
+  readonly nin?: Maybe<ReadonlyArray<Maybe<Scalars['JSON']>>>,
+  readonly regex?: Maybe<Scalars['JSON']>,
+  readonly glob?: Maybe<Scalars['JSON']>,
 };
 
 export enum MarkdownExcerptFormats {
@@ -1418,17 +1402,17 @@ export enum MarkdownExcerptFormats {
 
 export type MarkdownHeading = {
   readonly __typename?: 'MarkdownHeading',
-  readonly value: Maybe<Scalars['String']>,
-  readonly depth: Maybe<Scalars['Int']>,
+  readonly value?: Maybe<Scalars['String']>,
+  readonly depth?: Maybe<Scalars['Int']>,
 };
 
 export type MarkdownHeadingFilterInput = {
-  readonly value: Maybe<StringQueryOperatorInput>,
-  readonly depth: Maybe<IntQueryOperatorInput>,
+  readonly value?: Maybe<StringQueryOperatorInput>,
+  readonly depth?: Maybe<IntQueryOperatorInput>,
 };
 
 export type MarkdownHeadingFilterListInput = {
-  readonly elemMatch: Maybe<MarkdownHeadingFilterInput>,
+  readonly elemMatch?: Maybe<MarkdownHeadingFilterInput>,
 };
 
 export enum MarkdownHeadingLevels {
@@ -1443,19 +1427,19 @@ export enum MarkdownHeadingLevels {
 export type MarkdownRemark = Node & {
   readonly __typename?: 'MarkdownRemark',
   readonly id: Scalars['ID'],
-  readonly frontmatter: Maybe<Frontmatter>,
-  readonly excerpt: Maybe<Scalars['String']>,
-  readonly rawMarkdownBody: Maybe<Scalars['String']>,
-  readonly fileAbsolutePath: Maybe<Scalars['String']>,
-  readonly fields: Maybe<MarkdownRemarkFields>,
-  readonly html: Maybe<Scalars['String']>,
-  readonly htmlAst: Maybe<Scalars['JSON']>,
-  readonly excerptAst: Maybe<Scalars['JSON']>,
-  readonly headings: Maybe<ReadonlyArray<Maybe<MarkdownHeading>>>,
-  readonly timeToRead: Maybe<Scalars['Int']>,
-  readonly tableOfContents: Maybe<Scalars['String']>,
-  readonly wordCount: Maybe<MarkdownWordCount>,
-  readonly parent: Maybe<Node>,
+  readonly frontmatter?: Maybe<Frontmatter>,
+  readonly excerpt?: Maybe<Scalars['String']>,
+  readonly rawMarkdownBody?: Maybe<Scalars['String']>,
+  readonly fileAbsolutePath?: Maybe<Scalars['String']>,
+  readonly fields?: Maybe<MarkdownRemarkFields>,
+  readonly html?: Maybe<Scalars['String']>,
+  readonly htmlAst?: Maybe<Scalars['JSON']>,
+  readonly excerptAst?: Maybe<Scalars['JSON']>,
+  readonly headings?: Maybe<ReadonlyArray<Maybe<MarkdownHeading>>>,
+  readonly timeToRead?: Maybe<Scalars['Int']>,
+  readonly tableOfContents?: Maybe<Scalars['String']>,
+  readonly wordCount?: Maybe<MarkdownWordCount>,
+  readonly parent?: Maybe<Node>,
   readonly children: ReadonlyArray<Node>,
   readonly internal: Internal,
 };
@@ -1475,14 +1459,15 @@ export type MarkdownRemarkExcerptAstArgs = {
 
 
 export type MarkdownRemarkHeadingsArgs = {
-  depth: Maybe<MarkdownHeadingLevels>
+  depth?: Maybe<MarkdownHeadingLevels>
 };
 
 
 export type MarkdownRemarkTableOfContentsArgs = {
+  absolute?: Maybe<Scalars['Boolean']>,
   pathToSlugField?: Maybe<Scalars['String']>,
-  maxDepth: Maybe<Scalars['Int']>,
-  heading: Maybe<Scalars['String']>
+  maxDepth?: Maybe<Scalars['Int']>,
+  heading?: Maybe<Scalars['String']>
 };
 
 export type MarkdownRemarkConnection = {
@@ -1502,68 +1487,26 @@ export type MarkdownRemarkConnectionDistinctArgs = {
 
 
 export type MarkdownRemarkConnectionGroupArgs = {
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>,
   field: MarkdownRemarkFieldsEnum
 };
 
 export type MarkdownRemarkEdge = {
   readonly __typename?: 'MarkdownRemarkEdge',
-  readonly next: Maybe<MarkdownRemark>,
+  readonly next?: Maybe<MarkdownRemark>,
   readonly node: MarkdownRemark,
-  readonly previous: Maybe<MarkdownRemark>,
+  readonly previous?: Maybe<MarkdownRemark>,
 };
 
 export type MarkdownRemarkFields = {
   readonly __typename?: 'MarkdownRemarkFields',
-  readonly slug: Maybe<Scalars['String']>,
-  readonly layout: Maybe<Scalars['String']>,
+  readonly slug?: Maybe<Scalars['String']>,
+  readonly layout?: Maybe<Scalars['String']>,
 };
 
 export enum MarkdownRemarkFieldsEnum {
   Id = 'id',
-  FrontmatterFeatureImageSrcBirthtime = 'frontmatter___featureImage___src___birthtime',
-  FrontmatterFeatureImageSrcBirthtimeMs = 'frontmatter___featureImage___src___birthtimeMs',
-  FrontmatterFeatureImageSrcSourceInstanceName = 'frontmatter___featureImage___src___sourceInstanceName',
-  FrontmatterFeatureImageSrcAbsolutePath = 'frontmatter___featureImage___src___absolutePath',
-  FrontmatterFeatureImageSrcRelativePath = 'frontmatter___featureImage___src___relativePath',
-  FrontmatterFeatureImageSrcExtension = 'frontmatter___featureImage___src___extension',
-  FrontmatterFeatureImageSrcSize = 'frontmatter___featureImage___src___size',
-  FrontmatterFeatureImageSrcPrettySize = 'frontmatter___featureImage___src___prettySize',
-  FrontmatterFeatureImageSrcModifiedTime = 'frontmatter___featureImage___src___modifiedTime',
-  FrontmatterFeatureImageSrcAccessTime = 'frontmatter___featureImage___src___accessTime',
-  FrontmatterFeatureImageSrcChangeTime = 'frontmatter___featureImage___src___changeTime',
-  FrontmatterFeatureImageSrcBirthTime = 'frontmatter___featureImage___src___birthTime',
-  FrontmatterFeatureImageSrcRoot = 'frontmatter___featureImage___src___root',
-  FrontmatterFeatureImageSrcDir = 'frontmatter___featureImage___src___dir',
-  FrontmatterFeatureImageSrcBase = 'frontmatter___featureImage___src___base',
-  FrontmatterFeatureImageSrcExt = 'frontmatter___featureImage___src___ext',
-  FrontmatterFeatureImageSrcName = 'frontmatter___featureImage___src___name',
-  FrontmatterFeatureImageSrcRelativeDirectory = 'frontmatter___featureImage___src___relativeDirectory',
-  FrontmatterFeatureImageSrcDev = 'frontmatter___featureImage___src___dev',
-  FrontmatterFeatureImageSrcMode = 'frontmatter___featureImage___src___mode',
-  FrontmatterFeatureImageSrcNlink = 'frontmatter___featureImage___src___nlink',
-  FrontmatterFeatureImageSrcUid = 'frontmatter___featureImage___src___uid',
-  FrontmatterFeatureImageSrcGid = 'frontmatter___featureImage___src___gid',
-  FrontmatterFeatureImageSrcRdev = 'frontmatter___featureImage___src___rdev',
-  FrontmatterFeatureImageSrcIno = 'frontmatter___featureImage___src___ino',
-  FrontmatterFeatureImageSrcAtimeMs = 'frontmatter___featureImage___src___atimeMs',
-  FrontmatterFeatureImageSrcMtimeMs = 'frontmatter___featureImage___src___mtimeMs',
-  FrontmatterFeatureImageSrcCtimeMs = 'frontmatter___featureImage___src___ctimeMs',
-  FrontmatterFeatureImageSrcAtime = 'frontmatter___featureImage___src___atime',
-  FrontmatterFeatureImageSrcMtime = 'frontmatter___featureImage___src___mtime',
-  FrontmatterFeatureImageSrcCtime = 'frontmatter___featureImage___src___ctime',
-  FrontmatterFeatureImageSrcPublicUrl = 'frontmatter___featureImage___src___publicURL',
-  FrontmatterFeatureImageSrcId = 'frontmatter___featureImage___src___id',
-  FrontmatterFeatureImageSrcChildren = 'frontmatter___featureImage___src___children',
-  FrontmatterFeatureImageDescription = 'frontmatter___featureImage___description',
-  FrontmatterTitle = 'frontmatter___title',
-  FrontmatterDraft = 'frontmatter___draft',
-  FrontmatterDate = 'frontmatter___date',
-  FrontmatterTags = 'frontmatter___tags',
-  FrontmatterCategories = 'frontmatter___categories',
-  FrontmatterFeaturedImageSrcBirthtime = 'frontmatter___featuredImage___src___birthtime',
-  FrontmatterFeaturedImageSrcBirthtimeMs = 'frontmatter___featuredImage___src___birthtimeMs',
   FrontmatterFeaturedImageSrcSourceInstanceName = 'frontmatter___featuredImage___src___sourceInstanceName',
   FrontmatterFeaturedImageSrcAbsolutePath = 'frontmatter___featuredImage___src___absolutePath',
   FrontmatterFeaturedImageSrcRelativePath = 'frontmatter___featuredImage___src___relativePath',
@@ -1593,12 +1536,21 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterFeaturedImageSrcAtime = 'frontmatter___featuredImage___src___atime',
   FrontmatterFeaturedImageSrcMtime = 'frontmatter___featuredImage___src___mtime',
   FrontmatterFeaturedImageSrcCtime = 'frontmatter___featuredImage___src___ctime',
+  FrontmatterFeaturedImageSrcBirthtime = 'frontmatter___featuredImage___src___birthtime',
+  FrontmatterFeaturedImageSrcBirthtimeMs = 'frontmatter___featuredImage___src___birthtimeMs',
+  FrontmatterFeaturedImageSrcBlksize = 'frontmatter___featuredImage___src___blksize',
+  FrontmatterFeaturedImageSrcBlocks = 'frontmatter___featuredImage___src___blocks',
   FrontmatterFeaturedImageSrcPublicUrl = 'frontmatter___featuredImage___src___publicURL',
   FrontmatterFeaturedImageSrcId = 'frontmatter___featuredImage___src___id',
   FrontmatterFeaturedImageSrcChildren = 'frontmatter___featuredImage___src___children',
   FrontmatterFeaturedImageDescription = 'frontmatter___featuredImage___description',
+  FrontmatterTitle = 'frontmatter___title',
+  FrontmatterDate = 'frontmatter___date',
+  FrontmatterTags = 'frontmatter___tags',
+  FrontmatterCategories = 'frontmatter___categories',
   FrontmatterDescription = 'frontmatter___description',
   FrontmatterDropcap = 'frontmatter___dropcap',
+  FrontmatterDraft = 'frontmatter___draft',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -1703,38 +1655,38 @@ export enum MarkdownRemarkFieldsEnum {
 }
 
 export type MarkdownRemarkFieldsFilterInput = {
-  readonly slug: Maybe<StringQueryOperatorInput>,
-  readonly layout: Maybe<StringQueryOperatorInput>,
+  readonly slug?: Maybe<StringQueryOperatorInput>,
+  readonly layout?: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkFilterInput = {
-  readonly id: Maybe<StringQueryOperatorInput>,
-  readonly frontmatter: Maybe<FrontmatterFilterInput>,
-  readonly excerpt: Maybe<StringQueryOperatorInput>,
-  readonly rawMarkdownBody: Maybe<StringQueryOperatorInput>,
-  readonly fileAbsolutePath: Maybe<StringQueryOperatorInput>,
-  readonly fields: Maybe<MarkdownRemarkFieldsFilterInput>,
-  readonly html: Maybe<StringQueryOperatorInput>,
-  readonly htmlAst: Maybe<JsonQueryOperatorInput>,
-  readonly excerptAst: Maybe<JsonQueryOperatorInput>,
-  readonly headings: Maybe<MarkdownHeadingFilterListInput>,
-  readonly timeToRead: Maybe<IntQueryOperatorInput>,
-  readonly tableOfContents: Maybe<StringQueryOperatorInput>,
-  readonly wordCount: Maybe<MarkdownWordCountFilterInput>,
-  readonly parent: Maybe<NodeFilterInput>,
-  readonly children: Maybe<NodeFilterListInput>,
-  readonly internal: Maybe<InternalFilterInput>,
+  readonly id?: Maybe<StringQueryOperatorInput>,
+  readonly frontmatter?: Maybe<FrontmatterFilterInput>,
+  readonly excerpt?: Maybe<StringQueryOperatorInput>,
+  readonly rawMarkdownBody?: Maybe<StringQueryOperatorInput>,
+  readonly fileAbsolutePath?: Maybe<StringQueryOperatorInput>,
+  readonly fields?: Maybe<MarkdownRemarkFieldsFilterInput>,
+  readonly html?: Maybe<StringQueryOperatorInput>,
+  readonly htmlAst?: Maybe<JsonQueryOperatorInput>,
+  readonly excerptAst?: Maybe<JsonQueryOperatorInput>,
+  readonly headings?: Maybe<MarkdownHeadingFilterListInput>,
+  readonly timeToRead?: Maybe<IntQueryOperatorInput>,
+  readonly tableOfContents?: Maybe<StringQueryOperatorInput>,
+  readonly wordCount?: Maybe<MarkdownWordCountFilterInput>,
+  readonly parent?: Maybe<NodeFilterInput>,
+  readonly children?: Maybe<NodeFilterListInput>,
+  readonly internal?: Maybe<InternalFilterInput>,
 };
 
 export type MarkdownRemarkFrontmatterFeaturedImage = {
   readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage',
-  readonly src: Maybe<File>,
-  readonly description: Maybe<Scalars['String']>,
+  readonly src?: Maybe<File>,
+  readonly description?: Maybe<Scalars['String']>,
 };
 
 export type MarkdownRemarkFrontmatterFeaturedImageFilterInput = {
-  readonly src: Maybe<FileFilterInput>,
-  readonly description: Maybe<StringQueryOperatorInput>,
+  readonly src?: Maybe<FileFilterInput>,
+  readonly description?: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -1744,44 +1696,43 @@ export type MarkdownRemarkGroupConnection = {
   readonly nodes: ReadonlyArray<MarkdownRemark>,
   readonly pageInfo: PageInfo,
   readonly field: Scalars['String'],
-  readonly fieldValue: Maybe<Scalars['String']>,
+  readonly fieldValue?: Maybe<Scalars['String']>,
 };
 
 export type MarkdownRemarkSortInput = {
-  readonly fields: Maybe<ReadonlyArray<Maybe<MarkdownRemarkFieldsEnum>>>,
-  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
+  readonly fields?: Maybe<ReadonlyArray<Maybe<MarkdownRemarkFieldsEnum>>>,
+  readonly order?: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
 };
 
 export type MarkdownWordCount = {
   readonly __typename?: 'MarkdownWordCount',
-  readonly paragraphs: Maybe<Scalars['Int']>,
-  readonly sentences: Maybe<Scalars['Int']>,
-  readonly words: Maybe<Scalars['Int']>,
+  readonly paragraphs?: Maybe<Scalars['Int']>,
+  readonly sentences?: Maybe<Scalars['Int']>,
+  readonly words?: Maybe<Scalars['Int']>,
 };
 
 export type MarkdownWordCountFilterInput = {
-  readonly paragraphs: Maybe<IntQueryOperatorInput>,
-  readonly sentences: Maybe<IntQueryOperatorInput>,
-  readonly words: Maybe<IntQueryOperatorInput>,
+  readonly paragraphs?: Maybe<IntQueryOperatorInput>,
+  readonly sentences?: Maybe<IntQueryOperatorInput>,
+  readonly words?: Maybe<IntQueryOperatorInput>,
 };
 
-/** Node Interface */
 export type Node = {
   readonly id: Scalars['ID'],
-  readonly parent: Maybe<Node>,
+  readonly parent?: Maybe<Node>,
   readonly children: ReadonlyArray<Node>,
   readonly internal: Internal,
 };
 
 export type NodeFilterInput = {
-  readonly id: Maybe<StringQueryOperatorInput>,
-  readonly parent: Maybe<NodeFilterInput>,
-  readonly children: Maybe<NodeFilterListInput>,
-  readonly internal: Maybe<InternalFilterInput>,
+  readonly id?: Maybe<StringQueryOperatorInput>,
+  readonly parent?: Maybe<NodeFilterInput>,
+  readonly children?: Maybe<NodeFilterListInput>,
+  readonly internal?: Maybe<InternalFilterInput>,
 };
 
 export type NodeFilterListInput = {
-  readonly elemMatch: Maybe<NodeFilterInput>,
+  readonly elemMatch?: Maybe<NodeFilterInput>,
 };
 
 export type PageInfo = {
@@ -1791,19 +1742,19 @@ export type PageInfo = {
   readonly hasNextPage: Scalars['Boolean'],
   readonly itemCount: Scalars['Int'],
   readonly pageCount: Scalars['Int'],
-  readonly perPage: Maybe<Scalars['Int']>,
+  readonly perPage?: Maybe<Scalars['Int']>,
 };
 
 export type Potrace = {
-  readonly turnPolicy: Maybe<PotraceTurnPolicy>,
-  readonly turdSize: Maybe<Scalars['Float']>,
-  readonly alphaMax: Maybe<Scalars['Float']>,
-  readonly optCurve: Maybe<Scalars['Boolean']>,
-  readonly optTolerance: Maybe<Scalars['Float']>,
-  readonly threshold: Maybe<Scalars['Int']>,
-  readonly blackOnWhite: Maybe<Scalars['Boolean']>,
-  readonly color: Maybe<Scalars['String']>,
-  readonly background: Maybe<Scalars['String']>,
+  readonly turnPolicy?: Maybe<PotraceTurnPolicy>,
+  readonly turdSize?: Maybe<Scalars['Float']>,
+  readonly alphaMax?: Maybe<Scalars['Float']>,
+  readonly optCurve?: Maybe<Scalars['Boolean']>,
+  readonly optTolerance?: Maybe<Scalars['Float']>,
+  readonly threshold?: Maybe<Scalars['Int']>,
+  readonly blackOnWhite?: Maybe<Scalars['Boolean']>,
+  readonly color?: Maybe<Scalars['String']>,
+  readonly background?: Maybe<Scalars['String']>,
 };
 
 export enum PotraceTurnPolicy {
@@ -1817,261 +1768,266 @@ export enum PotraceTurnPolicy {
 
 export type Query = {
   readonly __typename?: 'Query',
-  readonly markdownRemark: Maybe<MarkdownRemark>,
-  readonly allMarkdownRemark: MarkdownRemarkConnection,
-  readonly imageSharp: Maybe<ImageSharp>,
-  readonly allImageSharp: ImageSharpConnection,
-  readonly file: Maybe<File>,
+  readonly file?: Maybe<File>,
   readonly allFile: FileConnection,
-  readonly sitePage: Maybe<SitePage>,
-  readonly allSitePage: SitePageConnection,
-  readonly sitePlugin: Maybe<SitePlugin>,
-  readonly allSitePlugin: SitePluginConnection,
-  readonly site: Maybe<Site>,
-  readonly allSite: SiteConnection,
-  readonly directory: Maybe<Directory>,
+  readonly directory?: Maybe<Directory>,
   readonly allDirectory: DirectoryConnection,
-};
-
-
-export type QueryMarkdownRemarkArgs = {
-  id: Maybe<StringQueryOperatorInput>,
-  frontmatter: Maybe<FrontmatterFilterInput>,
-  excerpt: Maybe<StringQueryOperatorInput>,
-  rawMarkdownBody: Maybe<StringQueryOperatorInput>,
-  fileAbsolutePath: Maybe<StringQueryOperatorInput>,
-  fields: Maybe<MarkdownRemarkFieldsFilterInput>,
-  html: Maybe<StringQueryOperatorInput>,
-  htmlAst: Maybe<JsonQueryOperatorInput>,
-  excerptAst: Maybe<JsonQueryOperatorInput>,
-  headings: Maybe<MarkdownHeadingFilterListInput>,
-  timeToRead: Maybe<IntQueryOperatorInput>,
-  tableOfContents: Maybe<StringQueryOperatorInput>,
-  wordCount: Maybe<MarkdownWordCountFilterInput>,
-  parent: Maybe<NodeFilterInput>,
-  children: Maybe<NodeFilterListInput>,
-  internal: Maybe<InternalFilterInput>
-};
-
-
-export type QueryAllMarkdownRemarkArgs = {
-  filter: Maybe<MarkdownRemarkFilterInput>,
-  sort: Maybe<MarkdownRemarkSortInput>,
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>
-};
-
-
-export type QueryImageSharpArgs = {
-  fixed: Maybe<ImageSharpFixedFilterInput>,
-  resolutions: Maybe<ImageSharpResolutionsFilterInput>,
-  fluid: Maybe<ImageSharpFluidFilterInput>,
-  sizes: Maybe<ImageSharpSizesFilterInput>,
-  original: Maybe<ImageSharpOriginalFilterInput>,
-  resize: Maybe<ImageSharpResizeFilterInput>,
-  id: Maybe<StringQueryOperatorInput>,
-  parent: Maybe<NodeFilterInput>,
-  children: Maybe<NodeFilterListInput>,
-  internal: Maybe<InternalFilterInput>
-};
-
-
-export type QueryAllImageSharpArgs = {
-  filter: Maybe<ImageSharpFilterInput>,
-  sort: Maybe<ImageSharpSortInput>,
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>
+  readonly sitePage?: Maybe<SitePage>,
+  readonly allSitePage: SitePageConnection,
+  readonly markdownRemark?: Maybe<MarkdownRemark>,
+  readonly allMarkdownRemark: MarkdownRemarkConnection,
+  readonly imageSharp?: Maybe<ImageSharp>,
+  readonly allImageSharp: ImageSharpConnection,
+  readonly site?: Maybe<Site>,
+  readonly allSite: SiteConnection,
+  readonly sitePlugin?: Maybe<SitePlugin>,
+  readonly allSitePlugin: SitePluginConnection,
 };
 
 
 export type QueryFileArgs = {
-  birthtime: Maybe<DateQueryOperatorInput>,
-  birthtimeMs: Maybe<FloatQueryOperatorInput>,
-  sourceInstanceName: Maybe<StringQueryOperatorInput>,
-  absolutePath: Maybe<StringQueryOperatorInput>,
-  relativePath: Maybe<StringQueryOperatorInput>,
-  extension: Maybe<StringQueryOperatorInput>,
-  size: Maybe<IntQueryOperatorInput>,
-  prettySize: Maybe<StringQueryOperatorInput>,
-  modifiedTime: Maybe<DateQueryOperatorInput>,
-  accessTime: Maybe<DateQueryOperatorInput>,
-  changeTime: Maybe<DateQueryOperatorInput>,
-  birthTime: Maybe<DateQueryOperatorInput>,
-  root: Maybe<StringQueryOperatorInput>,
-  dir: Maybe<StringQueryOperatorInput>,
-  base: Maybe<StringQueryOperatorInput>,
-  ext: Maybe<StringQueryOperatorInput>,
-  name: Maybe<StringQueryOperatorInput>,
-  relativeDirectory: Maybe<StringQueryOperatorInput>,
-  dev: Maybe<IntQueryOperatorInput>,
-  mode: Maybe<IntQueryOperatorInput>,
-  nlink: Maybe<IntQueryOperatorInput>,
-  uid: Maybe<IntQueryOperatorInput>,
-  gid: Maybe<IntQueryOperatorInput>,
-  rdev: Maybe<IntQueryOperatorInput>,
-  ino: Maybe<FloatQueryOperatorInput>,
-  atimeMs: Maybe<FloatQueryOperatorInput>,
-  mtimeMs: Maybe<FloatQueryOperatorInput>,
-  ctimeMs: Maybe<FloatQueryOperatorInput>,
-  atime: Maybe<DateQueryOperatorInput>,
-  mtime: Maybe<DateQueryOperatorInput>,
-  ctime: Maybe<DateQueryOperatorInput>,
-  publicURL: Maybe<StringQueryOperatorInput>,
-  childImageSharp: Maybe<ImageSharpFilterInput>,
-  id: Maybe<StringQueryOperatorInput>,
-  parent: Maybe<NodeFilterInput>,
-  children: Maybe<NodeFilterListInput>,
-  internal: Maybe<InternalFilterInput>,
-  childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>
+  sourceInstanceName?: Maybe<StringQueryOperatorInput>,
+  absolutePath?: Maybe<StringQueryOperatorInput>,
+  relativePath?: Maybe<StringQueryOperatorInput>,
+  extension?: Maybe<StringQueryOperatorInput>,
+  size?: Maybe<IntQueryOperatorInput>,
+  prettySize?: Maybe<StringQueryOperatorInput>,
+  modifiedTime?: Maybe<DateQueryOperatorInput>,
+  accessTime?: Maybe<DateQueryOperatorInput>,
+  changeTime?: Maybe<DateQueryOperatorInput>,
+  birthTime?: Maybe<DateQueryOperatorInput>,
+  root?: Maybe<StringQueryOperatorInput>,
+  dir?: Maybe<StringQueryOperatorInput>,
+  base?: Maybe<StringQueryOperatorInput>,
+  ext?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  relativeDirectory?: Maybe<StringQueryOperatorInput>,
+  dev?: Maybe<IntQueryOperatorInput>,
+  mode?: Maybe<IntQueryOperatorInput>,
+  nlink?: Maybe<IntQueryOperatorInput>,
+  uid?: Maybe<IntQueryOperatorInput>,
+  gid?: Maybe<IntQueryOperatorInput>,
+  rdev?: Maybe<IntQueryOperatorInput>,
+  ino?: Maybe<FloatQueryOperatorInput>,
+  atimeMs?: Maybe<FloatQueryOperatorInput>,
+  mtimeMs?: Maybe<FloatQueryOperatorInput>,
+  ctimeMs?: Maybe<FloatQueryOperatorInput>,
+  atime?: Maybe<DateQueryOperatorInput>,
+  mtime?: Maybe<DateQueryOperatorInput>,
+  ctime?: Maybe<DateQueryOperatorInput>,
+  birthtime?: Maybe<DateQueryOperatorInput>,
+  birthtimeMs?: Maybe<FloatQueryOperatorInput>,
+  blksize?: Maybe<IntQueryOperatorInput>,
+  blocks?: Maybe<IntQueryOperatorInput>,
+  publicURL?: Maybe<StringQueryOperatorInput>,
+  childImageSharp?: Maybe<ImageSharpFilterInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>,
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>
 };
 
 
 export type QueryAllFileArgs = {
-  filter: Maybe<FileFilterInput>,
-  sort: Maybe<FileSortInput>,
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>
-};
-
-
-export type QuerySitePageArgs = {
-  id: Maybe<StringQueryOperatorInput>,
-  parent: Maybe<NodeFilterInput>,
-  children: Maybe<NodeFilterListInput>,
-  internal: Maybe<InternalFilterInput>,
-  path: Maybe<StringQueryOperatorInput>,
-  internalComponentName: Maybe<StringQueryOperatorInput>,
-  component: Maybe<StringQueryOperatorInput>,
-  componentChunkName: Maybe<StringQueryOperatorInput>,
-  isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>,
-  context: Maybe<SitePageContextFilterInput>,
-  pluginCreator: Maybe<SitePluginFilterInput>,
-  pluginCreatorId: Maybe<StringQueryOperatorInput>,
-  componentPath: Maybe<StringQueryOperatorInput>
-};
-
-
-export type QueryAllSitePageArgs = {
-  filter: Maybe<SitePageFilterInput>,
-  sort: Maybe<SitePageSortInput>,
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>
-};
-
-
-export type QuerySitePluginArgs = {
-  id: Maybe<StringQueryOperatorInput>,
-  parent: Maybe<NodeFilterInput>,
-  children: Maybe<NodeFilterListInput>,
-  internal: Maybe<InternalFilterInput>,
-  resolve: Maybe<StringQueryOperatorInput>,
-  name: Maybe<StringQueryOperatorInput>,
-  version: Maybe<StringQueryOperatorInput>,
-  pluginOptions: Maybe<SitePluginPluginOptionsFilterInput>,
-  nodeAPIs: Maybe<StringQueryOperatorInput>,
-  browserAPIs: Maybe<StringQueryOperatorInput>,
-  ssrAPIs: Maybe<StringQueryOperatorInput>,
-  pluginFilepath: Maybe<StringQueryOperatorInput>,
-  packageJson: Maybe<SitePluginPackageJsonFilterInput>
-};
-
-
-export type QueryAllSitePluginArgs = {
-  filter: Maybe<SitePluginFilterInput>,
-  sort: Maybe<SitePluginSortInput>,
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>
-};
-
-
-export type QuerySiteArgs = {
-  id: Maybe<StringQueryOperatorInput>,
-  parent: Maybe<NodeFilterInput>,
-  children: Maybe<NodeFilterListInput>,
-  internal: Maybe<InternalFilterInput>,
-  siteMetadata: Maybe<SiteSiteMetadataFilterInput>,
-  port: Maybe<IntQueryOperatorInput>,
-  host: Maybe<StringQueryOperatorInput>,
-  polyfill: Maybe<BooleanQueryOperatorInput>,
-  pathPrefix: Maybe<StringQueryOperatorInput>,
-  buildTime: Maybe<DateQueryOperatorInput>
-};
-
-
-export type QueryAllSiteArgs = {
-  filter: Maybe<SiteFilterInput>,
-  sort: Maybe<SiteSortInput>,
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>
+  filter?: Maybe<FileFilterInput>,
+  sort?: Maybe<FileSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
 };
 
 
 export type QueryDirectoryArgs = {
-  id: Maybe<StringQueryOperatorInput>,
-  parent: Maybe<NodeFilterInput>,
-  children: Maybe<NodeFilterListInput>,
-  internal: Maybe<InternalFilterInput>,
-  sourceInstanceName: Maybe<StringQueryOperatorInput>,
-  absolutePath: Maybe<StringQueryOperatorInput>,
-  relativePath: Maybe<StringQueryOperatorInput>,
-  extension: Maybe<StringQueryOperatorInput>,
-  size: Maybe<IntQueryOperatorInput>,
-  prettySize: Maybe<StringQueryOperatorInput>,
-  modifiedTime: Maybe<DateQueryOperatorInput>,
-  accessTime: Maybe<DateQueryOperatorInput>,
-  changeTime: Maybe<DateQueryOperatorInput>,
-  birthTime: Maybe<DateQueryOperatorInput>,
-  root: Maybe<StringQueryOperatorInput>,
-  dir: Maybe<StringQueryOperatorInput>,
-  base: Maybe<StringQueryOperatorInput>,
-  ext: Maybe<StringQueryOperatorInput>,
-  name: Maybe<StringQueryOperatorInput>,
-  relativeDirectory: Maybe<StringQueryOperatorInput>,
-  dev: Maybe<IntQueryOperatorInput>,
-  mode: Maybe<IntQueryOperatorInput>,
-  nlink: Maybe<IntQueryOperatorInput>,
-  uid: Maybe<IntQueryOperatorInput>,
-  gid: Maybe<IntQueryOperatorInput>,
-  rdev: Maybe<IntQueryOperatorInput>,
-  ino: Maybe<FloatQueryOperatorInput>,
-  atimeMs: Maybe<FloatQueryOperatorInput>,
-  mtimeMs: Maybe<FloatQueryOperatorInput>,
-  ctimeMs: Maybe<FloatQueryOperatorInput>,
-  birthtimeMs: Maybe<FloatQueryOperatorInput>,
-  atime: Maybe<DateQueryOperatorInput>,
-  mtime: Maybe<DateQueryOperatorInput>,
-  ctime: Maybe<DateQueryOperatorInput>,
-  birthtime: Maybe<DateQueryOperatorInput>
+  sourceInstanceName?: Maybe<StringQueryOperatorInput>,
+  absolutePath?: Maybe<StringQueryOperatorInput>,
+  relativePath?: Maybe<StringQueryOperatorInput>,
+  extension?: Maybe<StringQueryOperatorInput>,
+  size?: Maybe<IntQueryOperatorInput>,
+  prettySize?: Maybe<StringQueryOperatorInput>,
+  modifiedTime?: Maybe<DateQueryOperatorInput>,
+  accessTime?: Maybe<DateQueryOperatorInput>,
+  changeTime?: Maybe<DateQueryOperatorInput>,
+  birthTime?: Maybe<DateQueryOperatorInput>,
+  root?: Maybe<StringQueryOperatorInput>,
+  dir?: Maybe<StringQueryOperatorInput>,
+  base?: Maybe<StringQueryOperatorInput>,
+  ext?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  relativeDirectory?: Maybe<StringQueryOperatorInput>,
+  dev?: Maybe<IntQueryOperatorInput>,
+  mode?: Maybe<IntQueryOperatorInput>,
+  nlink?: Maybe<IntQueryOperatorInput>,
+  uid?: Maybe<IntQueryOperatorInput>,
+  gid?: Maybe<IntQueryOperatorInput>,
+  rdev?: Maybe<IntQueryOperatorInput>,
+  ino?: Maybe<FloatQueryOperatorInput>,
+  atimeMs?: Maybe<FloatQueryOperatorInput>,
+  mtimeMs?: Maybe<FloatQueryOperatorInput>,
+  ctimeMs?: Maybe<FloatQueryOperatorInput>,
+  atime?: Maybe<DateQueryOperatorInput>,
+  mtime?: Maybe<DateQueryOperatorInput>,
+  ctime?: Maybe<DateQueryOperatorInput>,
+  birthtime?: Maybe<DateQueryOperatorInput>,
+  birthtimeMs?: Maybe<FloatQueryOperatorInput>,
+  blksize?: Maybe<IntQueryOperatorInput>,
+  blocks?: Maybe<IntQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>
 };
 
 
 export type QueryAllDirectoryArgs = {
-  filter: Maybe<DirectoryFilterInput>,
-  sort: Maybe<DirectorySortInput>,
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>
+  filter?: Maybe<DirectoryFilterInput>,
+  sort?: Maybe<DirectorySortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
+};
+
+
+export type QuerySitePageArgs = {
+  path?: Maybe<StringQueryOperatorInput>,
+  component?: Maybe<StringQueryOperatorInput>,
+  internalComponentName?: Maybe<StringQueryOperatorInput>,
+  componentChunkName?: Maybe<StringQueryOperatorInput>,
+  matchPath?: Maybe<StringQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>,
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>,
+  context?: Maybe<SitePageContextFilterInput>,
+  pluginCreator?: Maybe<SitePluginFilterInput>,
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>,
+  componentPath?: Maybe<StringQueryOperatorInput>
+};
+
+
+export type QueryAllSitePageArgs = {
+  filter?: Maybe<SitePageFilterInput>,
+  sort?: Maybe<SitePageSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
+};
+
+
+export type QueryMarkdownRemarkArgs = {
+  id?: Maybe<StringQueryOperatorInput>,
+  frontmatter?: Maybe<FrontmatterFilterInput>,
+  excerpt?: Maybe<StringQueryOperatorInput>,
+  rawMarkdownBody?: Maybe<StringQueryOperatorInput>,
+  fileAbsolutePath?: Maybe<StringQueryOperatorInput>,
+  fields?: Maybe<MarkdownRemarkFieldsFilterInput>,
+  html?: Maybe<StringQueryOperatorInput>,
+  htmlAst?: Maybe<JsonQueryOperatorInput>,
+  excerptAst?: Maybe<JsonQueryOperatorInput>,
+  headings?: Maybe<MarkdownHeadingFilterListInput>,
+  timeToRead?: Maybe<IntQueryOperatorInput>,
+  tableOfContents?: Maybe<StringQueryOperatorInput>,
+  wordCount?: Maybe<MarkdownWordCountFilterInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>
+};
+
+
+export type QueryAllMarkdownRemarkArgs = {
+  filter?: Maybe<MarkdownRemarkFilterInput>,
+  sort?: Maybe<MarkdownRemarkSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
+};
+
+
+export type QueryImageSharpArgs = {
+  fixed?: Maybe<ImageSharpFixedFilterInput>,
+  resolutions?: Maybe<ImageSharpResolutionsFilterInput>,
+  fluid?: Maybe<ImageSharpFluidFilterInput>,
+  sizes?: Maybe<ImageSharpSizesFilterInput>,
+  original?: Maybe<ImageSharpOriginalFilterInput>,
+  resize?: Maybe<ImageSharpResizeFilterInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>
+};
+
+
+export type QueryAllImageSharpArgs = {
+  filter?: Maybe<ImageSharpFilterInput>,
+  sort?: Maybe<ImageSharpSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
+};
+
+
+export type QuerySiteArgs = {
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>,
+  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
+  port?: Maybe<IntQueryOperatorInput>,
+  host?: Maybe<StringQueryOperatorInput>,
+  polyfill?: Maybe<BooleanQueryOperatorInput>,
+  pathPrefix?: Maybe<StringQueryOperatorInput>,
+  buildTime?: Maybe<DateQueryOperatorInput>
+};
+
+
+export type QueryAllSiteArgs = {
+  filter?: Maybe<SiteFilterInput>,
+  sort?: Maybe<SiteSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
+};
+
+
+export type QuerySitePluginArgs = {
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>,
+  resolve?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  version?: Maybe<StringQueryOperatorInput>,
+  pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>,
+  nodeAPIs?: Maybe<StringQueryOperatorInput>,
+  browserAPIs?: Maybe<StringQueryOperatorInput>,
+  ssrAPIs?: Maybe<StringQueryOperatorInput>,
+  pluginFilepath?: Maybe<StringQueryOperatorInput>,
+  packageJson?: Maybe<SitePluginPackageJsonFilterInput>
+};
+
+
+export type QueryAllSitePluginArgs = {
+  filter?: Maybe<SitePluginFilterInput>,
+  sort?: Maybe<SitePluginSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
 };
 
 export type Site = Node & {
   readonly __typename?: 'Site',
   readonly id: Scalars['ID'],
-  readonly parent: Maybe<Node>,
+  readonly parent?: Maybe<Node>,
   readonly children: ReadonlyArray<Node>,
   readonly internal: Internal,
-  readonly siteMetadata: Maybe<SiteSiteMetadata>,
-  readonly port: Maybe<Scalars['Int']>,
-  readonly host: Maybe<Scalars['String']>,
-  readonly polyfill: Maybe<Scalars['Boolean']>,
-  readonly pathPrefix: Maybe<Scalars['String']>,
-  readonly buildTime: Maybe<Scalars['Date']>,
+  readonly siteMetadata?: Maybe<SiteSiteMetadata>,
+  readonly port?: Maybe<Scalars['Int']>,
+  readonly host?: Maybe<Scalars['String']>,
+  readonly polyfill?: Maybe<Scalars['Boolean']>,
+  readonly pathPrefix?: Maybe<Scalars['String']>,
+  readonly buildTime?: Maybe<Scalars['Date']>,
 };
 
 
 export type SiteBuildTimeArgs = {
-  formatString: Maybe<Scalars['String']>,
-  fromNow: Maybe<Scalars['Boolean']>,
-  difference: Maybe<Scalars['String']>,
-  locale: Maybe<Scalars['String']>
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 export type SiteConnection = {
@@ -2091,16 +2047,16 @@ export type SiteConnectionDistinctArgs = {
 
 
 export type SiteConnectionGroupArgs = {
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>,
   field: SiteFieldsEnum
 };
 
 export type SiteEdge = {
   readonly __typename?: 'SiteEdge',
-  readonly next: Maybe<Site>,
+  readonly next?: Maybe<Site>,
   readonly node: Site,
-  readonly previous: Maybe<Site>,
+  readonly previous?: Maybe<Site>,
 };
 
 export enum SiteFieldsEnum {
@@ -2207,16 +2163,16 @@ export enum SiteFieldsEnum {
 }
 
 export type SiteFilterInput = {
-  readonly id: Maybe<StringQueryOperatorInput>,
-  readonly parent: Maybe<NodeFilterInput>,
-  readonly children: Maybe<NodeFilterListInput>,
-  readonly internal: Maybe<InternalFilterInput>,
-  readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>,
-  readonly port: Maybe<IntQueryOperatorInput>,
-  readonly host: Maybe<StringQueryOperatorInput>,
-  readonly polyfill: Maybe<BooleanQueryOperatorInput>,
-  readonly pathPrefix: Maybe<StringQueryOperatorInput>,
-  readonly buildTime: Maybe<DateQueryOperatorInput>,
+  readonly id?: Maybe<StringQueryOperatorInput>,
+  readonly parent?: Maybe<NodeFilterInput>,
+  readonly children?: Maybe<NodeFilterListInput>,
+  readonly internal?: Maybe<InternalFilterInput>,
+  readonly siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
+  readonly port?: Maybe<IntQueryOperatorInput>,
+  readonly host?: Maybe<StringQueryOperatorInput>,
+  readonly polyfill?: Maybe<BooleanQueryOperatorInput>,
+  readonly pathPrefix?: Maybe<StringQueryOperatorInput>,
+  readonly buildTime?: Maybe<DateQueryOperatorInput>,
 };
 
 export type SiteGroupConnection = {
@@ -2226,24 +2182,25 @@ export type SiteGroupConnection = {
   readonly nodes: ReadonlyArray<Site>,
   readonly pageInfo: PageInfo,
   readonly field: Scalars['String'],
-  readonly fieldValue: Maybe<Scalars['String']>,
+  readonly fieldValue?: Maybe<Scalars['String']>,
 };
 
 export type SitePage = Node & {
   readonly __typename?: 'SitePage',
+  readonly path: Scalars['String'],
+  readonly component: Scalars['String'],
+  readonly internalComponentName: Scalars['String'],
+  readonly componentChunkName: Scalars['String'],
+  readonly matchPath?: Maybe<Scalars['String']>,
   readonly id: Scalars['ID'],
-  readonly parent: Maybe<Node>,
+  readonly parent?: Maybe<Node>,
   readonly children: ReadonlyArray<Node>,
   readonly internal: Internal,
-  readonly path: Maybe<Scalars['String']>,
-  readonly internalComponentName: Maybe<Scalars['String']>,
-  readonly component: Maybe<Scalars['String']>,
-  readonly componentChunkName: Maybe<Scalars['String']>,
-  readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>,
-  readonly context: Maybe<SitePageContext>,
-  readonly pluginCreator: Maybe<SitePlugin>,
-  readonly pluginCreatorId: Maybe<Scalars['String']>,
-  readonly componentPath: Maybe<Scalars['String']>,
+  readonly isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>,
+  readonly context?: Maybe<SitePageContext>,
+  readonly pluginCreator?: Maybe<SitePlugin>,
+  readonly pluginCreatorId?: Maybe<Scalars['String']>,
+  readonly componentPath?: Maybe<Scalars['String']>,
 };
 
 export type SitePageConnection = {
@@ -2263,28 +2220,233 @@ export type SitePageConnectionDistinctArgs = {
 
 
 export type SitePageConnectionGroupArgs = {
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>,
   field: SitePageFieldsEnum
 };
 
 export type SitePageContext = {
   readonly __typename?: 'SitePageContext',
-  readonly slug: Maybe<Scalars['String']>,
+  readonly slug?: Maybe<Scalars['String']>,
+  readonly previous?: Maybe<SitePageContextPrevious>,
+  readonly next?: Maybe<SitePageContextNext>,
 };
 
 export type SitePageContextFilterInput = {
-  readonly slug: Maybe<StringQueryOperatorInput>,
+  readonly slug?: Maybe<StringQueryOperatorInput>,
+  readonly previous?: Maybe<SitePageContextPreviousFilterInput>,
+  readonly next?: Maybe<SitePageContextNextFilterInput>,
+};
+
+export type SitePageContextNext = {
+  readonly __typename?: 'SitePageContextNext',
+  readonly node?: Maybe<SitePageContextNextNode>,
+};
+
+export type SitePageContextNextFilterInput = {
+  readonly node?: Maybe<SitePageContextNextNodeFilterInput>,
+};
+
+export type SitePageContextNextNode = {
+  readonly __typename?: 'SitePageContextNextNode',
+  readonly fields?: Maybe<SitePageContextNextNodeFields>,
+  readonly frontmatter?: Maybe<SitePageContextNextNodeFrontmatter>,
+  readonly excerpt?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextNextNodeFields = {
+  readonly __typename?: 'SitePageContextNextNodeFields',
+  readonly layout?: Maybe<Scalars['String']>,
+  readonly slug?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextNextNodeFieldsFilterInput = {
+  readonly layout?: Maybe<StringQueryOperatorInput>,
+  readonly slug?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextNextNodeFilterInput = {
+  readonly fields?: Maybe<SitePageContextNextNodeFieldsFilterInput>,
+  readonly frontmatter?: Maybe<SitePageContextNextNodeFrontmatterFilterInput>,
+  readonly excerpt?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextNextNodeFrontmatter = {
+  readonly __typename?: 'SitePageContextNextNodeFrontmatter',
+  readonly title?: Maybe<Scalars['String']>,
+  readonly draft?: Maybe<Scalars['Boolean']>,
+  readonly date?: Maybe<Scalars['String']>,
+  readonly categories?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly description?: Maybe<Scalars['String']>,
+  readonly featuredImage?: Maybe<SitePageContextNextNodeFrontmatterFeaturedImage>,
+};
+
+export type SitePageContextNextNodeFrontmatterFeaturedImage = {
+  readonly __typename?: 'SitePageContextNextNodeFrontmatterFeaturedImage',
+  readonly description?: Maybe<Scalars['String']>,
+  readonly src?: Maybe<SitePageContextNextNodeFrontmatterFeaturedImageSrc>,
+};
+
+export type SitePageContextNextNodeFrontmatterFeaturedImageFilterInput = {
+  readonly description?: Maybe<StringQueryOperatorInput>,
+  readonly src?: Maybe<SitePageContextNextNodeFrontmatterFeaturedImageSrcFilterInput>,
+};
+
+export type SitePageContextNextNodeFrontmatterFeaturedImageSrc = {
+  readonly __typename?: 'SitePageContextNextNodeFrontmatterFeaturedImageSrc',
+  readonly childImageSharp?: Maybe<SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharp>,
+};
+
+export type SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharp = {
+  readonly __typename?: 'SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharp',
+  readonly fixed?: Maybe<SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFixed>,
+};
+
+export type SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFilterInput = {
+  readonly fixed?: Maybe<SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFixedFilterInput>,
+};
+
+export type SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFixed = {
+  readonly __typename?: 'SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFixed',
+  readonly srcWebp?: Maybe<Scalars['String']>,
+  readonly srcSetWebp?: Maybe<Scalars['String']>,
+  readonly src?: Maybe<Scalars['String']>,
+  readonly srcSet?: Maybe<Scalars['String']>,
+  readonly base64?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFixedFilterInput = {
+  readonly srcWebp?: Maybe<StringQueryOperatorInput>,
+  readonly srcSetWebp?: Maybe<StringQueryOperatorInput>,
+  readonly src?: Maybe<StringQueryOperatorInput>,
+  readonly srcSet?: Maybe<StringQueryOperatorInput>,
+  readonly base64?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextNextNodeFrontmatterFeaturedImageSrcFilterInput = {
+  readonly childImageSharp?: Maybe<SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFilterInput>,
+};
+
+export type SitePageContextNextNodeFrontmatterFilterInput = {
+  readonly title?: Maybe<StringQueryOperatorInput>,
+  readonly draft?: Maybe<BooleanQueryOperatorInput>,
+  readonly date?: Maybe<StringQueryOperatorInput>,
+  readonly categories?: Maybe<StringQueryOperatorInput>,
+  readonly description?: Maybe<StringQueryOperatorInput>,
+  readonly featuredImage?: Maybe<SitePageContextNextNodeFrontmatterFeaturedImageFilterInput>,
+};
+
+export type SitePageContextPrevious = {
+  readonly __typename?: 'SitePageContextPrevious',
+  readonly node?: Maybe<SitePageContextPreviousNode>,
+};
+
+export type SitePageContextPreviousFilterInput = {
+  readonly node?: Maybe<SitePageContextPreviousNodeFilterInput>,
+};
+
+export type SitePageContextPreviousNode = {
+  readonly __typename?: 'SitePageContextPreviousNode',
+  readonly fields?: Maybe<SitePageContextPreviousNodeFields>,
+  readonly frontmatter?: Maybe<SitePageContextPreviousNodeFrontmatter>,
+  readonly excerpt?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPreviousNodeFields = {
+  readonly __typename?: 'SitePageContextPreviousNodeFields',
+  readonly layout?: Maybe<Scalars['String']>,
+  readonly slug?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPreviousNodeFieldsFilterInput = {
+  readonly layout?: Maybe<StringQueryOperatorInput>,
+  readonly slug?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPreviousNodeFilterInput = {
+  readonly fields?: Maybe<SitePageContextPreviousNodeFieldsFilterInput>,
+  readonly frontmatter?: Maybe<SitePageContextPreviousNodeFrontmatterFilterInput>,
+  readonly excerpt?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPreviousNodeFrontmatter = {
+  readonly __typename?: 'SitePageContextPreviousNodeFrontmatter',
+  readonly title?: Maybe<Scalars['String']>,
+  readonly draft?: Maybe<Scalars['Boolean']>,
+  readonly date?: Maybe<Scalars['String']>,
+  readonly categories?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly description?: Maybe<Scalars['String']>,
+  readonly featuredImage?: Maybe<SitePageContextPreviousNodeFrontmatterFeaturedImage>,
+};
+
+export type SitePageContextPreviousNodeFrontmatterFeaturedImage = {
+  readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImage',
+  readonly description?: Maybe<Scalars['String']>,
+  readonly src?: Maybe<SitePageContextPreviousNodeFrontmatterFeaturedImageSrc>,
+};
+
+export type SitePageContextPreviousNodeFrontmatterFeaturedImageFilterInput = {
+  readonly description?: Maybe<StringQueryOperatorInput>,
+  readonly src?: Maybe<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcFilterInput>,
+};
+
+export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrc = {
+  readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrc',
+  readonly childImageSharp?: Maybe<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharp>,
+};
+
+export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharp = {
+  readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharp',
+  readonly fixed?: Maybe<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixed>,
+};
+
+export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFilterInput = {
+  readonly fixed?: Maybe<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixedFilterInput>,
+};
+
+export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixed = {
+  readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixed',
+  readonly srcWebp?: Maybe<Scalars['String']>,
+  readonly srcSetWebp?: Maybe<Scalars['String']>,
+  readonly src?: Maybe<Scalars['String']>,
+  readonly srcSet?: Maybe<Scalars['String']>,
+  readonly base64?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixedFilterInput = {
+  readonly srcWebp?: Maybe<StringQueryOperatorInput>,
+  readonly srcSetWebp?: Maybe<StringQueryOperatorInput>,
+  readonly src?: Maybe<StringQueryOperatorInput>,
+  readonly srcSet?: Maybe<StringQueryOperatorInput>,
+  readonly base64?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrcFilterInput = {
+  readonly childImageSharp?: Maybe<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFilterInput>,
+};
+
+export type SitePageContextPreviousNodeFrontmatterFilterInput = {
+  readonly title?: Maybe<StringQueryOperatorInput>,
+  readonly draft?: Maybe<BooleanQueryOperatorInput>,
+  readonly date?: Maybe<StringQueryOperatorInput>,
+  readonly categories?: Maybe<StringQueryOperatorInput>,
+  readonly description?: Maybe<StringQueryOperatorInput>,
+  readonly featuredImage?: Maybe<SitePageContextPreviousNodeFrontmatterFeaturedImageFilterInput>,
 };
 
 export type SitePageEdge = {
   readonly __typename?: 'SitePageEdge',
-  readonly next: Maybe<SitePage>,
+  readonly next?: Maybe<SitePage>,
   readonly node: SitePage,
-  readonly previous: Maybe<SitePage>,
+  readonly previous?: Maybe<SitePage>,
 };
 
 export enum SitePageFieldsEnum {
+  Path = 'path',
+  Component = 'component',
+  InternalComponentName = 'internalComponentName',
+  ComponentChunkName = 'componentChunkName',
+  MatchPath = 'matchPath',
   Id = 'id',
   ParentId = 'parent___id',
   ParentParentId = 'parent___parent___id',
@@ -2371,12 +2533,10 @@ export enum SitePageFieldsEnum {
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
-  Path = 'path',
-  InternalComponentName = 'internalComponentName',
-  Component = 'component',
-  ComponentChunkName = 'componentChunkName',
   IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
   ContextSlug = 'context___slug',
+  ContextPreviousNodeExcerpt = 'context___previous___node___excerpt',
+  ContextNextNodeExcerpt = 'context___next___node___excerpt',
   PluginCreatorId = 'pluginCreator___id',
   PluginCreatorParentId = 'pluginCreator___parent___id',
   PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
@@ -2425,16 +2585,25 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsPluginsVersion = 'pluginCreator___pluginOptions___plugins___version',
   PluginCreatorPluginOptionsPluginsNodeApIs = 'pluginCreator___pluginOptions___plugins___nodeAPIs',
   PluginCreatorPluginOptionsPluginsBrowserApIs = 'pluginCreator___pluginOptions___plugins___browserAPIs',
-  PluginCreatorPluginOptionsPluginsSsrApIs = 'pluginCreator___pluginOptions___plugins___ssrAPIs',
+  PluginCreatorPluginOptionsPluginsPluginFilepath = 'pluginCreator___pluginOptions___plugins___pluginFilepath',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsTarget = 'pluginCreator___pluginOptions___target',
   PluginCreatorPluginOptionsRel = 'pluginCreator___pluginOptions___rel',
   PluginCreatorPluginOptionsWrapperStyle = 'pluginCreator___pluginOptions___wrapperStyle',
   PluginCreatorPluginOptionsAliasesCs = 'pluginCreator___pluginOptions___aliases___cs',
   PluginCreatorPluginOptionsAliasesPosh = 'pluginCreator___pluginOptions___aliases___posh',
+  PluginCreatorPluginOptionsIgnoreFileExtensions = 'pluginCreator___pluginOptions___ignoreFileExtensions',
   PluginCreatorPluginOptionsMaxWidth = 'pluginCreator___pluginOptions___maxWidth',
   PluginCreatorPluginOptionsLinkImagesToOriginal = 'pluginCreator___pluginOptions___linkImagesToOriginal',
   PluginCreatorPluginOptionsWithWebp = 'pluginCreator___pluginOptions___withWebp',
+  PluginCreatorPluginOptionsPathPrefix = 'pluginCreator___pluginOptions___pathPrefix',
+  PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___backgroundColor',
+  PluginCreatorPluginOptionsShowCaptions = 'pluginCreator___pluginOptions___showCaptions',
+  PluginCreatorPluginOptionsMarkdownCaptions = 'pluginCreator___pluginOptions___markdownCaptions',
+  PluginCreatorPluginOptionsTracedSvg = 'pluginCreator___pluginOptions___tracedSVG',
+  PluginCreatorPluginOptionsLoading = 'pluginCreator___pluginOptions___loading',
+  PluginCreatorPluginOptionsDisableBgImageOnAlpha = 'pluginCreator___pluginOptions___disableBgImageOnAlpha',
+  PluginCreatorPluginOptionsDisableBgImage = 'pluginCreator___pluginOptions___disableBgImage',
   PluginCreatorPluginOptionsSiteUrl = 'pluginCreator___pluginOptions___siteUrl',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
@@ -2444,11 +2613,13 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsDisplay = 'pluginCreator___pluginOptions___display',
   PluginCreatorPluginOptionsIcon = 'pluginCreator___pluginOptions___icon',
   PluginCreatorPluginOptionsPrecachePages = 'pluginCreator___pluginOptions___precachePages',
+  PluginCreatorPluginOptionsWorkboxConfigRuntimeCaching = 'pluginCreator___pluginOptions___workboxConfig___runtimeCaching',
   PluginCreatorPluginOptionsQuery = 'pluginCreator___pluginOptions___query',
   PluginCreatorPluginOptionsFeeds = 'pluginCreator___pluginOptions___feeds',
   PluginCreatorPluginOptionsFeedsQuery = 'pluginCreator___pluginOptions___feeds___query',
   PluginCreatorPluginOptionsFeedsOutput = 'pluginCreator___pluginOptions___feeds___output',
   PluginCreatorPluginOptionsFeedsTitle = 'pluginCreator___pluginOptions___feeds___title',
+  PluginCreatorPluginOptionsShortname = 'pluginCreator___pluginOptions___shortname',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -2474,19 +2645,20 @@ export enum SitePageFieldsEnum {
 }
 
 export type SitePageFilterInput = {
-  readonly id: Maybe<StringQueryOperatorInput>,
-  readonly parent: Maybe<NodeFilterInput>,
-  readonly children: Maybe<NodeFilterListInput>,
-  readonly internal: Maybe<InternalFilterInput>,
-  readonly path: Maybe<StringQueryOperatorInput>,
-  readonly internalComponentName: Maybe<StringQueryOperatorInput>,
-  readonly component: Maybe<StringQueryOperatorInput>,
-  readonly componentChunkName: Maybe<StringQueryOperatorInput>,
-  readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>,
-  readonly context: Maybe<SitePageContextFilterInput>,
-  readonly pluginCreator: Maybe<SitePluginFilterInput>,
-  readonly pluginCreatorId: Maybe<StringQueryOperatorInput>,
-  readonly componentPath: Maybe<StringQueryOperatorInput>,
+  readonly path?: Maybe<StringQueryOperatorInput>,
+  readonly component?: Maybe<StringQueryOperatorInput>,
+  readonly internalComponentName?: Maybe<StringQueryOperatorInput>,
+  readonly componentChunkName?: Maybe<StringQueryOperatorInput>,
+  readonly matchPath?: Maybe<StringQueryOperatorInput>,
+  readonly id?: Maybe<StringQueryOperatorInput>,
+  readonly parent?: Maybe<NodeFilterInput>,
+  readonly children?: Maybe<NodeFilterListInput>,
+  readonly internal?: Maybe<InternalFilterInput>,
+  readonly isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>,
+  readonly context?: Maybe<SitePageContextFilterInput>,
+  readonly pluginCreator?: Maybe<SitePluginFilterInput>,
+  readonly pluginCreatorId?: Maybe<StringQueryOperatorInput>,
+  readonly componentPath?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageGroupConnection = {
@@ -2496,29 +2668,29 @@ export type SitePageGroupConnection = {
   readonly nodes: ReadonlyArray<SitePage>,
   readonly pageInfo: PageInfo,
   readonly field: Scalars['String'],
-  readonly fieldValue: Maybe<Scalars['String']>,
+  readonly fieldValue?: Maybe<Scalars['String']>,
 };
 
 export type SitePageSortInput = {
-  readonly fields: Maybe<ReadonlyArray<Maybe<SitePageFieldsEnum>>>,
-  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
+  readonly fields?: Maybe<ReadonlyArray<Maybe<SitePageFieldsEnum>>>,
+  readonly order?: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
 };
 
 export type SitePlugin = Node & {
   readonly __typename?: 'SitePlugin',
   readonly id: Scalars['ID'],
-  readonly parent: Maybe<Node>,
+  readonly parent?: Maybe<Node>,
   readonly children: ReadonlyArray<Node>,
   readonly internal: Internal,
-  readonly resolve: Maybe<Scalars['String']>,
-  readonly name: Maybe<Scalars['String']>,
-  readonly version: Maybe<Scalars['String']>,
-  readonly pluginOptions: Maybe<SitePluginPluginOptions>,
-  readonly nodeAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly browserAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly ssrAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly pluginFilepath: Maybe<Scalars['String']>,
-  readonly packageJson: Maybe<SitePluginPackageJson>,
+  readonly resolve?: Maybe<Scalars['String']>,
+  readonly name?: Maybe<Scalars['String']>,
+  readonly version?: Maybe<Scalars['String']>,
+  readonly pluginOptions?: Maybe<SitePluginPluginOptions>,
+  readonly nodeAPIs?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly browserAPIs?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly ssrAPIs?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly pluginFilepath?: Maybe<Scalars['String']>,
+  readonly packageJson?: Maybe<SitePluginPackageJson>,
 };
 
 export type SitePluginConnection = {
@@ -2538,16 +2710,16 @@ export type SitePluginConnectionDistinctArgs = {
 
 
 export type SitePluginConnectionGroupArgs = {
-  skip: Maybe<Scalars['Int']>,
-  limit: Maybe<Scalars['Int']>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>,
   field: SitePluginFieldsEnum
 };
 
 export type SitePluginEdge = {
   readonly __typename?: 'SitePluginEdge',
-  readonly next: Maybe<SitePlugin>,
+  readonly next?: Maybe<SitePlugin>,
   readonly node: SitePlugin,
-  readonly previous: Maybe<SitePlugin>,
+  readonly previous?: Maybe<SitePlugin>,
 };
 
 export enum SitePluginFieldsEnum {
@@ -2649,21 +2821,39 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPluginsPluginOptionsTarget = 'pluginOptions___plugins___pluginOptions___target',
   PluginOptionsPluginsPluginOptionsRel = 'pluginOptions___plugins___pluginOptions___rel',
   PluginOptionsPluginsPluginOptionsWrapperStyle = 'pluginOptions___plugins___pluginOptions___wrapperStyle',
+  PluginOptionsPluginsPluginOptionsIgnoreFileExtensions = 'pluginOptions___plugins___pluginOptions___ignoreFileExtensions',
   PluginOptionsPluginsPluginOptionsMaxWidth = 'pluginOptions___plugins___pluginOptions___maxWidth',
   PluginOptionsPluginsPluginOptionsLinkImagesToOriginal = 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal',
   PluginOptionsPluginsPluginOptionsWithWebp = 'pluginOptions___plugins___pluginOptions___withWebp',
+  PluginOptionsPluginsPluginOptionsPathPrefix = 'pluginOptions___plugins___pluginOptions___pathPrefix',
+  PluginOptionsPluginsPluginOptionsBackgroundColor = 'pluginOptions___plugins___pluginOptions___backgroundColor',
+  PluginOptionsPluginsPluginOptionsShowCaptions = 'pluginOptions___plugins___pluginOptions___showCaptions',
+  PluginOptionsPluginsPluginOptionsMarkdownCaptions = 'pluginOptions___plugins___pluginOptions___markdownCaptions',
+  PluginOptionsPluginsPluginOptionsTracedSvg = 'pluginOptions___plugins___pluginOptions___tracedSVG',
+  PluginOptionsPluginsPluginOptionsLoading = 'pluginOptions___plugins___pluginOptions___loading',
+  PluginOptionsPluginsPluginOptionsDisableBgImageOnAlpha = 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha',
+  PluginOptionsPluginsPluginOptionsDisableBgImage = 'pluginOptions___plugins___pluginOptions___disableBgImage',
   PluginOptionsPluginsNodeApIs = 'pluginOptions___plugins___nodeAPIs',
   PluginOptionsPluginsBrowserApIs = 'pluginOptions___plugins___browserAPIs',
-  PluginOptionsPluginsSsrApIs = 'pluginOptions___plugins___ssrAPIs',
+  PluginOptionsPluginsPluginFilepath = 'pluginOptions___plugins___pluginFilepath',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsTarget = 'pluginOptions___target',
   PluginOptionsRel = 'pluginOptions___rel',
   PluginOptionsWrapperStyle = 'pluginOptions___wrapperStyle',
   PluginOptionsAliasesCs = 'pluginOptions___aliases___cs',
   PluginOptionsAliasesPosh = 'pluginOptions___aliases___posh',
+  PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
   PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
   PluginOptionsLinkImagesToOriginal = 'pluginOptions___linkImagesToOriginal',
   PluginOptionsWithWebp = 'pluginOptions___withWebp',
+  PluginOptionsPathPrefix = 'pluginOptions___pathPrefix',
+  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
+  PluginOptionsShowCaptions = 'pluginOptions___showCaptions',
+  PluginOptionsMarkdownCaptions = 'pluginOptions___markdownCaptions',
+  PluginOptionsTracedSvg = 'pluginOptions___tracedSVG',
+  PluginOptionsLoading = 'pluginOptions___loading',
+  PluginOptionsDisableBgImageOnAlpha = 'pluginOptions___disableBgImageOnAlpha',
+  PluginOptionsDisableBgImage = 'pluginOptions___disableBgImage',
   PluginOptionsSiteUrl = 'pluginOptions___siteUrl',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsShortName = 'pluginOptions___short_name',
@@ -2673,11 +2863,14 @@ export enum SitePluginFieldsEnum {
   PluginOptionsDisplay = 'pluginOptions___display',
   PluginOptionsIcon = 'pluginOptions___icon',
   PluginOptionsPrecachePages = 'pluginOptions___precachePages',
+  PluginOptionsWorkboxConfigRuntimeCaching = 'pluginOptions___workboxConfig___runtimeCaching',
+  PluginOptionsWorkboxConfigRuntimeCachingHandler = 'pluginOptions___workboxConfig___runtimeCaching___handler',
   PluginOptionsQuery = 'pluginOptions___query',
   PluginOptionsFeeds = 'pluginOptions___feeds',
   PluginOptionsFeedsQuery = 'pluginOptions___feeds___query',
   PluginOptionsFeedsOutput = 'pluginOptions___feeds___output',
   PluginOptionsFeedsTitle = 'pluginOptions___feeds___title',
+  PluginOptionsShortname = 'pluginOptions___shortname',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -2701,19 +2894,19 @@ export enum SitePluginFieldsEnum {
 }
 
 export type SitePluginFilterInput = {
-  readonly id: Maybe<StringQueryOperatorInput>,
-  readonly parent: Maybe<NodeFilterInput>,
-  readonly children: Maybe<NodeFilterListInput>,
-  readonly internal: Maybe<InternalFilterInput>,
-  readonly resolve: Maybe<StringQueryOperatorInput>,
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly version: Maybe<StringQueryOperatorInput>,
-  readonly pluginOptions: Maybe<SitePluginPluginOptionsFilterInput>,
-  readonly nodeAPIs: Maybe<StringQueryOperatorInput>,
-  readonly browserAPIs: Maybe<StringQueryOperatorInput>,
-  readonly ssrAPIs: Maybe<StringQueryOperatorInput>,
-  readonly pluginFilepath: Maybe<StringQueryOperatorInput>,
-  readonly packageJson: Maybe<SitePluginPackageJsonFilterInput>,
+  readonly id?: Maybe<StringQueryOperatorInput>,
+  readonly parent?: Maybe<NodeFilterInput>,
+  readonly children?: Maybe<NodeFilterListInput>,
+  readonly internal?: Maybe<InternalFilterInput>,
+  readonly resolve?: Maybe<StringQueryOperatorInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly version?: Maybe<StringQueryOperatorInput>,
+  readonly pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>,
+  readonly nodeAPIs?: Maybe<StringQueryOperatorInput>,
+  readonly browserAPIs?: Maybe<StringQueryOperatorInput>,
+  readonly ssrAPIs?: Maybe<StringQueryOperatorInput>,
+  readonly pluginFilepath?: Maybe<StringQueryOperatorInput>,
+  readonly packageJson?: Maybe<SitePluginPackageJsonFilterInput>,
 };
 
 export type SitePluginGroupConnection = {
@@ -2723,268 +2916,330 @@ export type SitePluginGroupConnection = {
   readonly nodes: ReadonlyArray<SitePlugin>,
   readonly pageInfo: PageInfo,
   readonly field: Scalars['String'],
-  readonly fieldValue: Maybe<Scalars['String']>,
+  readonly fieldValue?: Maybe<Scalars['String']>,
 };
 
 export type SitePluginPackageJson = {
   readonly __typename?: 'SitePluginPackageJson',
-  readonly name: Maybe<Scalars['String']>,
-  readonly description: Maybe<Scalars['String']>,
-  readonly version: Maybe<Scalars['String']>,
-  readonly main: Maybe<Scalars['String']>,
-  readonly license: Maybe<Scalars['String']>,
-  readonly dependencies: Maybe<ReadonlyArray<Maybe<SitePluginPackageJsonDependencies>>>,
-  readonly devDependencies: Maybe<ReadonlyArray<Maybe<SitePluginPackageJsonDevDependencies>>>,
-  readonly peerDependencies: Maybe<ReadonlyArray<Maybe<SitePluginPackageJsonPeerDependencies>>>,
-  readonly keywords: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly name?: Maybe<Scalars['String']>,
+  readonly description?: Maybe<Scalars['String']>,
+  readonly version?: Maybe<Scalars['String']>,
+  readonly main?: Maybe<Scalars['String']>,
+  readonly license?: Maybe<Scalars['String']>,
+  readonly dependencies?: Maybe<ReadonlyArray<Maybe<SitePluginPackageJsonDependencies>>>,
+  readonly devDependencies?: Maybe<ReadonlyArray<Maybe<SitePluginPackageJsonDevDependencies>>>,
+  readonly peerDependencies?: Maybe<ReadonlyArray<Maybe<SitePluginPackageJsonPeerDependencies>>>,
+  readonly keywords?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
 };
 
 export type SitePluginPackageJsonDependencies = {
   readonly __typename?: 'SitePluginPackageJsonDependencies',
-  readonly name: Maybe<Scalars['String']>,
-  readonly version: Maybe<Scalars['String']>,
+  readonly name?: Maybe<Scalars['String']>,
+  readonly version?: Maybe<Scalars['String']>,
 };
 
 export type SitePluginPackageJsonDependenciesFilterInput = {
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly version: Maybe<StringQueryOperatorInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly version?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPackageJsonDependenciesFilterListInput = {
-  readonly elemMatch: Maybe<SitePluginPackageJsonDependenciesFilterInput>,
+  readonly elemMatch?: Maybe<SitePluginPackageJsonDependenciesFilterInput>,
 };
 
 export type SitePluginPackageJsonDevDependencies = {
   readonly __typename?: 'SitePluginPackageJsonDevDependencies',
-  readonly name: Maybe<Scalars['String']>,
-  readonly version: Maybe<Scalars['String']>,
+  readonly name?: Maybe<Scalars['String']>,
+  readonly version?: Maybe<Scalars['String']>,
 };
 
 export type SitePluginPackageJsonDevDependenciesFilterInput = {
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly version: Maybe<StringQueryOperatorInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly version?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPackageJsonDevDependenciesFilterListInput = {
-  readonly elemMatch: Maybe<SitePluginPackageJsonDevDependenciesFilterInput>,
+  readonly elemMatch?: Maybe<SitePluginPackageJsonDevDependenciesFilterInput>,
 };
 
 export type SitePluginPackageJsonFilterInput = {
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly description: Maybe<StringQueryOperatorInput>,
-  readonly version: Maybe<StringQueryOperatorInput>,
-  readonly main: Maybe<StringQueryOperatorInput>,
-  readonly license: Maybe<StringQueryOperatorInput>,
-  readonly dependencies: Maybe<SitePluginPackageJsonDependenciesFilterListInput>,
-  readonly devDependencies: Maybe<SitePluginPackageJsonDevDependenciesFilterListInput>,
-  readonly peerDependencies: Maybe<SitePluginPackageJsonPeerDependenciesFilterListInput>,
-  readonly keywords: Maybe<StringQueryOperatorInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly description?: Maybe<StringQueryOperatorInput>,
+  readonly version?: Maybe<StringQueryOperatorInput>,
+  readonly main?: Maybe<StringQueryOperatorInput>,
+  readonly license?: Maybe<StringQueryOperatorInput>,
+  readonly dependencies?: Maybe<SitePluginPackageJsonDependenciesFilterListInput>,
+  readonly devDependencies?: Maybe<SitePluginPackageJsonDevDependenciesFilterListInput>,
+  readonly peerDependencies?: Maybe<SitePluginPackageJsonPeerDependenciesFilterListInput>,
+  readonly keywords?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPackageJsonPeerDependencies = {
   readonly __typename?: 'SitePluginPackageJsonPeerDependencies',
-  readonly name: Maybe<Scalars['String']>,
-  readonly version: Maybe<Scalars['String']>,
+  readonly name?: Maybe<Scalars['String']>,
+  readonly version?: Maybe<Scalars['String']>,
 };
 
 export type SitePluginPackageJsonPeerDependenciesFilterInput = {
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly version: Maybe<StringQueryOperatorInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly version?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
-  readonly elemMatch: Maybe<SitePluginPackageJsonPeerDependenciesFilterInput>,
+  readonly elemMatch?: Maybe<SitePluginPackageJsonPeerDependenciesFilterInput>,
 };
 
 export type SitePluginPluginOptions = {
   readonly __typename?: 'SitePluginPluginOptions',
-  readonly plugins: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsPlugins>>>,
-  readonly name: Maybe<Scalars['String']>,
-  readonly target: Maybe<Scalars['String']>,
-  readonly rel: Maybe<Scalars['String']>,
-  readonly wrapperStyle: Maybe<Scalars['String']>,
-  readonly aliases: Maybe<SitePluginPluginOptionsAliases>,
-  readonly maxWidth: Maybe<Scalars['Int']>,
-  readonly linkImagesToOriginal: Maybe<Scalars['Boolean']>,
-  readonly withWebp: Maybe<Scalars['Boolean']>,
-  readonly siteUrl: Maybe<Scalars['String']>,
-  readonly path: Maybe<Scalars['String']>,
-  readonly short_name: Maybe<Scalars['String']>,
-  readonly start_url: Maybe<Scalars['String']>,
-  readonly background_color: Maybe<Scalars['String']>,
-  readonly theme_color: Maybe<Scalars['String']>,
-  readonly display: Maybe<Scalars['String']>,
-  readonly icon: Maybe<Scalars['String']>,
-  readonly precachePages: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly query: Maybe<Scalars['String']>,
-  readonly feeds: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsFeeds>>>,
-  readonly pathCheck: Maybe<Scalars['Boolean']>,
+  readonly plugins?: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsPlugins>>>,
+  readonly name?: Maybe<Scalars['String']>,
+  readonly target?: Maybe<Scalars['String']>,
+  readonly rel?: Maybe<Scalars['String']>,
+  readonly wrapperStyle?: Maybe<Scalars['String']>,
+  readonly aliases?: Maybe<SitePluginPluginOptionsAliases>,
+  readonly ignoreFileExtensions?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly maxWidth?: Maybe<Scalars['Int']>,
+  readonly linkImagesToOriginal?: Maybe<Scalars['Boolean']>,
+  readonly withWebp?: Maybe<Scalars['Boolean']>,
+  readonly pathPrefix?: Maybe<Scalars['String']>,
+  readonly backgroundColor?: Maybe<Scalars['String']>,
+  readonly showCaptions?: Maybe<Scalars['Boolean']>,
+  readonly markdownCaptions?: Maybe<Scalars['Boolean']>,
+  readonly tracedSVG?: Maybe<Scalars['Boolean']>,
+  readonly loading?: Maybe<Scalars['String']>,
+  readonly disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>,
+  readonly disableBgImage?: Maybe<Scalars['Boolean']>,
+  readonly siteUrl?: Maybe<Scalars['String']>,
+  readonly path?: Maybe<Scalars['String']>,
+  readonly short_name?: Maybe<Scalars['String']>,
+  readonly start_url?: Maybe<Scalars['String']>,
+  readonly background_color?: Maybe<Scalars['String']>,
+  readonly theme_color?: Maybe<Scalars['String']>,
+  readonly display?: Maybe<Scalars['String']>,
+  readonly icon?: Maybe<Scalars['String']>,
+  readonly precachePages?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly workboxConfig?: Maybe<SitePluginPluginOptionsWorkboxConfig>,
+  readonly query?: Maybe<Scalars['String']>,
+  readonly feeds?: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsFeeds>>>,
+  readonly shortname?: Maybe<Scalars['String']>,
+  readonly pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsAliases = {
   readonly __typename?: 'SitePluginPluginOptionsAliases',
-  readonly cs: Maybe<Scalars['String']>,
-  readonly posh: Maybe<Scalars['String']>,
+  readonly cs?: Maybe<Scalars['String']>,
+  readonly posh?: Maybe<Scalars['String']>,
 };
 
 export type SitePluginPluginOptionsAliasesFilterInput = {
-  readonly cs: Maybe<StringQueryOperatorInput>,
-  readonly posh: Maybe<StringQueryOperatorInput>,
+  readonly cs?: Maybe<StringQueryOperatorInput>,
+  readonly posh?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsFeeds = {
   readonly __typename?: 'SitePluginPluginOptionsFeeds',
-  readonly query: Maybe<Scalars['String']>,
-  readonly output: Maybe<Scalars['String']>,
-  readonly title: Maybe<Scalars['String']>,
+  readonly query?: Maybe<Scalars['String']>,
+  readonly output?: Maybe<Scalars['String']>,
+  readonly title?: Maybe<Scalars['String']>,
 };
 
 export type SitePluginPluginOptionsFeedsFilterInput = {
-  readonly query: Maybe<StringQueryOperatorInput>,
-  readonly output: Maybe<StringQueryOperatorInput>,
-  readonly title: Maybe<StringQueryOperatorInput>,
+  readonly query?: Maybe<StringQueryOperatorInput>,
+  readonly output?: Maybe<StringQueryOperatorInput>,
+  readonly title?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsFeedsFilterListInput = {
-  readonly elemMatch: Maybe<SitePluginPluginOptionsFeedsFilterInput>,
+  readonly elemMatch?: Maybe<SitePluginPluginOptionsFeedsFilterInput>,
 };
 
 export type SitePluginPluginOptionsFilterInput = {
-  readonly plugins: Maybe<SitePluginPluginOptionsPluginsFilterListInput>,
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly target: Maybe<StringQueryOperatorInput>,
-  readonly rel: Maybe<StringQueryOperatorInput>,
-  readonly wrapperStyle: Maybe<StringQueryOperatorInput>,
-  readonly aliases: Maybe<SitePluginPluginOptionsAliasesFilterInput>,
-  readonly maxWidth: Maybe<IntQueryOperatorInput>,
-  readonly linkImagesToOriginal: Maybe<BooleanQueryOperatorInput>,
-  readonly withWebp: Maybe<BooleanQueryOperatorInput>,
-  readonly siteUrl: Maybe<StringQueryOperatorInput>,
-  readonly path: Maybe<StringQueryOperatorInput>,
-  readonly short_name: Maybe<StringQueryOperatorInput>,
-  readonly start_url: Maybe<StringQueryOperatorInput>,
-  readonly background_color: Maybe<StringQueryOperatorInput>,
-  readonly theme_color: Maybe<StringQueryOperatorInput>,
-  readonly display: Maybe<StringQueryOperatorInput>,
-  readonly icon: Maybe<StringQueryOperatorInput>,
-  readonly precachePages: Maybe<StringQueryOperatorInput>,
-  readonly query: Maybe<StringQueryOperatorInput>,
-  readonly feeds: Maybe<SitePluginPluginOptionsFeedsFilterListInput>,
-  readonly pathCheck: Maybe<BooleanQueryOperatorInput>,
+  readonly plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly target?: Maybe<StringQueryOperatorInput>,
+  readonly rel?: Maybe<StringQueryOperatorInput>,
+  readonly wrapperStyle?: Maybe<StringQueryOperatorInput>,
+  readonly aliases?: Maybe<SitePluginPluginOptionsAliasesFilterInput>,
+  readonly ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
+  readonly maxWidth?: Maybe<IntQueryOperatorInput>,
+  readonly linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>,
+  readonly withWebp?: Maybe<BooleanQueryOperatorInput>,
+  readonly pathPrefix?: Maybe<StringQueryOperatorInput>,
+  readonly backgroundColor?: Maybe<StringQueryOperatorInput>,
+  readonly showCaptions?: Maybe<BooleanQueryOperatorInput>,
+  readonly markdownCaptions?: Maybe<BooleanQueryOperatorInput>,
+  readonly tracedSVG?: Maybe<BooleanQueryOperatorInput>,
+  readonly loading?: Maybe<StringQueryOperatorInput>,
+  readonly disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>,
+  readonly disableBgImage?: Maybe<BooleanQueryOperatorInput>,
+  readonly siteUrl?: Maybe<StringQueryOperatorInput>,
+  readonly path?: Maybe<StringQueryOperatorInput>,
+  readonly short_name?: Maybe<StringQueryOperatorInput>,
+  readonly start_url?: Maybe<StringQueryOperatorInput>,
+  readonly background_color?: Maybe<StringQueryOperatorInput>,
+  readonly theme_color?: Maybe<StringQueryOperatorInput>,
+  readonly display?: Maybe<StringQueryOperatorInput>,
+  readonly icon?: Maybe<StringQueryOperatorInput>,
+  readonly precachePages?: Maybe<StringQueryOperatorInput>,
+  readonly workboxConfig?: Maybe<SitePluginPluginOptionsWorkboxConfigFilterInput>,
+  readonly query?: Maybe<StringQueryOperatorInput>,
+  readonly feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>,
+  readonly shortname?: Maybe<StringQueryOperatorInput>,
+  readonly pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsPlugins = {
   readonly __typename?: 'SitePluginPluginOptionsPlugins',
-  readonly resolve: Maybe<Scalars['String']>,
-  readonly id: Maybe<Scalars['String']>,
-  readonly name: Maybe<Scalars['String']>,
-  readonly version: Maybe<Scalars['String']>,
-  readonly pluginOptions: Maybe<SitePluginPluginOptionsPluginsPluginOptions>,
-  readonly nodeAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly browserAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly ssrAPIs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly resolve?: Maybe<Scalars['String']>,
+  readonly id?: Maybe<Scalars['String']>,
+  readonly name?: Maybe<Scalars['String']>,
+  readonly version?: Maybe<Scalars['String']>,
+  readonly pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptions>,
+  readonly nodeAPIs?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly browserAPIs?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly pluginFilepath?: Maybe<Scalars['String']>,
 };
 
 export type SitePluginPluginOptionsPluginsFilterInput = {
-  readonly resolve: Maybe<StringQueryOperatorInput>,
-  readonly id: Maybe<StringQueryOperatorInput>,
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly version: Maybe<StringQueryOperatorInput>,
-  readonly pluginOptions: Maybe<SitePluginPluginOptionsPluginsPluginOptionsFilterInput>,
-  readonly nodeAPIs: Maybe<StringQueryOperatorInput>,
-  readonly browserAPIs: Maybe<StringQueryOperatorInput>,
-  readonly ssrAPIs: Maybe<StringQueryOperatorInput>,
+  readonly resolve?: Maybe<StringQueryOperatorInput>,
+  readonly id?: Maybe<StringQueryOperatorInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly version?: Maybe<StringQueryOperatorInput>,
+  readonly pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsFilterInput>,
+  readonly nodeAPIs?: Maybe<StringQueryOperatorInput>,
+  readonly browserAPIs?: Maybe<StringQueryOperatorInput>,
+  readonly pluginFilepath?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsPluginsFilterListInput = {
-  readonly elemMatch: Maybe<SitePluginPluginOptionsPluginsFilterInput>,
+  readonly elemMatch?: Maybe<SitePluginPluginOptionsPluginsFilterInput>,
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptions = {
   readonly __typename?: 'SitePluginPluginOptionsPluginsPluginOptions',
-  readonly name: Maybe<Scalars['String']>,
-  readonly target: Maybe<Scalars['String']>,
-  readonly rel: Maybe<Scalars['String']>,
-  readonly wrapperStyle: Maybe<Scalars['String']>,
-  readonly aliases: Maybe<SitePluginPluginOptionsPluginsPluginOptionsAliases>,
-  readonly maxWidth: Maybe<Scalars['Int']>,
-  readonly linkImagesToOriginal: Maybe<Scalars['Boolean']>,
-  readonly withWebp: Maybe<Scalars['Boolean']>,
+  readonly name?: Maybe<Scalars['String']>,
+  readonly target?: Maybe<Scalars['String']>,
+  readonly rel?: Maybe<Scalars['String']>,
+  readonly wrapperStyle?: Maybe<Scalars['String']>,
+  readonly aliases?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsAliases>,
+  readonly ignoreFileExtensions?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly maxWidth?: Maybe<Scalars['Int']>,
+  readonly linkImagesToOriginal?: Maybe<Scalars['Boolean']>,
+  readonly withWebp?: Maybe<Scalars['Boolean']>,
+  readonly pathPrefix?: Maybe<Scalars['String']>,
+  readonly backgroundColor?: Maybe<Scalars['String']>,
+  readonly showCaptions?: Maybe<Scalars['Boolean']>,
+  readonly markdownCaptions?: Maybe<Scalars['Boolean']>,
+  readonly tracedSVG?: Maybe<Scalars['Boolean']>,
+  readonly loading?: Maybe<Scalars['String']>,
+  readonly disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>,
+  readonly disableBgImage?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsAliases = {
   readonly __typename?: 'SitePluginPluginOptionsPluginsPluginOptionsAliases',
-  readonly cs: Maybe<Scalars['String']>,
-  readonly posh: Maybe<Scalars['String']>,
+  readonly cs?: Maybe<Scalars['String']>,
+  readonly posh?: Maybe<Scalars['String']>,
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput = {
-  readonly cs: Maybe<StringQueryOperatorInput>,
-  readonly posh: Maybe<StringQueryOperatorInput>,
+  readonly cs?: Maybe<StringQueryOperatorInput>,
+  readonly posh?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly target: Maybe<StringQueryOperatorInput>,
-  readonly rel: Maybe<StringQueryOperatorInput>,
-  readonly wrapperStyle: Maybe<StringQueryOperatorInput>,
-  readonly aliases: Maybe<SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput>,
-  readonly maxWidth: Maybe<IntQueryOperatorInput>,
-  readonly linkImagesToOriginal: Maybe<BooleanQueryOperatorInput>,
-  readonly withWebp: Maybe<BooleanQueryOperatorInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly target?: Maybe<StringQueryOperatorInput>,
+  readonly rel?: Maybe<StringQueryOperatorInput>,
+  readonly wrapperStyle?: Maybe<StringQueryOperatorInput>,
+  readonly aliases?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput>,
+  readonly ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
+  readonly maxWidth?: Maybe<IntQueryOperatorInput>,
+  readonly linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>,
+  readonly withWebp?: Maybe<BooleanQueryOperatorInput>,
+  readonly pathPrefix?: Maybe<StringQueryOperatorInput>,
+  readonly backgroundColor?: Maybe<StringQueryOperatorInput>,
+  readonly showCaptions?: Maybe<BooleanQueryOperatorInput>,
+  readonly markdownCaptions?: Maybe<BooleanQueryOperatorInput>,
+  readonly tracedSVG?: Maybe<BooleanQueryOperatorInput>,
+  readonly loading?: Maybe<StringQueryOperatorInput>,
+  readonly disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>,
+  readonly disableBgImage?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsWorkboxConfig = {
+  readonly __typename?: 'SitePluginPluginOptionsWorkboxConfig',
+  readonly runtimeCaching?: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsWorkboxConfigRuntimeCaching>>>,
+};
+
+export type SitePluginPluginOptionsWorkboxConfigFilterInput = {
+  readonly runtimeCaching?: Maybe<SitePluginPluginOptionsWorkboxConfigRuntimeCachingFilterListInput>,
+};
+
+export type SitePluginPluginOptionsWorkboxConfigRuntimeCaching = {
+  readonly __typename?: 'SitePluginPluginOptionsWorkboxConfigRuntimeCaching',
+  readonly handler?: Maybe<Scalars['String']>,
+};
+
+export type SitePluginPluginOptionsWorkboxConfigRuntimeCachingFilterInput = {
+  readonly handler?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsWorkboxConfigRuntimeCachingFilterListInput = {
+  readonly elemMatch?: Maybe<SitePluginPluginOptionsWorkboxConfigRuntimeCachingFilterInput>,
 };
 
 export type SitePluginSortInput = {
-  readonly fields: Maybe<ReadonlyArray<Maybe<SitePluginFieldsEnum>>>,
-  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
+  readonly fields?: Maybe<ReadonlyArray<Maybe<SitePluginFieldsEnum>>>,
+  readonly order?: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
 };
 
 export type SiteSiteMetadata = {
   readonly __typename?: 'SiteSiteMetadata',
-  readonly title: Maybe<Scalars['String']>,
-  readonly description: Maybe<Scalars['String']>,
-  readonly keywords: Maybe<Scalars['String']>,
-  readonly siteUrl: Maybe<Scalars['String']>,
-  readonly author: Maybe<SiteSiteMetadataAuthor>,
-  readonly social: Maybe<SiteSiteMetadataSocial>,
+  readonly title?: Maybe<Scalars['String']>,
+  readonly description?: Maybe<Scalars['String']>,
+  readonly keywords?: Maybe<Scalars['String']>,
+  readonly siteUrl?: Maybe<Scalars['String']>,
+  readonly author?: Maybe<SiteSiteMetadataAuthor>,
+  readonly social?: Maybe<SiteSiteMetadataSocial>,
 };
 
 export type SiteSiteMetadataAuthor = {
   readonly __typename?: 'SiteSiteMetadataAuthor',
-  readonly name: Maybe<Scalars['String']>,
-  readonly url: Maybe<Scalars['String']>,
+  readonly name?: Maybe<Scalars['String']>,
+  readonly url?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataAuthorFilterInput = {
-  readonly name: Maybe<StringQueryOperatorInput>,
-  readonly url: Maybe<StringQueryOperatorInput>,
+  readonly name?: Maybe<StringQueryOperatorInput>,
+  readonly url?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSiteMetadataFilterInput = {
-  readonly title: Maybe<StringQueryOperatorInput>,
-  readonly description: Maybe<StringQueryOperatorInput>,
-  readonly keywords: Maybe<StringQueryOperatorInput>,
-  readonly siteUrl: Maybe<StringQueryOperatorInput>,
-  readonly author: Maybe<SiteSiteMetadataAuthorFilterInput>,
-  readonly social: Maybe<SiteSiteMetadataSocialFilterInput>,
+  readonly title?: Maybe<StringQueryOperatorInput>,
+  readonly description?: Maybe<StringQueryOperatorInput>,
+  readonly keywords?: Maybe<StringQueryOperatorInput>,
+  readonly siteUrl?: Maybe<StringQueryOperatorInput>,
+  readonly author?: Maybe<SiteSiteMetadataAuthorFilterInput>,
+  readonly social?: Maybe<SiteSiteMetadataSocialFilterInput>,
 };
 
 export type SiteSiteMetadataSocial = {
   readonly __typename?: 'SiteSiteMetadataSocial',
-  readonly github: Maybe<Scalars['String']>,
-  readonly instagram: Maybe<Scalars['String']>,
-  readonly linkedin: Maybe<Scalars['String']>,
+  readonly github?: Maybe<Scalars['String']>,
+  readonly instagram?: Maybe<Scalars['String']>,
+  readonly linkedin?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataSocialFilterInput = {
-  readonly github: Maybe<StringQueryOperatorInput>,
-  readonly instagram: Maybe<StringQueryOperatorInput>,
-  readonly linkedin: Maybe<StringQueryOperatorInput>,
+  readonly github?: Maybe<StringQueryOperatorInput>,
+  readonly instagram?: Maybe<StringQueryOperatorInput>,
+  readonly linkedin?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
-  readonly fields: Maybe<ReadonlyArray<Maybe<SiteFieldsEnum>>>,
-  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
+  readonly fields?: Maybe<ReadonlyArray<Maybe<SiteFieldsEnum>>>,
+  readonly order?: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>,
 };
 
 export enum SortOrderEnum {
@@ -2993,13 +3248,147 @@ export enum SortOrderEnum {
 }
 
 export type StringQueryOperatorInput = {
-  readonly eq: Maybe<Scalars['String']>,
-  readonly ne: Maybe<Scalars['String']>,
-  readonly in: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
-  readonly regex: Maybe<Scalars['String']>,
-  readonly glob: Maybe<Scalars['String']>,
+  readonly eq?: Maybe<Scalars['String']>,
+  readonly ne?: Maybe<Scalars['String']>,
+  readonly in?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly nin?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+  readonly regex?: Maybe<Scalars['String']>,
+  readonly glob?: Maybe<Scalars['String']>,
 };
+
+export type GatsbyImageSharpFixedFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
+);
+
+export type GatsbyImageSharpFixed_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>
+);
+
+export type GatsbyImageSharpFixed_WithWebpFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
+
+export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
+
+export type GatsbyImageSharpFixed_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet'>
+);
+
+export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
+
+export type GatsbyImageSharpFluidFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
+
+export type GatsbyImageSharpFluid_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
+
+export type GatsbyImageSharpFluid_WithWebpFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
+
+export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
+
+export type GatsbyImageSharpFluid_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
+
+export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
+
+export type GatsbyImageSharpResolutionsFragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
+);
+
+export type GatsbyImageSharpResolutions_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>
+);
+
+export type GatsbyImageSharpResolutions_WithWebpFragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
+
+export type GatsbyImageSharpResolutions_WithWebp_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
+
+export type GatsbyImageSharpResolutions_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet'>
+);
+
+export type GatsbyImageSharpResolutions_WithWebp_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
+
+export type GatsbyImageSharpSizesFragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
+
+export type GatsbyImageSharpSizes_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
+
+export type GatsbyImageSharpSizes_WithWebpFragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
+
+export type GatsbyImageSharpSizes_WithWebp_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
+
+export type GatsbyImageSharpSizes_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
+
+export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
+
+export type PagesQueryQueryVariables = {};
+
+
+export type PagesQueryQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly allSitePage: (
+    { readonly __typename?: 'SitePageConnection' }
+    & { readonly nodes: ReadonlyArray<(
+      { readonly __typename?: 'SitePage' }
+      & Pick<SitePage, 'path'>
+    )> }
+  ) }
+);
 
 export type BlogListerQueryVariables = {};
 
@@ -3018,7 +3407,7 @@ export type BlogListerQuery = (
           & Pick<MarkdownRemarkFields, 'slug'>
         )>, readonly frontmatter: Maybe<(
           { readonly __typename?: 'Frontmatter' }
-          & Pick<Frontmatter, 'title' | 'draft' | 'date' | 'tags' | 'categories' | 'description'>
+          & Pick<Frontmatter, 'title' | 'draft' | 'date' | 'categories' | 'description'>
           & { readonly featuredImage: Maybe<(
             { readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage' }
             & Pick<MarkdownRemarkFrontmatterFeaturedImage, 'description'>
@@ -3026,9 +3415,9 @@ export type BlogListerQuery = (
               { readonly __typename?: 'File' }
               & { readonly childImageSharp: Maybe<(
                 { readonly __typename?: 'ImageSharp' }
-                & { readonly fixed: Maybe<(
-                  { readonly __typename?: 'ImageSharpFixed' }
-                  & Pick<ImageSharpFixed, 'srcWebp' | 'srcSetWebp' | 'src' | 'srcSet' | 'base64'>
+                & { readonly fluid: Maybe<(
+                  { readonly __typename?: 'ImageSharpFluid' }
+                  & GatsbyImageSharpFluid_WithWebpFragment
                 )> }
               )> }
             )> }
@@ -3086,16 +3475,16 @@ export type NavigationQuery = (
   ) }
 );
 
-export type IndexLayoutQueryQueryVariables = {};
+export type IndexLayoutQueryVariables = {};
 
 
-export type IndexLayoutQueryQuery = (
+export type IndexLayoutQuery = (
   { readonly __typename?: 'Query' }
   & { readonly site: Maybe<(
     { readonly __typename?: 'Site' }
     & { readonly siteMetadata: Maybe<(
       { readonly __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'title' | 'description' | 'keywords'>
+      & Pick<SiteSiteMetadata, 'title' | 'description' | 'keywords' | 'siteUrl'>
     )> }
   )>, readonly file: Maybe<(
     { readonly __typename?: 'File' }
@@ -3103,7 +3492,7 @@ export type IndexLayoutQueryQuery = (
       { readonly __typename?: 'ImageSharp' }
       & { readonly fixed: Maybe<(
         { readonly __typename?: 'ImageSharpFixed' }
-        & Pick<ImageSharpFixed, 'src'>
+        & GatsbyImageSharpFixed_WithWebpFragment
       )> }
     )> }
   )> }
@@ -3116,7 +3505,13 @@ export type PageTemplateQueryVariables = {
 
 export type PageTemplateQuery = (
   { readonly __typename?: 'Query' }
-  & { readonly markdownRemark: Maybe<(
+  & { readonly site: Maybe<(
+    { readonly __typename?: 'Site' }
+    & { readonly siteMetadata: Maybe<(
+      { readonly __typename?: 'SiteSiteMetadata' }
+      & Pick<SiteSiteMetadata, 'siteUrl'>
+    )> }
+  )>, readonly markdownRemark: Maybe<(
     { readonly __typename?: 'MarkdownRemark' }
     & Pick<MarkdownRemark, 'html' | 'excerpt'>
     & { readonly frontmatter: Maybe<(
@@ -3131,7 +3526,41 @@ export type PageTemplateQuery = (
             { readonly __typename?: 'ImageSharp' }
             & { readonly fluid: Maybe<(
               { readonly __typename?: 'ImageSharpFluid' }
-              & Pick<ImageSharpFluid, 'src' | 'srcSet' | 'srcSetWebp' | 'srcWebp' | 'sizes' | 'aspectRatio' | 'base64'>
+              & GatsbyImageSharpFluid_WithWebpFragment
+            )> }
+          )> }
+        )> }
+      )> }
+    )> }
+  )>, readonly sitePage: Maybe<(
+    { readonly __typename?: 'SitePage' }
+    & Pick<SitePage, 'path'>
+    & { readonly context: Maybe<(
+      { readonly __typename?: 'SitePageContext' }
+      & { readonly previous: Maybe<(
+        { readonly __typename?: 'SitePageContextPrevious' }
+        & { readonly node: Maybe<(
+          { readonly __typename?: 'SitePageContextPreviousNode' }
+          & Pick<SitePageContextPreviousNode, 'excerpt'>
+          & { readonly fields: Maybe<(
+            { readonly __typename?: 'SitePageContextPreviousNodeFields' }
+            & Pick<SitePageContextPreviousNodeFields, 'slug'>
+          )>, readonly frontmatter: Maybe<(
+            { readonly __typename?: 'SitePageContextPreviousNodeFrontmatter' }
+            & Pick<SitePageContextPreviousNodeFrontmatter, 'title' | 'draft' | 'date' | 'categories' | 'description'>
+            & { readonly featuredImage: Maybe<(
+              { readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImage' }
+              & Pick<SitePageContextPreviousNodeFrontmatterFeaturedImage, 'description'>
+              & { readonly src: Maybe<(
+                { readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrc' }
+                & { readonly childImageSharp: Maybe<(
+                  { readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharp' }
+                  & { readonly fixed: Maybe<(
+                    { readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixed' }
+                    & Pick<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixed, 'srcWebp' | 'srcSetWebp' | 'src' | 'srcSet' | 'base64'>
+                  )> }
+                )> }
+              )> }
             )> }
           )> }
         )> }

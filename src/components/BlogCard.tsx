@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import Img, { FixedObject } from "gatsby-image"
+import Img, { FluidObject } from "gatsby-image"
 import PostDate from './PostDate'
 
 interface BlogCardProps {
@@ -10,13 +10,13 @@ interface BlogCardProps {
   excerpt: string
   date: string
   categories?: readonly string[]
-  blogImage: FixedObject
+  blogImage: FluidObject
   blogImageDescription: string
 }
 
 const BlogCard: React.FC<BlogCardProps> = (props) =>
   <Link className="card blog-card" to={props.slug}>
-    {props.blogImage !== null && props.blogImage !== undefined && <Img className="card-img-container" fixed={props.blogImage} alt={props.blogImageDescription} />}
+    {props.blogImage !== null && props.blogImage !== undefined && <Img className="card-img-container" fluid={props.blogImage} alt={props.blogImageDescription} />}
     <article className="card-body">
       <h2 className="card-title">{props.title}</h2>
       <p className="card-text">{props.description ?? props.excerpt}</p>

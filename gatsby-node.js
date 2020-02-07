@@ -124,9 +124,9 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const articles = articlesQuery.data.allMarkdownRemark.edges
+  const articles = articlesQuery.data.allMarkdownRemark.edges.filter(article => article.node.frontmatter.draft === null || article.node.frontmatter.draft === false)
 
-  const publishedArticles = articles.filter(article => article.node.frontmatter.draft === null || article.node.frontmatter.draft === false).reduce((acc, article) => {
+  const publishedArticles = articles.reduce((acc, article) => {
     acc[article.node.fields.slug] = article
     return acc
   }, {})
