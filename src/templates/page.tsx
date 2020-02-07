@@ -11,10 +11,14 @@ import { Disqus } from 'gatsby-plugin-disqus'
 import BlogCard from '../components/BlogCard'
 import { PageTemplateQuery } from '../types'
 
+interface PageTemplateQueryInterface {
+  data: PageTemplateQuery
+}
 
-const PageTemplate: React.SFC<PageTemplateQuery> = (data) => {
+const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data }) => {
   var blogImage = data.markdownRemark?.frontmatter?.featuredImage?.src?.childImageSharp?.fluid;
   var date = data.markdownRemark?.frontmatter?.date;
+
   let disqusConfig = {
     url: `${data.site.siteMetadata.siteUrl + data.sitePage?.path}`,
     identifier: data.sitePage?.path,
