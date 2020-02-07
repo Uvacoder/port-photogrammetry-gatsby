@@ -124,13 +124,7 @@ query PageTemplate($slug: String!) {
         src {
           childImageSharp {
             fluid(quality: 50) {
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-              sizes
-              aspectRatio
-              base64
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

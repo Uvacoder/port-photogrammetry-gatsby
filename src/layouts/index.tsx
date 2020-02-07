@@ -39,7 +39,7 @@ const IndexLayout: React.FC = ({ children }) => (
         file(name: {eq: "favicon"} ext: {eq: ".png"}) {
           childImageSharp {
             fixed {
-              src
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
