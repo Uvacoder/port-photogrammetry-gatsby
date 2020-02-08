@@ -36,9 +36,9 @@ const Footer: React.FC = () => (
     render={(data: FooterQuery) => {
       return (<footer>
         <div className={socialLinks.svgIconContainer}>
-          <SocialIcon className={socialLinks.github} href={`https://github.com/${data.site?.siteMetadata?.social?.github}`} label="Github"></SocialIcon>
-          <SocialIcon className={socialLinks.instagram} href={`https://instagram.com/${data.site?.siteMetadata?.social?.instagram}`} label="Instagram"></SocialIcon>
-          <SocialIcon className={socialLinks.linkedin} href={`https://www.linkedin.com/in/${data.site?.siteMetadata?.social?.linkedin}`} label="Linkedin"></SocialIcon>
+          <SocialIcon className={socialLinks.github} href={`https://github.com/${data.site?.siteMetadata.social.github}`} label="Github"></SocialIcon>
+          <SocialIcon className={socialLinks.instagram} href={`https://instagram.com/${data.site?.siteMetadata.social.instagram}`} label="Instagram"></SocialIcon>
+          <SocialIcon className={socialLinks.linkedin} href={`https://www.linkedin.com/in/${data.site?.siteMetadata.social.linkedin}`} label="Linkedin"></SocialIcon>
         </div>
       </footer>)
     }}

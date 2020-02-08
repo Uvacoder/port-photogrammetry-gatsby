@@ -6,9 +6,6 @@ tags:
 - Travel
 categories:
 - Photography
-featuredImage:
-  src: images/loweproflipsidetrekbp350aw.jpg
-  description: The Lowepro Flipside Trek BP 350 AW backpack
 description: A excellent backpack for a good price
 ---
 

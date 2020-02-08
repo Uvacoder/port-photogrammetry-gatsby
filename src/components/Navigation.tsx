@@ -47,7 +47,7 @@ const Navigation: React.FC = () => (
     render={(data: NavigationQuery) => {
       return <nav className="nav-bar side-padding" >
         <h1 className="nav-header">
-          <Link to="/" className="nav-text">{data.site?.siteMetadata?.title}</Link>
+          <Link to="/" className="nav-text">{data.site?.siteMetadata.title}</Link>
         </h1>
         <div className="hamburger-menu">
           <button onClick={e => hamburgerMenuPressed(e.currentTarget)} aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">

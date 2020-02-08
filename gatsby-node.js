@@ -8,6 +8,81 @@ const path = require('path')
 exports.createSchemaCustomization = ({ actions }) => {
   const { createFieldExtension, createTypes } = actions
 
+  const typeDefs = `
+  type MarkdownRemarkFrontmatterFeaturedImage @infer{
+      src: File! @fileByDataPath
+    }
+    type Frontmatter @infer {
+      title: String!
+      categories: [String!]
+      tags: [String!]
+      featuredImage: MarkdownRemarkFrontmatterFeaturedImage
+    }
+    type MarkdownRemark implements Node @infer {
+      frontmatter: Frontmatter!
+      fields: MarkdownRemarkFields!
+      html: String!
+    }
+    type MarkdownRemarkFields {
+      slug: String!
+      title: String!
+      layout: String!
+    }
+
+    type SiteSiteMetadata{
+      title: String!
+      siteUrl: String!
+      description: String!
+      keywords: String!
+      author: SiteSiteMetadataAuthor!
+      social: SiteSiteMetadataSocial!
+    }
+
+    type SiteSiteMetadataSocial{
+      github: String
+      instagram: String
+      linkedin: String
+    }
+
+    type SiteSiteMetadataAuthor{
+      name: String!
+      url: String!
+    }
+
+    type Site implements Node @infer {
+      siteMetadata: SiteSiteMetadata!
+    }
+
+    type SitePage{
+      context: SitePageContext!
+    }
+
+    type SitePageContext{
+      slug: String
+    }
+
+    type SitePageContextPrevious{
+      node: SitePageContextPreviousNode!
+    }
+
+    type SitePageContextPreviousNode{
+      fields: SitePageContextPreviousNodeFields!
+      frontmatter: SitePageContextPreviousNodeFrontmatter!
+      excerpt: String!
+    }
+
+    type SitePageContextPreviousNodeFields{
+      layout: String!
+      slug: String!
+    }
+
+    type SitePageContextPreviousNodeFrontmatter{
+      title: String!
+    }
+  `
+
+  createTypes(typeDefs)
+
   createFieldExtension({
     name: 'fileByDataPath',
     extend: () => ({
@@ -38,20 +113,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       }
     })
   })
-
-  const typeDefs = `
-    type MarkdownRemarkFrontmatterFeaturedImage @infer{
-      src: File @fileByDataPath
-    }
-    type Frontmatter @infer {
-      featuredImage: MarkdownRemarkFrontmatterFeaturedImage
-    }
-    type MarkdownRemark implements Node @infer {
-      frontmatter: Frontmatter
-    }
-  `
-
-  createTypes(typeDefs)
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
