@@ -45,6 +45,7 @@ const BlogLister: React.FC<BlogListerProps> = (props) => (
       {data.allMarkdownRemark.edges.map(post => {
         if (post.node.frontmatter.draft !== true && (props.category === undefined || post.node.frontmatter.categories?.includes(props.category!))) {
           return <BlogCard
+            key={post.node.fields.slug}
             title={post.node.frontmatter.title!}
             slug={post.node.fields.slug}
             description={post.node.frontmatter.description!}
