@@ -2281,15 +2281,16 @@ export type SitePageContextNextNodeFrontmatterFeaturedImageSrc = {
 
 export type SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharp = {
   readonly __typename?: 'SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharp',
-  readonly fixed?: Maybe<SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFixed>,
+  readonly fluid?: Maybe<SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFluid>,
 };
 
-export type SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFixed = {
-  readonly __typename?: 'SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFixed',
+export type SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFluid = {
+  readonly __typename?: 'SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFluid',
   readonly srcWebp?: Maybe<Scalars['String']>,
   readonly srcSetWebp?: Maybe<Scalars['String']>,
   readonly src?: Maybe<Scalars['String']>,
   readonly srcSet?: Maybe<Scalars['String']>,
+  readonly sizes?: Maybe<Scalars['String']>,
   readonly base64?: Maybe<Scalars['String']>,
 };
 
@@ -2334,15 +2335,16 @@ export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrc = {
 
 export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharp = {
   readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharp',
-  readonly fixed?: Maybe<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixed>,
+  readonly fluid?: Maybe<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFluid>,
 };
 
-export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixed = {
-  readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixed',
+export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFluid = {
+  readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFluid',
   readonly srcWebp?: Maybe<Scalars['String']>,
   readonly srcSetWebp?: Maybe<Scalars['String']>,
   readonly src?: Maybe<Scalars['String']>,
   readonly srcSet?: Maybe<Scalars['String']>,
+  readonly sizes?: Maybe<Scalars['String']>,
   readonly base64?: Maybe<Scalars['String']>,
 };
 
@@ -2502,18 +2504,9 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsWrapperStyle = 'pluginCreator___pluginOptions___wrapperStyle',
   PluginCreatorPluginOptionsAliasesCs = 'pluginCreator___pluginOptions___aliases___cs',
   PluginCreatorPluginOptionsAliasesPosh = 'pluginCreator___pluginOptions___aliases___posh',
-  PluginCreatorPluginOptionsIgnoreFileExtensions = 'pluginCreator___pluginOptions___ignoreFileExtensions',
   PluginCreatorPluginOptionsMaxWidth = 'pluginCreator___pluginOptions___maxWidth',
   PluginCreatorPluginOptionsLinkImagesToOriginal = 'pluginCreator___pluginOptions___linkImagesToOriginal',
   PluginCreatorPluginOptionsWithWebp = 'pluginCreator___pluginOptions___withWebp',
-  PluginCreatorPluginOptionsPathPrefix = 'pluginCreator___pluginOptions___pathPrefix',
-  PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___backgroundColor',
-  PluginCreatorPluginOptionsShowCaptions = 'pluginCreator___pluginOptions___showCaptions',
-  PluginCreatorPluginOptionsMarkdownCaptions = 'pluginCreator___pluginOptions___markdownCaptions',
-  PluginCreatorPluginOptionsTracedSvg = 'pluginCreator___pluginOptions___tracedSVG',
-  PluginCreatorPluginOptionsLoading = 'pluginCreator___pluginOptions___loading',
-  PluginCreatorPluginOptionsDisableBgImageOnAlpha = 'pluginCreator___pluginOptions___disableBgImageOnAlpha',
-  PluginCreatorPluginOptionsDisableBgImage = 'pluginCreator___pluginOptions___disableBgImage',
   PluginCreatorPluginOptionsSiteUrl = 'pluginCreator___pluginOptions___siteUrl',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
@@ -2522,7 +2515,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsThemeColor = 'pluginCreator___pluginOptions___theme_color',
   PluginCreatorPluginOptionsDisplay = 'pluginCreator___pluginOptions___display',
   PluginCreatorPluginOptionsIcon = 'pluginCreator___pluginOptions___icon',
-  PluginCreatorPluginOptionsPrecachePages = 'pluginCreator___pluginOptions___precachePages',
   PluginCreatorPluginOptionsWorkboxConfigRuntimeCaching = 'pluginCreator___pluginOptions___workboxConfig___runtimeCaching',
   PluginCreatorPluginOptionsQuery = 'pluginCreator___pluginOptions___query',
   PluginCreatorPluginOptionsFeeds = 'pluginCreator___pluginOptions___feeds',
@@ -2731,18 +2723,9 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPluginsPluginOptionsTarget = 'pluginOptions___plugins___pluginOptions___target',
   PluginOptionsPluginsPluginOptionsRel = 'pluginOptions___plugins___pluginOptions___rel',
   PluginOptionsPluginsPluginOptionsWrapperStyle = 'pluginOptions___plugins___pluginOptions___wrapperStyle',
-  PluginOptionsPluginsPluginOptionsIgnoreFileExtensions = 'pluginOptions___plugins___pluginOptions___ignoreFileExtensions',
   PluginOptionsPluginsPluginOptionsMaxWidth = 'pluginOptions___plugins___pluginOptions___maxWidth',
   PluginOptionsPluginsPluginOptionsLinkImagesToOriginal = 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal',
   PluginOptionsPluginsPluginOptionsWithWebp = 'pluginOptions___plugins___pluginOptions___withWebp',
-  PluginOptionsPluginsPluginOptionsPathPrefix = 'pluginOptions___plugins___pluginOptions___pathPrefix',
-  PluginOptionsPluginsPluginOptionsBackgroundColor = 'pluginOptions___plugins___pluginOptions___backgroundColor',
-  PluginOptionsPluginsPluginOptionsShowCaptions = 'pluginOptions___plugins___pluginOptions___showCaptions',
-  PluginOptionsPluginsPluginOptionsMarkdownCaptions = 'pluginOptions___plugins___pluginOptions___markdownCaptions',
-  PluginOptionsPluginsPluginOptionsTracedSvg = 'pluginOptions___plugins___pluginOptions___tracedSVG',
-  PluginOptionsPluginsPluginOptionsLoading = 'pluginOptions___plugins___pluginOptions___loading',
-  PluginOptionsPluginsPluginOptionsDisableBgImageOnAlpha = 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha',
-  PluginOptionsPluginsPluginOptionsDisableBgImage = 'pluginOptions___plugins___pluginOptions___disableBgImage',
   PluginOptionsPluginsNodeApIs = 'pluginOptions___plugins___nodeAPIs',
   PluginOptionsPluginsBrowserApIs = 'pluginOptions___plugins___browserAPIs',
   PluginOptionsPluginsPluginFilepath = 'pluginOptions___plugins___pluginFilepath',
@@ -2752,18 +2735,9 @@ export enum SitePluginFieldsEnum {
   PluginOptionsWrapperStyle = 'pluginOptions___wrapperStyle',
   PluginOptionsAliasesCs = 'pluginOptions___aliases___cs',
   PluginOptionsAliasesPosh = 'pluginOptions___aliases___posh',
-  PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
   PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
   PluginOptionsLinkImagesToOriginal = 'pluginOptions___linkImagesToOriginal',
   PluginOptionsWithWebp = 'pluginOptions___withWebp',
-  PluginOptionsPathPrefix = 'pluginOptions___pathPrefix',
-  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
-  PluginOptionsShowCaptions = 'pluginOptions___showCaptions',
-  PluginOptionsMarkdownCaptions = 'pluginOptions___markdownCaptions',
-  PluginOptionsTracedSvg = 'pluginOptions___tracedSVG',
-  PluginOptionsLoading = 'pluginOptions___loading',
-  PluginOptionsDisableBgImageOnAlpha = 'pluginOptions___disableBgImageOnAlpha',
-  PluginOptionsDisableBgImage = 'pluginOptions___disableBgImage',
   PluginOptionsSiteUrl = 'pluginOptions___siteUrl',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsShortName = 'pluginOptions___short_name',
@@ -2772,7 +2746,6 @@ export enum SitePluginFieldsEnum {
   PluginOptionsThemeColor = 'pluginOptions___theme_color',
   PluginOptionsDisplay = 'pluginOptions___display',
   PluginOptionsIcon = 'pluginOptions___icon',
-  PluginOptionsPrecachePages = 'pluginOptions___precachePages',
   PluginOptionsWorkboxConfigRuntimeCaching = 'pluginOptions___workboxConfig___runtimeCaching',
   PluginOptionsWorkboxConfigRuntimeCachingHandler = 'pluginOptions___workboxConfig___runtimeCaching___handler',
   PluginOptionsQuery = 'pluginOptions___query',
@@ -2907,18 +2880,9 @@ export type SitePluginPluginOptions = {
   readonly rel?: Maybe<Scalars['String']>,
   readonly wrapperStyle?: Maybe<Scalars['String']>,
   readonly aliases?: Maybe<SitePluginPluginOptionsAliases>,
-  readonly ignoreFileExtensions?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
   readonly maxWidth?: Maybe<Scalars['Int']>,
   readonly linkImagesToOriginal?: Maybe<Scalars['Boolean']>,
   readonly withWebp?: Maybe<Scalars['Boolean']>,
-  readonly pathPrefix?: Maybe<Scalars['String']>,
-  readonly backgroundColor?: Maybe<Scalars['String']>,
-  readonly showCaptions?: Maybe<Scalars['Boolean']>,
-  readonly markdownCaptions?: Maybe<Scalars['Boolean']>,
-  readonly tracedSVG?: Maybe<Scalars['Boolean']>,
-  readonly loading?: Maybe<Scalars['String']>,
-  readonly disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>,
-  readonly disableBgImage?: Maybe<Scalars['Boolean']>,
   readonly siteUrl?: Maybe<Scalars['String']>,
   readonly path?: Maybe<Scalars['String']>,
   readonly short_name?: Maybe<Scalars['String']>,
@@ -2927,7 +2891,6 @@ export type SitePluginPluginOptions = {
   readonly theme_color?: Maybe<Scalars['String']>,
   readonly display?: Maybe<Scalars['String']>,
   readonly icon?: Maybe<Scalars['String']>,
-  readonly precachePages?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
   readonly workboxConfig?: Maybe<SitePluginPluginOptionsWorkboxConfig>,
   readonly query?: Maybe<Scalars['String']>,
   readonly feeds?: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsFeeds>>>,
@@ -2970,18 +2933,9 @@ export type SitePluginPluginOptionsFilterInput = {
   readonly rel?: Maybe<StringQueryOperatorInput>,
   readonly wrapperStyle?: Maybe<StringQueryOperatorInput>,
   readonly aliases?: Maybe<SitePluginPluginOptionsAliasesFilterInput>,
-  readonly ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
   readonly maxWidth?: Maybe<IntQueryOperatorInput>,
   readonly linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>,
   readonly withWebp?: Maybe<BooleanQueryOperatorInput>,
-  readonly pathPrefix?: Maybe<StringQueryOperatorInput>,
-  readonly backgroundColor?: Maybe<StringQueryOperatorInput>,
-  readonly showCaptions?: Maybe<BooleanQueryOperatorInput>,
-  readonly markdownCaptions?: Maybe<BooleanQueryOperatorInput>,
-  readonly tracedSVG?: Maybe<BooleanQueryOperatorInput>,
-  readonly loading?: Maybe<StringQueryOperatorInput>,
-  readonly disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>,
-  readonly disableBgImage?: Maybe<BooleanQueryOperatorInput>,
   readonly siteUrl?: Maybe<StringQueryOperatorInput>,
   readonly path?: Maybe<StringQueryOperatorInput>,
   readonly short_name?: Maybe<StringQueryOperatorInput>,
@@ -2990,7 +2944,6 @@ export type SitePluginPluginOptionsFilterInput = {
   readonly theme_color?: Maybe<StringQueryOperatorInput>,
   readonly display?: Maybe<StringQueryOperatorInput>,
   readonly icon?: Maybe<StringQueryOperatorInput>,
-  readonly precachePages?: Maybe<StringQueryOperatorInput>,
   readonly workboxConfig?: Maybe<SitePluginPluginOptionsWorkboxConfigFilterInput>,
   readonly query?: Maybe<StringQueryOperatorInput>,
   readonly feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>,
@@ -3032,18 +2985,9 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   readonly rel?: Maybe<Scalars['String']>,
   readonly wrapperStyle?: Maybe<Scalars['String']>,
   readonly aliases?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsAliases>,
-  readonly ignoreFileExtensions?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
   readonly maxWidth?: Maybe<Scalars['Int']>,
   readonly linkImagesToOriginal?: Maybe<Scalars['Boolean']>,
   readonly withWebp?: Maybe<Scalars['Boolean']>,
-  readonly pathPrefix?: Maybe<Scalars['String']>,
-  readonly backgroundColor?: Maybe<Scalars['String']>,
-  readonly showCaptions?: Maybe<Scalars['Boolean']>,
-  readonly markdownCaptions?: Maybe<Scalars['Boolean']>,
-  readonly tracedSVG?: Maybe<Scalars['Boolean']>,
-  readonly loading?: Maybe<Scalars['String']>,
-  readonly disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>,
-  readonly disableBgImage?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsAliases = {
@@ -3063,18 +3007,9 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   readonly rel?: Maybe<StringQueryOperatorInput>,
   readonly wrapperStyle?: Maybe<StringQueryOperatorInput>,
   readonly aliases?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput>,
-  readonly ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
   readonly maxWidth?: Maybe<IntQueryOperatorInput>,
   readonly linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>,
   readonly withWebp?: Maybe<BooleanQueryOperatorInput>,
-  readonly pathPrefix?: Maybe<StringQueryOperatorInput>,
-  readonly backgroundColor?: Maybe<StringQueryOperatorInput>,
-  readonly showCaptions?: Maybe<BooleanQueryOperatorInput>,
-  readonly markdownCaptions?: Maybe<BooleanQueryOperatorInput>,
-  readonly tracedSVG?: Maybe<BooleanQueryOperatorInput>,
-  readonly loading?: Maybe<StringQueryOperatorInput>,
-  readonly disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>,
-  readonly disableBgImage?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsWorkboxConfig = {
@@ -3166,91 +3101,315 @@ export type StringQueryOperatorInput = {
   readonly glob?: Maybe<Scalars['String']>,
 };
 
-export type GatsbyImageSharpFixedFragment = { readonly __typename?: 'ImageSharpFixed', readonly base64: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
+export type GatsbyImageSharpFixedFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
+);
 
-export type GatsbyImageSharpFixed_TracedSvgFragment = { readonly __typename?: 'ImageSharpFixed', readonly tracedSVG: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
+export type GatsbyImageSharpFixed_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>
+);
 
-export type GatsbyImageSharpFixed_WithWebpFragment = { readonly __typename?: 'ImageSharpFixed', readonly base64: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string> };
+export type GatsbyImageSharpFixed_WithWebpFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
 
-export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = { readonly __typename?: 'ImageSharpFixed', readonly tracedSVG: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string> };
+export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
 
-export type GatsbyImageSharpFixed_NoBase64Fragment = { readonly __typename?: 'ImageSharpFixed', readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
+export type GatsbyImageSharpFixed_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet'>
+);
 
-export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = { readonly __typename?: 'ImageSharpFixed', readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string> };
+export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
 
-export type GatsbyImageSharpFluidFragment = { readonly __typename?: 'ImageSharpFluid', readonly base64: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly sizes: string };
+export type GatsbyImageSharpFluidFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
 
-export type GatsbyImageSharpFluid_TracedSvgFragment = { readonly __typename?: 'ImageSharpFluid', readonly tracedSVG: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly sizes: string };
+export type GatsbyImageSharpFluid_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
 
-export type GatsbyImageSharpFluid_WithWebpFragment = { readonly __typename?: 'ImageSharpFluid', readonly base64: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string>, readonly sizes: string };
+export type GatsbyImageSharpFluid_WithWebpFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
 
-export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = { readonly __typename?: 'ImageSharpFluid', readonly tracedSVG: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string>, readonly sizes: string };
+export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
 
-export type GatsbyImageSharpFluid_NoBase64Fragment = { readonly __typename?: 'ImageSharpFluid', readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly sizes: string };
+export type GatsbyImageSharpFluid_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
 
-export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = { readonly __typename?: 'ImageSharpFluid', readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string>, readonly sizes: string };
+export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
 
-export type GatsbyImageSharpResolutionsFragment = { readonly __typename?: 'ImageSharpResolutions', readonly base64: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
+export type GatsbyImageSharpResolutionsFragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
+);
 
-export type GatsbyImageSharpResolutions_TracedSvgFragment = { readonly __typename?: 'ImageSharpResolutions', readonly tracedSVG: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
+export type GatsbyImageSharpResolutions_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>
+);
 
-export type GatsbyImageSharpResolutions_WithWebpFragment = { readonly __typename?: 'ImageSharpResolutions', readonly base64: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string> };
+export type GatsbyImageSharpResolutions_WithWebpFragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
 
-export type GatsbyImageSharpResolutions_WithWebp_TracedSvgFragment = { readonly __typename?: 'ImageSharpResolutions', readonly tracedSVG: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string> };
+export type GatsbyImageSharpResolutions_WithWebp_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
 
-export type GatsbyImageSharpResolutions_NoBase64Fragment = { readonly __typename?: 'ImageSharpResolutions', readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
+export type GatsbyImageSharpResolutions_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet'>
+);
 
-export type GatsbyImageSharpResolutions_WithWebp_NoBase64Fragment = { readonly __typename?: 'ImageSharpResolutions', readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string> };
+export type GatsbyImageSharpResolutions_WithWebp_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpResolutions' }
+  & Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
 
-export type GatsbyImageSharpSizesFragment = { readonly __typename?: 'ImageSharpSizes', readonly base64: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly sizes: string };
+export type GatsbyImageSharpSizesFragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
 
-export type GatsbyImageSharpSizes_TracedSvgFragment = { readonly __typename?: 'ImageSharpSizes', readonly tracedSVG: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly sizes: string };
+export type GatsbyImageSharpSizes_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
 
-export type GatsbyImageSharpSizes_WithWebpFragment = { readonly __typename?: 'ImageSharpSizes', readonly base64: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string>, readonly sizes: string };
+export type GatsbyImageSharpSizes_WithWebpFragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
 
-export type GatsbyImageSharpSizes_WithWebp_TracedSvgFragment = { readonly __typename?: 'ImageSharpSizes', readonly tracedSVG: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string>, readonly sizes: string };
+export type GatsbyImageSharpSizes_WithWebp_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
 
-export type GatsbyImageSharpSizes_NoBase64Fragment = { readonly __typename?: 'ImageSharpSizes', readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly sizes: string };
+export type GatsbyImageSharpSizes_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
 
-export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = { readonly __typename?: 'ImageSharpSizes', readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string>, readonly sizes: string };
+export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpSizes' }
+  & Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
 
 export type PagesQueryQueryVariables = {};
 
 
-export type PagesQueryQuery = { readonly __typename?: 'Query', readonly allSitePage: { readonly __typename?: 'SitePageConnection', readonly nodes: ReadonlyArray<{ readonly __typename?: 'SitePage', readonly path: string }> } };
+export type PagesQueryQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly allSitePage: (
+    { readonly __typename?: 'SitePageConnection' }
+    & { readonly nodes: ReadonlyArray<(
+      { readonly __typename?: 'SitePage' }
+      & Pick<SitePage, 'path'>
+    )> }
+  ) }
+);
 
 export type BlogListerQueryVariables = {};
 
 
-export type BlogListerQuery = { readonly __typename?: 'Query', readonly allMarkdownRemark: { readonly __typename?: 'MarkdownRemarkConnection', readonly edges: ReadonlyArray<{ readonly __typename?: 'MarkdownRemarkEdge', readonly node: { readonly __typename?: 'MarkdownRemark', readonly excerpt: Maybe<string>, readonly fields: { readonly __typename?: 'MarkdownRemarkFields', readonly slug: string }, readonly frontmatter: { readonly __typename?: 'Frontmatter', readonly title: string, readonly draft: Maybe<boolean>, readonly date: Maybe<any>, readonly categories: Maybe<ReadonlyArray<string>>, readonly description: Maybe<string>, readonly featuredImage: Maybe<{ readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage', readonly description: Maybe<string>, readonly src: { readonly __typename?: 'File', readonly childImageSharp: Maybe<{ readonly __typename?: 'ImageSharp', readonly fluid: Maybe<(
+export type BlogListerQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly allMarkdownRemark: (
+    { readonly __typename?: 'MarkdownRemarkConnection' }
+    & { readonly edges: ReadonlyArray<(
+      { readonly __typename?: 'MarkdownRemarkEdge' }
+      & { readonly node: (
+        { readonly __typename?: 'MarkdownRemark' }
+        & Pick<MarkdownRemark, 'excerpt'>
+        & { readonly fields: (
+          { readonly __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'slug'>
+        ), readonly frontmatter: (
+          { readonly __typename?: 'Frontmatter' }
+          & Pick<Frontmatter, 'title' | 'draft' | 'date' | 'categories' | 'description'>
+          & { readonly featuredImage: Maybe<(
+            { readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage' }
+            & Pick<MarkdownRemarkFrontmatterFeaturedImage, 'description'>
+            & { readonly src: (
+              { readonly __typename?: 'File' }
+              & { readonly childImageSharp: Maybe<(
+                { readonly __typename?: 'ImageSharp' }
+                & { readonly fluid: Maybe<(
                   { readonly __typename?: 'ImageSharpFluid' }
                   & GatsbyImageSharpFluid_WithWebpFragment
-                )> }> } }> } } }> } };
+                )> }
+              )> }
+            ) }
+          )> }
+        ) }
+      ) }
+    )> }
+  ) }
+);
 
 export type FooterQueryVariables = {};
 
 
-export type FooterQuery = { readonly __typename?: 'Query', readonly site: Maybe<{ readonly __typename?: 'Site', readonly siteMetadata: { readonly __typename?: 'SiteSiteMetadata', readonly social: { readonly __typename?: 'SiteSiteMetadataSocial', readonly github: Maybe<string>, readonly instagram: Maybe<string>, readonly linkedin: Maybe<string> } } }> };
+export type FooterQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly site: Maybe<(
+    { readonly __typename?: 'Site' }
+    & { readonly siteMetadata: (
+      { readonly __typename?: 'SiteSiteMetadata' }
+      & { readonly social: (
+        { readonly __typename?: 'SiteSiteMetadataSocial' }
+        & Pick<SiteSiteMetadataSocial, 'github' | 'instagram' | 'linkedin'>
+      ) }
+    ) }
+  )> }
+);
 
 export type NavigationQueryVariables = {};
 
 
-export type NavigationQuery = { readonly __typename?: 'Query', readonly site: Maybe<{ readonly __typename?: 'Site', readonly siteMetadata: { readonly __typename?: 'SiteSiteMetadata', readonly title: string, readonly description: string } }>, readonly allMarkdownRemark: { readonly __typename?: 'MarkdownRemarkConnection', readonly edges: ReadonlyArray<{ readonly __typename?: 'MarkdownRemarkEdge', readonly node: { readonly __typename?: 'MarkdownRemark', readonly id: string, readonly excerpt: Maybe<string>, readonly fields: { readonly __typename?: 'MarkdownRemarkFields', readonly slug: string }, readonly frontmatter: { readonly __typename?: 'Frontmatter', readonly title: string, readonly date: Maybe<any>, readonly tags: Maybe<ReadonlyArray<string>> } } }> } };
+export type NavigationQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly site: Maybe<(
+    { readonly __typename?: 'Site' }
+    & { readonly siteMetadata: (
+      { readonly __typename?: 'SiteSiteMetadata' }
+      & Pick<SiteSiteMetadata, 'title' | 'description'>
+    ) }
+  )>, readonly allMarkdownRemark: (
+    { readonly __typename?: 'MarkdownRemarkConnection' }
+    & { readonly edges: ReadonlyArray<(
+      { readonly __typename?: 'MarkdownRemarkEdge' }
+      & { readonly node: (
+        { readonly __typename?: 'MarkdownRemark' }
+        & Pick<MarkdownRemark, 'id' | 'excerpt'>
+        & { readonly fields: (
+          { readonly __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'slug'>
+        ), readonly frontmatter: (
+          { readonly __typename?: 'Frontmatter' }
+          & Pick<Frontmatter, 'title' | 'date' | 'tags'>
+        ) }
+      ) }
+    )> }
+  ) }
+);
 
 export type IndexLayoutQueryVariables = {};
 
 
-export type IndexLayoutQuery = { readonly __typename?: 'Query', readonly site: Maybe<{ readonly __typename?: 'Site', readonly siteMetadata: { readonly __typename?: 'SiteSiteMetadata', readonly title: string, readonly description: string, readonly keywords: string, readonly siteUrl: string } }>, readonly file: Maybe<{ readonly __typename?: 'File', readonly childImageSharp: Maybe<{ readonly __typename?: 'ImageSharp', readonly fixed: Maybe<(
+export type IndexLayoutQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly site: Maybe<(
+    { readonly __typename?: 'Site' }
+    & { readonly siteMetadata: (
+      { readonly __typename?: 'SiteSiteMetadata' }
+      & Pick<SiteSiteMetadata, 'title' | 'description' | 'keywords' | 'siteUrl'>
+    ) }
+  )>, readonly file: Maybe<(
+    { readonly __typename?: 'File' }
+    & { readonly childImageSharp: Maybe<(
+      { readonly __typename?: 'ImageSharp' }
+      & { readonly fixed: Maybe<(
         { readonly __typename?: 'ImageSharpFixed' }
         & GatsbyImageSharpFixed_WithWebpFragment
-      )> }> }> };
+      )> }
+    )> }
+  )> }
+);
 
 export type PageTemplateQueryVariables = {
   slug: Scalars['String']
 };
 
 
-export type PageTemplateQuery = { readonly __typename?: 'Query', readonly site: Maybe<{ readonly __typename?: 'Site', readonly siteMetadata: { readonly __typename?: 'SiteSiteMetadata', readonly siteUrl: string } }>, readonly markdownRemark: Maybe<{ readonly __typename?: 'MarkdownRemark', readonly html: Maybe<string>, readonly excerpt: Maybe<string>, readonly frontmatter: { readonly __typename?: 'Frontmatter', readonly title: string, readonly date: Maybe<any>, readonly featuredImage: Maybe<{ readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage', readonly description: Maybe<string>, readonly src: { readonly __typename?: 'File', readonly childImageSharp: Maybe<{ readonly __typename?: 'ImageSharp', readonly fluid: Maybe<(
+export type PageTemplateQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly site: Maybe<(
+    { readonly __typename?: 'Site' }
+    & { readonly siteMetadata: (
+      { readonly __typename?: 'SiteSiteMetadata' }
+      & Pick<SiteSiteMetadata, 'siteUrl'>
+    ) }
+  )>, readonly markdownRemark: Maybe<(
+    { readonly __typename?: 'MarkdownRemark' }
+    & Pick<MarkdownRemark, 'html' | 'excerpt'>
+    & { readonly frontmatter: (
+      { readonly __typename?: 'Frontmatter' }
+      & Pick<Frontmatter, 'title' | 'date'>
+      & { readonly featuredImage: Maybe<(
+        { readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage' }
+        & Pick<MarkdownRemarkFrontmatterFeaturedImage, 'description'>
+        & { readonly src: (
+          { readonly __typename?: 'File' }
+          & { readonly childImageSharp: Maybe<(
+            { readonly __typename?: 'ImageSharp' }
+            & { readonly fluid: Maybe<(
               { readonly __typename?: 'ImageSharpFluid' }
               & GatsbyImageSharpFluid_WithWebpFragment
-            )> }> } }> } }>, readonly sitePage: Maybe<{ readonly __typename?: 'SitePage', readonly path: string, readonly context: { readonly __typename?: 'SitePageContext', readonly previous: Maybe<{ readonly __typename?: 'SitePageContextPrevious', readonly node: { readonly __typename?: 'SitePageContextPreviousNode', readonly excerpt: string, readonly fields: { readonly __typename?: 'SitePageContextPreviousNodeFields', readonly slug: string }, readonly frontmatter: { readonly __typename?: 'SitePageContextPreviousNodeFrontmatter', readonly title: string, readonly draft: Maybe<boolean>, readonly date: Maybe<string>, readonly categories: Maybe<ReadonlyArray<Maybe<string>>>, readonly description: Maybe<string>, readonly featuredImage: Maybe<{ readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImage', readonly description: Maybe<string>, readonly src: Maybe<{ readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrc', readonly childImageSharp: Maybe<{ readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharp', readonly fixed: Maybe<{ readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFixed', readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string>, readonly src: Maybe<string>, readonly srcSet: Maybe<string>, readonly base64: Maybe<string> }> }> }> }> } } }> } }> };
+            )> }
+          )> }
+        ) }
+      )> }
+    ) }
+  )>, readonly sitePage: Maybe<(
+    { readonly __typename?: 'SitePage' }
+    & Pick<SitePage, 'path'>
+    & { readonly context: (
+      { readonly __typename?: 'SitePageContext' }
+      & { readonly previous: Maybe<(
+        { readonly __typename?: 'SitePageContextPrevious' }
+        & { readonly node: (
+          { readonly __typename?: 'SitePageContextPreviousNode' }
+          & Pick<SitePageContextPreviousNode, 'excerpt'>
+          & { readonly fields: (
+            { readonly __typename?: 'SitePageContextPreviousNodeFields' }
+            & Pick<SitePageContextPreviousNodeFields, 'slug'>
+          ), readonly frontmatter: (
+            { readonly __typename?: 'SitePageContextPreviousNodeFrontmatter' }
+            & Pick<SitePageContextPreviousNodeFrontmatter, 'title' | 'draft' | 'date' | 'categories' | 'description'>
+            & { readonly featuredImage: Maybe<(
+              { readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImage' }
+              & Pick<SitePageContextPreviousNodeFrontmatterFeaturedImage, 'description'>
+              & { readonly src: Maybe<(
+                { readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrc' }
+                & { readonly childImageSharp: Maybe<(
+                  { readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharp' }
+                  & { readonly fluid: Maybe<(
+                    { readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFluid' }
+                    & Pick<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFluid, 'srcWebp' | 'srcSetWebp' | 'src' | 'srcSet' | 'sizes' | 'base64'>
+                  )> }
+                )> }
+              )> }
+            )> }
+          ) }
+        ) }
+      )> }
+    ) }
+  )> }
+);

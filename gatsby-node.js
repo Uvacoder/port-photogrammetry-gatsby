@@ -167,12 +167,14 @@ exports.createPages = async ({ graphql, actions }) => {
                 description
                 src {
                   childImageSharp {
-                    fixed(height: 170, quality: 50) {
+                    fluid(quality: 50) {
                       srcWebp
                       srcSetWebp
                       src
                       srcSet
+                      sizes
                       base64
+                      aspectRatio
                     }
                   }
                 }

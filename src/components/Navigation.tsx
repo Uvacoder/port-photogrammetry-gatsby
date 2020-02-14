@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { NavigationQuery } from '../types'
 
@@ -32,10 +32,8 @@ query Navigation {
 
 const hamburgerMenuPressed = (menuOpen: boolean, setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>) => {
   if (menuOpen) {
-    document.body.classList.remove('no-scroll');
     setMenuOpen(false)
   } else {
-    document.body.classList.add('no-scroll');
     setMenuOpen(true)
   }
 }
@@ -45,6 +43,15 @@ const Navigation: React.FC = () => (
     query={ComponentQuery}
     render={(data: NavigationQuery) => {
       const [menuOpen, setMenuOpen] = useState(false);
+
+      useEffect(() => {
+        if (menuOpen) {
+          document.body.classList.add('no-scroll');
+        } else {
+          document.body.classList.remove('no-scroll');
+        }
+      }, [menuOpen])
+
       return <nav className="nav-bar side-padding" >
         <h1 className="nav-header">
           <Link to="/" className="nav-text">{data.site?.siteMetadata.title}</Link>

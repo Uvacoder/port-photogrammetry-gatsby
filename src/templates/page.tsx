@@ -16,12 +16,15 @@ interface PageTemplateQueryInterface {
 }
 
 const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data }) => {
+  if (data.sitePage === null) return (<></>);
+  if (data.site === null) return (<></>);
+
   var blogImage = data.markdownRemark?.frontmatter.featuredImage?.src.childImageSharp?.fluid;
   var date = data.markdownRemark?.frontmatter.date;
 
-  let disqusConfig = {
-    url: `${data.site?.siteMetadata.siteUrl + data.sitePage?.path}`,
-    identifier: data.sitePage?.path,
+  const disqusConfig = {
+    url: `${data.site.siteMetadata.siteUrl + data.sitePage.path}`,
+    identifier: data.sitePage.path,
     title: data.markdownRemark?.frontmatter.title,
   }
   return (<>
@@ -40,14 +43,15 @@ const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data }) => {
       </article>
     </Main>
     <nav className="end-nav side-padding">
-      {data.sitePage?.context.previous !== null && <BlogCard
-        title={data.sitePage?.context.previous.node.frontmatter.title}
-        slug={data.sitePage?.context.previous.node.fields.slug}
-        description={data.sitePage?.context.previous.node.frontmatter.description!}
-        excerpt={data.sitePage?.context.previous.node.excerpt} date={data.sitePage?.context.previous.node.frontmatter.date}
-        categories={data.sitePage?.context.previous.node.frontmatter.categories!}
-        blogImage={data.sitePage?.context.previous.node.frontmatter.featuredImage?.src?.childImageSharp?.fixed}
-        blogImageDescription={data.sitePage?.context.previous.node.frontmatter.featuredImage?.description!}>
+      {data.sitePage.context.previous !== null && <BlogCard
+        title={data.sitePage.context.previous.node.frontmatter.title}
+        slug={data.sitePage.context.previous.node.fields.slug}
+        description={data.sitePage.context.previous.node.frontmatter.description!}
+        excerpt={data.sitePage.context.previous.node.excerpt}
+        date={data.sitePage.context.previous.node.frontmatter.date}
+        categories={data.sitePage.context.previous.node.frontmatter.categories!}
+        blogImage={data.sitePage.context.previous.node.frontmatter.featuredImage?.src.childImageSharp.fluid}
+        blogImageDescription={data.sitePage.context.previous.node.frontmatter.featuredImage?.description}>
       </BlogCard>}
     </nav>
 
@@ -100,12 +104,14 @@ query PageTemplate($slug: String!) {
             description
             src {
               childImageSharp {
-                fixed {
+                fluid {
                   srcWebp
                   srcSetWebp
                   src
                   srcSet
+                  sizes
                   base64
+                  aspectRatio
                 }
               }
             }
