@@ -10,7 +10,7 @@ interface BlogCardProps {
   excerpt: string
   date: string
   categories?: readonly string[]
-  blogImage: FluidObject
+  blogImage?: FluidObject | undefined | null
   blogImageDescription: string
 }
 

@@ -5,6 +5,7 @@ categories:
   - Programming
 featuredImage:
   src: images/robert-metz-p4cxvs9ptww-unsplash.jpg
+  description: Girl letting go a latern
 ---
 
 ## The old release workflow

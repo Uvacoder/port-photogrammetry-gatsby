@@ -5,6 +5,7 @@ categories:
   - Programming
 featuredImage:
   src: images/patrick-tomasso-oaqk7qqnh_c-unsplash.jpg
+  description: Lots of open books
 ---
 Woohoo my blog is up and running. At first I thought it would be quite a hassle to setup but in the end it turned out to be extremely simple.
 

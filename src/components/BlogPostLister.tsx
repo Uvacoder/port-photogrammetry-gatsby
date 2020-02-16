@@ -43,15 +43,17 @@ const BlogLister: React.FC<BlogListerProps> = (props) => (
     query={ComponentQuery}
     render={(data: BlogListerQuery) => (<>
       {data.allMarkdownRemark.edges.map(post => {
-        if (post.node.frontmatter?.draft !== true && (props.category === undefined || post.node.frontmatter?.categories?.includes(props.category!))) {
+        if (post.node.frontmatter.draft !== true && (props.category === undefined || post.node.frontmatter.categories?.includes(props.category!))) {
           return <BlogCard
-            title={post.node.frontmatter!.title!}
-            slug={post.node.fields!.slug!}
-            description={post.node.frontmatter!.description!}
-            excerpt={post.node.excerpt!} date={post.node.frontmatter!.date}
-            categories={post.node.frontmatter!.categories!}
-            blogImage={post.node.frontmatter?.featuredImage?.src?.childImageSharp?.fluid}
-            blogImageDescription={post.node.frontmatter?.featuredImage?.description!}>
+            key={post.node.fields.slug}
+            title={post.node.frontmatter.title!}
+            slug={post.node.fields.slug}
+            description={post.node.frontmatter.description!}
+            excerpt={post.node.excerpt!}
+            date={post.node.frontmatter.date}
+            categories={post.node.frontmatter.categories}
+            blogImage={post.node.frontmatter.featuredImage?.src.childImageSharp?.fluid}
+            blogImageDescription={post.node.frontmatter.featuredImage?.description!}>
           </BlogCard>
         }
       })}

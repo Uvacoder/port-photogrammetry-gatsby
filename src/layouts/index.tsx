@@ -8,7 +8,7 @@ import 'normalize.css'
 import Navigation from '../components/Navigation'
 
 const IndexLayout: React.FC = ({ children }) => (
-  <StaticQuery
+  <StaticQuery<IndexLayoutQuery>
     query={graphql`
       query IndexLayout {
         site {
@@ -34,15 +34,13 @@ const IndexLayout: React.FC = ({ children }) => (
           htmlAttributes={{
             lang: "en",
           }}
-          title={data.site?.siteMetadata?.title}
-          meta={[
-            { name: 'description', content: data.site?.siteMetadata?.description },
-            { name: 'keywords', content: data.site?.siteMetadata?.keywords }
-          ]}
+          title={data.site?.siteMetadata.title}
         >
+          <meta name="description" content={data.site?.siteMetadata.description} />
+          <meta name="keywords" content={data.site?.siteMetadata.keywords} />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content={data.site?.siteMetadata?.title} />
-          <meta property="og:image" content={data.site?.siteMetadata?.siteUrl + data.file?.childImageSharp?.fixed?.src} />
+          <meta property="og:title" content={data.site?.siteMetadata.title} />
+          <meta property="og:image" content={data.site?.siteMetadata.siteUrl + data.file?.childImageSharp?.fixed?.src} />
           <meta property="og:image:width" content="400" />
           <meta property="og:image:height" content="400" />
         </Helmet>

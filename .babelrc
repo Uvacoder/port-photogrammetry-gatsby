@@ -1,15 +1,14 @@
 {
-  "plugins": [
-    "@babel/plugin-proposal-optional-chaining"
-  ],
+  "plugins": [],
   "presets": [
     [
       "babel-preset-gatsby",
       {
         "targets": {
           "browsers": [
-            ">0.25%",
-            "not dead"
+            ">1%",
+            "not dead",
+            "not IE 11"
           ]
         }
       }
