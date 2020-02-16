@@ -1,5 +1,4 @@
-// @ts-check
-'use strict'
+require('ts-node').register({ files: true })
 
 module.exports = {
   siteMetadata: {
