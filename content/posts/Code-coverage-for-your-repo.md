@@ -5,6 +5,7 @@ categories:
   - Programming
 featuredImage:
   src: images/stephen-dawson-qwtcej5clys-unsplash.jpg
+    description: Screen showing metrics
 ---
 
 ## Which unit tests am I missing?

@@ -35,11 +35,9 @@ const IndexLayout: React.FC = ({ children }) => (
             lang: "en",
           }}
           title={data.site?.siteMetadata.title}
-          meta={[
-            { name: 'description', content: data.site?.siteMetadata.description },
-            { name: 'keywords', content: data.site?.siteMetadata.keywords }
-          ]}
         >
+          <meta name="description" content={data.site?.siteMetadata.description} />
+          <meta name="keywords" content={data.site?.siteMetadata.keywords} />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={data.site?.siteMetadata.title} />
           <meta property="og:image" content={data.site?.siteMetadata.siteUrl + data.file?.childImageSharp?.fixed?.src} />

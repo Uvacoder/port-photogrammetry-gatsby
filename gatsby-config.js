@@ -62,7 +62,6 @@ module.exports = {
         ]
       }
     },
-    'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
