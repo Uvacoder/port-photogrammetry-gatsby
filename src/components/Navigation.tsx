@@ -11,32 +11,8 @@ query Navigation {
       description
     }
   }
-  allMarkdownRemark {
-    edges {
-      node {
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          date
-          tags
-        }
-        excerpt
-      }
-    }
-  }
 }
 `
-
-const hamburgerMenuPressed = (menuOpen: boolean, setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>) => {
-  if (menuOpen) {
-    setMenuOpen(false)
-  } else {
-    setMenuOpen(true)
-  }
-}
 
 const Navigation: React.FC = () => (
   <StaticQuery
@@ -57,7 +33,7 @@ const Navigation: React.FC = () => (
           <Link to="/" className="nav-text">{data.site?.siteMetadata.title}</Link>
         </h1>
         <div className={menuOpen ? 'hamburger-menu hamburger-menu-open' : "hamburger-menu"}>
-          <button onClick={() => hamburgerMenuPressed(menuOpen, setMenuOpen)} aria-haspopup="true" aria-expanded={menuOpen} aria-controls="menu" aria-label="Menu">
+          <button onClick={() => setMenuOpen(!menuOpen)} aria-haspopup="true" aria-expanded={menuOpen} aria-controls="menu" aria-label="Menu">
             <span>
             </span>
             <span>
@@ -65,19 +41,19 @@ const Navigation: React.FC = () => (
           </button>
           <ul id="menu" className="hamburger-menu-overlay">
             <li>
-              <Link onClick={() => hamburgerMenuPressed(menuOpen, setMenuOpen)} to="/" className="hamburger-menu-overlay-link">Home</Link>
+              <Link onClick={() => setMenuOpen(false)} to="/" className="hamburger-menu-overlay-link">Home</Link>
             </li>
             <li>
-              <Link onClick={() => hamburgerMenuPressed(menuOpen, setMenuOpen)} to="/about-me/" className="hamburger-menu-overlay-link">About Me</Link>
+              <Link onClick={() => setMenuOpen(false)} to="/about-me/" className="hamburger-menu-overlay-link">About Me</Link>
             </li>
             <li>
-              <a onClick={() => hamburgerMenuPressed(menuOpen, setMenuOpen)} href="/categories/photography" className="hamburger-menu-overlay-link">Photography</a>
+              <a onClick={() => setMenuOpen(false)} href="/categories/photography" className="hamburger-menu-overlay-link">Photography</a>
             </li>
             <li>
-              <a onClick={() => hamburgerMenuPressed(menuOpen, setMenuOpen)} href="/categories/programming" className="hamburger-menu-overlay-link">Programming</a>
+              <a onClick={() => setMenuOpen(false)} href="/categories/programming" className="hamburger-menu-overlay-link">Programming</a>
             </li>
             <li>
-              <a onClick={() => hamburgerMenuPressed(menuOpen, setMenuOpen)} href="/index.xml" className="hamburger-menu-overlay-link">rss</a>
+              <a onClick={() => setMenuOpen(false)} href="/index.xml" className="hamburger-menu-overlay-link">rss</a>
             </li>
           </ul>
         </div>

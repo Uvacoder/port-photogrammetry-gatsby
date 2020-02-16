@@ -8,7 +8,7 @@ import 'normalize.css'
 import Navigation from '../components/Navigation'
 
 const IndexLayout: React.FC = ({ children }) => (
-  <StaticQuery
+  <StaticQuery<IndexLayoutQuery>
     query={graphql`
       query IndexLayout {
         site {

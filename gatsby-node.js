@@ -204,7 +204,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: slug,
-      component: path.resolve(`./src/templates/${layout || 'page'}.tsx`),
+      component: path.resolve(`./src/templates/${layout || 'blogPost'}.tsx`),
       context: {
         slug,
         previous,
@@ -238,7 +238,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: slug,
-      component: path.resolve(`./src/templates/${layout || 'page'}.tsx`),
+      component: path.resolve(`./src/templates/${layout || 'blogPost'}.tsx`),
       context: {
         slug
       }
