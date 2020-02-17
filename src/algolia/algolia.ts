@@ -32,7 +32,7 @@ const postQuery = `{
         frontmatter {
           title
           date(formatString: "MMM D, YYYY")
-          category
+          categories
         }
         excerpt(pruneLength: 5000)
       }

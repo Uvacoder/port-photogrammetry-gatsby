@@ -4,7 +4,7 @@ import * as path from "path"
 export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions: { createPage } }) => {
 
   const articlesQuery = await graphql(`
-    {
+  query articles {
       allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "/(posts)/"}}) {
         edges {
           node {
@@ -70,7 +70,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions:
   })
 
   const pagesQuery = await graphql(`
-  {
+  query pages {
     allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "/(pages)/"}}) {
       edges {
         node {

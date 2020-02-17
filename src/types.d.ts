@@ -686,8 +686,8 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterFeaturedImageDescription = 'childMarkdownRemark___frontmatter___featuredImage___description',
   ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
   ChildMarkdownRemarkFrontmatterDescription = 'childMarkdownRemark___frontmatter___description',
-  ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
   ChildMarkdownRemarkFrontmatterDropcap = 'childMarkdownRemark___frontmatter___dropcap',
+  ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
   ChildMarkdownRemarkFieldsSlug = 'childMarkdownRemark___fields___slug',
   ChildMarkdownRemarkFieldsTitle = 'childMarkdownRemark___fields___title',
   ChildMarkdownRemarkFieldsLayout = 'childMarkdownRemark___fields___layout',
@@ -821,8 +821,8 @@ export type Frontmatter = {
   readonly featuredImage?: Maybe<MarkdownRemarkFrontmatterFeaturedImage>,
   readonly date?: Maybe<Scalars['Date']>,
   readonly description?: Maybe<Scalars['String']>,
-  readonly draft?: Maybe<Scalars['Boolean']>,
   readonly dropcap?: Maybe<Scalars['Boolean']>,
+  readonly draft?: Maybe<Scalars['Boolean']>,
 };
 
 
@@ -840,8 +840,8 @@ export type FrontmatterFilterInput = {
   readonly featuredImage?: Maybe<MarkdownRemarkFrontmatterFeaturedImageFilterInput>,
   readonly date?: Maybe<DateQueryOperatorInput>,
   readonly description?: Maybe<StringQueryOperatorInput>,
-  readonly draft?: Maybe<BooleanQueryOperatorInput>,
   readonly dropcap?: Maybe<BooleanQueryOperatorInput>,
+  readonly draft?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export enum ImageCropFocus {
@@ -1551,8 +1551,8 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterFeaturedImageDescription = 'frontmatter___featuredImage___description',
   FrontmatterDate = 'frontmatter___date',
   FrontmatterDescription = 'frontmatter___description',
-  FrontmatterDraft = 'frontmatter___draft',
   FrontmatterDropcap = 'frontmatter___dropcap',
+  FrontmatterDraft = 'frontmatter___draft',
   FieldsSlug = 'fields___slug',
   FieldsTitle = 'fields___title',
   FieldsLayout = 'fields___layout',
@@ -2292,6 +2292,7 @@ export type SitePageContextNextNodeFrontmatterFeaturedImageSrcChildImageSharpFlu
   readonly srcSet?: Maybe<Scalars['String']>,
   readonly sizes?: Maybe<Scalars['String']>,
   readonly base64?: Maybe<Scalars['String']>,
+  readonly aspectRatio?: Maybe<Scalars['Float']>,
 };
 
 export type SitePageContextPrevious = {
@@ -2346,6 +2347,7 @@ export type SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageShar
   readonly srcSet?: Maybe<Scalars['String']>,
   readonly sizes?: Maybe<Scalars['String']>,
   readonly base64?: Maybe<Scalars['String']>,
+  readonly aspectRatio?: Maybe<Scalars['Float']>,
 };
 
 export type SitePageEdge = {
@@ -2522,6 +2524,12 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsFeedsOutput = 'pluginCreator___pluginOptions___feeds___output',
   PluginCreatorPluginOptionsFeedsTitle = 'pluginCreator___pluginOptions___feeds___title',
   PluginCreatorPluginOptionsShortname = 'pluginCreator___pluginOptions___shortname',
+  PluginCreatorPluginOptionsAppId = 'pluginCreator___pluginOptions___appId',
+  PluginCreatorPluginOptionsApiKey = 'pluginCreator___pluginOptions___apiKey',
+  PluginCreatorPluginOptionsQueries = 'pluginCreator___pluginOptions___queries',
+  PluginCreatorPluginOptionsQueriesQuery = 'pluginCreator___pluginOptions___queries___query',
+  PluginCreatorPluginOptionsQueriesIndexName = 'pluginCreator___pluginOptions___queries___indexName',
+  PluginCreatorPluginOptionsChunkSize = 'pluginCreator___pluginOptions___chunkSize',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -2754,6 +2762,13 @@ export enum SitePluginFieldsEnum {
   PluginOptionsFeedsOutput = 'pluginOptions___feeds___output',
   PluginOptionsFeedsTitle = 'pluginOptions___feeds___title',
   PluginOptionsShortname = 'pluginOptions___shortname',
+  PluginOptionsAppId = 'pluginOptions___appId',
+  PluginOptionsApiKey = 'pluginOptions___apiKey',
+  PluginOptionsQueries = 'pluginOptions___queries',
+  PluginOptionsQueriesQuery = 'pluginOptions___queries___query',
+  PluginOptionsQueriesIndexName = 'pluginOptions___queries___indexName',
+  PluginOptionsQueriesSettingsAttributesToSnippet = 'pluginOptions___queries___settings___attributesToSnippet',
+  PluginOptionsChunkSize = 'pluginOptions___chunkSize',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -2895,6 +2910,10 @@ export type SitePluginPluginOptions = {
   readonly query?: Maybe<Scalars['String']>,
   readonly feeds?: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsFeeds>>>,
   readonly shortname?: Maybe<Scalars['String']>,
+  readonly appId?: Maybe<Scalars['String']>,
+  readonly apiKey?: Maybe<Scalars['String']>,
+  readonly queries?: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsQueries>>>,
+  readonly chunkSize?: Maybe<Scalars['Int']>,
   readonly pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -2948,6 +2967,10 @@ export type SitePluginPluginOptionsFilterInput = {
   readonly query?: Maybe<StringQueryOperatorInput>,
   readonly feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>,
   readonly shortname?: Maybe<StringQueryOperatorInput>,
+  readonly appId?: Maybe<StringQueryOperatorInput>,
+  readonly apiKey?: Maybe<StringQueryOperatorInput>,
+  readonly queries?: Maybe<SitePluginPluginOptionsQueriesFilterListInput>,
+  readonly chunkSize?: Maybe<IntQueryOperatorInput>,
   readonly pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
@@ -3010,6 +3033,32 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   readonly maxWidth?: Maybe<IntQueryOperatorInput>,
   readonly linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>,
   readonly withWebp?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsQueries = {
+  readonly __typename?: 'SitePluginPluginOptionsQueries',
+  readonly query?: Maybe<Scalars['String']>,
+  readonly indexName?: Maybe<Scalars['String']>,
+  readonly settings?: Maybe<SitePluginPluginOptionsQueriesSettings>,
+};
+
+export type SitePluginPluginOptionsQueriesFilterInput = {
+  readonly query?: Maybe<StringQueryOperatorInput>,
+  readonly indexName?: Maybe<StringQueryOperatorInput>,
+  readonly settings?: Maybe<SitePluginPluginOptionsQueriesSettingsFilterInput>,
+};
+
+export type SitePluginPluginOptionsQueriesFilterListInput = {
+  readonly elemMatch?: Maybe<SitePluginPluginOptionsQueriesFilterInput>,
+};
+
+export type SitePluginPluginOptionsQueriesSettings = {
+  readonly __typename?: 'SitePluginPluginOptionsQueriesSettings',
+  readonly attributesToSnippet?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+};
+
+export type SitePluginPluginOptionsQueriesSettingsFilterInput = {
+  readonly attributesToSnippet?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsWorkboxConfig = {
@@ -3301,19 +3350,61 @@ export type NavigationQuery = (
       { readonly __typename?: 'SiteSiteMetadata' }
       & Pick<SiteSiteMetadata, 'title' | 'description'>
     ) }
-  )>, readonly allMarkdownRemark: (
+  )> }
+);
+
+export type ArticlesQueryVariables = {};
+
+
+export type ArticlesQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly allMarkdownRemark: (
     { readonly __typename?: 'MarkdownRemarkConnection' }
     & { readonly edges: ReadonlyArray<(
       { readonly __typename?: 'MarkdownRemarkEdge' }
       & { readonly node: (
         { readonly __typename?: 'MarkdownRemark' }
-        & Pick<MarkdownRemark, 'id' | 'excerpt'>
+        & Pick<MarkdownRemark, 'excerpt'>
         & { readonly fields: (
           { readonly __typename?: 'MarkdownRemarkFields' }
-          & Pick<MarkdownRemarkFields, 'slug'>
+          & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
         ), readonly frontmatter: (
           { readonly __typename?: 'Frontmatter' }
-          & Pick<Frontmatter, 'title' | 'date' | 'tags'>
+          & Pick<Frontmatter, 'title' | 'draft' | 'date' | 'categories' | 'description'>
+          & { readonly featuredImage: Maybe<(
+            { readonly __typename?: 'MarkdownRemarkFrontmatterFeaturedImage' }
+            & Pick<MarkdownRemarkFrontmatterFeaturedImage, 'description'>
+            & { readonly src: (
+              { readonly __typename?: 'File' }
+              & { readonly childImageSharp: Maybe<(
+                { readonly __typename?: 'ImageSharp' }
+                & { readonly fluid: Maybe<(
+                  { readonly __typename?: 'ImageSharpFluid' }
+                  & Pick<ImageSharpFluid, 'srcWebp' | 'srcSetWebp' | 'src' | 'srcSet' | 'sizes' | 'base64' | 'aspectRatio'>
+                )> }
+              )> }
+            ) }
+          )> }
+        ) }
+      ) }
+    )> }
+  ) }
+);
+
+export type PagesQueryVariables = {};
+
+
+export type PagesQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly allMarkdownRemark: (
+    { readonly __typename?: 'MarkdownRemarkConnection' }
+    & { readonly edges: ReadonlyArray<(
+      { readonly __typename?: 'MarkdownRemarkEdge' }
+      & { readonly node: (
+        { readonly __typename?: 'MarkdownRemark' }
+        & { readonly fields: (
+          { readonly __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
         ) }
       ) }
     )> }
@@ -3402,7 +3493,7 @@ export type PageTemplateQuery = (
                   { readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharp' }
                   & { readonly fluid: Maybe<(
                     { readonly __typename?: 'SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFluid' }
-                    & Pick<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFluid, 'srcWebp' | 'srcSetWebp' | 'src' | 'srcSet' | 'sizes' | 'base64'>
+                    & Pick<SitePageContextPreviousNodeFrontmatterFeaturedImageSrcChildImageSharpFluid, 'srcWebp' | 'srcSetWebp' | 'src' | 'srcSet' | 'sizes' | 'base64' | 'aspectRatio'>
                   )> }
                 )> }
               )> }
