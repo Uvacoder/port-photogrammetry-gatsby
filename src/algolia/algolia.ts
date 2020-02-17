@@ -2,7 +2,6 @@ const pageQuery = `{
   pages: allMarkdownRemark(
     filter: {
       fileAbsolutePath: { regex: "/pages/" },
-      frontmatter: {purpose: {eq: "page"}}
     }
   ) {
     edges {
@@ -32,7 +31,7 @@ const postQuery = `{
         frontmatter {
           title
           date(formatString: "MMM D, YYYY")
-          tags
+          category
         }
         excerpt(pruneLength: 5000)
       }
