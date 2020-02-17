@@ -1,9 +1,11 @@
 import { GatsbyNode } from "gatsby"
+import { PagesQuery, ArticlesQuery } from '../types'
+import { CheckQuery } from '../utils/graphqlUtils'
 import * as path from "path"
 
 export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions: { createPage } }) => {
 
-  const articlesQuery = await graphql(`
+  const articlesQuery = CheckQuery(await graphql<ArticlesQuery>(`
   query articles {
       allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "/(posts)/"}}) {
         edges {
@@ -40,12 +42,12 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions:
         }
       }
     }
-  `)
+  `))
 
-  // @ts-ignore
-  const articles: any[] = articlesQuery.data.allMarkdownRemark.edges.filter(article => article.node.frontmatter.draft === null || article.node.frontmatter.draft === false)
+  const articles = articlesQuery.allMarkdownRemark.edges.filter(article => article.node.frontmatter.draft === null || article.node.frontmatter.draft === false)
 
   const publishedArticles = articles.reduce((acc, article) => {
+    // @ts-ignore
     acc[article.node.fields.slug] = article
     return acc
   }, {})
@@ -69,7 +71,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions:
     })
   })
 
-  const pagesQuery = await graphql(`
+  const pagesQuery = CheckQuery(await graphql<PagesQuery>(`
   query pages {
     allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "/(pages)/"}}) {
       edges {
@@ -82,15 +84,9 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions:
       }
     }
   }
-`)
+`))
 
-  if (pagesQuery.errors) {
-    console.error(pagesQuery.errors)
-    throw new Error(pagesQuery.errors)
-  }
-
-  // @ts-ignore
-  const pages: any[] = pagesQuery.data.allMarkdownRemark.edges
+  const pages = pagesQuery.allMarkdownRemark.edges
   pages.forEach(({ node }) => {
     const { slug, layout } = node.fields
 
