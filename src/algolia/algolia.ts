@@ -1,3 +1,4 @@
+
 const pageQuery = `{
   pages: allMarkdownRemark(
     filter: {
@@ -5,10 +6,10 @@ const pageQuery = `{
     }
   ) {
     edges {
-      fields {
-        slug
-      }
       node {
+        fields {
+          slug
+        }
         objectID: id
         frontmatter {
           title
