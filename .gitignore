@@ -113,3 +113,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Local Netlify folder
+.netlify

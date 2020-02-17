@@ -1,0 +1,9 @@
+[build]
+  functions = "src/functions"
+  publish = "public"
+  command = "gatsby build"
+
+[dev]
+  command = "gatsby develop"
+  port = 8000
+  publish = "public"

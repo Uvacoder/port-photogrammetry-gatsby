@@ -15,9 +15,11 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
+    "algoliasearch": "^4.0.3",
     "classnames": "^2.2.6",
     "gatsby": "^2.19.17",
     "gatsby-image": "^2.2.40",
+    "gatsby-plugin-algolia": "^0.5.0",
     "gatsby-plugin-canonical-urls": "^2.1.20",
     "gatsby-plugin-catch-links": "^2.1.25",
     "gatsby-plugin-disqus": "^1.1.4",
@@ -42,7 +44,8 @@
     "prismjs": "^1.19.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-instantsearch-dom": "^6.3.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.12.2",
