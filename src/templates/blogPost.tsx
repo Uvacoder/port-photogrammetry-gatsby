@@ -7,7 +7,8 @@ import Footer from '../components/Footer'
 
 import { PageTemplateQuery } from '../types'
 import Article from '../components/Article/Article'
-import NextPost from '../components/NextPost/NextPost'
+import BottomNav from '../components/BottomNav/BottomNav'
+import BlogCard from '../components/BlogCard/BlogCard'
 
 interface PageTemplateQueryInterface {
   data: PageTemplateQuery
@@ -23,7 +24,7 @@ const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sit
     title: markdownRemark?.frontmatter.title!,
   }
   return (<>
-    <IndexLayout></IndexLayout>
+    <IndexLayout />
     <Main className="content side-text-padding">
       <Article title={markdownRemark?.frontmatter.title!}
         date={markdownRemark?.frontmatter.date}
@@ -37,17 +38,20 @@ const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sit
     </Main>
 
     {sitePage.context.previous !== null &&
-      <NextPost title={sitePage.context.previous.node.frontmatter.title}
-        slug={sitePage.context.previous.node.fields.slug}
-        description={sitePage.context.previous.node.frontmatter.description!}
-        excerpt={sitePage.context.previous.node.excerpt}
-        date={sitePage.context.previous.node.frontmatter.date}
-        categories={sitePage.context.previous.node.frontmatter.categories!}
-        featuredImage={{
-          data: sitePage.context.previous.node.frontmatter.featuredImage?.src.childImageSharp.fluid,
-          description: sitePage.context.previous.node.frontmatter.featuredImage?.description
-        }}>
-      </NextPost>
+      <BottomNav>
+        <BlogCard
+          title={sitePage.context.previous.node.frontmatter.title}
+          slug={sitePage.context.previous.node.fields.slug}
+          description={sitePage.context.previous.node.frontmatter.description!}
+          excerpt={sitePage.context.previous.node.excerpt}
+          date={sitePage.context.previous.node.frontmatter.date}
+          categories={sitePage.context.previous.node.frontmatter.categories!}
+          featuredImage={{
+            data: sitePage.context.previous.node.frontmatter.featuredImage?.src?.childImageSharp?.fluid,
+            description: sitePage.context.previous.node.frontmatter.featuredImage?.description
+          }}>
+        </BlogCard>
+      </BottomNav>
     }
     <Footer></Footer>
   </>)

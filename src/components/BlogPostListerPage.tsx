@@ -2,7 +2,7 @@ import * as React from 'react'
 import IndexLayout from "../layouts";
 import Main from "./Main";
 import BlogLister from "./BlogPostLister";
-import Header from "./Header/Header";
+import ListHeader from "./ListHeader/ListHeader";
 import Footer from "./Footer";
 
 interface BlogListerProps {
@@ -10,12 +10,13 @@ interface BlogListerProps {
 }
 
 const BlogListerPage: React.FC<BlogListerProps> = (props) => (
-  <IndexLayout>
+  <>
+    <IndexLayout />
     <Main className="card-container">
-      <Header title=""></Header>
+      <ListHeader title=""></ListHeader>
       <BlogLister category={props.category}></BlogLister>
     </Main>
     <Footer></Footer>
-  </IndexLayout>)
+  </>)
 
 export default BlogListerPage

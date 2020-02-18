@@ -3,7 +3,12 @@ import { PagesQuery, ArticlesQuery } from '../types'
 import { CheckQuery } from '../utils/graphqlUtils'
 import * as path from "path"
 
-export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions: { createPage } }) => {
+export const createPages: GatsbyNode["createPages"] = async (
+  { graphql, actions:
+    {
+      createPage
+    }
+  }) => {
 
   const articlesQuery = CheckQuery(await graphql<ArticlesQuery>(`
   query articles {
@@ -46,19 +51,20 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions:
 
   const articles = articlesQuery.allMarkdownRemark.edges.filter(article => article.node.frontmatter.draft === null || article.node.frontmatter.draft === false)
 
-  const publishedArticles = articles.reduce((acc, article) => {
+  const articleSlugMap = articles.reduce((acc, article) => {
     // @ts-ignore
     acc[article.node.fields.slug] = article
     return acc
   }, {})
 
-  articles.forEach(({ node }) => {
-    const { slug, layout } = node.fields
+  articles.forEach((
+    { node:
+      { fields:
+        { slug, layout }
+      }
+    }) => {
 
-    const [previous, next] = getPrevAndNextArticles(
-      publishedArticles,
-      node.fields.slug
-    )
+    const [previous, next] = getPrevAndNextArticles(articleSlugMap, slug)
 
     createPage({
       path: slug,
@@ -87,9 +93,12 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions:
 `))
 
   const pages = pagesQuery.allMarkdownRemark.edges
-  pages.forEach(({ node }) => {
-    const { slug, layout } = node.fields
-
+  pages.forEach((
+    { node:
+      { fields:
+        { slug, layout }
+      }
+    }) => {
     createPage({
       path: slug,
       component: path.resolve(`./src/templates/${layout || 'blogPost'}.tsx`),
@@ -100,7 +109,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions:
   })
 }
 
-function getPrevAndNextArticles(articles: any, slug: any) {
+function getPrevAndNextArticles(articles: any, slug: string) {
   const currentArticleIndex = Object.keys(articles).findIndex(
     articleSlug => articleSlug === slug
   )
