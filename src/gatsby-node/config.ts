@@ -186,7 +186,7 @@ export const Config = {
       }
     },
     `gatsby-plugin-netlify`,
-    {
+    ...(process.env.ALGOLIA_APP_ID ? [{
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.ALGOLIA_APP_ID,
@@ -194,6 +194,6 @@ export const Config = {
         queries,
         chunkSize: 10000, // default: 1000
       },
-    }
+    }] : []),
   ]
 }

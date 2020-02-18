@@ -1,0 +1,30 @@
+.list-header {
+  margin: 6em 0;
+  text-align: center;
+}
+
+.list-header-title {
+  margin: 0.1em 0 0.2em 0;
+  font-size: 2.2em;
+  text-transform: uppercase;
+}
+
+.list-header-subtext {
+  font-weight: normal;
+  color: #7a7b7c;
+  font-size: 1em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.list-header-content {
+  margin: 5em 0;
+  line-height: 1.6em;
+}
+
+@media only screen and (min-width: 40.063em) {
+  .list-header-title {
+    font-weight: normal;
+    font-size: 4.2em;
+  }
+}

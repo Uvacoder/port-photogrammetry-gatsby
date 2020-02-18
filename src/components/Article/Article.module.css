@@ -1,0 +1,30 @@
+.post {
+  margin: 0 0 1em 0;
+  line-height: 1.6;
+}
+
+.post-header {
+  margin: 0 0 1.5em 0;
+}
+
+.post-title {
+  font-size: 1.8em;
+  line-height: 1.2;
+  margin: 0 0 0.4em 0;
+}
+
+.post-date {
+  display: block;
+  color: #7a7b7c;
+  font-size: 0.8em;
+  margin: 0;
+}
+
+@media only screen and (min-width: 40.063em) {
+  .post {
+    margin: 1em 1em 2em 1em;
+  }
+  .post-title {
+    font-size: 2.4em;
+  }
+}

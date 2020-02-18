@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { BlogListerQuery } from '../types'
-import BlogCard from './BlogCard'
+import BlogCard from './BlogCard/BlogCard'
 
 export const ComponentQuery = graphql`
 query BlogLister {
@@ -52,8 +52,10 @@ const BlogLister: React.FC<BlogListerProps> = (props) => (
             excerpt={post.node.excerpt!}
             date={post.node.frontmatter.date}
             categories={post.node.frontmatter.categories}
-            blogImage={post.node.frontmatter.featuredImage?.src.childImageSharp?.fluid}
-            blogImageDescription={post.node.frontmatter.featuredImage?.description!}>
+            featuredImage={{
+              data: post.node.frontmatter.featuredImage?.src.childImageSharp?.fluid,
+              description: post.node.frontmatter.featuredImage?.description!
+            }}>
           </BlogCard>
         }
       })}

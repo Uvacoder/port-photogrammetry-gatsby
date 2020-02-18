@@ -5,7 +5,7 @@ import { IndexLayoutQuery } from '../types'
 
 import 'normalize.css'
 
-import Navigation from '../components/Navigation'
+import Navigation from '../components/Navigation/Navigation'
 
 const IndexLayout: React.FC = ({ children }) => (
   <StaticQuery<IndexLayoutQuery>

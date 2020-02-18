@@ -2,7 +2,7 @@ import * as React from 'react'
 import IndexLayout from "../layouts";
 import Main from "./Main";
 import BlogLister from "./BlogPostLister";
-import Header from "./Header";
+import Header from "./Header/Header";
 import Footer from "./Footer";
 
 interface BlogListerProps {
