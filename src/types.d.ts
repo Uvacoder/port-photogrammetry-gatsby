@@ -708,8 +708,8 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterFeaturedImageDescription = 'childMarkdownRemark___frontmatter___featuredImage___description',
   ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
   ChildMarkdownRemarkFrontmatterDescription = 'childMarkdownRemark___frontmatter___description',
-  ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
   ChildMarkdownRemarkFrontmatterDropcap = 'childMarkdownRemark___frontmatter___dropcap',
+  ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
   ChildMarkdownRemarkFieldsSlug = 'childMarkdownRemark___fields___slug',
   ChildMarkdownRemarkFieldsTitle = 'childMarkdownRemark___fields___title',
   ChildMarkdownRemarkFieldsLayout = 'childMarkdownRemark___fields___layout',
@@ -843,8 +843,8 @@ export type Frontmatter = {
   readonly featuredImage?: Maybe<FeaturedImage>,
   readonly date?: Maybe<Scalars['Date']>,
   readonly description?: Maybe<Scalars['String']>,
-  readonly draft?: Maybe<Scalars['Boolean']>,
   readonly dropcap?: Maybe<Scalars['Boolean']>,
+  readonly draft?: Maybe<Scalars['Boolean']>,
 };
 
 
@@ -862,8 +862,8 @@ export type FrontmatterFilterInput = {
   readonly featuredImage?: Maybe<FeaturedImageFilterInput>,
   readonly date?: Maybe<DateQueryOperatorInput>,
   readonly description?: Maybe<StringQueryOperatorInput>,
-  readonly draft?: Maybe<BooleanQueryOperatorInput>,
   readonly dropcap?: Maybe<BooleanQueryOperatorInput>,
+  readonly draft?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export enum ImageCropFocus {
@@ -1574,8 +1574,8 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterFeaturedImageDescription = 'frontmatter___featuredImage___description',
   FrontmatterDate = 'frontmatter___date',
   FrontmatterDescription = 'frontmatter___description',
-  FrontmatterDraft = 'frontmatter___draft',
   FrontmatterDropcap = 'frontmatter___dropcap',
+  FrontmatterDraft = 'frontmatter___draft',
   FieldsSlug = 'fields___slug',
   FieldsTitle = 'fields___title',
   FieldsLayout = 'fields___layout',
@@ -2293,8 +2293,8 @@ export enum SitePageFieldsEnum {
   ContextPreviousFrontmatterTags = 'context___previous___frontmatter___tags',
   ContextPreviousFrontmatterDate = 'context___previous___frontmatter___date',
   ContextPreviousFrontmatterDescription = 'context___previous___frontmatter___description',
-  ContextPreviousFrontmatterDraft = 'context___previous___frontmatter___draft',
   ContextPreviousFrontmatterDropcap = 'context___previous___frontmatter___dropcap',
+  ContextPreviousFrontmatterDraft = 'context___previous___frontmatter___draft',
   ContextPreviousFieldsSlug = 'context___previous___fields___slug',
   ContextPreviousFieldsTitle = 'context___previous___fields___title',
   ContextPreviousFieldsLayout = 'context___previous___fields___layout',
@@ -2331,8 +2331,8 @@ export enum SitePageFieldsEnum {
   ContextNextFrontmatterTags = 'context___next___frontmatter___tags',
   ContextNextFrontmatterDate = 'context___next___frontmatter___date',
   ContextNextFrontmatterDescription = 'context___next___frontmatter___description',
-  ContextNextFrontmatterDraft = 'context___next___frontmatter___draft',
   ContextNextFrontmatterDropcap = 'context___next___frontmatter___dropcap',
+  ContextNextFrontmatterDraft = 'context___next___frontmatter___draft',
   ContextNextFieldsSlug = 'context___next___fields___slug',
   ContextNextFieldsTitle = 'context___next___fields___title',
   ContextNextFieldsLayout = 'context___next___fields___layout',
@@ -3350,6 +3350,10 @@ export type ArticlesQuery = (
       & { readonly node: (
         { readonly __typename?: 'MarkdownRemark' }
         & Pick<MarkdownRemark, 'id'>
+        & { readonly fields: (
+          { readonly __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
+        ) }
       ) }
     )> }
   ) }

@@ -16,25 +16,25 @@ export const createPages: GatsbyNode["createPages"] = async (
         edges {
           node {
             id
+            fields {
+              layout
+              slug
+            }
           }
         }
       }
     }
   `))
 
-  const articles = articlesQuery.allMarkdownRemark.edges.map(x => getNode(x.node.id))
-  const articleSlugMap = articles.reduce((acc, article) => {
-    // @ts-ignore
-    acc[article.fields.slug] = article
-    return acc
-  }, {})
+  const articles = articlesQuery.allMarkdownRemark.edges.map(x => x.node)
+  const articleSlugMap = toDictionary(articles, x => x.fields.slug)
 
   articles.forEach((
     { fields:
       { slug, layout }
     }
   ) => {
-    const [previous, next] = getPrevAndNextArticles(articleSlugMap, slug)
+    const [previous, next] = getPrevAndNextArticles(articleSlugMap, slug).filter(x => x !== undefined).map(x => getNode(x!.id))
 
     createPage({
       path: slug,
@@ -79,11 +79,11 @@ export const createPages: GatsbyNode["createPages"] = async (
   })
 }
 
-function getPrevAndNextArticles(articles: any, slug: string) {
+function getPrevAndNextArticles<T>(articles: T, slug: string) {
   const currentArticleIndex = Object.keys(articles).findIndex(
     articleSlug => articleSlug === slug
   )
-  const articlesArray = Object.values(articles)
+  const articlesArray = Object.values(articles) as T[]
   let prevArticle
   let nextArticle
   if (currentArticleIndex < articlesArray.length - 1) {
@@ -93,4 +93,17 @@ function getPrevAndNextArticles(articles: any, slug: string) {
     nextArticle = articlesArray[currentArticleIndex - 1]
   }
   return [prevArticle, nextArticle]
+}
+
+function toDictionary<TValue>(collection: TValue[], keySelector: Func<string, TValue>) {
+  const dictionary = collection.reduce((acc, element) => {
+    acc[keySelector(element)] = element
+    return acc
+  }, {} as { [key: string]: TValue })
+
+  return dictionary;
+}
+
+interface Func<TOut, TIn> {
+  (message: TIn): TOut;
 }
