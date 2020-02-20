@@ -7,7 +7,7 @@ export const createPages: GatsbyNode["createPages"] = async (
   { graphql, actions:
     {
       createPage
-    }
+    }, getNode
   }) => {
 
   const articlesQuery = CheckQuery(await graphql<ArticlesQuery>(`
@@ -15,55 +15,25 @@ export const createPages: GatsbyNode["createPages"] = async (
       allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "/(posts)/"}}) {
         edges {
           node {
-            fields {
-              layout
-              slug
-            }
-            frontmatter {
-              title
-              draft
-              date(formatString: "D-MM-YYYY")
-              categories
-              description
-              featuredImage {
-                description
-                src {
-                  childImageSharp {
-                    fluid(quality: 50) {
-                      srcWebp
-                      srcSetWebp
-                      src
-                      srcSet
-                      sizes
-                      base64
-                      aspectRatio
-                    }
-                  }
-                }
-              }
-            }
-            excerpt
+            id
           }
         }
       }
     }
   `))
 
-  const articles = articlesQuery.allMarkdownRemark.edges.filter(article => article.node.frontmatter.draft === null || article.node.frontmatter.draft === false)
-
+  const articles = articlesQuery.allMarkdownRemark.edges.map(x => getNode(x.node.id))
   const articleSlugMap = articles.reduce((acc, article) => {
     // @ts-ignore
-    acc[article.node.fields.slug] = article
+    acc[article.fields.slug] = article
     return acc
   }, {})
 
   articles.forEach((
-    { node:
-      { fields:
-        { slug, layout }
-      }
-    }) => {
-
+    { fields:
+      { slug, layout }
+    }
+  ) => {
     const [previous, next] = getPrevAndNextArticles(articleSlugMap, slug)
 
     createPage({

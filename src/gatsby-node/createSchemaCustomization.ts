@@ -3,14 +3,15 @@ import { GatsbyNode } from "gatsby"
 // @ts-ignore
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async ({ actions: { createFieldExtension, createTypes } }) => {
   const typeDefs = `
-  type MarkdownRemarkFrontmatterFeaturedImage @infer{
+  type FeaturedImage @infer{
       src: File! @fileByDataPath
+      description: String
     }
     type Frontmatter @infer {
       title: String!
-      categories: [String!]
+      categories: [String!]!
       tags: [String!]
-      featuredImage: MarkdownRemarkFrontmatterFeaturedImage
+      featuredImage: FeaturedImage
     }
     type MarkdownRemark implements Node @infer {
       frontmatter: Frontmatter!
@@ -23,28 +24,28 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       layout: String!
     }
 
-    type SiteSiteMetadata{
+    type Site implements Node @infer {
+      siteMetadata: SiteMetadata!
+    }
+
+    type SiteMetadata{
       title: String!
       siteUrl: String!
       description: String!
       keywords: String!
-      author: SiteSiteMetadataAuthor!
-      social: SiteSiteMetadataSocial!
+      author: Author!
+      social: Social!
     }
 
-    type SiteSiteMetadataSocial{
+    type Social{
       github: String
       instagram: String
       linkedin: String
     }
 
-    type SiteSiteMetadataAuthor{
+    type Author{
       name: String!
       url: String!
-    }
-
-    type Site implements Node @infer {
-      siteMetadata: SiteSiteMetadata!
     }
 
     type SitePage{
@@ -53,25 +54,8 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 
     type SitePageContext{
       slug: String
-    }
-
-    type SitePageContextPrevious{
-      node: SitePageContextPreviousNode!
-    }
-
-    type SitePageContextPreviousNode{
-      fields: SitePageContextPreviousNodeFields!
-      frontmatter: SitePageContextPreviousNodeFrontmatter!
-      excerpt: String!
-    }
-
-    type SitePageContextPreviousNodeFields{
-      layout: String!
-      slug: String!
-    }
-
-    type SitePageContextPreviousNodeFrontmatter{
-      title: String!
+      previous: MarkdownRemark
+      next: MarkdownRemark
     }
   `
 

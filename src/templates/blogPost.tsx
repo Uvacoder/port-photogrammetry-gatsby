@@ -17,22 +17,23 @@ interface PageTemplateQueryInterface {
 const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sitePage, markdownRemark } }) => {
   if (sitePage === null) return (<></>);
   if (site === null) return (<></>);
+  if (markdownRemark === null) return (<></>);
 
   const disqusConfig = {
     url: `${site.siteMetadata.siteUrl + sitePage.path}`,
     identifier: sitePage.path,
-    title: markdownRemark?.frontmatter.title!,
+    title: markdownRemark.frontmatter.title!,
   }
   return (<>
     <IndexLayout />
     <Main className="content side-text-padding">
-      <Article title={markdownRemark?.frontmatter.title!}
-        date={markdownRemark?.frontmatter.date}
-        excerpt={markdownRemark?.html!}
+      <Article title={markdownRemark.frontmatter.title!}
+        date={markdownRemark.frontmatter.date}
+        excerpt={markdownRemark.html!}
         disqusConfig={disqusConfig}
         featuredImage={{
-          data: markdownRemark?.frontmatter.featuredImage?.src.childImageSharp?.fluid!,
-          description: markdownRemark?.frontmatter.featuredImage?.description!
+          data: markdownRemark.frontmatter.featuredImage?.src.childImageSharp?.fluid,
+          description: markdownRemark.frontmatter.featuredImage?.description!
         }}>
       </Article>
     </Main>
@@ -40,15 +41,15 @@ const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sit
     {sitePage.context.previous !== null &&
       <BottomNav>
         <BlogCard
-          title={sitePage.context.previous.node.frontmatter.title}
-          slug={sitePage.context.previous.node.fields.slug}
-          description={sitePage.context.previous.node.frontmatter.description!}
-          excerpt={sitePage.context.previous.node.excerpt}
-          date={sitePage.context.previous.node.frontmatter.date}
-          categories={sitePage.context.previous.node.frontmatter.categories!}
+          title={sitePage.context.previous.frontmatter.title}
+          slug={sitePage.context.previous.fields.slug}
+          description={sitePage.context.previous.frontmatter.description!}
+          excerpt={sitePage.context.previous.excerpt}
+          date={sitePage.context.previous.frontmatter.date}
+          categories={sitePage.context.previous.frontmatter.categories}
           featuredImage={{
-            data: sitePage.context.previous.node.frontmatter.featuredImage?.src?.childImageSharp?.fluid,
-            description: sitePage.context.previous.node.frontmatter.featuredImage?.description
+            data: sitePage.context.previous.frontmatter.featuredImage?.src.childImageSharp?.fluid,
+            description: sitePage.context.previous.frontmatter.featuredImage?.description!
           }}>
         </BlogCard>
       </BottomNav>
@@ -88,35 +89,26 @@ query PageTemplate($slug: String!) {
     path
     context {
       previous {
-        node {
-          fields {
-            slug
-          }
+        fields {
+          slug
+        }
         frontmatter {
           title
-          draft
-          date
+          date(formatString: "D-MM-YYYY")
           categories
           description
           featuredImage {
             description
             src {
               childImageSharp {
-                fluid {
-                  srcWebp
-                  srcSetWebp
-                  src
-                  srcSet
-                  sizes
-                  base64
-                  aspectRatio
+                fluid(quality: 50) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
           }
         }
         excerpt
-        }
       }
     }
   }
