@@ -4,7 +4,7 @@ import Img, { FluidObject } from "gatsby-image"
 import PostDate from '../PostDate'
 import styles from './BlogCard.module.css'
 import classNames from 'classnames'
-import FeaturedImage from '../FeaturedImage'
+import ImageWithMeta from '../ImageWithMeta'
 
 interface BlogCardProps {
   title: string
@@ -13,7 +13,7 @@ interface BlogCardProps {
   excerpt: string
   date: string
   categories?: readonly string[]
-  featuredImage: FeaturedImage
+  featuredImage?: ImageWithMeta
 }
 
 const BlogCard: React.FC<BlogCardProps> = (props) =>

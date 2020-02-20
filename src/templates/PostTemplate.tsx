@@ -5,16 +5,17 @@ import IndexLayout from '../layouts'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 
-import { PageTemplateQuery } from '../types'
+import { PageTemplateQuery, FeaturedImage } from '../types'
 import Article from '../components/Article/Article'
 import BottomNav from '../components/BottomNav/BottomNav'
 import BlogCard from '../components/BlogCard/BlogCard'
+import { toImageWithMeta } from '../components/ImageWithMeta'
 
 interface PageTemplateQueryInterface {
   data: PageTemplateQuery
 }
 
-const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sitePage, markdownRemark } }) => {
+const PostTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sitePage, markdownRemark } }) => {
   if (sitePage === null) return (<></>);
   if (site === null) return (<></>);
   if (markdownRemark === null) return (<></>);
@@ -31,10 +32,7 @@ const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sit
         date={markdownRemark.frontmatter.date}
         excerpt={markdownRemark.html!}
         disqusConfig={disqusConfig}
-        featuredImage={{
-          data: markdownRemark.frontmatter.featuredImage?.src.childImageSharp?.fluid,
-          description: markdownRemark.frontmatter.featuredImage?.description!
-        }}>
+        featuredImage={toImageWithMeta(markdownRemark.frontmatter.featuredImage)}>
       </Article>
     </Main>
 
@@ -47,10 +45,7 @@ const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sit
           excerpt={sitePage.context.previous.excerpt!}
           date={sitePage.context.previous.frontmatter.date}
           categories={sitePage.context.previous.frontmatter.categories}
-          featuredImage={{
-            data: sitePage.context.previous.frontmatter.featuredImage?.src.childImageSharp?.fluid,
-            description: sitePage.context.previous.frontmatter.featuredImage?.description!
-          }}>
+          featuredImage={toImageWithMeta(sitePage.context.previous.frontmatter.featuredImage)}>
         </BlogCard>
       </BottomNav>
     }
@@ -58,10 +53,10 @@ const PageTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sit
   </>)
 }
 
-export default PageTemplate
+export default PostTemplate
 
 export const query = graphql`
-query PageTemplate($slug: String!) {
+query PostTemplate($slug: String!) {
   site {
     siteMetadata {
       siteUrl
@@ -85,7 +80,7 @@ query PageTemplate($slug: String!) {
       }
     }
   }
-  sitePage(context: {slug: {eq: $slug}}) {
+  sitePage(path: {eq: $slug}) {
     path
     context {
       previous {

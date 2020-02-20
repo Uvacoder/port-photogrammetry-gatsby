@@ -38,7 +38,7 @@ export const createPages: GatsbyNode["createPages"] = async (
 
     createPage({
       path: slug,
-      component: path.resolve(`./src/templates/${layout || 'blogPost'}.tsx`),
+      component: path.resolve(`./src/templates/${layout || 'PostTemplate'}.tsx`),
       context: {
         slug,
         previous,
@@ -71,13 +71,30 @@ export const createPages: GatsbyNode["createPages"] = async (
     }) => {
     createPage({
       path: slug,
-      component: path.resolve(`./src/templates/${layout || 'blogPost'}.tsx`),
+      component: path.resolve(`./src/templates/${layout || 'PostTemplate'}.tsx`),
       context: {
         slug
       }
     })
   })
+
+  createCategoryPage('/', 'PostListerTemplate')
+  createCategoryPage('/categories/photography/', 'PostListerTemplate', ['Photography'])
+  createCategoryPage('/categories/programming/', 'PostListerTemplate', ['Programming'])
+
+  function createCategoryPage(slug: string, layout: string, category?: string[]) {
+    createPage({
+      path: slug,
+      component: path.resolve(`./src/templates/${layout}.tsx`),
+      context: {
+        slug,
+        category: category,
+      }
+    })
+  }
 }
+
+
 
 function getPrevAndNextArticles<T>(articles: T, slug: string) {
   const currentArticleIndex = Object.keys(articles).findIndex(

@@ -35,7 +35,7 @@ query BlogLister {
 }
 `
 interface BlogListerProps {
-  category?: string
+  category: string[]
 }
 
 const BlogLister: React.FC<BlogListerProps> = (props) => (
@@ -43,7 +43,7 @@ const BlogLister: React.FC<BlogListerProps> = (props) => (
     query={ComponentQuery}
     render={(data: BlogListerQuery) => (<>
       {data.allMarkdownRemark.edges.map(post => {
-        if (post.node.frontmatter.draft !== true && (props.category === undefined || post.node.frontmatter.categories?.includes(props.category!))) {
+        if (post.node.frontmatter.draft !== true && (props.category.every(x => post.node.frontmatter.categories.includes(x)))) {
           return <BlogCard
             key={post.node.fields.slug}
             title={post.node.frontmatter.title!}
