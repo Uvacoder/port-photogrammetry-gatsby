@@ -1,5 +1,6 @@
 .card-container {
   max-width: 52rem;
+  margin: auto;
 }
 
 .card-container>a:first-of-type {
