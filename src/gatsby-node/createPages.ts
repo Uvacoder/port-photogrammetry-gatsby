@@ -20,6 +20,9 @@ export const createPages: GatsbyNode["createPages"] = async (
               layout
               slug
             }
+            frontmatter{
+              draft
+            }
           }
         }
       }
@@ -27,7 +30,7 @@ export const createPages: GatsbyNode["createPages"] = async (
   `))
 
   const articles = articlesQuery.allMarkdownRemark.edges.map(x => x.node)
-  const slugToArticleMap = toDictionary(articles, x => x.fields.slug)
+  const slugToArticleMap = toDictionary(articles.filter(x => x.frontmatter.draft !== true), x => x.fields.slug)
 
   articles.forEach((
     { fields:

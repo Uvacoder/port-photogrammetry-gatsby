@@ -3,6 +3,7 @@ const pageQuery = `{
   pages: allMarkdownRemark(
     filter: {
       fileAbsolutePath: { regex: "/pages/" },
+      filter: {frontmatter: {draft: {ne: true}}}
     }
   ) {
     edges {
@@ -22,6 +23,7 @@ const pageQuery = `{
 const postQuery = `{
   posts: allMarkdownRemark(
     filter: { fileAbsolutePath: { regex: "/posts/" } }
+    filter: {frontmatter: {draft: {ne: true}}}
   ) {
     edges {
       node {

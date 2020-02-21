@@ -30,7 +30,6 @@ export default function Search({ indices }) {
 }
 
 function Hit(props) {
-  console.log(props)
   return (
     <div>
       <div className="hit-name">

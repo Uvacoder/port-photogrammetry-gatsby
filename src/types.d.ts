@@ -2533,6 +2533,12 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsFeedsOutput = 'pluginCreator___pluginOptions___feeds___output',
   PluginCreatorPluginOptionsFeedsTitle = 'pluginCreator___pluginOptions___feeds___title',
   PluginCreatorPluginOptionsShortname = 'pluginCreator___pluginOptions___shortname',
+  PluginCreatorPluginOptionsAppId = 'pluginCreator___pluginOptions___appId',
+  PluginCreatorPluginOptionsApiKey = 'pluginCreator___pluginOptions___apiKey',
+  PluginCreatorPluginOptionsQueries = 'pluginCreator___pluginOptions___queries',
+  PluginCreatorPluginOptionsQueriesQuery = 'pluginCreator___pluginOptions___queries___query',
+  PluginCreatorPluginOptionsQueriesIndexName = 'pluginCreator___pluginOptions___queries___indexName',
+  PluginCreatorPluginOptionsChunkSize = 'pluginCreator___pluginOptions___chunkSize',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -2783,6 +2789,13 @@ export enum SitePluginFieldsEnum {
   PluginOptionsFeedsOutput = 'pluginOptions___feeds___output',
   PluginOptionsFeedsTitle = 'pluginOptions___feeds___title',
   PluginOptionsShortname = 'pluginOptions___shortname',
+  PluginOptionsAppId = 'pluginOptions___appId',
+  PluginOptionsApiKey = 'pluginOptions___apiKey',
+  PluginOptionsQueries = 'pluginOptions___queries',
+  PluginOptionsQueriesQuery = 'pluginOptions___queries___query',
+  PluginOptionsQueriesIndexName = 'pluginOptions___queries___indexName',
+  PluginOptionsQueriesSettingsAttributesToSnippet = 'pluginOptions___queries___settings___attributesToSnippet',
+  PluginOptionsChunkSize = 'pluginOptions___chunkSize',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -2933,6 +2946,10 @@ export type SitePluginPluginOptions = {
   readonly query?: Maybe<Scalars['String']>,
   readonly feeds?: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsFeeds>>>,
   readonly shortname?: Maybe<Scalars['String']>,
+  readonly appId?: Maybe<Scalars['String']>,
+  readonly apiKey?: Maybe<Scalars['String']>,
+  readonly queries?: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsQueries>>>,
+  readonly chunkSize?: Maybe<Scalars['Int']>,
   readonly pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -2995,6 +3012,10 @@ export type SitePluginPluginOptionsFilterInput = {
   readonly query?: Maybe<StringQueryOperatorInput>,
   readonly feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>,
   readonly shortname?: Maybe<StringQueryOperatorInput>,
+  readonly appId?: Maybe<StringQueryOperatorInput>,
+  readonly apiKey?: Maybe<StringQueryOperatorInput>,
+  readonly queries?: Maybe<SitePluginPluginOptionsQueriesFilterListInput>,
+  readonly chunkSize?: Maybe<IntQueryOperatorInput>,
   readonly pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
@@ -3075,6 +3096,32 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   readonly loading?: Maybe<StringQueryOperatorInput>,
   readonly disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>,
   readonly disableBgImage?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsQueries = {
+  readonly __typename?: 'SitePluginPluginOptionsQueries',
+  readonly query?: Maybe<Scalars['String']>,
+  readonly indexName?: Maybe<Scalars['String']>,
+  readonly settings?: Maybe<SitePluginPluginOptionsQueriesSettings>,
+};
+
+export type SitePluginPluginOptionsQueriesFilterInput = {
+  readonly query?: Maybe<StringQueryOperatorInput>,
+  readonly indexName?: Maybe<StringQueryOperatorInput>,
+  readonly settings?: Maybe<SitePluginPluginOptionsQueriesSettingsFilterInput>,
+};
+
+export type SitePluginPluginOptionsQueriesFilterListInput = {
+  readonly elemMatch?: Maybe<SitePluginPluginOptionsQueriesFilterInput>,
+};
+
+export type SitePluginPluginOptionsQueriesSettings = {
+  readonly __typename?: 'SitePluginPluginOptionsQueriesSettings',
+  readonly attributesToSnippet?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
+};
+
+export type SitePluginPluginOptionsQueriesSettingsFilterInput = {
+  readonly attributesToSnippet?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsWorkboxConfig = {
@@ -3261,17 +3308,13 @@ export type PagesQueryQueryVariables = {};
 
 export type PagesQueryQuery = (
   { readonly __typename?: 'Query' }
-  & {
-    readonly allSitePage: (
-      { readonly __typename?: 'SitePageConnection' }
-      & {
-        readonly nodes: ReadonlyArray<(
-          { readonly __typename?: 'SitePage' }
-          & Pick<SitePage, 'path'>
-        )>
-      }
-    )
-  }
+  & { readonly allSitePage: (
+    { readonly __typename?: 'SitePageConnection' }
+    & { readonly nodes: ReadonlyArray<(
+      { readonly __typename?: 'SitePage' }
+      & Pick<SitePage, 'path'>
+    )> }
+  ) }
 );
 
 export type BlogListerQueryVariables = {};
@@ -3279,53 +3322,37 @@ export type BlogListerQueryVariables = {};
 
 export type BlogListerQuery = (
   { readonly __typename?: 'Query' }
-  & {
-    readonly allMarkdownRemark: (
-      { readonly __typename?: 'MarkdownRemarkConnection' }
-      & {
-        readonly edges: ReadonlyArray<(
-          { readonly __typename?: 'MarkdownRemarkEdge' }
-          & {
-            readonly node: (
-              { readonly __typename?: 'MarkdownRemark' }
-              & Pick<MarkdownRemark, 'excerpt'>
-              & {
-                readonly fields: (
-                  { readonly __typename?: 'MarkdownRemarkFields' }
-                  & Pick<MarkdownRemarkFields, 'slug'>
-                ), readonly frontmatter: (
-                  { readonly __typename?: 'Frontmatter' }
-                  & Pick<Frontmatter, 'title' | 'draft' | 'date' | 'categories' | 'description'>
-                  & {
-                    readonly featuredImage: Maybe<(
-                      { readonly __typename?: 'FeaturedImage' }
-                      & Pick<FeaturedImage, 'description'>
-                      & {
-                        readonly src: (
-                          { readonly __typename?: 'File' }
-                          & {
-                            readonly childImageSharp: Maybe<(
-                              { readonly __typename?: 'ImageSharp' }
-                              & {
-                                readonly fluid: Maybe<(
-                                  { readonly __typename?: 'ImageSharpFluid' }
-                                  & GatsbyImageSharpFluid_WithWebpFragment
-                                )>
-                              }
-                            )>
-                          }
-                        )
-                      }
-                    )>
-                  }
-                )
-              }
-            )
-          }
-        )>
-      }
-    )
-  }
+  & { readonly allMarkdownRemark: (
+    { readonly __typename?: 'MarkdownRemarkConnection' }
+    & { readonly edges: ReadonlyArray<(
+      { readonly __typename?: 'MarkdownRemarkEdge' }
+      & { readonly node: (
+        { readonly __typename?: 'MarkdownRemark' }
+        & Pick<MarkdownRemark, 'excerpt'>
+        & { readonly fields: (
+          { readonly __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'slug'>
+        ), readonly frontmatter: (
+          { readonly __typename?: 'Frontmatter' }
+          & Pick<Frontmatter, 'title' | 'draft' | 'date' | 'categories' | 'description'>
+          & { readonly featuredImage: Maybe<(
+            { readonly __typename?: 'FeaturedImage' }
+            & Pick<FeaturedImage, 'description'>
+            & { readonly src: (
+              { readonly __typename?: 'File' }
+              & { readonly childImageSharp: Maybe<(
+                { readonly __typename?: 'ImageSharp' }
+                & { readonly fluid: Maybe<(
+                  { readonly __typename?: 'ImageSharpFluid' }
+                  & GatsbyImageSharpFluid_WithWebpFragment
+                )> }
+              )> }
+            ) }
+          )> }
+        ) }
+      ) }
+    )> }
+  ) }
 );
 
 export type FooterQueryVariables = {};
@@ -3333,40 +3360,30 @@ export type FooterQueryVariables = {};
 
 export type FooterQuery = (
   { readonly __typename?: 'Query' }
-  & {
-    readonly site: Maybe<(
-      { readonly __typename?: 'Site' }
-      & {
-        readonly siteMetadata: (
-          { readonly __typename?: 'SiteMetadata' }
-          & {
-            readonly social: (
-              { readonly __typename?: 'Social' }
-              & Pick<Social, 'github' | 'instagram' | 'linkedin'>
-            )
-          }
-        )
-      }
-    )>
-  }
+  & { readonly site: Maybe<(
+    { readonly __typename?: 'Site' }
+    & { readonly siteMetadata: (
+      { readonly __typename?: 'SiteMetadata' }
+      & { readonly social: (
+        { readonly __typename?: 'Social' }
+        & Pick<Social, 'github' | 'instagram' | 'linkedin'>
+      ) }
+    ) }
+  )> }
 );
 
-export type NavigationQueryVariables = {};
+export type MenuQueryVariables = {};
 
 
 export type MenuQuery = (
   { readonly __typename?: 'Query' }
-  & {
-    readonly site: Maybe<(
-      { readonly __typename?: 'Site' }
-      & {
-        readonly siteMetadata: (
-          { readonly __typename?: 'SiteMetadata' }
-          & Pick<SiteMetadata, 'title' | 'description'>
-        )
-      }
-    )>
-  }
+  & { readonly site: Maybe<(
+    { readonly __typename?: 'Site' }
+    & { readonly siteMetadata: (
+      { readonly __typename?: 'SiteMetadata' }
+      & Pick<SiteMetadata, 'title' | 'description'>
+    ) }
+  )> }
 );
 
 export type ArticlesQueryVariables = {};
@@ -3374,28 +3391,23 @@ export type ArticlesQueryVariables = {};
 
 export type ArticlesQuery = (
   { readonly __typename?: 'Query' }
-  & {
-    readonly allMarkdownRemark: (
-      { readonly __typename?: 'MarkdownRemarkConnection' }
-      & {
-        readonly edges: ReadonlyArray<(
-          { readonly __typename?: 'MarkdownRemarkEdge' }
-          & {
-            readonly node: (
-              { readonly __typename?: 'MarkdownRemark' }
-              & Pick<MarkdownRemark, 'id'>
-              & {
-                readonly fields: (
-                  { readonly __typename?: 'MarkdownRemarkFields' }
-                  & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
-                )
-              }
-            )
-          }
-        )>
-      }
-    )
-  }
+  & { readonly allMarkdownRemark: (
+    { readonly __typename?: 'MarkdownRemarkConnection' }
+    & { readonly edges: ReadonlyArray<(
+      { readonly __typename?: 'MarkdownRemarkEdge' }
+      & { readonly node: (
+        { readonly __typename?: 'MarkdownRemark' }
+        & Pick<MarkdownRemark, 'id'>
+        & { readonly fields: (
+          { readonly __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
+        ), readonly frontmatter: (
+          { readonly __typename?: 'Frontmatter' }
+          & Pick<Frontmatter, 'draft'>
+        ) }
+      ) }
+    )> }
+  ) }
 );
 
 export type PagesQueryVariables = {};
@@ -3403,27 +3415,19 @@ export type PagesQueryVariables = {};
 
 export type PagesQuery = (
   { readonly __typename?: 'Query' }
-  & {
-    readonly allMarkdownRemark: (
-      { readonly __typename?: 'MarkdownRemarkConnection' }
-      & {
-        readonly edges: ReadonlyArray<(
-          { readonly __typename?: 'MarkdownRemarkEdge' }
-          & {
-            readonly node: (
-              { readonly __typename?: 'MarkdownRemark' }
-              & {
-                readonly fields: (
-                  { readonly __typename?: 'MarkdownRemarkFields' }
-                  & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
-                )
-              }
-            )
-          }
-        )>
-      }
-    )
-  }
+  & { readonly allMarkdownRemark: (
+    { readonly __typename?: 'MarkdownRemarkConnection' }
+    & { readonly edges: ReadonlyArray<(
+      { readonly __typename?: 'MarkdownRemarkEdge' }
+      & { readonly node: (
+        { readonly __typename?: 'MarkdownRemark' }
+        & { readonly fields: (
+          { readonly __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
+        ) }
+      ) }
+    )> }
+  ) }
 );
 
 export type IndexLayoutQueryVariables = {};
@@ -3431,30 +3435,22 @@ export type IndexLayoutQueryVariables = {};
 
 export type IndexLayoutQuery = (
   { readonly __typename?: 'Query' }
-  & {
-    readonly site: Maybe<(
-      { readonly __typename?: 'Site' }
-      & {
-        readonly siteMetadata: (
-          { readonly __typename?: 'SiteMetadata' }
-          & Pick<SiteMetadata, 'title' | 'description' | 'keywords' | 'siteUrl'>
-        )
-      }
-    )>, readonly file: Maybe<(
-      { readonly __typename?: 'File' }
-      & {
-        readonly childImageSharp: Maybe<(
-          { readonly __typename?: 'ImageSharp' }
-          & {
-            readonly fixed: Maybe<(
-              { readonly __typename?: 'ImageSharpFixed' }
-              & GatsbyImageSharpFixed_WithWebpFragment
-            )>
-          }
-        )>
-      }
-    )>
-  }
+  & { readonly site: Maybe<(
+    { readonly __typename?: 'Site' }
+    & { readonly siteMetadata: (
+      { readonly __typename?: 'SiteMetadata' }
+      & Pick<SiteMetadata, 'title' | 'description' | 'keywords' | 'siteUrl'>
+    ) }
+  )>, readonly file: Maybe<(
+    { readonly __typename?: 'File' }
+    & { readonly childImageSharp: Maybe<(
+      { readonly __typename?: 'ImageSharp' }
+      & { readonly fixed: Maybe<(
+        { readonly __typename?: 'ImageSharpFixed' }
+        & GatsbyImageSharpFixed_WithWebpFragment
+      )> }
+    )> }
+  )> }
 );
 
 export type PostListerTemplateQueryVariables = {
@@ -3464,111 +3460,79 @@ export type PostListerTemplateQueryVariables = {
 
 export type PostListerTemplateQuery = (
   { readonly __typename?: 'Query' }
-  & {
-    readonly sitePage: Maybe<(
-      { readonly __typename?: 'SitePage' }
-      & {
-        readonly context: (
-          { readonly __typename?: 'SitePageContext' }
-          & Pick<SitePageContext, 'category'>
-        )
-      }
-    )>
-  }
+  & { readonly sitePage: Maybe<(
+    { readonly __typename?: 'SitePage' }
+    & { readonly context: (
+      { readonly __typename?: 'SitePageContext' }
+      & Pick<SitePageContext, 'category'>
+    ) }
+  )> }
 );
 
-export type PageTemplateQueryVariables = {
+export type PostTemplateQueryVariables = {
   slug: Scalars['String']
 };
 
 
-export type PageTemplateQuery = (
+export type PostTemplateQuery = (
   { readonly __typename?: 'Query' }
-  & {
-    readonly site: Maybe<(
-      { readonly __typename?: 'Site' }
-      & {
-        readonly siteMetadata: (
-          { readonly __typename?: 'SiteMetadata' }
-          & Pick<SiteMetadata, 'siteUrl'>
-        )
-      }
-    )>, readonly markdownRemark: Maybe<(
-      { readonly __typename?: 'MarkdownRemark' }
-      & Pick<MarkdownRemark, 'html' | 'excerpt'>
-      & {
-        readonly frontmatter: (
+  & { readonly site: Maybe<(
+    { readonly __typename?: 'Site' }
+    & { readonly siteMetadata: (
+      { readonly __typename?: 'SiteMetadata' }
+      & Pick<SiteMetadata, 'siteUrl'>
+    ) }
+  )>, readonly markdownRemark: Maybe<(
+    { readonly __typename?: 'MarkdownRemark' }
+    & Pick<MarkdownRemark, 'html' | 'excerpt'>
+    & { readonly frontmatter: (
+      { readonly __typename?: 'Frontmatter' }
+      & Pick<Frontmatter, 'title' | 'date'>
+      & { readonly featuredImage: Maybe<(
+        { readonly __typename?: 'FeaturedImage' }
+        & Pick<FeaturedImage, 'description'>
+        & { readonly src: (
+          { readonly __typename?: 'File' }
+          & { readonly childImageSharp: Maybe<(
+            { readonly __typename?: 'ImageSharp' }
+            & { readonly fluid: Maybe<(
+              { readonly __typename?: 'ImageSharpFluid' }
+              & GatsbyImageSharpFluid_WithWebpFragment
+            )> }
+          )> }
+        ) }
+      )> }
+    ) }
+  )>, readonly sitePage: Maybe<(
+    { readonly __typename?: 'SitePage' }
+    & Pick<SitePage, 'path'>
+    & { readonly context: (
+      { readonly __typename?: 'SitePageContext' }
+      & { readonly previous: Maybe<(
+        { readonly __typename?: 'MarkdownRemark' }
+        & Pick<MarkdownRemark, 'excerpt'>
+        & { readonly fields: (
+          { readonly __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'slug'>
+        ), readonly frontmatter: (
           { readonly __typename?: 'Frontmatter' }
-          & Pick<Frontmatter, 'title' | 'date'>
-          & {
-            readonly featuredImage: Maybe<(
-              { readonly __typename?: 'FeaturedImage' }
-              & Pick<FeaturedImage, 'description'>
-              & {
-                readonly src: (
-                  { readonly __typename?: 'File' }
-                  & {
-                    readonly childImageSharp: Maybe<(
-                      { readonly __typename?: 'ImageSharp' }
-                      & {
-                        readonly fluid: Maybe<(
-                          { readonly __typename?: 'ImageSharpFluid' }
-                          & GatsbyImageSharpFluid_WithWebpFragment
-                        )>
-                      }
-                    )>
-                  }
-                )
-              }
-            )>
-          }
-        )
-      }
-    )>, readonly sitePage: Maybe<(
-      { readonly __typename?: 'SitePage' }
-      & Pick<SitePage, 'path'>
-      & {
-        readonly context: (
-          { readonly __typename?: 'SitePageContext' }
-          & {
-            readonly previous: Maybe<(
-              { readonly __typename?: 'MarkdownRemark' }
-              & Pick<MarkdownRemark, 'excerpt'>
-              & {
-                readonly fields: (
-                  { readonly __typename?: 'MarkdownRemarkFields' }
-                  & Pick<MarkdownRemarkFields, 'slug'>
-                ), readonly frontmatter: (
-                  { readonly __typename?: 'Frontmatter' }
-                  & Pick<Frontmatter, 'title' | 'date' | 'categories' | 'description'>
-                  & {
-                    readonly featuredImage: Maybe<(
-                      { readonly __typename?: 'FeaturedImage' }
-                      & Pick<FeaturedImage, 'description'>
-                      & {
-                        readonly src: (
-                          { readonly __typename?: 'File' }
-                          & {
-                            readonly childImageSharp: Maybe<(
-                              { readonly __typename?: 'ImageSharp' }
-                              & {
-                                readonly fluid: Maybe<(
-                                  { readonly __typename?: 'ImageSharpFluid' }
-                                  & GatsbyImageSharpFluid_WithWebpFragment
-                                )>
-                              }
-                            )>
-                          }
-                        )
-                      }
-                    )>
-                  }
-                )
-              }
-            )>
-          }
-        )
-      }
-    )>
-  }
+          & Pick<Frontmatter, 'title' | 'date' | 'categories' | 'description'>
+          & { readonly featuredImage: Maybe<(
+            { readonly __typename?: 'FeaturedImage' }
+            & Pick<FeaturedImage, 'description'>
+            & { readonly src: (
+              { readonly __typename?: 'File' }
+              & { readonly childImageSharp: Maybe<(
+                { readonly __typename?: 'ImageSharp' }
+                & { readonly fluid: Maybe<(
+                  { readonly __typename?: 'ImageSharpFluid' }
+                  & GatsbyImageSharpFluid_WithWebpFragment
+                )> }
+              )> }
+            ) }
+          )> }
+        ) }
+      )> }
+    ) }
+  )> }
 );
