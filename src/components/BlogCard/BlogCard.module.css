@@ -74,6 +74,10 @@
   margin-right: 1rem;
 }
 
+.muted-text {
+  color: #7a7b7c;
+}
+
 @media screen and (pointer: coarse) {
   .card-hover {
     transform: scale(0.95);

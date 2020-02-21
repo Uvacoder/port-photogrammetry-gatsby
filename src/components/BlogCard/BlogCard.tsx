@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import Img, { FluidObject } from "gatsby-image"
+import Img from "gatsby-image"
 import PostDate from '../PostDate'
 import styles from './BlogCard.module.css'
 import classNames from 'classnames'
@@ -12,7 +12,7 @@ interface BlogCardProps {
   description: string
   excerpt: string
   date: string
-  categories?: readonly string[]
+  categories: readonly string[]
   featuredImage?: ImageWithMeta
 }
 
@@ -22,7 +22,7 @@ const BlogCard: React.FC<BlogCardProps> = (props) =>
     <article className={styles.cardBody}>
       <h2 className={styles.cardTitle}>{props.title}</h2>
       <p className={styles.cardText}>{props.description ?? props.excerpt}</p>
-      <div className={classNames(styles.cardSubtext, 'muted-text')}>
+      <div className={classNames(styles.cardSubtext, styles.mutedText)}>
         <PostDate date={props.date}></PostDate>
         <p>
           {props.categories?.map(x => `#${x}`)}

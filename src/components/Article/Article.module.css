@@ -20,11 +20,39 @@
   margin: 0;
 }
 
+.content {
+  background-color: white;
+  padding-top: 2em;
+  margin-bottom: 2em;
+  width: 100%;
+  max-width: 52rem;
+  border-radius: 0.3rem;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 0.7rem 1.4rem 0 rgba(0, 0, 0, 0.25), 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.22);
+}
+
+.side-text-padding {
+  padding-left: 1.2rem !important;
+  padding-right: 1.2rem !important;
+  box-sizing: border-box !important;
+}
+
+.dropcase>p:first-of-type::first-letter {
+  float: left;
+  font-size: 3em;
+  line-height: 1;
+  margin: 0.05em 0.15em -0.1em 0;
+  /* initial-letter: 2; Maybe someday*/
+}
+
 @media only screen and (min-width: 40.063em) {
   .post {
     margin: 1em 1em 2em 1em;
   }
   .post-title {
     font-size: 2.4em;
+  }
+  .content {
+    border-radius: 0.2rem;
   }
 }

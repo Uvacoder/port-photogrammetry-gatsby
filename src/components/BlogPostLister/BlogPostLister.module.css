@@ -1,0 +1,7 @@
+.card-container {
+  max-width: 52rem;
+}
+
+.card-container>a:first-of-type {
+  margin-top: 5em;
+}

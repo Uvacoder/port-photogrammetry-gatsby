@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby'
-import { NavigationQuery } from '../../types'
+import { MenuQuery } from '../../types'
 import classNames from 'classnames'
-import styles from './Navigation.module.css'
+import styles from './Menu.module.css'
+import globalStyles from '../shared.module.css'
 
 export const ComponentQuery = graphql`
-query Navigation {
+query Menu {
   site {
     siteMetadata {
       title
@@ -16,10 +17,10 @@ query Navigation {
 }
 `
 
-const Navigation: React.FC = () => (
+const Menu: React.FC = () => (
   <StaticQuery
     query={ComponentQuery}
-    render={(data: NavigationQuery) => {
+    render={(data: MenuQuery) => {
       const [menuOpen, setMenuOpen] = useState(false);
       useEffect(() => {
         if (menuOpen) {
@@ -29,7 +30,7 @@ const Navigation: React.FC = () => (
         }
       }, [menuOpen])
 
-      return <nav className={classNames(styles.navBar, 'side-padding')}>
+      return <nav className={classNames(styles.navBar, globalStyles.sidePadding)}>
         <h1 className={styles.navHeader}>
           <Link to="/" className={styles.navText}>{data.site?.siteMetadata.title}</Link>
         </h1>
@@ -63,4 +64,4 @@ const Navigation: React.FC = () => (
   />
 )
 
-export default Navigation
+export default Menu

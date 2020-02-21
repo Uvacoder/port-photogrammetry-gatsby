@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import { BlogListerQuery } from '../types'
-import BlogCard from './BlogCard/BlogCard'
+import { BlogListerQuery } from '../../types'
+import BlogCard from '../BlogCard/BlogCard'
+import styles from './BlogPostLister.module.css'
 
 export const ComponentQuery = graphql`
 query BlogLister {
@@ -41,7 +42,7 @@ interface BlogListerProps {
 const BlogLister: React.FC<BlogListerProps> = (props) => (
   <StaticQuery
     query={ComponentQuery}
-    render={(data: BlogListerQuery) => (<>
+    render={(data: BlogListerQuery) => (<div className={styles.cardContainer}>
       {data.allMarkdownRemark.edges.map(post => {
         if (post.node.frontmatter.draft !== true && (props.category.every(x => post.node.frontmatter.categories.includes(x)))) {
           return <BlogCard
@@ -59,7 +60,7 @@ const BlogLister: React.FC<BlogListerProps> = (props) => (
           </BlogCard>
         }
       })}
-    </>)}
+    </div>)}
   />
 )
 

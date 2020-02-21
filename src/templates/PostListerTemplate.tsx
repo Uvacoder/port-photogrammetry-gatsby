@@ -1,10 +1,8 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import Main from '../components/Main'
 import IndexLayout from '../layouts'
 import ListHeader from '../components/ListHeader/ListHeader'
-import BlogLister from '../components/BlogPostLister'
-import Footer from '../components/Footer'
+import BlogLister from '../components/BlogPostLister/BlogPostLister'
 import { PostListerTemplateQuery } from '../types'
 
 interface PostListerTemplateQueryInterface {
@@ -12,14 +10,10 @@ interface PostListerTemplateQueryInterface {
 }
 
 const PostListerTemplate: React.SFC<PostListerTemplateQueryInterface> = ({ data: { sitePage } }) => (
-  <>
-    <IndexLayout />
-    <Main className="card-container">
-      <ListHeader title=""></ListHeader>
-      <BlogLister category={[...sitePage?.context.category ?? []]}></BlogLister>
-    </Main>
-    <Footer></Footer>
-  </>
+  <IndexLayout>
+    <ListHeader title=""></ListHeader>
+    <BlogLister category={[...sitePage?.context.category ?? []]}></BlogLister>
+  </IndexLayout>
 )
 
 export default PostListerTemplate
