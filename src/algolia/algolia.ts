@@ -1,11 +1,6 @@
 
 const pageQuery = `{
-  pages: allMarkdownRemark(
-    filter: {
-      fileAbsolutePath: { regex: "/pages/" },
-      filter: {frontmatter: {draft: {ne: true}}}
-    }
-  ) {
+  pages: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/pages/"}, frontmatter: {draft: {ne: true}}}) {
     edges {
       node {
         fields {
@@ -21,10 +16,7 @@ const pageQuery = `{
   }
 }`
 const postQuery = `{
-  posts: allMarkdownRemark(
-    filter: { fileAbsolutePath: { regex: "/posts/" } }
-    filter: {frontmatter: {draft: {ne: true}}}
-  ) {
+  posts: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/posts/"}, frontmatter: {draft: {ne: true}}}) {
     edges {
       node {
         fields {
