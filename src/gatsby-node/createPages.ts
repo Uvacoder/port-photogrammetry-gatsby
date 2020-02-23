@@ -85,6 +85,8 @@ export const createPages: GatsbyNode["createPages"] = async (
   createCategoryPage('/categories/photography/', 'PostListerTemplate', ['Photography'])
   createCategoryPage('/categories/programming/', 'PostListerTemplate', ['Programming'])
 
+  createStaticPage('/search/', 'SearchPage')
+
   function createCategoryPage(slug: string, layout: string, category?: string[]) {
     createPage({
       path: slug,
@@ -92,6 +94,16 @@ export const createPages: GatsbyNode["createPages"] = async (
       context: {
         slug,
         category: category,
+      }
+    })
+  }
+
+  function createStaticPage(slug: string, layout: string) {
+    createPage({
+      path: slug,
+      component: path.resolve(`./src/templates/${layout}.tsx`),
+      context: {
+        slug,
       }
     })
   }

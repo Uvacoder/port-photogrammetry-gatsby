@@ -5,12 +5,13 @@ import PostDate from '../PostDate'
 import styles from './BlogCard.module.css'
 import classNames from 'classnames'
 import ImageWithMeta from '../ImageWithMeta'
+import { ReactNode } from 'react'
 
 interface BlogCardProps {
-  title: string
+  title: string | ReactNode
   slug: string
-  description: string
-  excerpt: string
+  description?: string
+  excerpt: string | ReactNode
   date: string
   categories: readonly string[]
   featuredImage?: ImageWithMeta

@@ -3,14 +3,14 @@ import { graphql } from 'gatsby'
 
 import IndexLayout from '../layouts'
 
-import { PageTemplateQuery } from '../types'
+import { PostTemplateQuery } from '../types'
 import Article from '../components/Article/Article'
 import BottomNav from '../components/BottomNav/BottomNav'
 import BlogCard from '../components/BlogCard/BlogCard'
 import { toImageWithMeta } from '../components/ImageWithMeta'
 
 interface PageTemplateQueryInterface {
-  data: PageTemplateQuery
+  data: PostTemplateQuery
 }
 
 const PostTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sitePage, markdownRemark } }) => {
