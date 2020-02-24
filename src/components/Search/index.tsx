@@ -5,7 +5,7 @@ import {
   PoweredBy,
 } from "react-instantsearch-dom"
 
-import Input from "./Input"
+import Input from "./input"
 import algoliasearch from "algoliasearch/lite"
 import { CustomHits } from "./customHits"
 
