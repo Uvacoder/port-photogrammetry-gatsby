@@ -2,8 +2,7 @@ import React from "react"
 import styles from "./index.module.css"
 import { connectHighlight } from 'react-instantsearch-dom';
 
-//@ts-ignore
-const Snippet = ({ highlight, attribute, hit }) => {
+export const CustomSnippet = connectHighlight(({ highlight, attribute, hit }) => {
   const parsedHit = highlight({
     highlightProperty: '_snippetResult',
     attribute,
@@ -13,7 +12,6 @@ const Snippet = ({ highlight, attribute, hit }) => {
   return (
     <span>
       {parsedHit.map(
-        //@ts-ignore
         (part, index) =>
           part.isHighlighted ? (
             <mark key={index}>{part.value}</mark>
@@ -23,6 +21,4 @@ const Snippet = ({ highlight, attribute, hit }) => {
       )}
     </span>
   );
-};
-
-export const CustomSnippet = connectHighlight(Snippet);
+});
