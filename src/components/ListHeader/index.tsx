@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styles from './ListHeader.module.css'
+import styles from './index.module.css'
 
 interface HeaderProps {
   title: string

@@ -12,7 +12,7 @@ import {
 } from "react-instantsearch-dom"
 
 import algoliasearch from "algoliasearch/lite"
-import BlogCard from "../BlogCard/BlogCard"
+import BlogCard from "../BlogCard"
 import './algolia.css'
 
 

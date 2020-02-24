@@ -1,15 +1,10 @@
 {
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "netlify dev",
     "production": "gatsby serve",
-    "info": "gatsby info --clipboard",
-    "forestry:preview": "gatsby develop --port 8080 -H 0.0.0.0",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "start": "npm run dev",
-    "test": "npm run type-check && npm run lint",
-    "type-check": "tsc",
-    "generate": "graphql-codegen"
+    "graphql-generate": "graphql-codegen",
+    "css-generate": "tcm -p src/**/*.module.css --c"
   },
   "engines": {
     "node": ">=12.0.0"
@@ -62,6 +57,7 @@
     "@typescript-eslint/parser": "^2.19.0",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-gatsby": "^0.2.29",
+    "typed-css-modules": "^0.6.3",
     "eslint": "^6.8.0",
     "graphql": "^14.6.0",
     "ts-node": "^8.6.2",

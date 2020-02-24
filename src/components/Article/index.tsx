@@ -1,6 +1,7 @@
 import * as React from 'react'
+import styles from './index.module.css'
+
 import './prismhighlight.css'
-import styles from './Article.module.css'
 import { Disqus } from 'gatsby-plugin-disqus'
 import PostDate from '../PostDate'
 import Image from 'gatsby-image'

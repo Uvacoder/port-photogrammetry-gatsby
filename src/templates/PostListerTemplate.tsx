@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import IndexLayout from '../layouts'
-import ListHeader from '../components/ListHeader/ListHeader'
-import BlogLister from '../components/BlogPostLister/BlogPostLister'
+import ListHeader from '../components/ListHeader'
+import BlogLister from '../components/BlogPostLister'
 import { PostListerTemplateQuery } from '../types'
 
 interface PostListerTemplateQueryInterface {

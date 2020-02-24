@@ -1,8 +1,9 @@
 import * as React from 'react'
+import styles from './index.module.css'
+
 import { StaticQuery, graphql } from 'gatsby'
 import { BlogListerQuery } from '../../types'
-import BlogCard from '../BlogCard/BlogCard'
-import styles from './BlogPostLister.module.css'
+import BlogCard from '../BlogCard'
 
 export const ComponentQuery = graphql`
 query BlogLister {

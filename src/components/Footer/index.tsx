@@ -1,8 +1,9 @@
 import * as React from 'react'
+import styles from './index.module.css'
+
 import classNames from 'classnames'
 import { StaticQuery, graphql } from 'gatsby'
 import { FooterQuery } from '../../types'
-import styles from './Footer.module.css'
 
 interface SocialIconProps {
   className: string

@@ -6,8 +6,8 @@ import styles from './index.module.css'
 import './global.css';
 import 'normalize.css'
 
-import Menu from '../components/Menu/Menu'
-import Footer from '../components/Footer/Footer'
+import Menu from '../components/Menu'
+import Footer from '../components/Footer'
 
 const IndexLayout: React.FC = ({ children }) => (
   <StaticQuery<IndexLayoutQuery>

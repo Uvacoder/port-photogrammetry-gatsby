@@ -1,8 +1,9 @@
 import * as React from 'react'
+import styles from './index.module.css'
+
 import { Link } from 'gatsby'
 import Img from "gatsby-image"
 import PostDate from '../PostDate'
-import styles from './BlogCard.module.css'
 import classNames from 'classnames'
 import ImageWithMeta from '../ImageWithMeta'
 import { ReactNode } from 'react'

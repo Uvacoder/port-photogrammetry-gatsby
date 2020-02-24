@@ -1,10 +1,11 @@
 import * as React from 'react'
+import styles from './index.module.css'
+import sharedStyles from '../shared.module.css'
+
 import { useState, useEffect } from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { MenuQuery } from '../../types'
 import classNames from 'classnames'
-import styles from './Menu.module.css'
-import globalStyles from '../shared.module.css'
 
 export const ComponentQuery = graphql`
 query Menu {
@@ -30,7 +31,7 @@ const Menu: React.FC = () => (
         }
       }, [menuOpen])
 
-      return <nav className={classNames(styles.navBar, globalStyles.sidePadding)}>
+      return <nav className={classNames(styles.navBar, sharedStyles.sidePadding)}>
 
         <h1 className={styles.navHeader}>
           <Link to="/" className={styles.navText}>{data.site?.siteMetadata.title}</Link>
