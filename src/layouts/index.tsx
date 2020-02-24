@@ -47,7 +47,7 @@ const IndexLayout: React.FC = ({ children }) => (
           <meta property="og:image:height" content="400" />
         </Helmet>
         <Menu></Menu>
-        <main>
+        <main className={styles.main}>
           {children}
         </main>
         <Footer></Footer>

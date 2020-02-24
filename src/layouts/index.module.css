@@ -1,17 +1,19 @@
 .body {
   font-family: Avenir, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: #141823;
   font-size: 1.0em;
-  background-color: #ecedef;
-  margin: 0;
-  padding: 0 0 2em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  box-sizing: border-box;
-  word-break: break-word;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  width: calc(100vw);
   background-image: url("../../static/images/background.png");
+}
+
+.main {
+  margin-bottom: 8.5em;
 }
 
 /* Medium devices (tablets, ~641px and up) */
