@@ -2,19 +2,17 @@ import React from "react"
 import {
   InstantSearch,
   Hits,
-  SearchBox,
   Pagination,
-  Highlight,
-  ClearRefinements,
-  RefinementList,
-  Configure,
-  Snippet,
+  PoweredBy,
 } from "react-instantsearch-dom"
 
+import Input from "./Input"
 import algoliasearch from "algoliasearch/lite"
 import BlogCard from "../BlogCard"
-import './algolia.css'
-
+//import './algolia.css'
+import CardContainer from "../CardContainer"
+import { CustomSnippet } from "./customSnippet"
+import { CustomHighlight } from "./customHighlight"
 
 export default function Search({ indices }) {
   const searchClient = algoliasearch(
@@ -26,29 +24,23 @@ export default function Search({ indices }) {
       searchClient={searchClient}
       indexName={indices[1].name}
     >
-      <SearchBox />
-      <Hits hitComponent={Hit} />
-    </InstantSearch>
+      <CardContainer>
+        <Input />
+        <Hits hitComponent={Hit} />
+      </CardContainer>
+      <PoweredBy />
+    </InstantSearch >
   )
 }
 
-function Title(props) {
-  return
-}
-
-function Description(props) {
-  return
-}
-
 function Hit(props: any) {
-  console.log(props)
   return (
     <BlogCard
       title={
-        <Highlight attribute="title" hit={props.hit} />}
+        <CustomHighlight attribute="title" hit={props.hit} />}
       slug={props.hit.fields.slug}
       excerpt={
-        <Snippet attribute="excerpt" hit={props.hit} />}
+        <CustomSnippet attribute="excerpt" hit={props.hit} />}
       date={props.hit.date}
       categories={props.hit.categories}
       featuredImage={props.hit.featuredImage}
