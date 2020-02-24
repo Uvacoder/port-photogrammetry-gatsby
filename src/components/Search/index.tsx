@@ -7,8 +7,6 @@ import {
 
 import Input from "./Input"
 import algoliasearch from "algoliasearch/lite"
-//import './algolia.css'
-import CardContainer from "../CardContainer"
 import { CustomHits } from "./customHits"
 
 interface SearchProps {
