@@ -14,7 +14,7 @@ export const CustomHits = connectHits(({ hits }) => (
           <CustomHighlight attribute="title" hit={hit} />
         }
         //@ts-ignore
-        slug={hit.fields.slug}
+        slug={hit.slug}
         excerpt={
           <CustomSnippet attribute="excerpt" hit={hit} />
         }

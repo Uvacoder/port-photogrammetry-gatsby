@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import { IndexLayoutQuery } from '../types'
 import styles from './index.module.css'
 import './global.css';
-import 'normalize.css'
+//import 'normalize.css'
 
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'

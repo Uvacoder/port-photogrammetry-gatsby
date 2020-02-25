@@ -16,7 +16,13 @@ const pageQuery = `{
             src {
               childImageSharp {
                 fluid(quality: 50) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
                 }
               }
             }
@@ -31,8 +37,9 @@ const pageQuery = `{
 // @ts-ignore
 const flatten = arr =>
   // @ts-ignore
-  arr.map(({ node: { frontmatter, ...rest } }) => ({
+  arr.map(({ node: { frontmatter, fields, ...rest } }) => ({
     ...frontmatter,
+    ...fields,
     ...rest,
   }))
 const settings = { attributesToSnippet: [`excerpt:20`] }
