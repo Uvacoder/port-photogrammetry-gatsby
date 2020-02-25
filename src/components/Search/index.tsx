@@ -27,7 +27,7 @@ const Search: React.FC<SearchProps> = ({ indices }) => {
   return (
     <InstantSearch
       searchClient={searchClient}
-      indexName={indices[1].name}
+      indexName={indices[0].name}
     >
       <Input />
       <CustomHits />

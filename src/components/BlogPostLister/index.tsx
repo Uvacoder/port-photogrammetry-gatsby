@@ -7,7 +7,7 @@ import CardContainer from '../CardContainer'
 
 export const ComponentQuery = graphql`
 query BlogLister {
-  allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "/(posts)/"}}) {
+  allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "/(posts)/"}, frontmatter: {draft: {ne: true}}}) {
     edges {
       node {
         fields {
@@ -15,7 +15,6 @@ query BlogLister {
         }
         frontmatter {
           title
-          draft
           date(formatString: "D-MM-YYYY")
           categories
           description

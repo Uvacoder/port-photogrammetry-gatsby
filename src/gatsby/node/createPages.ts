@@ -1,6 +1,6 @@
 import { GatsbyNode } from "gatsby"
-import { PagesQuery, ArticlesQuery } from '../types'
-import { CheckQuery } from '../utils/graphqlUtils'
+import { PagesQuery, ArticlesQuery } from '../../types'
+import { CheckQuery } from '../../utils/graphqlUtils'
 import * as path from "path"
 
 export const createPages: GatsbyNode["createPages"] = async (

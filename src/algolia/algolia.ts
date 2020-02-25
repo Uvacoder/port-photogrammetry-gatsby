@@ -1,6 +1,6 @@
 
 const pageQuery = `{
-  pages: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/pages/"}, frontmatter: {draft: {ne: true}}}) {
+  pages: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(posts)/"}, frontmatter: {draft: {ne: true}}}) {
     edges {
       node {
         fields {
@@ -9,24 +9,18 @@ const pageQuery = `{
         objectID: id
         frontmatter {
           title
-        }
-        excerpt(pruneLength: 5000)
-      }
-    }
-  }
-}`
-const postQuery = `{
-  posts: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/posts/"}, frontmatter: {draft: {ne: true}}}) {
-    edges {
-      node {
-        fields {
-          slug
-        }
-        objectID: id
-        frontmatter {
-          title
-          date(formatString: "MMM D, YYYY")
+          date(formatString: "D-MM-YYYY")
           categories
+          featuredImage {
+            description
+            src {
+              childImageSharp {
+                fluid(quality: 50) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
         }
         excerpt(pruneLength: 5000)
       }
@@ -49,13 +43,6 @@ export const queries = [
     // @ts-ignore
     transformer: ({ data }) => flatten(data.pages.edges),
     indexName: `Pages`,
-    settings,
-  },
-  {
-    query: postQuery,
-    // @ts-ignore
-    transformer: ({ data }) => flatten(data.posts.edges),
-    indexName: `Posts`,
     settings,
   },
 ]
