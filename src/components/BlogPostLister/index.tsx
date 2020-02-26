@@ -42,7 +42,7 @@ interface BlogListerProps {
 const BlogLister: React.FC<BlogListerProps> = (props) => (
   <StaticQuery
     query={ComponentQuery}
-    render={(data: BlogListerQuery) => (<CardContainer>
+    render={(data: BlogListerQuery) => (<>
       {data.allMarkdownRemark.edges.map(post => {
         if (post.node.frontmatter.draft !== true && (props.category.every(x => post.node.frontmatter.categories.includes(x)))) {
           return <BlogCard
@@ -60,7 +60,7 @@ const BlogLister: React.FC<BlogListerProps> = (props) => (
           </BlogCard>
         }
       })}
-    </CardContainer>)}
+    </>)}
   />
 )
 

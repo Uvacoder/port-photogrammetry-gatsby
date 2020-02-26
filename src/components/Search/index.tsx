@@ -1,4 +1,4 @@
-import React from "react"
+import React, { ReactElement } from "react"
 import {
   InstantSearch,
   Pagination,
@@ -8,9 +8,11 @@ import {
 import Input from "./input"
 import algoliasearch from "algoliasearch/lite"
 import { CustomHits } from "./customHits"
+import { Results } from "./results"
 
 interface SearchProps {
   indices: Index[]
+  renderEmptyQuery: ReactElement
 }
 
 interface Index {
@@ -19,7 +21,7 @@ interface Index {
   hitComp: string;
 }
 
-const Search: React.FC<SearchProps> = ({ indices }) => {
+const Search: React.FC<SearchProps> = ({ indices, renderEmptyQuery }) => {
   const searchClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID!,
     process.env.GATSBY_ALGOLIA_SEARCH_KEY!
@@ -30,8 +32,10 @@ const Search: React.FC<SearchProps> = ({ indices }) => {
       indexName={indices[0].name}
     >
       <Input />
-      <CustomHits />
-      <PoweredBy />
+      <Results renderEmptyQuery={renderEmptyQuery}>
+        <CustomHits />
+        <PoweredBy />
+      </Results>
     </InstantSearch >
   )
 }

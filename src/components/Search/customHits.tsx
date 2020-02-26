@@ -1,16 +1,15 @@
 import React from "react"
-import styles from "./index.module.css"
 import { connectHits } from 'react-instantsearch-dom';
 import BlogCard from "../BlogCard";
 import { CustomHighlight } from "./customHighlight";
 import { CustomSnippet } from "./customSnippet";
-import CardContainer from "../CardContainer";
 import { toImageWithMeta } from "../ImageWithMeta";
 
 export const CustomHits = connectHits(({ hits }) => (
-  <CardContainer>
+  <>
     {hits.map(hit => (
       <BlogCard
+        key={hit.objectID}
         title={
           <CustomHighlight attribute="title" hit={hit} />
         }
@@ -26,5 +25,5 @@ export const CustomHits = connectHits(({ hits }) => (
       >
       </BlogCard>
     ))}
-  </CardContainer>
+  </>
 ));

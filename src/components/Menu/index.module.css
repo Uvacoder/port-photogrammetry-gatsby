@@ -3,7 +3,6 @@
 }
 
 .hamburger-menu {
-  display: block;
   position: relative;
   z-index: 105;
   -webkit-user-select: none;
@@ -11,7 +10,6 @@
 }
 
 .hamburger-menu button {
-  display: block;
   position: relative;
   width: 33px;
   height: 33px;

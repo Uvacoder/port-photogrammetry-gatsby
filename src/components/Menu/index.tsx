@@ -32,7 +32,6 @@ const Menu: React.FC = () => (
       }, [menuOpen])
 
       return <nav className={classNames(styles.navBar, sharedStyles.sidePadding)}>
-
         <h1 className={styles.navHeader}>
           <Link to="/" className={styles.navText}>{data.site?.siteMetadata.title}</Link>
         </h1>
