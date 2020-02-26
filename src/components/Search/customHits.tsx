@@ -5,6 +5,7 @@ import BlogCard from "../BlogCard";
 import { CustomHighlight } from "./customHighlight";
 import { CustomSnippet } from "./customSnippet";
 import CardContainer from "../CardContainer";
+import { toImageWithMeta } from "../ImageWithMeta";
 
 export const CustomHits = connectHits(({ hits }) => (
   <CardContainer>
@@ -21,6 +22,7 @@ export const CustomHits = connectHits(({ hits }) => (
         date={hit.date}
         //@ts-ignore
         categories={hit.categories}
+        featuredImage={toImageWithMeta(hit.featuredImage)}
       >
       </BlogCard>
     ))}

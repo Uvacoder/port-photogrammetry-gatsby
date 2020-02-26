@@ -15,7 +15,7 @@ query BlogLister {
         }
         frontmatter {
           title
-          date(formatString: "D-MM-YYYY")
+          date(formatString: "YYYY-MM-DD")
           categories
           description
           featuredImage {

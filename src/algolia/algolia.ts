@@ -9,7 +9,7 @@ const pageQuery = `{
         objectID: id
         frontmatter {
           title
-          date(formatString: "D-MM-YYYY")
+          date(formatString: "YYYY-MM-DD")
           categories
           featuredImage {
             description
