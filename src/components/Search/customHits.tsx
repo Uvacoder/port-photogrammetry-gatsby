@@ -1,12 +1,12 @@
-import React from "react"
-import { connectHits } from 'react-instantsearch-dom';
-import BlogCard from "../BlogCard";
-import { CustomHighlight } from "./customHighlight";
-import { CustomSnippet } from "./customSnippet";
+import React from 'react'
+import { connectHits } from 'react-instantsearch-dom'
+import BlogCard from '../BlogCard'
+import { CustomHighlight } from './customHighlight'
+import { CustomSnippet } from './customSnippet'
 
 export const CustomHits = connectHits(({ hits }) => (
   <>
-    {hits.map(hit => (
+    {hits.map((hit) => (
       <BlogCard
         key={hit.objectID}
         title={
@@ -17,9 +17,9 @@ export const CustomHits = connectHits(({ hits }) => (
           <CustomSnippet attribute="excerpt" hit={hit} />
         }
         date={hit.date}
-        //@ts-ignore
+        // @ts-ignore
         categories={hit.categories}
       />
     ))}
   </>
-));
+))

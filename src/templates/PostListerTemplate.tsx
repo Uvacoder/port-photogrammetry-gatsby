@@ -8,24 +8,28 @@ import CardContainer from '../components/CardContainer'
 import Search from '../components/Search'
 
 interface PostListerTemplateQueryInterface {
-  data: PostListerTemplateQuery
+  data: PostListerTemplateQuery;
 }
 
 const searchIndices = [
-  { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
+  { name: 'Pages', title: 'Pages', hitComp: 'PageHit' }
 ]
 
 
-const PostListerTemplate: React.SFC<PostListerTemplateQueryInterface> = ({ data: { sitePage } }) => {
-  return <IndexLayout>
-    <ListHeader title=""></ListHeader>
+const PostListerTemplate: React.SFC<PostListerTemplateQueryInterface> = ({ data: { sitePage } }) => (
+  <IndexLayout>
+    <ListHeader title="" />
     <CardContainer>
-      <Search indices={searchIndices} renderEmptyQuery={
-        <BlogLister category={[...sitePage?.context.category ?? []]}></BlogLister>
-      } />
+      <Search
+        indices={searchIndices}
+        renderEmptyQuery={
+          <BlogLister category={[...sitePage?.context.category ?? []]} />
+        }
+        minAmountofCharacters={2}
+      />
     </CardContainer>
   </IndexLayout>
-}
+)
 
 export default PostListerTemplate
 

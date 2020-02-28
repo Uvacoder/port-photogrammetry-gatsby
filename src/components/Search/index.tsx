@@ -1,18 +1,19 @@
-import React, { ReactElement } from "react"
+import React, { ReactElement } from 'react'
 import {
   InstantSearch,
   Pagination,
-  PoweredBy,
-} from "react-instantsearch-dom"
+  PoweredBy
+} from 'react-instantsearch-dom'
 
-import Input from "./input"
-import algoliasearch from "algoliasearch/lite"
-import { CustomHits } from "./customHits"
-import { Results } from "./results"
+import Input from './input'
+import { CustomHits } from './customHits'
+import { Results } from './results'
+import { createClient } from './searchClient'
 
 interface SearchProps {
-  indices: Index[]
-  renderEmptyQuery: ReactElement
+  indices: Index[];
+  renderEmptyQuery: ReactElement;
+  minAmountofCharacters: number;
 }
 
 interface Index {
@@ -21,22 +22,20 @@ interface Index {
   hitComp: string;
 }
 
-const Search: React.FC<SearchProps> = ({ indices, renderEmptyQuery }) => {
-  const searchClient = algoliasearch(
-    process.env.GATSBY_ALGOLIA_APP_ID!,
-    process.env.GATSBY_ALGOLIA_SEARCH_KEY!
-  )
+const Search: React.FC<SearchProps> = ({ indices, renderEmptyQuery, minAmountofCharacters }) => {
+  const searchClient = createClient(minAmountofCharacters)
+
   return (
     <InstantSearch
       searchClient={searchClient}
       indexName={indices[0].name}
     >
       <Input />
-      <Results renderEmptyQuery={renderEmptyQuery}>
+      <Results renderEmptyQuery={renderEmptyQuery} minAmountofCharacters={minAmountofCharacters}>
         <CustomHits />
         <PoweredBy />
       </Results>
-    </InstantSearch >
+    </InstantSearch>
   )
 }
 export default Search
