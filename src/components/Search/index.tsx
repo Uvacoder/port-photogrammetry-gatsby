@@ -5,7 +5,7 @@ import {
   PoweredBy
 } from 'react-instantsearch-dom'
 
-import Input from './input'
+import { Input } from './input'
 import { CustomHits } from './customHits'
 import { Results } from './results'
 import { createClient } from './searchClient'
@@ -30,7 +30,7 @@ const Search: React.FC<SearchProps> = ({ indices, renderEmptyQuery, minAmountofC
       searchClient={searchClient}
       indexName={indices[0].name}
     >
-      <Input />
+      <Input delay={200} />
       <Results renderEmptyQuery={renderEmptyQuery} minAmountofCharacters={minAmountofCharacters}>
         <CustomHits />
         <PoweredBy />
