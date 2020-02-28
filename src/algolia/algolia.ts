@@ -1,7 +1,8 @@
 
 const pageQuery = `{
-  pages: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(posts)/"}, frontmatter: {draft: {ne: true}}}) {
-      nodes {
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(posts)/"}, frontmatter: {draft: {ne: true}}}) {
+    edges {
+      node {
         fields {
           slug
         }
@@ -13,6 +14,7 @@ const pageQuery = `{
         }
         excerpt(pruneLength: 5000)
       }
+    }
   }
 }`
 
@@ -32,7 +34,7 @@ export const queries = [
     // @ts-ignore
     transformer: ({ data }) => {
       console.log(data)
-      return flatten(data.pages)
+      return flatten(data.allMarkdownRemark.edges)
     },
     indexName: 'Pages',
     settings,
