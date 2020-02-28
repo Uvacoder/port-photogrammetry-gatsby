@@ -30,7 +30,7 @@ export const queries = [
   {
     query: pageQuery,
     // @ts-ignore
-    transformer: ({ data }) => flatten(data.nodes),
+    transformer: ({ data }) => flatten(data.pages),
     indexName: 'Pages',
     settings,
   },
