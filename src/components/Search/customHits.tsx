@@ -3,7 +3,6 @@ import { connectHits } from 'react-instantsearch-dom';
 import BlogCard from "../BlogCard";
 import { CustomHighlight } from "./customHighlight";
 import { CustomSnippet } from "./customSnippet";
-import { toImageWithMeta } from "../ImageWithMeta";
 
 export const CustomHits = connectHits(({ hits }) => (
   <>
@@ -21,9 +20,7 @@ export const CustomHits = connectHits(({ hits }) => (
         date={hit.date}
         //@ts-ignore
         categories={hit.categories}
-        featuredImage={toImageWithMeta(hit.featuredImage)}
-      >
-      </BlogCard>
+      />
     ))}
   </>
 ));

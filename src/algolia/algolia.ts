@@ -10,22 +10,6 @@ const pageQuery = `{
           title
           date(formatString: "YYYY-MM-DD")
           categories
-          featuredImage {
-            description
-            src {
-              childImageSharp {
-                fluid(quality: 50) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                }
-              }
-            }
-          }
         }
         excerpt(pruneLength: 5000)
       }
@@ -46,7 +30,7 @@ export const queries = [
   {
     query: pageQuery,
     // @ts-ignore
-    transformer: ({ data }) => flatten(data.pages),
+    transformer: ({ data }) => flatten(data.nodes),
     indexName: 'Pages',
     settings,
   },
