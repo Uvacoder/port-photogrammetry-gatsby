@@ -145,13 +145,13 @@ export const Config = {
             // @ts-ignore
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               // @ts-ignore
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+              return allMarkdownRemark.nodes.map(node => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.html }],
                 })
               })
             },
@@ -160,8 +160,7 @@ export const Config = {
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
                 ) {
-                  edges {
-                    node {
+                    nodes {
                       excerpt
                       fields { slug }
                       frontmatter {
@@ -169,7 +168,6 @@ export const Config = {
                         date
                       }
                     }
-                  }
                 }
               }
             `,

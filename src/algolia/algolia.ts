@@ -1,8 +1,7 @@
 
 const pageQuery = `{
   pages: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(posts)/"}, frontmatter: {draft: {ne: true}}}) {
-    edges {
-      node {
+      nodes {
         fields {
           slug
         }
@@ -30,26 +29,25 @@ const pageQuery = `{
         }
         excerpt(pruneLength: 5000)
       }
-    }
   }
 }`
 
 // @ts-ignore
 const flatten = arr =>
   // @ts-ignore
-  arr.map(({ node: { frontmatter, fields, ...rest } }) => ({
+  arr.map(({ frontmatter, fields, ...rest }) => ({
     ...frontmatter,
     ...fields,
     ...rest,
   }))
-const settings = { attributesToSnippet: [`excerpt:20`] }
+const settings = { attributesToSnippet: ['excerpt:20'] }
 
 export const queries = [
   {
     query: pageQuery,
     // @ts-ignore
-    transformer: ({ data }) => flatten(data.pages.edges),
-    indexName: `Pages`,
+    transformer: ({ data }) => flatten(data.pages),
+    indexName: 'Pages',
     settings,
   },
 ]

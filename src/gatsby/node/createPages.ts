@@ -1,20 +1,19 @@
-import { GatsbyNode } from "gatsby"
+import { GatsbyNode } from 'gatsby'
+import * as path from 'path'
 import { PagesQuery, ArticlesQuery } from '../../types'
 import { CheckQuery } from '../../utils/graphqlUtils'
-import * as path from "path"
 
-export const createPages: GatsbyNode["createPages"] = async (
-  { graphql, actions:
+export const createPages: GatsbyNode['createPages'] = async (
+  {
+    graphql, actions:
     {
       createPage
     }, getNode
   }) => {
-
   const articlesQuery = CheckQuery(await graphql<ArticlesQuery>(`
   query articles {
       allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "/(posts)/"}}) {
-        edges {
-          node {
+          nodes {
             id
             fields {
               layout
@@ -23,21 +22,21 @@ export const createPages: GatsbyNode["createPages"] = async (
             frontmatter{
               draft
             }
-          }
         }
       }
     }
   `))
 
-  const articles = articlesQuery.allMarkdownRemark.edges.map(x => x.node)
-  const slugToArticleMap = toDictionary(articles.filter(x => x.frontmatter.draft !== true), x => x.fields.slug)
+  const articles = articlesQuery.allMarkdownRemark.nodes.map((x) => x)
+  const slugToArticleMap = toDictionary(articles.filter((x) => x.frontmatter.draft !== true), (x) => x.fields.slug)
 
   articles.forEach((
-    { fields:
+    {
+      fields:
       { slug, layout }
     }
   ) => {
-    const [previous, next] = getPrevAndNextArticles(slugToArticleMap, slug).filter(x => x !== undefined).map(x => getNode(x!.id))
+    const [previous, next] = getPrevAndNextArticles(slugToArticleMap, slug).filter((x) => x !== undefined).map((x) => getNode(x!.id))
 
     createPage({
       path: slug,
@@ -53,25 +52,23 @@ export const createPages: GatsbyNode["createPages"] = async (
   const pagesQuery = CheckQuery(await graphql<PagesQuery>(`
   query pages {
     allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "/(pages)/"}}) {
-      edges {
-        node {
+        nodes {
           fields {
             layout
             slug
           }
         }
-      }
     }
   }
 `))
 
-  const pages = pagesQuery.allMarkdownRemark.edges
+  const pages = pagesQuery.allMarkdownRemark.nodes
   pages.forEach((
-    { node:
-      { fields:
-        { slug, layout }
-      }
-    }) => {
+    {
+      fields:
+      { slug, layout }
+    }
+  ) => {
     createPage({
       path: slug,
       component: path.resolve(`./src/templates/${layout || 'PostTemplate'}.tsx`),
@@ -91,7 +88,7 @@ export const createPages: GatsbyNode["createPages"] = async (
       component: path.resolve(`./src/templates/${layout}.tsx`),
       context: {
         slug,
-        category: category,
+        category
       }
     })
   }
@@ -99,7 +96,7 @@ export const createPages: GatsbyNode["createPages"] = async (
 
 function getPrevAndNextArticles<T>(articles: T, slug: string) {
   const currentArticleIndex = Object.keys(articles).findIndex(
-    articleSlug => articleSlug === slug
+    (articleSlug) => articleSlug === slug
   )
   const articlesArray = Object.values(articles) as T[]
   let prevArticle
@@ -119,7 +116,7 @@ function toDictionary<TValue>(collection: TValue[], keySelector: Func<string, TV
     return acc
   }, {} as { [key: string]: TValue })
 
-  return dictionary;
+  return dictionary
 }
 
 interface Func<TOut, TIn> {

@@ -708,8 +708,8 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterFeaturedImageDescription = 'childMarkdownRemark___frontmatter___featuredImage___description',
   ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
   ChildMarkdownRemarkFrontmatterDescription = 'childMarkdownRemark___frontmatter___description',
-  ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
   ChildMarkdownRemarkFrontmatterDropcap = 'childMarkdownRemark___frontmatter___dropcap',
+  ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
   ChildMarkdownRemarkFieldsSlug = 'childMarkdownRemark___fields___slug',
   ChildMarkdownRemarkFieldsTitle = 'childMarkdownRemark___fields___title',
   ChildMarkdownRemarkFieldsLayout = 'childMarkdownRemark___fields___layout',
@@ -843,8 +843,8 @@ export type Frontmatter = {
   readonly featuredImage?: Maybe<FeaturedImage>,
   readonly date?: Maybe<Scalars['Date']>,
   readonly description?: Maybe<Scalars['String']>,
-  readonly draft?: Maybe<Scalars['Boolean']>,
   readonly dropcap?: Maybe<Scalars['Boolean']>,
+  readonly draft?: Maybe<Scalars['Boolean']>,
 };
 
 
@@ -862,8 +862,8 @@ export type FrontmatterFilterInput = {
   readonly featuredImage?: Maybe<FeaturedImageFilterInput>,
   readonly date?: Maybe<DateQueryOperatorInput>,
   readonly description?: Maybe<StringQueryOperatorInput>,
-  readonly draft?: Maybe<BooleanQueryOperatorInput>,
   readonly dropcap?: Maybe<BooleanQueryOperatorInput>,
+  readonly draft?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export enum ImageCropFocus {
@@ -1574,8 +1574,8 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterFeaturedImageDescription = 'frontmatter___featuredImage___description',
   FrontmatterDate = 'frontmatter___date',
   FrontmatterDescription = 'frontmatter___description',
-  FrontmatterDraft = 'frontmatter___draft',
   FrontmatterDropcap = 'frontmatter___dropcap',
+  FrontmatterDraft = 'frontmatter___draft',
   FieldsSlug = 'fields___slug',
   FieldsTitle = 'fields___title',
   FieldsLayout = 'fields___layout',
@@ -2294,8 +2294,8 @@ export enum SitePageFieldsEnum {
   ContextPreviousFrontmatterTags = 'context___previous___frontmatter___tags',
   ContextPreviousFrontmatterDate = 'context___previous___frontmatter___date',
   ContextPreviousFrontmatterDescription = 'context___previous___frontmatter___description',
-  ContextPreviousFrontmatterDraft = 'context___previous___frontmatter___draft',
   ContextPreviousFrontmatterDropcap = 'context___previous___frontmatter___dropcap',
+  ContextPreviousFrontmatterDraft = 'context___previous___frontmatter___draft',
   ContextPreviousFieldsSlug = 'context___previous___fields___slug',
   ContextPreviousFieldsTitle = 'context___previous___fields___title',
   ContextPreviousFieldsLayout = 'context___previous___fields___layout',
@@ -2332,8 +2332,8 @@ export enum SitePageFieldsEnum {
   ContextNextFrontmatterTags = 'context___next___frontmatter___tags',
   ContextNextFrontmatterDate = 'context___next___frontmatter___date',
   ContextNextFrontmatterDescription = 'context___next___frontmatter___description',
-  ContextNextFrontmatterDraft = 'context___next___frontmatter___draft',
   ContextNextFrontmatterDropcap = 'context___next___frontmatter___dropcap',
+  ContextNextFrontmatterDraft = 'context___next___frontmatter___draft',
   ContextNextFieldsSlug = 'context___next___fields___slug',
   ContextNextFieldsTitle = 'context___next___fields___title',
   ContextNextFieldsLayout = 'context___next___fields___layout',
@@ -2506,18 +2506,9 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsWrapperStyle = 'pluginCreator___pluginOptions___wrapperStyle',
   PluginCreatorPluginOptionsAliasesCs = 'pluginCreator___pluginOptions___aliases___cs',
   PluginCreatorPluginOptionsAliasesPosh = 'pluginCreator___pluginOptions___aliases___posh',
-  PluginCreatorPluginOptionsIgnoreFileExtensions = 'pluginCreator___pluginOptions___ignoreFileExtensions',
   PluginCreatorPluginOptionsMaxWidth = 'pluginCreator___pluginOptions___maxWidth',
   PluginCreatorPluginOptionsLinkImagesToOriginal = 'pluginCreator___pluginOptions___linkImagesToOriginal',
   PluginCreatorPluginOptionsWithWebp = 'pluginCreator___pluginOptions___withWebp',
-  PluginCreatorPluginOptionsPathPrefix = 'pluginCreator___pluginOptions___pathPrefix',
-  PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___backgroundColor',
-  PluginCreatorPluginOptionsShowCaptions = 'pluginCreator___pluginOptions___showCaptions',
-  PluginCreatorPluginOptionsMarkdownCaptions = 'pluginCreator___pluginOptions___markdownCaptions',
-  PluginCreatorPluginOptionsTracedSvg = 'pluginCreator___pluginOptions___tracedSVG',
-  PluginCreatorPluginOptionsLoading = 'pluginCreator___pluginOptions___loading',
-  PluginCreatorPluginOptionsDisableBgImageOnAlpha = 'pluginCreator___pluginOptions___disableBgImageOnAlpha',
-  PluginCreatorPluginOptionsDisableBgImage = 'pluginCreator___pluginOptions___disableBgImage',
   PluginCreatorPluginOptionsSiteUrl = 'pluginCreator___pluginOptions___siteUrl',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
@@ -2740,18 +2731,9 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPluginsPluginOptionsTarget = 'pluginOptions___plugins___pluginOptions___target',
   PluginOptionsPluginsPluginOptionsRel = 'pluginOptions___plugins___pluginOptions___rel',
   PluginOptionsPluginsPluginOptionsWrapperStyle = 'pluginOptions___plugins___pluginOptions___wrapperStyle',
-  PluginOptionsPluginsPluginOptionsIgnoreFileExtensions = 'pluginOptions___plugins___pluginOptions___ignoreFileExtensions',
   PluginOptionsPluginsPluginOptionsMaxWidth = 'pluginOptions___plugins___pluginOptions___maxWidth',
   PluginOptionsPluginsPluginOptionsLinkImagesToOriginal = 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal',
   PluginOptionsPluginsPluginOptionsWithWebp = 'pluginOptions___plugins___pluginOptions___withWebp',
-  PluginOptionsPluginsPluginOptionsPathPrefix = 'pluginOptions___plugins___pluginOptions___pathPrefix',
-  PluginOptionsPluginsPluginOptionsBackgroundColor = 'pluginOptions___plugins___pluginOptions___backgroundColor',
-  PluginOptionsPluginsPluginOptionsShowCaptions = 'pluginOptions___plugins___pluginOptions___showCaptions',
-  PluginOptionsPluginsPluginOptionsMarkdownCaptions = 'pluginOptions___plugins___pluginOptions___markdownCaptions',
-  PluginOptionsPluginsPluginOptionsTracedSvg = 'pluginOptions___plugins___pluginOptions___tracedSVG',
-  PluginOptionsPluginsPluginOptionsLoading = 'pluginOptions___plugins___pluginOptions___loading',
-  PluginOptionsPluginsPluginOptionsDisableBgImageOnAlpha = 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha',
-  PluginOptionsPluginsPluginOptionsDisableBgImage = 'pluginOptions___plugins___pluginOptions___disableBgImage',
   PluginOptionsPluginsNodeApIs = 'pluginOptions___plugins___nodeAPIs',
   PluginOptionsPluginsBrowserApIs = 'pluginOptions___plugins___browserAPIs',
   PluginOptionsPluginsPluginFilepath = 'pluginOptions___plugins___pluginFilepath',
@@ -2761,18 +2743,9 @@ export enum SitePluginFieldsEnum {
   PluginOptionsWrapperStyle = 'pluginOptions___wrapperStyle',
   PluginOptionsAliasesCs = 'pluginOptions___aliases___cs',
   PluginOptionsAliasesPosh = 'pluginOptions___aliases___posh',
-  PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
   PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
   PluginOptionsLinkImagesToOriginal = 'pluginOptions___linkImagesToOriginal',
   PluginOptionsWithWebp = 'pluginOptions___withWebp',
-  PluginOptionsPathPrefix = 'pluginOptions___pathPrefix',
-  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
-  PluginOptionsShowCaptions = 'pluginOptions___showCaptions',
-  PluginOptionsMarkdownCaptions = 'pluginOptions___markdownCaptions',
-  PluginOptionsTracedSvg = 'pluginOptions___tracedSVG',
-  PluginOptionsLoading = 'pluginOptions___loading',
-  PluginOptionsDisableBgImageOnAlpha = 'pluginOptions___disableBgImageOnAlpha',
-  PluginOptionsDisableBgImage = 'pluginOptions___disableBgImage',
   PluginOptionsSiteUrl = 'pluginOptions___siteUrl',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsShortName = 'pluginOptions___short_name',
@@ -2922,18 +2895,9 @@ export type SitePluginPluginOptions = {
   readonly rel?: Maybe<Scalars['String']>,
   readonly wrapperStyle?: Maybe<Scalars['String']>,
   readonly aliases?: Maybe<SitePluginPluginOptionsAliases>,
-  readonly ignoreFileExtensions?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
   readonly maxWidth?: Maybe<Scalars['Int']>,
   readonly linkImagesToOriginal?: Maybe<Scalars['Boolean']>,
   readonly withWebp?: Maybe<Scalars['Boolean']>,
-  readonly pathPrefix?: Maybe<Scalars['String']>,
-  readonly backgroundColor?: Maybe<Scalars['String']>,
-  readonly showCaptions?: Maybe<Scalars['Boolean']>,
-  readonly markdownCaptions?: Maybe<Scalars['Boolean']>,
-  readonly tracedSVG?: Maybe<Scalars['Boolean']>,
-  readonly loading?: Maybe<Scalars['String']>,
-  readonly disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>,
-  readonly disableBgImage?: Maybe<Scalars['Boolean']>,
   readonly siteUrl?: Maybe<Scalars['String']>,
   readonly path?: Maybe<Scalars['String']>,
   readonly short_name?: Maybe<Scalars['String']>,
@@ -2988,18 +2952,9 @@ export type SitePluginPluginOptionsFilterInput = {
   readonly rel?: Maybe<StringQueryOperatorInput>,
   readonly wrapperStyle?: Maybe<StringQueryOperatorInput>,
   readonly aliases?: Maybe<SitePluginPluginOptionsAliasesFilterInput>,
-  readonly ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
   readonly maxWidth?: Maybe<IntQueryOperatorInput>,
   readonly linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>,
   readonly withWebp?: Maybe<BooleanQueryOperatorInput>,
-  readonly pathPrefix?: Maybe<StringQueryOperatorInput>,
-  readonly backgroundColor?: Maybe<StringQueryOperatorInput>,
-  readonly showCaptions?: Maybe<BooleanQueryOperatorInput>,
-  readonly markdownCaptions?: Maybe<BooleanQueryOperatorInput>,
-  readonly tracedSVG?: Maybe<BooleanQueryOperatorInput>,
-  readonly loading?: Maybe<StringQueryOperatorInput>,
-  readonly disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>,
-  readonly disableBgImage?: Maybe<BooleanQueryOperatorInput>,
   readonly siteUrl?: Maybe<StringQueryOperatorInput>,
   readonly path?: Maybe<StringQueryOperatorInput>,
   readonly short_name?: Maybe<StringQueryOperatorInput>,
@@ -3053,18 +3008,9 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   readonly rel?: Maybe<Scalars['String']>,
   readonly wrapperStyle?: Maybe<Scalars['String']>,
   readonly aliases?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsAliases>,
-  readonly ignoreFileExtensions?: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>,
   readonly maxWidth?: Maybe<Scalars['Int']>,
   readonly linkImagesToOriginal?: Maybe<Scalars['Boolean']>,
   readonly withWebp?: Maybe<Scalars['Boolean']>,
-  readonly pathPrefix?: Maybe<Scalars['String']>,
-  readonly backgroundColor?: Maybe<Scalars['String']>,
-  readonly showCaptions?: Maybe<Scalars['Boolean']>,
-  readonly markdownCaptions?: Maybe<Scalars['Boolean']>,
-  readonly tracedSVG?: Maybe<Scalars['Boolean']>,
-  readonly loading?: Maybe<Scalars['String']>,
-  readonly disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>,
-  readonly disableBgImage?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsAliases = {
@@ -3084,18 +3030,9 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   readonly rel?: Maybe<StringQueryOperatorInput>,
   readonly wrapperStyle?: Maybe<StringQueryOperatorInput>,
   readonly aliases?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput>,
-  readonly ignoreFileExtensions?: Maybe<StringQueryOperatorInput>,
   readonly maxWidth?: Maybe<IntQueryOperatorInput>,
   readonly linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>,
   readonly withWebp?: Maybe<BooleanQueryOperatorInput>,
-  readonly pathPrefix?: Maybe<StringQueryOperatorInput>,
-  readonly backgroundColor?: Maybe<StringQueryOperatorInput>,
-  readonly showCaptions?: Maybe<BooleanQueryOperatorInput>,
-  readonly markdownCaptions?: Maybe<BooleanQueryOperatorInput>,
-  readonly tracedSVG?: Maybe<BooleanQueryOperatorInput>,
-  readonly loading?: Maybe<StringQueryOperatorInput>,
-  readonly disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>,
-  readonly disableBgImage?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsQueries = {
@@ -3324,32 +3261,29 @@ export type BlogListerQuery = (
   { readonly __typename?: 'Query' }
   & { readonly allMarkdownRemark: (
     { readonly __typename?: 'MarkdownRemarkConnection' }
-    & { readonly edges: ReadonlyArray<(
-      { readonly __typename?: 'MarkdownRemarkEdge' }
-      & { readonly node: (
-        { readonly __typename?: 'MarkdownRemark' }
-        & Pick<MarkdownRemark, 'excerpt'>
-        & { readonly fields: (
-          { readonly __typename?: 'MarkdownRemarkFields' }
-          & Pick<MarkdownRemarkFields, 'slug'>
-        ), readonly frontmatter: (
-          { readonly __typename?: 'Frontmatter' }
-          & Pick<Frontmatter, 'title' | 'draft' | 'date' | 'categories' | 'description'>
-          & { readonly featuredImage: Maybe<(
-            { readonly __typename?: 'FeaturedImage' }
-            & Pick<FeaturedImage, 'description'>
-            & { readonly src: (
-              { readonly __typename?: 'File' }
-              & { readonly childImageSharp: Maybe<(
-                { readonly __typename?: 'ImageSharp' }
-                & { readonly fluid: Maybe<(
-                  { readonly __typename?: 'ImageSharpFluid' }
-                  & GatsbyImageSharpFluid_WithWebpFragment
-                )> }
+    & { readonly nodes: ReadonlyArray<(
+      { readonly __typename?: 'MarkdownRemark' }
+      & Pick<MarkdownRemark, 'excerpt'>
+      & { readonly fields: (
+        { readonly __typename?: 'MarkdownRemarkFields' }
+        & Pick<MarkdownRemarkFields, 'slug'>
+      ), readonly frontmatter: (
+        { readonly __typename?: 'Frontmatter' }
+        & Pick<Frontmatter, 'title' | 'draft' | 'date' | 'categories' | 'description'>
+        & { readonly featuredImage: Maybe<(
+          { readonly __typename?: 'FeaturedImage' }
+          & Pick<FeaturedImage, 'description'>
+          & { readonly src: (
+            { readonly __typename?: 'File' }
+            & { readonly childImageSharp: Maybe<(
+              { readonly __typename?: 'ImageSharp' }
+              & { readonly fluid: Maybe<(
+                { readonly __typename?: 'ImageSharpFluid' }
+                & GatsbyImageSharpFluid_WithWebpFragment
               )> }
-            ) }
-          )> }
-        ) }
+            )> }
+          ) }
+        )> }
       ) }
     )> }
   ) }
@@ -3393,18 +3327,15 @@ export type ArticlesQuery = (
   { readonly __typename?: 'Query' }
   & { readonly allMarkdownRemark: (
     { readonly __typename?: 'MarkdownRemarkConnection' }
-    & { readonly edges: ReadonlyArray<(
-      { readonly __typename?: 'MarkdownRemarkEdge' }
-      & { readonly node: (
-        { readonly __typename?: 'MarkdownRemark' }
-        & Pick<MarkdownRemark, 'id'>
-        & { readonly fields: (
-          { readonly __typename?: 'MarkdownRemarkFields' }
-          & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
-        ), readonly frontmatter: (
-          { readonly __typename?: 'Frontmatter' }
-          & Pick<Frontmatter, 'draft'>
-        ) }
+    & { readonly nodes: ReadonlyArray<(
+      { readonly __typename?: 'MarkdownRemark' }
+      & Pick<MarkdownRemark, 'id'>
+      & { readonly fields: (
+        { readonly __typename?: 'MarkdownRemarkFields' }
+        & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
+      ), readonly frontmatter: (
+        { readonly __typename?: 'Frontmatter' }
+        & Pick<Frontmatter, 'draft'>
       ) }
     )> }
   ) }
@@ -3417,14 +3348,11 @@ export type PagesQuery = (
   { readonly __typename?: 'Query' }
   & { readonly allMarkdownRemark: (
     { readonly __typename?: 'MarkdownRemarkConnection' }
-    & { readonly edges: ReadonlyArray<(
-      { readonly __typename?: 'MarkdownRemarkEdge' }
-      & { readonly node: (
-        { readonly __typename?: 'MarkdownRemark' }
-        & { readonly fields: (
-          { readonly __typename?: 'MarkdownRemarkFields' }
-          & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
-        ) }
+    & { readonly nodes: ReadonlyArray<(
+      { readonly __typename?: 'MarkdownRemark' }
+      & { readonly fields: (
+        { readonly __typename?: 'MarkdownRemarkFields' }
+        & Pick<MarkdownRemarkFields, 'layout' | 'slug'>
       ) }
     )> }
   ) }
