@@ -1,23 +1,20 @@
 {
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "netlify dev",
     "production": "gatsby serve",
-    "info": "gatsby info --clipboard",
-    "forestry:preview": "gatsby develop --port 8080 -H 0.0.0.0",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "start": "npm run dev",
-    "test": "npm run type-check && npm run lint",
-    "type-check": "tsc",
-    "generate": "graphql-codegen"
+    "graphql-generate": "graphql-codegen",
+    "css-generate": "tcm -p src/**/*.module.css --c"
   },
   "engines": {
     "node": ">=12.0.0"
   },
   "dependencies": {
+    "algoliasearch": "^4.0.3",
     "classnames": "^2.2.6",
     "gatsby": "^2.19.17",
     "gatsby-image": "^2.2.40",
+    "gatsby-plugin-algolia": "^0.5.0",
     "gatsby-plugin-canonical-urls": "^2.1.20",
     "gatsby-plugin-catch-links": "^2.1.25",
     "gatsby-plugin-disqus": "^1.1.4",
@@ -42,24 +39,29 @@
     "prismjs": "^1.19.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-instantsearch-dom": "^6.3.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.12.2",
     "@graphql-codegen/typescript": "^1.12.2",
     "@graphql-codegen/typescript-operations": "^1.12.2",
+    "@types/algoliasearch": "^3.34.10",
     "@types/classnames": "^2.2.9",
     "@types/node": "^12.12.26",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/react-helmet": "^5.0.15",
-    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@types/react-instantsearch-dom": "^5.2.6",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.19.0",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-gatsby": "^0.2.29",
     "eslint": "^6.8.0",
+    "eslint-config-blvd": "^1.0.2",
     "graphql": "^14.6.0",
     "ts-node": "^8.6.2",
+    "typed-css-modules": "^0.6.3",
     "typescript": "^3.7.5"
   }
 }

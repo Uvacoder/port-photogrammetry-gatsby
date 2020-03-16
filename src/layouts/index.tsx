@@ -2,10 +2,12 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { IndexLayoutQuery } from '../types'
-
+import styles from './index.module.css'
+import './global.css';
 import 'normalize.css'
 
-import Navigation from '../components/Navigation'
+import Menu from '../components/Menu'
+import Footer from '../components/Footer'
 
 const IndexLayout: React.FC = ({ children }) => (
   <StaticQuery<IndexLayoutQuery>
@@ -29,7 +31,7 @@ const IndexLayout: React.FC = ({ children }) => (
       }
     `}
     render={(data: IndexLayoutQuery) => (
-      <>
+      <div className={styles.body}>
         <Helmet
           htmlAttributes={{
             lang: "en",
@@ -44,9 +46,12 @@ const IndexLayout: React.FC = ({ children }) => (
           <meta property="og:image:width" content="400" />
           <meta property="og:image:height" content="400" />
         </Helmet>
-        <Navigation></Navigation>
-        {children}
-      </>
+        <Menu></Menu>
+        <main className={styles.main}>
+          {children}
+        </main>
+        <Footer></Footer>
+      </div>
     )}
   />
 )

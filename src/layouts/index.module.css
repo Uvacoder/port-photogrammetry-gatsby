@@ -1,0 +1,30 @@
+.body {
+  font-family: Avenir, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1.0em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  width: 100vw;
+  background-image: url("../../static/images/background.png");
+}
+
+.main {
+  margin-bottom: 8.5em;
+  width: 832px;
+}
+
+/* Medium devices (tablets, ~641px and up) */
+
+@media only screen and (min-width: 40.063em) {
+  .body {
+    font-size: 1.15rem;
+  }
+}
+
+@media only screen and (max-width: 832px) {
+  .main {
+    width: 100%;
+  }
+}

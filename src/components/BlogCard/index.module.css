@@ -1,0 +1,133 @@
+.card {
+  display: block;
+  margin: 2.2rem 0;
+  box-sizing: border-box;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.19), 0 0.3rem 0.3rem -0.1rem rgba(0, 0, 0, 0.23);
+}
+
+.card-img-container {
+  position: relative;
+  min-height: 176px;
+  width: 100%
+}
+
+.card-img {
+  max-height: 10em;
+}
+
+.card-img-overlay {
+  border-radius: 0.3rem 0.3rem 0 0;
+  position: absolute;
+  top: 0;
+  font-size: 1.27em;
+  text-align: center;
+  padding: 1.18em 0 0.5em 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+.card-body {
+  padding: 1em;
+}
+
+.card-title {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.card-text {
+  margin: 1em 0;
+  line-height: 1.5;
+}
+
+.card-subtext {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.card-subtext>p {
+  margin: 0;
+}
+
+.card-subtext>p+p {
+  margin-left: 1em;
+  padding-left: 1em;
+  word-spacing: 0.5em;
+  border-left: thin solid #7a7b7c;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.muted-text {
+  color: #7a7b7c;
+}
+
+@media screen and (pointer: coarse) {
+  .card-hover {
+    transform: scale(0.95);
+    box-shadow: 0 0.15rem 0.3rem 0 rgba(0, 0, 0, 0.16), 0 0.15rem 0.3rem -0.04rem rgba(0, 0, 0, 0.23);
+  }
+}
+
+@media not screen and (pointer: coarse) {
+  .card:hover {
+    transform: scale(0.97);
+    box-shadow: 0 0.15rem 0.3rem 0 rgba(0, 0, 0, 0.16), 0 0.15rem 0.3rem -0.04rem rgba(0, 0, 0, 0.23);
+  }
+  .card:active {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 40.063em) {
+  .card {
+    border-radius: 0.2rem;
+  }
+  .blog-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .card-img-container {
+    min-height: unset;
+    min-width: 276px;
+    width: 276px;
+  }
+  .card-img {
+    max-height: unset;
+    height: 100%;
+    width: 15em;
+  }
+  .card-img-overlay {
+    border-radius: 0.2rem 0 0 0;
+  }
+  .card-body {
+    padding: 1.5em 1.3em;
+    flex-grow: 1;
+  }
+  .card-title {
+    font-size: 1.27em;
+  }
+  .card-text {
+    font-size: 0.95em;
+    margin: 1.2em 0;
+  }
+  .card-subtext {
+    font-size: 0.7em;
+  }
+}

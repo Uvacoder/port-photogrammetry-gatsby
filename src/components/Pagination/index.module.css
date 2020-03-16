@@ -1,0 +1,13 @@
+.pagination-nav {
+  margin: 2em 0;
+  width: 100%;
+  max-width: 47rem;
+}
+
+.pagination-newer {
+  float: left;
+}
+
+.pagination-older {
+  float: right;
+}

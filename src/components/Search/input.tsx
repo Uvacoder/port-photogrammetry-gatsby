@@ -1,0 +1,36 @@
+import React from 'react'
+import { connectSearchBox } from 'react-instantsearch-dom'
+import styles from './index.module.css'
+
+interface InputProps {
+  delay: number;
+}
+
+export const Input: React.FC<InputProps> = ({ delay }) => {
+  let timerId: NodeJS.Timeout | null = null
+
+  const InputConnector = connectSearchBox(({ refine }) => (
+    <form className={styles.form}>
+      <input
+        className={styles.input}
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+        onChange={(e) => {
+          const value = e.target.value
+          if (timerId !== null) {
+            clearTimeout(timerId)
+          }
+
+          timerId = setTimeout(() => {
+            console.log('search')
+            return refine(value)
+          }, delay)
+        }}
+      />
+      <div className={styles.searchIcon} />
+    </form>
+  ))
+
+  return <InputConnector />
+}
