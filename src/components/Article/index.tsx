@@ -4,7 +4,7 @@ import * as styles from './index.module.css'
 import './prismhighlight.css'
 import { Disqus } from 'gatsby-plugin-disqus'
 import PostDate from '../PostDate'
-import Image from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import ImageWithMeta from '../ImageWithMeta'
 import classNames from 'classnames'
 
@@ -29,9 +29,9 @@ const Article: React.FC<ArticleProps> = (props) =>
         <h1 className={styles.postTitle}>
           {props.title}
         </h1>
-        {props.date !== null && <PostDate date={props.date} className={styles.postDate}></PostDate>}
+        {props.date && <PostDate date={props.date} className={styles.postDate}></PostDate>}
       </header>
-      {props.featuredImage !== undefined && <Image fluid={props.featuredImage.data} alt={props.featuredImage.description} />}
+      {props.featuredImage !== undefined && <GatsbyImage image={props.featuredImage.data} alt={props.featuredImage.description} />}
       <div dangerouslySetInnerHTML={{ __html: props.excerpt }} />
       <Disqus config={props.disqusConfig} />
     </article>

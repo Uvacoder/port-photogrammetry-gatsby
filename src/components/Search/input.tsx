@@ -18,7 +18,7 @@ export const Input: React.FC<InputProps> = ({ delay }) => {
         aria-label="Search"
         onChange={(e) => {
           const value = e.target.value
-          if (timerId !== null) {
+          if (timerId) {
             clearTimeout(timerId)
           }
 

@@ -5,37 +5,34 @@ import { BlogListerQuery } from '../../types'
 import BlogCard from '../BlogCard'
 import { toImageWithMeta } from '../ImageWithMeta'
 
-export const ComponentQuery = graphql`
-  query BlogLister {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fileAbsolutePath: { regex: "/(posts)/" }, frontmatter: { draft: { ne: true } } }
-    ) {
-      nodes {
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          draft
-          date(formatString: "YYYY-MM-DD")
-          categories
+export const ComponentQuery = graphql`query BlogLister {
+  allMarkdownRemark(
+    sort: {order: DESC, fields: [frontmatter___date]}
+    filter: {fileAbsolutePath: {regex: "/(posts)/"}, frontmatter: {draft: {ne: true}}}
+  ) {
+    nodes {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        draft
+        date(formatString: "YYYY-MM-DD")
+        categories
+        description
+        featuredImage {
           description
-          featuredImage {
-            description
-            src {
-              childImageSharp {
-                fluid(quality: 50) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
+          src {
+            childImageSharp {
+              gatsbyImageData(quality: 50, layout: FULL_WIDTH)
             }
           }
         }
-        excerpt
       }
+      excerpt
     }
   }
+}
 `
 interface BlogListerProps {
   category: string[];

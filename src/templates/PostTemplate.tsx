@@ -30,7 +30,7 @@ const PostTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sit
         featuredImage={toImageWithMeta(markdownRemark.frontmatter.featuredImage)}>
       </Article>
 
-      {sitePage.context.previous !== null &&
+      {sitePage.context.previous &&
         <BottomNav>
           <BlogCard
             title={sitePage.context.previous.frontmatter.title}
@@ -49,8 +49,7 @@ const PostTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sit
 
 export default PostTemplate
 
-export const query = graphql`
-query PostTemplate($slug: String!) {
+export const query = graphql`query PostTemplate($slug: String!) {
   site {
     siteMetadata {
       siteUrl
@@ -66,9 +65,7 @@ query PostTemplate($slug: String!) {
         description
         src {
           childImageSharp {
-            fluid(quality: 50) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(quality: 50, layout: FULL_WIDTH)
           }
         }
       }
@@ -90,9 +87,7 @@ query PostTemplate($slug: String!) {
             description
             src {
               childImageSharp {
-                fluid(quality: 50) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(quality: 50, layout: FULL_WIDTH)
               }
             }
           }
@@ -102,4 +97,4 @@ query PostTemplate($slug: String!) {
     }
   }
 }
-  `
+`

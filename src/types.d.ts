@@ -607,8 +607,8 @@ export enum FileFieldsEnum {
   ChildrenMarkdownRemarkFrontmatterFeaturedImageDescription = 'childrenMarkdownRemark___frontmatter___featuredImage___description',
   ChildrenMarkdownRemarkFrontmatterDate = 'childrenMarkdownRemark___frontmatter___date',
   ChildrenMarkdownRemarkFrontmatterDescription = 'childrenMarkdownRemark___frontmatter___description',
-  ChildrenMarkdownRemarkFrontmatterDropcap = 'childrenMarkdownRemark___frontmatter___dropcap',
   ChildrenMarkdownRemarkFrontmatterDraft = 'childrenMarkdownRemark___frontmatter___draft',
+  ChildrenMarkdownRemarkFrontmatterDropcap = 'childrenMarkdownRemark___frontmatter___dropcap',
   ChildrenMarkdownRemarkFieldsSlug = 'childrenMarkdownRemark___fields___slug',
   ChildrenMarkdownRemarkFieldsTitle = 'childrenMarkdownRemark___fields___title',
   ChildrenMarkdownRemarkFieldsLayout = 'childrenMarkdownRemark___fields___layout',
@@ -671,8 +671,8 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterFeaturedImageDescription = 'childMarkdownRemark___frontmatter___featuredImage___description',
   ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
   ChildMarkdownRemarkFrontmatterDescription = 'childMarkdownRemark___frontmatter___description',
-  ChildMarkdownRemarkFrontmatterDropcap = 'childMarkdownRemark___frontmatter___dropcap',
   ChildMarkdownRemarkFrontmatterDraft = 'childMarkdownRemark___frontmatter___draft',
+  ChildMarkdownRemarkFrontmatterDropcap = 'childMarkdownRemark___frontmatter___dropcap',
   ChildMarkdownRemarkFieldsSlug = 'childMarkdownRemark___fields___slug',
   ChildMarkdownRemarkFieldsTitle = 'childMarkdownRemark___fields___title',
   ChildMarkdownRemarkFieldsLayout = 'childMarkdownRemark___fields___layout',
@@ -1036,8 +1036,8 @@ export type Frontmatter = {
   readonly featuredImage?: Maybe<FeaturedImage>;
   readonly date?: Maybe<Scalars['Date']>;
   readonly description?: Maybe<Scalars['String']>;
-  readonly dropcap?: Maybe<Scalars['Boolean']>;
   readonly draft?: Maybe<Scalars['Boolean']>;
+  readonly dropcap?: Maybe<Scalars['Boolean']>;
 };
 
 
@@ -1055,8 +1055,8 @@ export type FrontmatterFilterInput = {
   readonly featuredImage?: Maybe<FeaturedImageFilterInput>;
   readonly date?: Maybe<DateQueryOperatorInput>;
   readonly description?: Maybe<StringQueryOperatorInput>;
-  readonly dropcap?: Maybe<BooleanQueryOperatorInput>;
   readonly draft?: Maybe<BooleanQueryOperatorInput>;
+  readonly dropcap?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export enum ImageCropFocus {
@@ -1725,8 +1725,8 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterFeaturedImageDescription = 'frontmatter___featuredImage___description',
   FrontmatterDate = 'frontmatter___date',
   FrontmatterDescription = 'frontmatter___description',
-  FrontmatterDropcap = 'frontmatter___dropcap',
   FrontmatterDraft = 'frontmatter___draft',
+  FrontmatterDropcap = 'frontmatter___dropcap',
   FieldsSlug = 'fields___slug',
   FieldsTitle = 'fields___title',
   FieldsLayout = 'fields___layout',
@@ -2900,8 +2900,8 @@ export enum SitePageFieldsEnum {
   ContextPreviousFrontmatterTags = 'context___previous___frontmatter___tags',
   ContextPreviousFrontmatterDate = 'context___previous___frontmatter___date',
   ContextPreviousFrontmatterDescription = 'context___previous___frontmatter___description',
-  ContextPreviousFrontmatterDropcap = 'context___previous___frontmatter___dropcap',
   ContextPreviousFrontmatterDraft = 'context___previous___frontmatter___draft',
+  ContextPreviousFrontmatterDropcap = 'context___previous___frontmatter___dropcap',
   ContextPreviousFieldsSlug = 'context___previous___fields___slug',
   ContextPreviousFieldsTitle = 'context___previous___fields___title',
   ContextPreviousFieldsLayout = 'context___previous___fields___layout',
@@ -2939,8 +2939,8 @@ export enum SitePageFieldsEnum {
   ContextNextFrontmatterTags = 'context___next___frontmatter___tags',
   ContextNextFrontmatterDate = 'context___next___frontmatter___date',
   ContextNextFrontmatterDescription = 'context___next___frontmatter___description',
-  ContextNextFrontmatterDropcap = 'context___next___frontmatter___dropcap',
   ContextNextFrontmatterDraft = 'context___next___frontmatter___draft',
+  ContextNextFrontmatterDropcap = 'context___next___frontmatter___dropcap',
   ContextNextFieldsSlug = 'context___next___fields___slug',
   ContextNextFieldsTitle = 'context___next___fields___title',
   ContextNextFieldsLayout = 'context___next___fields___layout',
@@ -3965,10 +3965,7 @@ export type BlogListerQuery = (
             { readonly __typename?: 'File' }
             & { readonly childImageSharp?: Maybe<(
               { readonly __typename?: 'ImageSharp' }
-              & { readonly fluid?: Maybe<(
-                { readonly __typename?: 'ImageSharpFluid' }
-                & GatsbyImageSharpFluid_WithWebpFragment
-              )> }
+              & Pick<ImageSharp, 'gatsbyImageData'>
             )> }
           ) }
         )> }
@@ -4061,10 +4058,7 @@ export type IndexLayoutQuery = (
     { readonly __typename?: 'File' }
     & { readonly childImageSharp?: Maybe<(
       { readonly __typename?: 'ImageSharp' }
-      & { readonly fixed?: Maybe<(
-        { readonly __typename?: 'ImageSharpFixed' }
-        & GatsbyImageSharpFixed_WithWebpFragment
-      )> }
+      & Pick<ImageSharp, 'gatsbyImageData'>
     )> }
   )> }
 );
@@ -4111,10 +4105,7 @@ export type PostTemplateQuery = (
           { readonly __typename?: 'File' }
           & { readonly childImageSharp?: Maybe<(
             { readonly __typename?: 'ImageSharp' }
-            & { readonly fluid?: Maybe<(
-              { readonly __typename?: 'ImageSharpFluid' }
-              & GatsbyImageSharpFluid_WithWebpFragment
-            )> }
+            & Pick<ImageSharp, 'gatsbyImageData'>
           )> }
         ) }
       )> }
@@ -4140,10 +4131,7 @@ export type PostTemplateQuery = (
               { readonly __typename?: 'File' }
               & { readonly childImageSharp?: Maybe<(
                 { readonly __typename?: 'ImageSharp' }
-                & { readonly fluid?: Maybe<(
-                  { readonly __typename?: 'ImageSharpFluid' }
-                  & GatsbyImageSharpFluid_WithWebpFragment
-                )> }
+                & Pick<ImageSharp, 'gatsbyImageData'>
               )> }
             ) }
           )> }

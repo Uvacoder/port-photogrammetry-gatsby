@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { getSrc } from "gatsby-plugin-image"
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { IndexLayoutQuery } from '../types'
@@ -23,9 +24,7 @@ const IndexLayout: React.FC = ({ children }) => (
         }
         file(name: {eq: "favicon"} ext: {eq: ".png"}) {
           childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed_withWebp
-            }
+            gatsbyImageData(layout: FIXED)
           }
         }
       }
@@ -42,7 +41,7 @@ const IndexLayout: React.FC = ({ children }) => (
           <meta name="keywords" content={data.site?.siteMetadata.keywords} />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={data.site?.siteMetadata.title} />
-          <meta property="og:image" content={data.site?.siteMetadata.siteUrl + data.file?.childImageSharp?.fixed?.src} />
+          <meta property="og:image" content={data.site?.siteMetadata.siteUrl + getSrc(data.file)} />
           <meta property="og:image:width" content="400" />
           <meta property="og:image:height" content="400" />
         </Helmet>

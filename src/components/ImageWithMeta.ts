@@ -1,12 +1,12 @@
-import { FluidObject } from 'gatsby-image';
+import { IGatsbyImageData } from "gatsby-plugin-image";
 
 export default interface ImageWithMeta {
-  data: FluidObject;
+  data: IGatsbyImageData;
   description: string;
 }
 
 export function toImageWithMeta(featuredImage: any): ImageWithMeta | undefined {
-  const data = featuredImage?.src.childImageSharp?.fluid
+  const data = featuredImage?.src.childImageSharp?.gatsbyImageData
   const description = featuredImage?.description!
   if (data) {
     return {
