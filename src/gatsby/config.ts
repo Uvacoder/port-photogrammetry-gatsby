@@ -19,15 +19,19 @@ export const Config = {
   },
   plugins: [
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/../../static/images`
+      }
+    },
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'images',
-            },
-          },
           {
             resolve: "gatsby-remark-external-links",
             options: {
@@ -56,8 +60,6 @@ export const Config = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 1140,
-              linkImagesToOriginal: false,
-              withWebp: true
             }
           }
         ]
@@ -74,13 +76,6 @@ export const Config = {
       options: {
         name: 'content',
         path: `${__dirname}/../../content`
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/../../static/images`
       }
     },
     {
@@ -121,9 +116,6 @@ export const Config = {
       },
     },
     'gatsby-plugin-typescript',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-image',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-sitemap`,
     {
