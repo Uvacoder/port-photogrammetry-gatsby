@@ -1,6 +1,6 @@
 import * as React from 'react'
-import styles from './index.module.css'
-import sharedStyles from '../shared.module.css'
+import * as styles from './index.module.css'
+import { sidePadding } from '../shared.module.css'
 
 import { useState, useEffect } from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby'
@@ -31,7 +31,7 @@ const Menu: React.FC = () => (
         }
       }, [menuOpen])
 
-      return <nav className={classNames(styles.navBar, sharedStyles.sidePadding)}>
+      return <nav className={classNames(styles.navBar, sidePadding)}>
         <h1 className={styles.navHeader}>
           <Link to="/" className={styles.navText}>{data.site?.siteMetadata.title}</Link>
         </h1>

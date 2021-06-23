@@ -2,7 +2,7 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { IndexLayoutQuery } from '../types'
-import styles from './index.module.css'
+import * as styles from './index.module.css'
 import './global.css';
 import 'normalize.css'
 

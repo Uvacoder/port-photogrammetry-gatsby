@@ -36,7 +36,7 @@ export const createPages: GatsbyNode['createPages'] = async (
       { slug, layout }
     }
   ) => {
-    const [previous, next] = getPrevAndNextArticles(slugToArticleMap, slug).filter((x) => x !== undefined).map((x) => getNode(x!.id))
+    const [previous, next] = getPrevAndNextArticles(slugToArticleMap, slug).filter((x) => x !== undefined).map((x) => getNode(x!.id.id))
 
     createPage({
       path: slug,

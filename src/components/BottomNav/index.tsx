@@ -1,13 +1,13 @@
 import * as React from 'react'
-import styles from './index.module.css'
-import sharedStyles from '../shared.module.css'
+import * as styles from './index.module.css'
+import { sidePadding } from '../shared.module.css'
 
 import classNames from 'classnames'
 
 
 
 const BottomNav: React.FC = ({ children }) =>
-  <nav className={classNames(styles.endNav, sharedStyles.sidePadding)}>
+  <nav className={classNames(styles.endNav, sidePadding)}>
     {children}
   </nav>
 
