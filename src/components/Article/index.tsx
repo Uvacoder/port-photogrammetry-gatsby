@@ -31,7 +31,7 @@ const Article: React.FC<ArticleProps> = (props) =>
         </h1>
         {props.date && <PostDate date={props.date} className={styles.postDate}></PostDate>}
       </header>
-      {props.featuredImage !== undefined && <GatsbyImage image={props.featuredImage.data} alt={props.featuredImage.description} />}
+      {props.featuredImage && <GatsbyImage image={props.featuredImage.data} alt={props.featuredImage.description} />}
       <div dangerouslySetInnerHTML={{ __html: props.excerpt }} />
       <Disqus config={props.disqusConfig} />
     </article>

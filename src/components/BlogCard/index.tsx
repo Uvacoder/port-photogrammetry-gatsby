@@ -20,7 +20,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = (props) =>
   <Link className={classNames(styles.card, styles.blogCard)} to={props.slug}>
-    {props.featuredImage && props.featuredImage !== undefined && <GatsbyImage
+    {props.featuredImage && <GatsbyImage
       image={props.featuredImage.data}
       className={styles.cardImgContainer}
       alt={props.featuredImage.description} />}
