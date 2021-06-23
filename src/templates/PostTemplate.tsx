@@ -14,7 +14,7 @@ interface PageTemplateQueryInterface {
 }
 
 const PostTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sitePage, markdownRemark } }) => {
-  if (sitePage == null || site == null || markdownRemark == null) return (<></>);
+  if (!sitePage || !site || !markdownRemark) return (<></>);
 
   const disqusConfig = {
     url: `${site.siteMetadata.siteUrl + sitePage.path}`,
@@ -36,7 +36,7 @@ const PostTemplate: React.SFC<PageTemplateQueryInterface> = ({ data: { site, sit
             title={sitePage.context.previous.frontmatter.title}
             slug={sitePage.context.previous.fields.slug}
             description={sitePage.context.previous.frontmatter.description!}
-            excerpt={sitePage.context.previous.excerpt!}
+            excerpt={sitePage.context.previous.excerpt}
             date={sitePage.context.previous.frontmatter.date}
             categories={sitePage.context.previous.frontmatter.categories}
             featuredImage={toImageWithMeta(sitePage.context.previous.frontmatter.featuredImage)}>
