@@ -7,7 +7,7 @@ tags:
 categories:
 - Programming
 featuredImage:
-  src: images/spancode.jpg
+  src: spancode.jpg
   description: Stackalloc in safe C# code
 description: Throw it on the heap or stack it up
 dropcap: false

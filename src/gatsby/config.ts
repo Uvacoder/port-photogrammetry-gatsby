@@ -18,16 +18,9 @@ export const Config = {
     }
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/../../static/images`
-      }
-    },
-    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -66,9 +59,10 @@ export const Config = {
       }
     },
     {
-      resolve: 'gatsby-plugin-canonical-urls',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        siteUrl: environment.URL
+        name: 'images',
+        path: `${__dirname}/../../static/images`
       }
     },
     {
@@ -76,6 +70,12 @@ export const Config = {
       options: {
         name: 'content',
         path: `${__dirname}/../../content`
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: environment.URL
       }
     },
     {

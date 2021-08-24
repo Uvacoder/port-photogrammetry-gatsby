@@ -4,7 +4,7 @@ date: 2018-11-02T18:48:51.000Z
 categories:
   - Programming
 featuredImage:
-  src: images/robert-metz-p4cxvs9ptww-unsplash.jpg
+  src: robert-metz-p4cxvs9ptww-unsplash.jpg
   description: Girl letting go a latern
 ---
 

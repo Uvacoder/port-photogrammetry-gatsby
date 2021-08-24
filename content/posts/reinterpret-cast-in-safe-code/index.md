@@ -7,7 +7,7 @@ tags:
 categories:
 - Programming
 featuredImage:
-  src: images/reinterpretcode.jpg
+  src: reinterpretcode.jpg
   description: Reinterpret cast in C# code
 description: A different way of looking at the same thing
 dropcap: false

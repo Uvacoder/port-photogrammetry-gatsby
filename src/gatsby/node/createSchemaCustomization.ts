@@ -4,7 +4,7 @@ import { GatsbyNode } from "gatsby"
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async ({ actions: { createFieldExtension, createTypes } }) => {
   const typeDefs = `
   type FeaturedImage @infer{
-      src: File! @fileByDataPath
+      src: File @fileByDataPath
       description: String
     }
     type Frontmatter @infer {
@@ -66,14 +66,15 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     name: 'fileByDataPath',
     extend: () => ({
       // @ts-ignore
-      resolve: function (featureImage, args, context, info) {
+      resolve: async function (featureImage, args, context, info) {
         let partialPath = featureImage.src
         if (!partialPath) {
+          console.error("Unable to resolve path")
           return null
         }
 
-        const regex = "/(/static/" + partialPath + ")/"
-        const fileNode = context.nodeModel.runQuery({
+        const regex = "/(/static/images/" + partialPath + ")/"
+        const fileNode = await context.nodeModel.runQuery({
           firstOnly: true,
           type: 'File',
           query: {
@@ -83,12 +84,14 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
               }
             }
           }
-        })
+        });
 
         if (!fileNode) {
-          return null
+          console.error(`Unable to resolve path ${partialPath} for context ${context.path}`)
+          return null;
         }
 
+        console.log(`Resolved path ${partialPath} to ${fileNode.absolutePath} for context ${context.path}`)
         return fileNode
       }
     })
