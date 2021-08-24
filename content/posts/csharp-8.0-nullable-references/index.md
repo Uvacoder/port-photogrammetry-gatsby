@@ -132,4 +132,4 @@ class Program
 }
 ```
 
-If you are using .NETcore it will also be possible to enable nullable references by adding <NullableContextOptions>enable</NullableContextOptions> to the .csproj file. I could not get this to work for .NET framework projects in the current VS2019 preview 4.
+If you are using .NETcore it will also be possible to enable nullable references by adding `<NullableContextOptions>enable</NullableContextOptions>` to the .csproj file. I could not get this to work for .NET framework projects in the current VS2019 preview 4.
